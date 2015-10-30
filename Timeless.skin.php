@@ -19,7 +19,6 @@ class SkinTimeless extends SkinTemplate {
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1.0' );
 
 		$out->addModuleStyles( array(
-			'mediawiki.skinning.interface',
 			'mediawiki.skinning.content.externallinks',
 			'skins.timeless'
 		) );
