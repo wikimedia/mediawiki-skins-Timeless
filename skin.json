@@ -1,0 +1,51 @@
+{
+	"name": "Timeless",
+	"version": "0.1",
+	"author": "Isarra",
+	"url": "https://www.mediawiki.org/wiki/Skin:Timeless",
+	"descriptionmsg": "timeless-desc",
+	"namemsg": "skinname-timeless",
+	"license-name": "GPL-2.0+",
+	"type": "skin",
+	"ValidSkinNames": {
+		"timeless": "Timeless"
+	},
+	"MessagesDirs": {
+		"Timeless": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.timeless": {
+			"class": "ResourceLoaderSkinModule",
+			"styles": {
+				"resources/libraries/normalise.css": {
+					"media": "screen"
+				},
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
+				"resources/screen-desktop.less": {
+					"media": "screen and (min-width: 951px)"
+				},
+				"resources/screen-mobile.less": {
+					"media": "screen and (max-width: 950px)"
+				}
+			}
+		},
+		"skins.timeless.js": {
+			"scripts": [
+				"resources/main.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Timeless"
+	},
+	"AutoloadClasses": {
+		"SkinTimeless": "Timeless.skin.php",
+		"TimelessTemplate": "TimelessTemplate.php"
+	},
+	"manifest_version": 1
+}
