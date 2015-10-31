@@ -12,66 +12,81 @@ class TimelessTemplate extends BaseTemplate {
 		$this->html( 'headelement' );
 		?>
 		<div id="mw-wrapper">
-			<?php
-			$this->outputLogo();
-			?>
-			<div class="mw-body" role="main">
+			<div id="mw-header-container" class="ts-container">
+			<div id="mw-header" class="ts-inner">
+				<div id="user-tools">
+					<?php $this->outputUserLinks(); ?>
+				</div>
 				<?php
-				if ( $this->data['sitenotice'] ) {
-					?>
-					<div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
-					<?php
-				}
-				if ( $this->data['newtalk'] ) {
-					?>
-					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
-					<?php
-				}
+				$this->outputLogo( 'p-logo-text', 'text' );
+				$this->outputSearch();
 				?>
+			</div>
+			</div>
 
-				<h1 class="firstHeading">
-					<?php $this->html( 'title' ) ?>
-				</h1>
-				<div id="siteSub"><?php echo $this->getMsg( 'tagline' )->parse() ?></div>
-				<div class="mw-body-content">
-					<div id="contentSub">
-						<?php
-						if ( $this->data['subtitle'] ) {
-							?>
-							<p><?php $this->html( 'subtitle' ) ?></p>
-							<?php
-						}
-						if ( $this->data['undelete'] ) {
-							?>
-							<p><?php $this->html( 'undelete' ) ?></p>
-							<?php
-						}
-						?>
-					</div>
-
+			<div id="content-container" class="ts-container">
+			<div id="content-block" class="ts-inner">
+				<div id="mw-site-navigation">
+					<h2><?php echo $this->getMsg( 'navigation-heading' )->parse() ?></h2>
 					<?php
-					$this->html( 'bodytext' );
-					$this->html( 'catlinks' );
-					$this->html( 'dataAfterContent' );
+					$this->outputLogo( 'p-logo', 'image' );
+					echo '<div id="page-tools">';
+						$this->outputPageLinks();
+					echo '</div><div id="site-navigation">';
+						$this->outputSiteNavigation();
+					echo '</div>';
 					?>
 				</div>
+				<div id="mw-related-navigation">
+				</div>
+				<div id="content">
+				<div class="mw-body" role="main">
+					<?php
+					if ( $this->data['sitenotice'] ) {
+						?>
+						<div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
+						<?php
+					}
+					if ( $this->data['newtalk'] ) {
+						?>
+						<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
+						<?php
+					}
+					?>
+
+					<h1 class="firstHeading">
+						<?php $this->html( 'title' ) ?>
+					</h1>
+					<div id="siteSub"><?php echo $this->getMsg( 'tagline' )->parse() ?></div>
+					<div class="mw-body-content">
+						<div id="contentSub">
+							<?php
+							if ( $this->data['subtitle'] ) {
+								?>
+								<p><?php $this->html( 'subtitle' ) ?></p>
+								<?php
+							}
+							if ( $this->data['undelete'] ) {
+								?>
+								<p><?php $this->html( 'undelete' ) ?></p>
+								<?php
+							}
+							?>
+						</div>
+
+						<?php
+						$this->html( 'bodytext' );
+						$this->html( 'catlinks' );
+						$this->html( 'dataAfterContent' );
+						?>
+					</div>
+				</div>
+				</div>
+			</div>
 			</div>
 
-			<div id="mw-navigation">
-				<h2><?php echo $this->getMsg( 'navigation-heading' )->parse() ?></h2>
-				<?php
-				$this->outputSearch();
-				echo '<div id="user-tools">';
-					$this->outputUserLinks();
-				echo '</div><div id="page-tools">';
-					$this->outputPageLinks();
-				echo '</div><div id="site-navigation">';
-					$this->outputSiteNavigation();
-				echo '</div>';
-				?>
-			</div>
-
-			<div id="mw-footer">
+			<div id="mw-footer-container" class="ts-container">
+			<div id="mw-footer" class="ts-inner">
 				<?php
 				foreach ( $this->getFooterLinks() as $category => $links ) {
 					?>
@@ -103,6 +118,7 @@ class TimelessTemplate extends BaseTemplate {
 					}
 					?>
 				</ul>
+			</div>
 			</div>
 		</div>
 
@@ -154,17 +170,21 @@ class TimelessTemplate extends BaseTemplate {
 	/**
 	 * Outputs the logo and (optionally) site title
 	 */
-	private function outputLogo( $id = 'p-logo', $imageonly = false ) {
+	private function outputLogo( $id = 'p-logo', $part = 'both' ) {
 		?>
 		<div id="<?php echo $id ?>" class="mw-portlet" role="banner">
-			<a
-				class="mw-wiki-logo"
-				href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
-			?>" <?php
-			echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) )
-			?>></a>
 			<?php
-			if ( !$imageonly ) {
+			if ( $part !== 'text' ) {
+				?>
+				<a
+					class="mw-wiki-logo"
+					href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+				?>" <?php
+				echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) )
+				?>></a>
+				<?php
+			}
+			if ( $part !== 'image' ) {
 				?>
 				<a id="p-banner" class="mw-wiki-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
 					<?php echo $this->getMsg( 'sitetitle' )->escaped() ?>
