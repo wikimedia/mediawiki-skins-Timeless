@@ -211,8 +211,10 @@ class TimelessTemplate extends BaseTemplate {
 			<h3>
 				<label for="searchInput"><?php echo $this->getMsg( 'search' )->escaped() ?></label>
 			</h3>
-			<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ) ?>
 			<?php echo $this->makeSearchButton( 'go', array( 'id' => 'searchGoButton', 'class' => 'searchButton' ) ) ?>
+			<div id="searchInput-container">
+				<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ) ?>
+			</div>
 			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 		</form>
 		<?php

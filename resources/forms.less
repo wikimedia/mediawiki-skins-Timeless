@@ -158,22 +158,20 @@ input[type="submit"],
 input[type="button"],
 button {
 	padding: .25em 1em .1em 1em;
-	border: solid 1px @blue-dark;
+	border: solid 1px @grey;
 	border-bottom-width: @border;
-	text-shadow: 0 -1px 0 @blue-dark;
+	text-shadow: 0 -1px 0 @grey;
 	box-sizing: border-box;
 	border-radius: @radius;
-	background: @blue;
-	color: @text-inverse;
-	font-weight: bold;
+	background: @background;
+	color: @text;
 	min-height: 30px;
 
 	&:active {
-		background: @blue-bright;
-		border-color: @blue;
+		background: @grey-bright;
 	}
 	&:hover {
-		background: @blue-bright;
+		background: @grey-bright;
 	}
 }
 textarea {
@@ -183,13 +181,14 @@ textarea {
 	line-height: 1.3em;
 }
 textarea#wpTextbox1 {
-	border-color: @grey-bright;
+	border-color: @grey;
 }
 div.editOptions {
 	padding: 1.25em 1.75em;
 	padding: 1em;
-	border: solid @grey-bright;
+	border: solid @grey;
 	border-width: 0 1px @border;
+	background: @background2;
 
 	.mw-summary label {
 		padding-left: 0;
