@@ -22,6 +22,9 @@
 				"resources/libraries/normalise.css": {
 					"media": "screen"
 				},
+				"resources/forms.less": {
+					"media": "screen"
+				},
 				"resources/screen-common.less": {
 					"media": "screen"
 				},
