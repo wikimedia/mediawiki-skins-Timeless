@@ -17,6 +17,7 @@
 	},
 	"ResourceModules": {
 		"skins.timeless": {
+			"position": "top",
 			"class": "ResourceLoaderSkinModule",
 			"styles": {
 				"resources/libraries/normalise.css": {
@@ -37,6 +38,7 @@
 			}
 		},
 		"skins.timeless.js": {
+			"position": "bottom",
 			"scripts": [
 				"resources/main.js"
 			]
