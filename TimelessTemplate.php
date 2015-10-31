@@ -197,26 +197,33 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Outputs the logo and site title
+	 * Outputs the search
 	 */
 	private function outputSearch() {
 		?>
-		<form
-			action="<?php $this->text( 'wgScript' ) ?>"
-			role="search"
-			class="mw-portlet"
-			id="p-search"
-		>
-			<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
-			<h3>
-				<label for="searchInput"><?php echo $this->getMsg( 'search' )->escaped() ?></label>
+		<div class="mw-portlet" id="p-search">
+			<h3<?php $this->html( 'userlangattributes' ) ?>>
+				<label for="searchInput"><?php $this->msg( 'search' ) ?></label>
 			</h3>
-			<?php echo $this->makeSearchButton( 'go', array( 'id' => 'searchGoButton', 'class' => 'searchButton' ) ) ?>
-			<div id="searchInput-container">
-				<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ) ?>
-			</div>
-			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-		</form>
+			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
+				<div id="simpleSearch">
+				<div id="searchInput-container">
+					<?php echo $this->makeSearchInput( array( 'id' => 'searchInput' ) ); ?>
+				</div>
+				<?php
+				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
+				echo $this->makeSearchButton(
+					'fulltext',
+					array( 'id' => 'mw-searchButton', 'class' => 'searchButton mw-fallbackSearchButton' )
+				);
+				echo $this->makeSearchButton(
+					'go',
+					array( 'id' => 'searchButton', 'class' => 'searchButton' )
+				);
+				?>
+				</div>
+			</form>
+		</div>
 		<?php
 	}
 
