@@ -24,8 +24,8 @@ class TimelessTemplate extends BaseTemplate {
 			</div>
 			</div>
 
-			<div id="content-container" class="ts-container">
-			<div id="content-block" class="ts-inner">
+			<div id="mw-content-container" class="ts-container">
+			<div id="mw-content-block" class="ts-inner">
 				<div id="mw-site-navigation">
 					<h2><?php echo $this->getMsg( 'navigation-heading' )->parse() ?></h2>
 					<?php
@@ -39,7 +39,7 @@ class TimelessTemplate extends BaseTemplate {
 				</div>
 				<div id="mw-related-navigation">
 				</div>
-				<div id="content">
+				<div id="mw-content">
 				<div class="mw-body" role="main">
 					<?php
 					if ( $this->data['sitenotice'] ) {
@@ -76,12 +76,16 @@ class TimelessTemplate extends BaseTemplate {
 
 						<?php
 						$this->html( 'bodytext' );
+						?>
+						<div class="visual-clear"></div>
+						<?php
 						$this->html( 'catlinks' );
 						$this->html( 'dataAfterContent' );
 						?>
 					</div>
 				</div>
 				</div>
+			<div class="visual-clear"></div>
 			</div>
 			</div>
 

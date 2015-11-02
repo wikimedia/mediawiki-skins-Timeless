@@ -8,12 +8,37 @@ body {
 	margin: 0;
 	padding: 0;
 	color: @text;
-	background: @background2;
+	background: @background-dark;
 	font-size: 1em;
 	line-height: 1.3;
 }
-#content {
+#mw-content {
 	background: @background;
+}
+#mw-content-container {
+	background: @background2;
+}
+#mw-footer-container {
+	border-top: solid 1px @background-dark2;
+	box-shadow: inset 0 7px 2px -4px rgba(0, 0, 0, .1);
+
+	ul {
+		margin: 0;
+	}
+}
+
+#p-logo {
+	text-align: center;
+	width: 10em;
+
+	a.mw-wiki-logo {
+		display: block;
+		content: '';
+		width: 10em;
+		height: 10em;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
 }
 
 /* Misc */
@@ -34,19 +59,14 @@ a {
 	}
 }
 
-#p-logo {
-	text-align: center;
-	width: 10em;
-
-	a.mw-wiki-logo {
-		display: block;
-		content: '';
-		width: 10em;
-		height: 10em;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-	}
+.mw-editsection-bracket {
+	display: none;
 }
+.visual-clear {
+	clear: both;
+}
+
+/* Hidden stuff */
 
 #mw-site-navigation h2,
 #p-search h3,
