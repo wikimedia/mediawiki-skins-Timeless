@@ -3,5 +3,6 @@
 		"authors": [ "Isarra" ]
 	},
 	"skinname-timeless": "Timeless",
-	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris."
+	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris.",
+	"timeless-search-placeholder": "Search approximately {{NUMBEROFPAGES}} pages"
 }

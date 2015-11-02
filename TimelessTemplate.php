@@ -203,12 +203,17 @@ class TimelessTemplate extends BaseTemplate {
 		?>
 		<div class="mw-portlet" id="p-search">
 			<h3<?php $this->html( 'userlangattributes' ) ?>>
-				<label for="searchInput"><?php $this->msg( 'search' ) ?></label>
+				<label for="searchInput"><?php echo $this->getMsg( 'search' )->parse() ?></label>
 			</h3>
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<div id="simpleSearch">
 				<div id="searchInput-container">
-					<?php echo $this->makeSearchInput( array( 'id' => 'searchInput' ) ); ?>
+					<?php
+					echo $this->makeSearchInput( array(
+						'id' => 'searchInput',
+						'placeholder' => $this->getMsg( 'timeless-search-placeholder' )->escaped(),
+					) );
+					?>
 				</div>
 				<?php
 				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
