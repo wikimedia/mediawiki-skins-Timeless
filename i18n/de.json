@@ -4,5 +4,6 @@
 			"Metalhead64"
 		]
 	},
-	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris."
+	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris.",
+	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen"
 }
