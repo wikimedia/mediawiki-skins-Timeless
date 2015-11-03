@@ -24,8 +24,8 @@ class TimelessTemplate extends BaseTemplate {
 			</div>
 			</div>
 
-			<div id="content-container" class="ts-container">
-			<div id="content-block" class="ts-inner">
+			<div id="mw-content-container" class="ts-container">
+			<div id="mw-content-block" class="ts-inner">
 				<div id="mw-site-navigation">
 					<h2><?php echo $this->getMsg( 'navigation-heading' )->parse() ?></h2>
 					<?php
@@ -39,7 +39,7 @@ class TimelessTemplate extends BaseTemplate {
 				</div>
 				<div id="mw-related-navigation">
 				</div>
-				<div id="content">
+				<div id="mw-content">
 				<div class="mw-body" role="main">
 					<?php
 					if ( $this->data['sitenotice'] ) {
@@ -76,12 +76,16 @@ class TimelessTemplate extends BaseTemplate {
 
 						<?php
 						$this->html( 'bodytext' );
+						?>
+						<div class="visual-clear"></div>
+						<?php
 						$this->html( 'catlinks' );
 						$this->html( 'dataAfterContent' );
 						?>
 					</div>
 				</div>
 				</div>
+			<div class="visual-clear"></div>
 			</div>
 			</div>
 
@@ -203,12 +207,17 @@ class TimelessTemplate extends BaseTemplate {
 		?>
 		<div class="mw-portlet" id="p-search">
 			<h3<?php $this->html( 'userlangattributes' ) ?>>
-				<label for="searchInput"><?php $this->msg( 'search' ) ?></label>
+				<label for="searchInput"><?php echo $this->getMsg( 'search' )->parse() ?></label>
 			</h3>
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<div id="simpleSearch">
 				<div id="searchInput-container">
-					<?php echo $this->makeSearchInput( array( 'id' => 'searchInput' ) ); ?>
+					<?php
+					echo $this->makeSearchInput( array(
+						'id' => 'searchInput',
+						'placeholder' => $this->getMsg( 'timeless-search-placeholder' )->escaped(),
+					) );
+					?>
 				</div>
 				<?php
 				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );

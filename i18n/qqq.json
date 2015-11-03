@@ -5,5 +5,6 @@
 		]
 	},
 	"skinname-timeless": "{{optional}}",
-	"timeless-desc": "{{desc|what=skin|name=Timeless|url=https://www.mediawiki.org/wiki/Skin:Timeless}}"
+	"timeless-desc": "{{desc|what=skin|name=Timeless|url=https://www.mediawiki.org/wiki/Skin:Timeless}}",
+	"timeless-search-placeholder": "Main search input placeholder text"
 }
