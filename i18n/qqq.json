@@ -1,10 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"..."
+			"Isarra"
 		]
 	},
 	"skinname-timeless": "{{optional}}",
 	"timeless-desc": "{{desc|what=skin|name=Timeless|url=https://www.mediawiki.org/wiki/Skin:Timeless}}",
-	"timeless-search-placeholder": "Main search input placeholder text"
+	"timeless-search-placeholder": "Main search input placeholder text",
+	"timeless-loggedin": "Label for logged in users' user menu (if their username is too long to fit)",
+	"timeless-anonymous": "Label for anonymous (not logged in) user menu",
+	"timeless-userpage": "User page/profile link label in the personal menu\n{{Identical|User page}}",
+	"timeless-talkpage": "Talk page link label in the personal menu",
+	"timeless-pagelog": "Label for special:log link for the page",
+	"timeless-sitetools": "Label for general site tools menu in sidebar",
+	"timeless-pageactions": "Label for some page actions",
+	"timeless-userpagetools": "Label for actions associated with a userpage",
+	"timeless-pagemisc": "Label for more tools",
+	"timeless-namespaces": "Label for page namespaces and watch tool",
+	"timeless-pagetools": "Label for some other page tools"
 }

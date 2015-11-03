@@ -3,6 +3,7 @@
 @text: #013;
 @background: #fff;
 @background2: #f3f3f3;
+@background3: #fcfcfc;
 
 @background-dark: #777;
 @background-dark2: #555;
@@ -11,7 +12,7 @@
 @link: @blue;
 @link-red: @red;
 
-@grey: #ccc;
+@grey: #ddd;
 @grey-bright: #eee;
 @grey-dark: #aaa;
 
@@ -45,4 +46,21 @@
 .hidden() {
 	position: absolute;
 	top: -9999px;
+}
+
+/* Icons - hides labels, but keep them accessible for screen-readers */
+.icon() {
+	text-indent: -99999px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+}
+
+.box {
+	background: @background3;
+	border: solid @grey-bright;
+	border-width: 1px 1px @border;
+	padding: 1.25em 1.75em;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.02);
+	overflow: auto;
 }

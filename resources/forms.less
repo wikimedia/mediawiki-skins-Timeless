@@ -13,13 +13,9 @@
 		display: inline;
 		margin-right: 1em;
 
-		&.selected {
-			font-weight: bold;
-
-			a {
-				color: @text;
-				border-bottom: solid @border @blue;
-			}
+		&.selected a {
+			color: @text;
+			border-bottom: solid @border @blue;
 		}
 	}
 }
@@ -32,6 +28,7 @@
 		border: none;
 		padding: 0;
 		margin: 0;
+		box-shadow: none;
 	}
 	.mainLegend {
 		display: none;
@@ -60,25 +57,16 @@ td.mw-label {
 }
 
 fieldset {
-	border: solid @grey-bright;
-	border-width: 1px 1px @border;
+	.box;
 	line-height: 1.3em;
 	margin: 1em 0;
-	padding: 1.25em 1.75em;
+	background: @background;
 
 	legend {
 		padding: .5em 1.25em;
 		background: @background;
-		border-bottom: solid @border @blue;
 		font-weight: bold;
-	}
-	fieldset {
-		box-shadow: none;
-
-		legend {
-			border-bottom: none;
-			color: @blue;
-		}
+		color: @blue-dark;
 	}
 }
 label {
@@ -127,7 +115,7 @@ textarea,
 	padding: .25em .35em;
 	border: solid 1px @grey;
 	margin: .5em 0;
-	box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 1px 1px rgba(0, 0, 0, 0.05);
 	font-size: 1em;
 	min-height: 30px;
 }
@@ -166,6 +154,7 @@ button {
 	background: @background;
 	color: @text;
 	min-height: 30px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
 	&:active {
 		background: @grey-bright;

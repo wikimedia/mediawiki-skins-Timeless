@@ -10,7 +10,7 @@ body {
 	color: @text;
 	background: @background-dark;
 	font-size: 1em;
-	line-height: 1.3;
+	line-height: 1.4;
 }
 #mw-content {
 	background: @background;
@@ -21,7 +21,11 @@ body {
 #mw-footer-container {
 	border-top: solid 1px @background-dark2;
 	box-shadow: inset 0 7px 2px -4px rgba(0, 0, 0, .1);
+	color: @text-inverse;
 
+	a {
+		color: @text-inverse;
+	}
 	ul {
 		margin: 0;
 	}
@@ -29,13 +33,13 @@ body {
 
 #p-logo {
 	text-align: center;
-	width: 10em;
+	width: 11em;
 
 	a.mw-wiki-logo {
 		display: block;
 		content: '';
-		width: 10em;
-		height: 10em;
+		width: 11em;
+		height: 11em;
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
 	}
@@ -50,26 +54,165 @@ a {
 	&:visited {
 		color: @blue-dark;
 	}
-	&.new {
-		color: @red;
+}
+a.new,
+.new a {
+	color: @red;
 
-		&:visited {
-			color: @red-dark;
-		}
+	&:visited {
+		color: @red-dark;
 	}
 }
 
+.mw-editsection {
+	font-family: @fonts;
+}
 .mw-editsection-bracket {
 	display: none;
 }
 .visual-clear {
 	clear: both;
 }
+#mw-content {
+	h1, h2, h3, h4, h5, h6, dt {
+		font-weight: normal;
+		font-family: @fonts-secondary;
+		line-height: 1.25;
+		margin: 1.5em 0 .5em;
+	}
+
+	h1, h2 {
+		border-bottom: solid 2px @blue-bright;
+
+	}
+
+	h1.firstHeading {
+		margin: .25em 0 .5em;
+		border-bottom: solid 4px @red;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.7em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	h4 {
+		font-size: 1.35em;
+	}
+	h5 {
+		font-size: 1.25em;
+	}
+	h6 {
+		font-size: 1.2em;
+	}
+	dt {
+		margin-top: 1em;
+	}
+	dd {
+		margin-bottom: 1em;
+	}
+	.mw-changeslist-legend dd {
+		margin-bottom: 0;
+	}
+}
+
+/* Thumbnails */
+.tright {
+	margin: 0 0 .5em .5em;
+	padding: 0 0 1em 1.5em;
+	background: #fff;
+}
+.tleft {
+	margin: 0 .5em .5em 0;
+	padding: 0 1.5em 1em 0;
+	background: #fff;
+
+}
+.thumbinner {
+	.box;
+	padding: .75em;
+}
+.thumbcaption {
+	font-size: 95%;
+	padding: .5em 1em;
+}
+.thumbinner img{
+	border: solid 1px @grey-bright;
+}
+#mw-content li.gallerybox div.thumb {
+	.box;
+	padding: 0;
+}
+
+/* Tables of contents */
+ul#filetoc,
+#toc, .toc, .mw-warning {
+	display: inline-block;
+	.box;
+	padding: 1.25em 1.75em;
+	margin: 1em 0 ;
+	min-width: 15em;
+}
+ul#filetoc {
+	display: block;
+	border: none;
+}
+#toc ul,
+.toc ul {
+	margin: 1em 0 0;
+	list-style: none;
+}
+#mw-content .toc h2 {
+	font-size: 1.2em;
+	font-family: @fonts;
+	margin: 0;
+	display: inline-block;
+	border-bottom-color: @grey;
+}
+.toctoggle {
+	color: @background3;
+}
+#toc li:last-child {
+	margin-bottom: .5em;
+}
+.toclevel-1 {
+	margin-bottom: .25em;
+}
+.mw-changeslist-legend,
+#mw-content .mw-search-profile-tabs,
+#mw-content fieldset#mw-searchoptions,
+table.wikitable {
+	border: none;
+	color: @text;
+	.box;
+}
+#mw-content .mw-search-profile-tabs {
+	padding: .5em;
+}
+
+table.wikitable > tr > th,
+table.wikitable > tr > td,
+table.wikitable > * > tr > th,
+table.wikitable > * > tr > td {
+	border: 1px solid @grey-bright;
+	padding: 0.5em;
+}
+
+table.wikitable > tr > th,
+table.wikitable > * > tr > th {
+	border: none;
+}
+
 
 /* Hidden stuff */
 
+#p-namespaces h3,
+#p-pagetools h3,
 #mw-site-navigation h2,
-#p-search h3,
-#p-personal h3 {
+#p-search h3 {
 	.hidden;
 }
