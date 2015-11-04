@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"timeless-loggedin": "आपले खाते",
+	"timeless-anonymous": "अनामिक सदस्य",
+	"timeless-userpage": "सदस्य पान",
+	"timeless-talkpage": "सदस्य चर्चा",
+	"timeless-pagelog": "पानाच्या नोंदी",
+	"timeless-sitetools": "विकि साधने",
+	"timeless-pageactions": "पृष्ठ उपकरणे",
+	"timeless-userpagetools": "सदस्य साधने",
+	"timeless-pagemisc": "अधिक",
+	"timeless-namespaces": "नामविश्वे",
+	"timeless-pagetools": "पानाच्या क्रिया"
+}

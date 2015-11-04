@@ -5,5 +5,16 @@
 		]
 	},
 	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris.",
-	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen"
+	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen",
+	"timeless-loggedin": "Dein Benutzerkonto",
+	"timeless-anonymous": "Anonymer Benutzer",
+	"timeless-userpage": "Benutzerseite",
+	"timeless-talkpage": "Benutzerdiskussion",
+	"timeless-pagelog": "Seitenlogbücher",
+	"timeless-sitetools": "Wikiwerkzeuge",
+	"timeless-pageactions": "Seitenwerkzeuge",
+	"timeless-userpagetools": "Benutzerwerkzeuge",
+	"timeless-pagemisc": "Mehr",
+	"timeless-namespaces": "Namensräume",
+	"timeless-pagetools": "Seitenaktionen"
 }

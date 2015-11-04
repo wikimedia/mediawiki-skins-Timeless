@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sujiniku"
+		]
+	},
+	"timeless-loggedin": "あなたのアカウント",
+	"timeless-anonymous": "匿名の利用者",
+	"timeless-userpage": "利用者ページ",
+	"timeless-talkpage": "利用者トーク",
+	"timeless-pagelog": "ページの履歴",
+	"timeless-sitetools": "ウィキツール",
+	"timeless-pageactions": "ページツール",
+	"timeless-userpagetools": "利用者ツール",
+	"timeless-namespaces": "名前空間",
+	"timeless-pagetools": "ページアクション"
+}

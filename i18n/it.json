@@ -1,8 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Macofe"
 		]
 	},
-	"timeless-search-placeholder": "Cerca su circa {{NUMBEROFPAGES}} pagine"
+	"timeless-search-placeholder": "Cerca su circa {{NUMBEROFPAGES}} pagine",
+	"timeless-loggedin": "La tua utenza",
+	"timeless-anonymous": "Utente anonimo",
+	"timeless-userpage": "Pagina utente",
+	"timeless-talkpage": "Discussioni utente",
+	"timeless-pagelog": "Registri della pagina",
+	"timeless-sitetools": "Strumenti wiki",
+	"timeless-pageactions": "Strumenti pagine",
+	"timeless-userpagetools": "Strumenti utente",
+	"timeless-pagemisc": "Altro",
+	"timeless-namespaces": "Namespace",
+	"timeless-pagetools": "Azioni sulla pagina"
 }

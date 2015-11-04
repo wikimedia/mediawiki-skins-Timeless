@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"timeless-loggedin": "Votre compte",
+	"timeless-anonymous": "Utilisateur anonyme",
+	"timeless-pagelog": "Registres de page",
+	"timeless-sitetools": "Outils wiki",
+	"timeless-pageactions": "Outils de page",
+	"timeless-userpagetools": "Outils d'utilisateur",
+	"timeless-pagemisc": "Plus",
+	"timeless-namespaces": "Espaces de noms",
+	"timeless-pagetools": "Actions de page"
+}

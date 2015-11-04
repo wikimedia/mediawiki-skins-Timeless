@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"timeless-loggedin": "Twoje konto",
+	"timeless-anonymous": "Anonimowy użytkownik",
+	"timeless-userpage": "Strona użytkownika",
+	"timeless-talkpage": "Dyskusja użytkownika",
+	"timeless-sitetools": "Narzędzia Wiki",
+	"timeless-userpagetools": "Narzędzia użytkownika",
+	"timeless-pagemisc": "Więcej",
+	"timeless-namespaces": "Przestrzenie nazw"
+}

@@ -5,5 +5,16 @@
 		]
 	},
 	"timeless-desc": "Безвременско руво по образ на прототипот „Зима“ на Брендон Харис",
-	"timeless-search-placeholder": "Пребарајте по околу {{NUMBEROFPAGES}} страници"
+	"timeless-search-placeholder": "Пребарајте по околу {{NUMBEROFPAGES}} страници",
+	"timeless-loggedin": "Вашата сметка",
+	"timeless-anonymous": "Анонимен корисник",
+	"timeless-userpage": "Корисничка страница",
+	"timeless-talkpage": "Разговор со корисникот",
+	"timeless-pagelog": "Дневници на страницата",
+	"timeless-sitetools": "Викиалатки",
+	"timeless-pageactions": "Алатки за страници",
+	"timeless-userpagetools": "Кориснички алатки",
+	"timeless-pagemisc": "Повеќе",
+	"timeless-namespaces": "Именски простори",
+	"timeless-pagetools": "Дејства врз страници"
 }

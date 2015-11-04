@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"timeless-search-placeholder": "Buscar aproximadamente {{NUMBEROFPAGES}} páxinas",
+	"timeless-loggedin": "A súa conta",
+	"timeless-anonymous": "Usuario anónimo",
+	"timeless-userpage": "Páxina de usuario",
+	"timeless-talkpage": "Conversa de usuario",
+	"timeless-pagelog": "Rexistros de páxina",
+	"timeless-sitetools": "Ferramentas wiki",
+	"timeless-pageactions": "Ferramentas das páxinas",
+	"timeless-userpagetools": "Ferramentas de usuario",
+	"timeless-pagemisc": "Máis",
+	"timeless-namespaces": "Espazos de nomes",
+	"timeless-pagetools": "Accións de páxina"
+}
