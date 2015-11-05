@@ -4,5 +4,17 @@
 			"Purodha"
 		]
 	},
-	"timeless-desc": "En Bedehnbovverfläsch „Ziggloßß“ en Aanlehnong an et Moster „Winter“ vum <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Brandon Harris\">Brandon Harris</i>."
+	"timeless-desc": "En Bedehnbovverfläsch „Ziggloßß“ en Aanlehnong an et Moster „Winter“ vum <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Brandon Harris\">Brandon Harris</i>.",
+	"timeless-search-placeholder": "Söhk en onjefähr {{NUMBEROFPAGES}} Sigge",
+	"timeless-loggedin": "Ding Aanmeldung",
+	"timeless-anonymous": "Nahmelohse Metmaacher",
+	"timeless-userpage": "Metmaachersigg",
+	"timeless-talkpage": "Klaafsigg",
+	"timeless-pagelog": "Logböhscher övver Sigge",
+	"timeless-sitetools": "Wärkzüsch vum Wikki",
+	"timeless-pageactions": "Werrekzüch för Sigge",
+	"timeless-userpagetools": "Wärkzüsch vum Metmaacher <!--  https://translatewiki.net/wiki/Thread:Translating_talk:MediaWiki/About_MediaWiki:Timeless-userpagetools/ksh -->",
+	"timeless-pagemisc": "Mih",
+	"timeless-namespaces": "Appachtemangs",
+	"timeless-pagetools": "Axjhune för Sigge"
 }
