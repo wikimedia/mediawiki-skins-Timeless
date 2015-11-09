@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nguyên Lê"
+		]
+	},
+	"timeless-search-placeholder": "Tìm khoảng {{NUMBEROFPAGES}} trang",
+	"timeless-loggedin": "Tài khoản"
+}

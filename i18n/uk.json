@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"timeless-desc": "«Вічне» офомлення, створене за прототипом «Зима» Брендон Гарріса.",
+	"timeless-search-placeholder": "Пошук по сторінках, яких є {{NUMBEROFPAGES}}",
+	"timeless-loggedin": "Ваш обліковий запис",
+	"timeless-anonymous": "Анонімний користувач",
+	"timeless-userpage": "Сторінка користувача",
+	"timeless-talkpage": "Обговорення користувача",
+	"timeless-pagelog": "Журнали сторінки",
+	"timeless-sitetools": "Вікі-інструменти",
+	"timeless-pageactions": "Інструменти сторінки",
+	"timeless-userpagetools": "Інструменти користувача",
+	"timeless-pagemisc": "Ще",
+	"timeless-namespaces": "Простори назв",
+	"timeless-pagetools": "Дії над сторінкою"
+}
