@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hwangjy9"
+			"Hwangjy9",
+			"Revi"
 		]
 	},
+	"timeless-desc": "Brandon Harris의 윈터 프로토타입 이후로 개발된 타임리스 스킨",
+	"timeless-search-placeholder": "대략 {{NUMBEROFPAGES}} 문서 중에서 검색.",
+	"timeless-loggedin": "사용자 계정",
 	"timeless-anonymous": "익명 사용자",
 	"timeless-userpage": "사용자 문서",
 	"timeless-talkpage": "사용자토론",
@@ -12,5 +16,6 @@
 	"timeless-pageactions": "문서 도구",
 	"timeless-userpagetools": "사용자 도구",
 	"timeless-pagemisc": "더 보기",
-	"timeless-namespaces": "이름공간"
+	"timeless-namespaces": "이름공간",
+	"timeless-pagetools": "문서 행위"
 }
