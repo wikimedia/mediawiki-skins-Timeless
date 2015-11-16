@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"DaBler"
+		]
+	},
+	"timeless-loggedin": "Váš účet",
+	"timeless-anonymous": "Anonymní uživatel",
+	"timeless-userpage": "Uživatelská stránka",
+	"timeless-sitetools": "Wiki nástroje",
+	"timeless-pageactions": "Nástroje ke stránkám",
+	"timeless-userpagetools": "Uživatelské nástroje",
+	"timeless-pagemisc": "Více",
+	"timeless-namespaces": "Jmenné prostory"
+}
