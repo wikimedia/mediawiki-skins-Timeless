@@ -11,13 +11,14 @@
 	float: left;
 }
 #p-search,
-#mw-content {
+#mw-content,
+#mw-header-container .color-middle {
 	margin-left: 12em;
-	margin-right: 18em;
+	margin-right: 15em;
 }
 #mw-related-navigation,
 #user-tools {
-	width: 18em;
+	width: 15em;
 	float: right;
 }
 
@@ -25,37 +26,66 @@
 
 #mw-header-container {
 	position: fixed;
+	z-index: 100;
 	top: 0;
 	width: 100%;
-	background: @background-dark;
-	color: @text-inverse;
-	height: 3em;
-	border-bottom: solid 1px @background-dark2;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	background: @background;
+	color: @text;
+	padding: 0.5em 0 0;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.5);
 }
+
+@color-height: 4px;
+.color-left {
+	float:left;
+	height: @color-height;
+	background: @red;
+	width: 50%;
+}
+.color-right {
+	display: inline-block;
+	height: @color-height;
+	background: @green;
+	width: 50%;
+	float:right;
+}
+.color-middle {
+	height: @color-height;
+	background: @blue;
+	margin-top: .25em;
+	margin-bottom: -@color-height;
+	position: relative;
+}
+
 .dropdown {
 	display: none;
 }
 
 #p-personal {
+	display: inline-block;
+	position: relative;
 	padding-left: 1.5em;
+	padding-right: 2em;
+	line-height: 1;
 }
 #p-personal h3 {
 	margin: 0;
-	padding: .55em 0 .45em 1.5em;
+	padding: .7em 0 .55em 25px;
 	font-family: @fonts-secondary;
 	font-weight: normal;
 	font-size: 1.1em;
-	text-shadow: 0 -1px 0 @background-dark2;
-	.background-image-svg('images/user.svg', 'images/user.png');
-	background-position: 0% 10px;
+	.background-image-svg('images/user-grey.svg', 'images/user-grey.png');
+	background-position: 0 7px;
 	background-repeat: no-repeat;
 
-	span {
-		.background-image-svg('images/arrow-down-white.svg', 'images/arrow-down-white.png');
-		background-position: 100% 2px;
+	&:after {
+		display: inline-block;
+		content: '';
+		width: 22px;
+		height: 12px;
+		.background-image-svg('images/arrow-down-grey.svg', 'images/arrow-down-grey.png');
+		background-position: center center;
 		background-repeat: no-repeat;
-		padding-right: 1.35em;
 	}
 	&:hover {
 		cursor: pointer;
@@ -65,10 +95,11 @@
 #p-logo-text {
 	width: 11em;
 	text-align: center;
-	text-shadow: 0 -1px 0 @background-dark2;
+	line-height: 1;
 
 	a {
-		color: @text-inverse;
+		padding: .2em 0;
+		color: @text;
 		font-family: @fonts-secondary;
 		font-variant: small-caps;
 		font-size: 1.75em;
@@ -76,24 +107,23 @@
 	}
 }
 
-
 /* Search */
 
 #simpleSearch {
-	box-shadow: inset 0 2px 2px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 	background: @background;
-	margin: .5em 0 0 0;
 	position: relative;
-	border-top: solid 1px @background-dark2;
+	border: solid 1px @grey;
 }
 #searchInput {
 	border: none;
 	margin: 0;
 	height: 2.1em;
-	padding: .4em 4.5em .3em 2em;
+	padding: .4em 4.5em .2em 2em;
 	box-shadow: none;
 	background: transparent;
 	width: 100%;
+	min-height: 0;
 }
 #searchButton,
 #mw-searchButton {
@@ -108,12 +138,65 @@
 	box-shadow: none;
 }
 
+/* Dropdowns */
+
+#p-personal:hover .dropdown {
+	display: block;
+}
+
+.dropdown {
+	.box;
+	background: #fff;
+	box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.05);
+	position: absolute;
+	padding: 20px 2em 0;
+	min-width: 6em;
+	top: 2.45em;
+	right: 0;
+	overflow: visible;
+	line-height: 1.1;
+	z-index: 1;
+
+	ul,
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		margin-bottom: 2em;
+	}
+	li {
+		margin: 0 0 .35em;
+	}
+}
+.pokey,
+.pokey::after {
+	border-bottom: 10px solid #E6E6E6;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	content: "";
+	height: 0px;
+	position: absolute;
+	transform: rotate(360deg); // to force some smoothing
+	width: 0px;
+}
+.pokey {
+	right: 28px;
+	top: -10px;
+}
+.pokey::after {
+	border-bottom-color: #FFFFFF;
+	right: -10px;
+	top: 2px;
+}
 
 /* Content */
 
 #mw-content-container {
 	margin-top: 3em;
 	padding-bottom: .5em;
+	border-bottom: solid 4px @green;
 }
 #mw-content {
 	.box;
@@ -176,7 +259,6 @@
 
 /* Sidebars */
 
-.dropdown,
 #mw-site-navigation .sidebar-chunk,
 #mw-related-navigation .sidebar-chunk {
 	.box;
@@ -210,24 +292,6 @@
 }
 #mw-related-navigation .sidebar-chunk {
 	margin-right: 0;
-}
-
-/* Dropdowns */
-
-#p-personal {
-	position: relative;
-
-	&:hover .dropdown {
-		display: block;
-	}
-}
-
-.dropdown {
-	position: absolute;
-	padding: 1.5em 2em 0;
-	min-width: 8em;
-	top: 1.6em;
-	left: 0;
 }
 
 /* Footer */

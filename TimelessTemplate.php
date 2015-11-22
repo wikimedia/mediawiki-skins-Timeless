@@ -23,7 +23,12 @@ class TimelessTemplate extends BaseTemplate {
 				$this->outputLogo( 'p-logo-text', 'text' );
 				$this->outputSearch();
 				?>
+				<div class="color-middle"></div>
 			</div>
+			<div class="visual-clear"></div>
+			<div class="color-left"></div>
+			<div class="color-right"></div>
+			<div class="visual-clear"></div>
 			</div>
 
 			<div id="mw-content-container" class="ts-container">
@@ -318,7 +323,7 @@ class TimelessTemplate extends BaseTemplate {
 			if ( $user->isLoggedIn() ) {
 				$userName = $user->getName();
 				// Make sure it fit firsts
-				if ( strlen( $userName ) < 15 ) {
+				if ( strlen( $userName ) < 12 ) {
 					echo htmlspecialchars( $userName, ENT_QUOTES );
 				} else {
 					echo wfMessage( 'timeless-loggedin' )->escaped();
@@ -330,6 +335,7 @@ class TimelessTemplate extends BaseTemplate {
 			</span>
 			</h3>
 			<div class="p-body dropdown">
+			<div class="pokey"></div>
 			<ul<?php $this->html( 'userlangattributes' ) ?>>
 			<?php
 				foreach ( $this->getPersonalTools() as $key => $item ) {
