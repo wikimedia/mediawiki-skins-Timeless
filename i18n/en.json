@@ -15,6 +15,7 @@
 	"timeless-userpagetools": "User tools",
 	"timeless-pagemisc": "More",
 	"timeless-namespaces": "Namespaces",
-	"timeless-pagetools": "Page actions"
+	"timeless-pagetools": "Page actions",
+	"timeless-sitetitle": "{{MediaWiki:Sitetitle}}"
 }
 

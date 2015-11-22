@@ -247,9 +247,15 @@ class TimelessTemplate extends BaseTemplate {
 				<?php
 			}
 			if ( $part !== 'image' ) {
+				$titleClass = '';
+				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+				// width is 11em; 13 characters will probably fit?
+				if ( mb_strlen( $siteTitle ) > 13 ) {
+					$titleClass = 'long';
+				}
 				?>
-				<a id="p-banner" class="mw-wiki-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-					<?php echo $this->getMsg( 'sitetitle' )->escaped() ?>
+				<a id="p-banner" class="mw-wiki-title <?php echo $titleClass ?>" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
+					<?php echo $siteTitle ?>
 				</a>
 				<?php
 			}
@@ -323,7 +329,7 @@ class TimelessTemplate extends BaseTemplate {
 			if ( $user->isLoggedIn() ) {
 				$userName = $user->getName();
 				// Make sure it fit firsts
-				if ( strlen( $userName ) < 12 ) {
+				if ( mb_strlen( $userName ) < 12 ) {
 					echo htmlspecialchars( $userName, ENT_QUOTES );
 				} else {
 					echo wfMessage( 'timeless-loggedin' )->escaped();

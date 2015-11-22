@@ -52,7 +52,7 @@
 .color-middle {
 	height: @color-height;
 	background: @blue;
-	margin-top: .25em;
+	margin-top: .3em;
 	margin-bottom: -@color-height;
 	position: relative;
 }
@@ -104,6 +104,13 @@
 		font-variant: small-caps;
 		font-size: 1.75em;
 		display: block;
+
+		/* 13+ character names */
+		&.long {
+			font-size: 1.45em;
+			padding: 0;
+			line-height: .8;
+		}
 	}
 }
 

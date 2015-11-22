@@ -17,6 +17,7 @@
 	"timeless-pageactions": "Label for some page actions",
 	"timeless-userpagetools": "Label for actions associated with a userpage",
 	"timeless-pagemisc": "Label for more tools\n{{Identical|More}}",
-	"timeless-namespaces": "Label for page namespaces and watch tool\n{{Identical|Namespace}}",
-	"timeless-pagetools": "Label for some other page tools"
+	"timeless-namespaces": "Label for page namespaces and watch tools\n{{Identical|Namespace}}",
+	"timeless-pagetools": "Label for other page tools",
+	"timeless-sitetitle": "{{ignore}}\nSite title for site banner"
 }
