@@ -32,27 +32,36 @@
 	background: @background;
 	color: @text;
 	padding: 0.5em 0 0;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.2);
+	min-height: 2.85em;
+}
+
+/* Add offset to make anchor links work with the fixed header */
+:target:before {
+	content: "";
+	display: block;
+	height: 2.85em;
+	margin: -2.85em 0 0;
 }
 
 @color-height: 4px;
 .color-left {
 	float:left;
 	height: @color-height;
-	background: @red;
+	background: @red-dark;
 	width: 50%;
 }
 .color-right {
 	display: inline-block;
 	height: @color-height;
-	background: @green;
+	background: @green-dark;
 	width: 50%;
 	float:right;
 }
 .color-middle {
 	height: @color-height;
-	background: @blue;
-	margin-top: .3em;
+	background: @blue-dark;
+	margin-top: .4em;
 	margin-bottom: -@color-height;
 	position: relative;
 }
@@ -69,8 +78,8 @@
 	line-height: 1;
 }
 #p-personal h3 {
-	margin: 0;
-	padding: .7em 0 .55em 25px;
+	margin: 0 0 -1em;
+	padding: .7em 0 1.25em 25px;
 	font-family: @fonts-secondary;
 	font-weight: normal;
 	font-size: 1.1em;
@@ -158,7 +167,7 @@
 	position: absolute;
 	padding: 20px 2em 0;
 	min-width: 6em;
-	top: 2.45em;
+	top: 2.95em;
 	right: 0;
 	overflow: visible;
 	line-height: 1.1;
