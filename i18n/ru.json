@@ -4,9 +4,15 @@
 			"Okras"
 		]
 	},
+	"timeless-loggedin": "Учётная запись",
 	"timeless-anonymous": "Аноним",
+	"timeless-userpage": "Участник",
 	"timeless-talkpage": "Обсуждение участника",
 	"timeless-pagelog": "Журналы страницы",
+	"timeless-sitetools": "Вики-инструменты",
+	"timeless-pageactions": "Инструменты для страниц",
+	"timeless-userpagetools": "Инструменты участника",
 	"timeless-pagemisc": "Ещё",
-	"timeless-namespaces": "Пространства имён"
+	"timeless-namespaces": "Пространства имён",
+	"timeless-pagetools": "Действия на странице"
 }
