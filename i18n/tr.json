@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"HakanIST"
+			"HakanIST",
+			"Sayginer"
 		]
 	},
 	"timeless-search-placeholder": "Yaklaşık {{NUMBEROFPAGES}} sayfayı ara",
 	"timeless-anonymous": "Anonim",
+	"timeless-userpage": "Kullanıcı sayfası",
+	"timeless-sitetools": "Viki araçları",
 	"timeless-pageactions": "Sayfa araçları",
+	"timeless-userpagetools": "Kullanıcı araçları",
 	"timeless-namespaces": "İsim alanları",
 	"timeless-pagetools": "Sayfa işlemleri"
 }
