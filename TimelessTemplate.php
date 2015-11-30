@@ -23,56 +23,66 @@ class TimelessTemplate extends BaseTemplate {
 				$this->outputLogo( 'p-logo-text', 'text' );
 				$this->outputSearch();
 				?>
-				<div class="color-middle"></div>
 			</div>
 			<div class="visual-clear"></div>
-			<div class="color-left"></div>
-			<div class="color-right"></div>
-			<div class="visual-clear"></div>
 			</div>
+
+			<div id="mw-header-hack" class="color-bar">
+				<div class="color-middle-container">
+					<div class="color-middle"></div>
+				</div>
+				<div class="color-left"></div>
+				<div class="color-right"></div>
+			</div>
+			<div id="mw-header-nav-hack">
+			<div class="color-bar">
+				<div class="color-middle-container">
+					<div class="color-middle"></div>
+				</div>
+				<div class="color-left"></div>
+				<div class="color-right"></div>
+			</div>
+			</div>
+			<div id="menus-cover"></div>
 
 			<div id="mw-content-container" class="ts-container">
 			<div id="mw-content-block" class="ts-inner">
 				<div id="mw-site-navigation">
-					<h2><?php echo $this->getMsg( 'navigation-heading' )->parse() ?></h2>
 					<?php
 					$this->outputLogo( 'p-logo', 'image' );
-					echo '<div id="site-navigation" class="sidebar-chunk">';
-						$this->outputSiteNavigation();
-					echo '</div>';
-					$this->outputPortlet( array(
+					$this->outputSiteNavigation();
+
+					$siteTools = $this->assemblePortlet( array(
 						'id' => 'p-sitetools',
 						'headerMessage' => 'timeless-sitetools',
-						'content' => $pileOfTools['general'],
-						'class' => 'sidebar-chunk'
+						'content' => $pileOfTools['general']
 					) );
+					$this->outputSidebarChunk( 'site-tools', 'timeless-sitetools', $siteTools );
 					?>
 				</div>
 				<div id="mw-related-navigation">
-					<div id="page-tools" class="sidebar-chunk">
-						<?php
-						if ( count( $pileOfTools['page-secondary'] ) > 0 ) {
-							$this->outputPortlet( array(
-								'id' => 'p-pageactions',
-								'headerMessage' => 'timeless-pageactions',
-								'content' => $pileOfTools['page-secondary'],
-							) );
-						}
-						if ( count( $pileOfTools['user'] ) > 0 ) {
-							$this->outputPortlet( array(
-								'id' => 'p-userpagetools',
-								'headerMessage' => 'timeless-userpagetools',
-								'content' => $pileOfTools['user'],
-							) );
-						}
-						$this->outputPortlet( array(
-							'id' => 'p-pagemisc',
-							'headerMessage' => 'timeless-pagemisc',
-							'content' => $pileOfTools['page-tertiary'],
-						) );
-						?>
-					</div>
 					<?php
+					$pageTools = '';
+					if ( count( $pileOfTools['page-secondary'] ) > 0 ) {
+						$pageTools .= $this->assemblePortlet( array(
+							'id' => 'p-pageactions',
+							'headerMessage' => 'timeless-pageactions',
+							'content' => $pileOfTools['page-secondary'],
+						) );
+					}
+					if ( count( $pileOfTools['user'] ) > 0 ) {
+						$pageTools .= $this->assemblePortlet( array(
+							'id' => 'p-userpagetools',
+							'headerMessage' => 'timeless-userpagetools',
+							'content' => $pileOfTools['user'],
+						) );
+					}
+					$pageTools .= $this->assemblePortlet( array(
+						'id' => 'p-pagemisc',
+						'headerMessage' => 'timeless-pagemisc',
+						'content' => $pileOfTools['page-tertiary'],
+					) );
+					$this->outputSidebarChunk( 'page-tools', 'timeless-pageactions', $pageTools );
 
 					$this->outputInterlanguageLinks();
 					$this->outputCategories();
@@ -91,6 +101,7 @@ class TimelessTemplate extends BaseTemplate {
 						<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
 						<?php
 					}
+					echo $this->getIndicators();
 					?>
 
 					<h1 class="firstHeading">
@@ -98,14 +109,14 @@ class TimelessTemplate extends BaseTemplate {
 					</h1>
 					<div id="page-header-links">
 					<?php
-						$this->outputPortlet( array(
+						echo $this->assemblePortlet( array(
 							'id' => 'p-namespaces',
 							'headerMessage' => 'timeless-namespaces',
 							'content' => $pileOfTools['namespaces'],
 						) );
 					?>
 					<?php
-						$this->outputPortlet( array(
+						echo $this->assemblePortlet( array(
 							'id' => 'p-pagetools',
 							'headerMessage' => 'timeless-pagetools',
 							'content' => $pileOfTools['page-primary'],
@@ -133,12 +144,15 @@ class TimelessTemplate extends BaseTemplate {
 						$this->html( 'bodytext' );
 						?>
 						<div class="visual-clear"></div>
-						<?php
-						$this->html( 'dataAfterContent' );
-						?>
 					</div>
 				</div>
 				</div>
+			<?php
+				if ( $this->data['catlinks'] ) {
+					$this->html( 'catlinks' );
+				}
+				$this->html( 'dataAfterContent' );
+			?>
 			<div class="visual-clear"></div>
 			</div>
 			</div>
@@ -186,9 +200,9 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Outputs a single sidebar portlet of any kind.
+	 * Returns a single sidebar portlet of any kind (monobook style)
 	 */
-	private function outputPortlet( $box ) {
+	private function assemblePortlet( $box ) {
 		if ( !$box['content'] ) {
 			return;
 		}
@@ -198,35 +212,85 @@ class TimelessTemplate extends BaseTemplate {
 			$box['class'] .= ' mw-portlet';
 		}
 
-		?>
-		<div
-			role="navigation"
-			class="<?php echo $box['class'] ?>"
-			id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"
-			<?php echo Linker::tooltip( $box['id'] ) ?>
-		>
-			<h3>
-				<?php
-				if ( isset( $box['headerMessage'] ) ) {
-					echo $this->getMsg( $box['headerMessage'] )->escaped();
-				} else {
-					echo htmlspecialchars( $box['header'] );
-				}
-				?>
-			</h3>
-
-			<?php
-			if ( is_array( $box['content'] ) ) {
-				echo '<ul>';
-				foreach ( $box['content'] as $key => $item ) {
-					echo $this->makeListItem( $key, $item );
-				}
-				echo '</ul>';
+		$content = '<div role="navigation" class="' . $box['class'] . '" id="' . Sanitizer::escapeId( $box['id'] ) . '"' . Linker::tooltip( $box['id'] ) . '>';
+		$content .= '<h3>';
+			if ( isset( $box['headerMessage'] ) ) {
+				$content .= $this->getMsg( $box['headerMessage'] )->escaped();
 			} else {
-				echo $box['content'];
-			}?>
-		</div>
-		<?php
+				$content .= htmlspecialchars( $box['header'] );
+			}
+		$content .= '</h3>';
+		if ( is_array( $box['content'] ) ) {
+			$content .= '<ul>';
+			foreach ( $box['content'] as $key => $item ) {
+				$content .= $this->makeListItem( $key, $item );
+			}
+			$content .= '</ul>';
+		} else {
+			$content .= $box['content'];
+		}
+		$content .= '</div>';
+
+		return $content;
+	}
+
+	/**
+	 * Makes links for navigation lists.
+	 *
+	 * Modified to add a <span> around <a> content in navigation lists; everything else is
+	 * basically the same as in BaseTemplate, just with extra stuff removed.
+	 *
+	 * Can't just use the original's options['wrapper'] because it's a piece of crap and spews
+	 * infinite errors on the page.
+	 */
+	function makeLink( $key, $item, $options = array() ) {
+		if ( isset( $item['text'] ) ) {
+			$text = $item['text'];
+		} else {
+			$text = $this->translator->translate( isset( $item['msg'] ) ? $item['msg'] : $key );
+		}
+
+		$html = htmlspecialchars( $text );
+		$html = '<span>' . $html . '</span>';
+
+		if ( isset( $item['href'] ) ) {
+			$attrs = $item;
+			foreach ( array( 'single-id', 'text', 'msg', 'tooltiponly', 'context', 'primary' ) as $k ) {
+				unset( $attrs[$k] );
+			}
+
+			if ( isset( $item['id'] ) && !isset( $item['single-id'] ) ) {
+				$item['single-id'] = $item['id'];
+			}
+			if ( isset( $item['single-id'] ) ) {
+				if ( isset( $item['tooltiponly'] ) && $item['tooltiponly'] ) {
+					$title = Linker::titleAttrib( $item['single-id'] );
+					if ( $title !== false ) {
+						$attrs['title'] = $title;
+					}
+				} else {
+					$tip = Linker::tooltipAndAccesskeyAttribs( $item['single-id'] );
+					if ( isset( $tip['title'] ) && $tip['title'] !== false ) {
+						$attrs['title'] = $tip['title'];
+					}
+					if ( isset( $tip['accesskey'] ) && $tip['accesskey'] !== false ) {
+						$attrs['accesskey'] = $tip['accesskey'];
+					}
+				}
+			}
+			$html = Html::rawElement( 'a', $attrs, $html );
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Outputs a sidebar-chunk containing one or more portlets
+	 */
+	private function outputSidebarChunk( $id, $headerMessage, $content ) {
+		echo '<div id="' . $id . '" class="sidebar-chunk">';
+		echo '<h2><span>' . $this->getMsg( $headerMessage )->escaped() . '</span><div class="pokey"></div></h2>';
+		echo '<div class="sidebar-inner">' . $content . '</div></div>';
 	}
 
 	/**
@@ -305,24 +369,30 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	private function outputSiteNavigation() {
 		$sidebar = $this->getSidebar();
+		$content = '';
 
 		$sidebar['SEARCH'] = false; // Already hardcoded into header
 		$sidebar['TOOLBOX'] = false; // Parsed as part of pageTools
-		$sidebar['LANGUAGES'] = false; // PUT THIS ON THE OTHER SIDE
+		$sidebar['LANGUAGES'] = false; // Forcibly removed to separate chunk
 
 		foreach ( $sidebar as $boxName => $box ) {
 			if ( $boxName === false ) {
 				continue;
 			}
-			$this->outputPortlet( $box, true );
+			$content .= $this->assemblePortlet( $box, true );
 		}
+
+		$this->outputSidebarChunk( 'site-navigation', 'navigation', $content );
 	}
 
+	/**
+	 * Outputs user links portlet for header
+	 */
 	private function outputUserLinks() {
 		$user = $this->getSkin()->getUser();
 		?>
-		<div class="mw-portlet" id="p-personal" role="navigation">
-			<h3>
+		<div id="p-personal">
+		<h2>
 			<span>
 			<?php
 			// Display status, and make a dropdown if logged in
@@ -339,9 +409,20 @@ class TimelessTemplate extends BaseTemplate {
 			}
 			?>
 			</span>
-			</h3>
-			<div class="p-body dropdown">
 			<div class="pokey"></div>
+		</h2>
+		<div id="p-personal-inner" class="dropdown">
+		<div class="mw-portlet" role="navigation">
+			<h3>
+			<?php
+			if ( $user->isLoggedIn() ) {
+				echo wfMessage( 'timeless-loggedinas', $user->getName() )->parse();
+			} else {
+				echo wfMessage( 'timeless-notloggedin' )->parse();
+			}
+			?>
+			</h3>
+			<div class="p-body">
 			<ul<?php $this->html( 'userlangattributes' ) ?>>
 			<?php
 				foreach ( $this->getPersonalTools() as $key => $item ) {
@@ -357,12 +438,14 @@ class TimelessTemplate extends BaseTemplate {
 			</ul>
 			</div>
 		</div>
+		</div>
+		</div>
 		<?php
 	}
 
 	/*
 	 * Generates pile of all the tools
-	 * Returns array of arrays of each kind
+	 * Returns array of arrays of each kind (wouldn't it be nice if tools themselves just registered the type instead?)
 	 */
 	private function getPageTools() {
 		$title = $this->getSkin()->getTitle();
@@ -399,6 +482,18 @@ class TimelessTemplate extends BaseTemplate {
 				'id' => 't-pagelog'
 			);
 		}
+		$pileOfTools['more'] = array(
+			'text' => $this->getMsg( 'timeless-more' )->escaped(),
+			'id' => 'ca-more',
+			'class' => 'dropdown-toggle'
+		);
+		if ( $this->data['language_urls'] ) {
+			$pileOfTools['languages'] = array(
+				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
+				'id' => 'ca-languages',
+				'class' => 'dropdown-toggle'
+			);
+		}
 
 		/* This is really dumb, but there is no sane way to do this. */
 		foreach ( $pileOfTools as $navKey => $navBlock ) {
@@ -406,7 +501,7 @@ class TimelessTemplate extends BaseTemplate {
 
 			if ( in_array( $navKey, array( 'watch', 'unwatch' ) ) ) {
 				$currentSet = 'namespaces';
-			} elseif ( in_array( $navKey, array( 'edit', 'view', 'history', 'contributions', 'addsection' ) ) ) {
+			} elseif ( in_array( $navKey, array( 'edit', 'view', 'history', 'contributions', 'addsection', 'more', 'languages' ) ) ) {
 				$currentSet = 'page-primary';
 			} elseif ( in_array( $navKey, array( 'delete', 'rename', 'protect', 'unprotect', 'viewsource', 'move' ) ) ) {
 				$currentSet = 'page-secondary';
@@ -486,23 +581,27 @@ class TimelessTemplate extends BaseTemplate {
 
 			/* Assemble the html because why not... */
 			if ( $count ) {
-				$catList = '<div role="navigation" class="mw-portlet sidebar-chunk" id="p-catlist">';
+				if ( $normalCount ) {
+					$catHeader = 'categories';
+				} else {
+					$catHeader = 'hidden-categories';
+				}
+				$catList = '';
 				if ( $normalCount ) {
 					$catList .= $this->assembleCatList( $normalCats, 'catlist-normal', 'categories' );
 				}
 				if ( $hiddenCount ) {
 					$catList .= $this->assembleCatList( $hiddenCats, 'catlist-hidden', 'hidden-categories' );
 				}
-				$catList .= '</div>';
 			}
 		}
 		if ( $catList ) {
-			echo $catList;
+			$this->outputSidebarChunk( 'catlinks-sidebar', $catHeader, $catList );
 		}
 	}
 	private function assembleCatList( $list, $id, $message ) {
-		$catList = '<h3>' . $this->getMsg( $message )->escaped() . '</h3>';
-		$catList .= '<ul id="' . $id . '">';
+		$catList = '<div class="mw-portlet" id="' . $id . '"><h3>' . $this->getMsg( $message )->escaped() . '</h3>';
+		$catList .= '<ul>';
 		foreach ( $list as $category) {
 			$title = Title::makeTitleSafe( NS_CATEGORY, $category );
 			if ( !$title ) {
@@ -511,21 +610,25 @@ class TimelessTemplate extends BaseTemplate {
 			$category = Linker::link( $title, $title->getText() );
 			$catList .=  '<li>' . $category . '</li>';
 		}
-		$catList .= '</ul>';
+		$catList .= '</ul></div>';
 
 		return $catList;
 	}
 
+	/*
+	 * Output interlanguage links block
+	 */
 	private function outputInterlanguageLinks() {
 		if ( $this->data['language_urls'] ) {
-			$msgObj = $this->getMsg( 'otherlanguages' );
-			$this->outputPortlet( array(
-				'id' => 'p-lang',
-				'header' => $msgObj->exists() ? $msgObj->text() : 'otherlanguages',
-				'generated' => false,
-				'content' => $this->data['language_urls'],
-				'class' => 'sidebar-chunk'
-			) );
+			$msgObj = $this->getMsg( 'otherlanguages' )->escaped();
+			$content = $this->assemblePortlet( array(
+					'id' => 'p-lang',
+					'header' => $msgObj,
+					'generated' => false,
+					'content' => $this->data['language_urls']
+				) );
+
+			$this->outputSidebarChunk( 'other-languages', 'timeless-languages', $content );
 		}
 	}
 }

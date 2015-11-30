@@ -3,19 +3,23 @@
 		"authors": [ "Isarra" ]
 	},
 	"skinname-timeless": "Timeless",
-	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris.",
+	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris, and various WMFy styles.",
 	"timeless-search-placeholder": "Search approximately {{NUMBEROFPAGES}} pages",
 	"timeless-loggedin": "Your account",
 	"timeless-anonymous": "Anonymous",
+	"timeless-loggedinas": "Logged in as $1",
+	"timeless-notloggedin": "Not logged in",
 	"timeless-userpage": "User page",
 	"timeless-talkpage": "User talk",
 	"timeless-pagelog": "Page logs",
+	"timeless-more": "More",
 	"timeless-sitetools": "Wiki tools",
 	"timeless-pageactions": "Page tools",
 	"timeless-userpagetools": "User tools",
 	"timeless-pagemisc": "More",
 	"timeless-namespaces": "Namespaces",
 	"timeless-pagetools": "Page actions",
+	"timeless-languages": "Languages",
 	"timeless-sitetitle": "{{MediaWiki:Sitetitle}}"
 }
 

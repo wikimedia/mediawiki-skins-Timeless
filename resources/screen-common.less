@@ -4,19 +4,27 @@
 
 html,
 body {
-	font-family: @fonts;
 	margin: 0;
 	padding: 0;
+}
+body {
+	font-family: @fonts;
 	color: @text;
 	background: @background-dark;
-	font-size: .95em;
 	line-height: 1.4;
+	font-size: @font-size;
 }
+
 #mw-content {
+	.box;
 	background: @background;
+	padding: 1em @content-padding 3em;
+	overflow: auto;
+	position: relative;
 }
 #mw-content-container {
 	background: @background2;
+	word-wrap: break-word;
 }
 #mw-footer-container {
 	border-top: solid 1px @background-dark2;
@@ -33,16 +41,178 @@ body {
 
 #p-logo {
 	text-align: center;
+	margin: auto;
+}
+.mw-wiki-logo {
+	display: block;
+	content: '';
 	width: 11em;
+	height: 11em;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin: auto;
+}
+#p-logo-text {
+	width: @column-left-size;
+	text-align: center;
+	line-height: 1;
 
-	a.mw-wiki-logo {
+	a {
+		padding: .2em 1em;
+		color: @text;
+		font-family: @fonts-secondary;
+		font-variant: small-caps;
+		font-size: 1.75em;
 		display: block;
-		content: '';
-		width: 11em;
-		height: 11em;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
+
+		/* 13+ character names */
+		&.long {
+			font-size: 1.45em;
+			padding: 0;
+			line-height: .8;
+		}
 	}
+}
+
+/* Search */
+
+#simpleSearch {
+	box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+	background: @background;
+	position: relative;
+	border: solid 1px @grey;
+}
+#searchInput {
+	border: none;
+	margin: 0;
+	height: 2.1em;
+	padding: .4em 4.5em .2em 2em;
+	box-shadow: none;
+	background: transparent;
+	width: 100%;
+	min-height: 0;
+}
+#searchButton,
+#mw-searchButton {
+	position: absolute;
+	top: 0;
+	right: 1.5em;
+	width: 2.5em;
+	height: 2.5em;
+	.icon;
+	.background-image-svg('images/search-ltr.svg', 'images/search-ltr.png');
+	background-position: 50% 40%;
+	box-shadow: none;
+}
+
+/* Dropdown stuff */
+
+.pokey,
+.pokey::after {
+	border-bottom: 10px solid @grey-bright;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	content: "";
+	height: 0px;
+	position: absolute;
+	transform: rotate(360deg); // to force some smoothing in annoying browsers
+	width: 0px;
+	z-index: 2;
+}
+.pokey {
+	top: 1.85em;
+	right: 1px;
+	display: none;
+}
+.pokey::after {
+	border-bottom-color: #FFFFFF;
+	right: -10px;
+	top: 2px;
+}
+
+.dropdown-toggle {
+	.dropdown-header();
+}
+
+/* Footer */
+
+#mw-footer {
+	padding-top: .5em;
+	padding-bottom: 1em;
+
+	ul,
+	li {
+		margin: 1em 0;
+		list-style: none;
+		padding: 0;
+	}
+	#footer-icons {
+		float: right;
+		margin: 0 0 0 1em;
+
+		li {
+			margin: 0 0 1em 0;
+		}
+	}
+}
+#footer-places li {
+	display: inline;
+	padding-right: 1em;
+}
+
+/* Content */
+
+#mw-content-container {
+	border-bottom: solid 4px @green;
+}
+#page-header-links {
+	div,
+	ul,
+	li {
+		list-style: none;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+	}
+	li {
+		margin: .25em 0 1.5em;
+		border-bottom: solid 3px @background;
+
+		&:hover {
+			border-bottom-color: @grey;
+		}
+		&.selected {
+			border-bottom-color: @blue;
+
+			a {
+				color: @text;
+			}
+		}
+	}
+}
+#p-namespaces {
+	float: left;
+
+	li {
+		margin-right: 1em;
+	}
+}
+#p-pagetools {
+	float: right;
+
+	li {
+		margin-left: 1em;
+	}
+}
+
+#ca-watch a {
+	.ca-icon();
+	.background-image-svg('images/star.svg', 'images/star.png');
+}
+#ca-unwatch a {
+	.ca-icon();
+	.background-image-svg('images/star-filled.svg', 'images/star-filled.png');
 }
 
 /* Misc */
@@ -51,6 +221,7 @@ a {
 	text-decoration: none;
 	color: @blue;
 
+	&:hover,
 	&:visited {
 		color: @blue-dark;
 	}
@@ -59,6 +230,7 @@ a.new,
 .new a {
 	color: @red;
 
+	&:hover,
 	&:visited {
 		color: @red-dark;
 	}
@@ -66,12 +238,24 @@ a.new,
 
 .mw-editsection {
 	font-family: @fonts;
+
+	a {
+		.background-image-svg('images/pencil-grey.svg', 'images/pencil-grey.png');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		display: inline-block;
+		padding: .5em 0 .25em 1.75em;
+	}
 }
 .mw-editsection-bracket {
 	display: none;
 }
 .visual-clear {
 	clear: both;
+}
+.mw-indicators {
+	float: right;
+	margin: .75em 0 0 1em;
 }
 #mw-content {
 	h1, h2, h3, h4, h5, h6, dt {
@@ -218,12 +402,41 @@ table.wikitable > * > tr > th {
 	border: none;
 }
 
+/* Color bars */
+
+.color-bar {
+	width: 100%;
+}
+@color-height: 4px;
+.color-left {
+	height: @color-height;
+	background: @red-dark;
+	width: 50%;
+	float: left;
+}
+.color-right {
+	display: inline-block;
+	height: @color-height;
+	background: @green-dark;
+	width: 50%;
+	float: right;
+}
+.color-middle-container {
+	max-width: @content-width;
+	margin: 0 auto -@color-height;
+	position: relative;
+}
+.color-middle {
+	height: @color-height;
+	background: @blue-dark;
+	margin-left: @column-left-size + 1em;
+	margin-right: @column-right-size + 1em;
+}
 
 /* Hidden stuff */
 
 #p-namespaces h3,
 #p-pagetools h3,
-#mw-site-navigation h2,
 #p-search h3 {
 	.hidden;
 }
