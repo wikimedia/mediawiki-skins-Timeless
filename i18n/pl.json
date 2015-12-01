@@ -6,10 +6,14 @@
 	},
 	"timeless-loggedin": "Twoje konto",
 	"timeless-anonymous": "Anonimowy",
+	"timeless-loggedinas": "Zalogowano jako $1",
+	"timeless-notloggedin": "Niezalogowany",
 	"timeless-userpage": "Strona użytkownika",
 	"timeless-talkpage": "Dyskusja użytkownika",
+	"timeless-more": "Więcej",
 	"timeless-sitetools": "Narzędzia Wiki",
 	"timeless-userpagetools": "Narzędzia użytkownika",
 	"timeless-pagemisc": "Więcej",
-	"timeless-namespaces": "Przestrzenie nazw"
+	"timeless-namespaces": "Przestrzenie nazw",
+	"timeless-languages": "Języki"
 }

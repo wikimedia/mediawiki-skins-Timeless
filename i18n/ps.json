@@ -4,17 +4,21 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
-	"timeless-desc": "يو ټايملېس پوښۍ د وېنټر نمونې وروسته د برانډن حارث لخوا سکښتل شوې.",
+	"timeless-desc": "يو ټايملېس پوښۍ د وېنټر نمونې وروسته د برانډن حارث او WMFy بېلابېلو ډولونو لخوا سکښتل شوې.",
 	"timeless-search-placeholder": "نژدې {{NUMBEROFPAGES}} مخونه پلټل",
 	"timeless-loggedin": "ستاسې گڼون",
 	"timeless-anonymous": "ورکنومی",
+	"timeless-loggedinas": "د $1 په توگه ورننوتئ",
+	"timeless-notloggedin": "غونډال کې نه ياست ننوتي",
 	"timeless-userpage": "کارن مخ",
 	"timeless-talkpage": "کارن خبرې اترې",
 	"timeless-pagelog": "د مخ يادښتونه",
+	"timeless-more": "نور",
 	"timeless-sitetools": "ويکي اوزارونه",
 	"timeless-pageactions": "د مخ اوزارونه",
 	"timeless-userpagetools": "د کارن اوزارونه",
 	"timeless-pagemisc": "نور",
 	"timeless-namespaces": "نومتشيالونه",
-	"timeless-pagetools": "د مخ چارې"
+	"timeless-pagetools": "د مخ چارې",
+	"timeless-languages": "ژبې"
 }

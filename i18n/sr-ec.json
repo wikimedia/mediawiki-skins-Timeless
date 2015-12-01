@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"timeless-loggedinas": "Пријављен сте као $1",
+	"timeless-notloggedin": "Нисте пријављени",
+	"timeless-more": "Више",
+	"timeless-languages": "Језици"
+}

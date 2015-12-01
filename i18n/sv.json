@@ -2,20 +2,25 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Fader"
 		]
 	},
 	"timeless-desc": "Ett tidlöst utseende designat efter prototypen Winter av Brandon Harris.",
 	"timeless-search-placeholder": "Sök cirka {{NUMBEROFPAGES}} sidor",
 	"timeless-loggedin": "Ditt konto",
 	"timeless-anonymous": "Anonym",
+	"timeless-loggedinas": "Inloggad som $1",
+	"timeless-notloggedin": "Inte inloggad",
 	"timeless-userpage": "Användarsida",
 	"timeless-talkpage": "Användardiskussion",
 	"timeless-pagelog": "Sidloggar",
+	"timeless-more": "Mer",
 	"timeless-sitetools": "Wikiverktyg",
 	"timeless-pageactions": "Sidverktyg",
 	"timeless-userpagetools": "Användarverktyg",
 	"timeless-pagemisc": "Mer",
 	"timeless-namespaces": "Namnrymder",
-	"timeless-pagetools": "Sidåtgärder"
+	"timeless-pagetools": "Sidåtgärder",
+	"timeless-languages": "Språk"
 }

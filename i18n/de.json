@@ -4,17 +4,21 @@
 			"Metalhead64"
 		]
 	},
-	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris.",
+	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris und verschiedenen WMF-Stilen.",
 	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen",
 	"timeless-loggedin": "Dein Benutzerkonto",
 	"timeless-anonymous": "Anonym",
+	"timeless-loggedinas": "Angemeldet als $1",
+	"timeless-notloggedin": "Nicht angemeldet",
 	"timeless-userpage": "Benutzerseite",
 	"timeless-talkpage": "Benutzerdiskussion",
 	"timeless-pagelog": "Seitenlogbücher",
+	"timeless-more": "Mehr",
 	"timeless-sitetools": "Wikiwerkzeuge",
 	"timeless-pageactions": "Seitenwerkzeuge",
 	"timeless-userpagetools": "Benutzerwerkzeuge",
 	"timeless-pagemisc": "Mehr",
 	"timeless-namespaces": "Namensräume",
-	"timeless-pagetools": "Seitenaktionen"
+	"timeless-pagetools": "Seitenaktionen",
+	"timeless-languages": "Sprachen"
 }

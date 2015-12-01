@@ -5,17 +5,21 @@
 			"Gomoko"
 		]
 	},
-	"timeless-desc": "Un habillage intemporel conçu d’après le prototype Winter par Brandon Harris.",
+	"timeless-desc": "Un habillage intemporel conçu d’après le prototype Winter par Brandon Harris, et divers styles de WMFy.",
 	"timeless-search-placeholder": "Rechercher environ {{NUMBEROFPAGES}} pages",
 	"timeless-loggedin": "Votre compte",
 	"timeless-anonymous": "Anonyme",
+	"timeless-loggedinas": "Connecté en tant que $1",
+	"timeless-notloggedin": "Non connecté",
 	"timeless-userpage": "Page utilisateur",
 	"timeless-talkpage": "Discussion utilisateur",
 	"timeless-pagelog": "Registres de page",
+	"timeless-more": "Plus",
 	"timeless-sitetools": "Outils wiki",
 	"timeless-pageactions": "Outils de page",
 	"timeless-userpagetools": "Outils d'utilisateur",
 	"timeless-pagemisc": "Plus",
 	"timeless-namespaces": "Espaces de noms",
-	"timeless-pagetools": "Actions de page"
+	"timeless-pagetools": "Actions de page",
+	"timeless-languages": "Langues"
 }

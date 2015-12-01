@@ -5,17 +5,21 @@
 			"Macofe"
 		]
 	},
-	"timeless-desc": "Una skin senza tempo disegnata dopo il prototipo Winter da Brandon Harris.",
+	"timeless-desc": "Una skin senza tempo disegnata dopo il prototipo Winter da Brandon Harris, e vari stili WMFy.",
 	"timeless-search-placeholder": "Cerca su circa {{NUMBEROFPAGES}} pagine",
 	"timeless-loggedin": "La tua utenza",
 	"timeless-anonymous": "Anonimo",
+	"timeless-loggedinas": "Accesso effettuato come $1",
+	"timeless-notloggedin": "Accesso non effettuato",
 	"timeless-userpage": "Pagina utente",
 	"timeless-talkpage": "Discussioni utente",
 	"timeless-pagelog": "Registri della pagina",
+	"timeless-more": "Altro",
 	"timeless-sitetools": "Strumenti wiki",
 	"timeless-pageactions": "Strumenti pagine",
 	"timeless-userpagetools": "Strumenti utente",
 	"timeless-pagemisc": "Altro",
 	"timeless-namespaces": "Namespace",
-	"timeless-pagetools": "Azioni sulla pagina"
+	"timeless-pagetools": "Azioni sulla pagina",
+	"timeless-languages": "Lingue"
 }
