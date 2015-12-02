@@ -6,8 +6,12 @@
 	},
 	"timeless-loggedin": "Äre Benotzerkont",
 	"timeless-anonymous": "Anonym",
+	"timeless-loggedinas": "Als $1 ageloggt",
+	"timeless-notloggedin": "Net ageloggt",
 	"timeless-userpage": "Benotzersäit",
 	"timeless-talkpage": "Benotzer Diskussioun",
+	"timeless-more": "Méi",
 	"timeless-pagemisc": "Méi",
-	"timeless-namespaces": "Nummraim"
+	"timeless-namespaces": "Nummraim",
+	"timeless-languages": "Sproochen"
 }

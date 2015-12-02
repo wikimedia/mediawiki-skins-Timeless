@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"An13sa"
 		]
 	},
 	"timeless-loggedin": "Zure kontua",
-	"timeless-anonymous": "Erabiltzaile anonimoa",
+	"timeless-anonymous": "Anonimoa",
 	"timeless-more": "Gehiago",
 	"timeless-sitetools": "Wiki-tresnak",
 	"timeless-userpagetools": "Erabiltzaile-tresnak",
