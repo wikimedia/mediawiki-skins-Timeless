@@ -4,17 +4,21 @@
 			"Elisardojm"
 		]
 	},
-	"timeless-desc": "Unha aparencia atemporal, deseñada por Brandon Harris en base ó prototipo Winter.",
+	"timeless-desc": "Unha aparencia atemporal, deseñada por Brandon Harris en base ó prototipo Winter, e varios estilos de WMFy.",
 	"timeless-search-placeholder": "Buscar aproximadamente {{NUMBEROFPAGES}} páxinas",
 	"timeless-loggedin": "A súa conta",
 	"timeless-anonymous": "Anónimo",
+	"timeless-loggedinas": "Conectado como $1",
+	"timeless-notloggedin": "Non conectado",
 	"timeless-userpage": "Páxina de usuario",
 	"timeless-talkpage": "Conversa de usuario",
 	"timeless-pagelog": "Rexistros de páxina",
+	"timeless-more": "Máis",
 	"timeless-sitetools": "Ferramentas wiki",
 	"timeless-pageactions": "Ferramentas das páxinas",
 	"timeless-userpagetools": "Ferramentas de usuario",
 	"timeless-pagemisc": "Máis",
 	"timeless-namespaces": "Espazos de nomes",
-	"timeless-pagetools": "Accións de páxina"
+	"timeless-pagetools": "Accións de páxina",
+	"timeless-languages": "Linguas"
 }

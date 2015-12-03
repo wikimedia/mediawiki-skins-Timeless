@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"SinNovedades"
 		]
 	},
 	"timeless-desc": "Una apariencia atemporal, diseñada por Brandon Harris en base al prototipo Winter.",
@@ -11,10 +12,12 @@
 	"timeless-userpage": "Página de usuario",
 	"timeless-talkpage": "Discusión de usuario",
 	"timeless-pagelog": "Registros de página",
+	"timeless-more": "Más",
 	"timeless-sitetools": "Herramientas wiki",
 	"timeless-pageactions": "Herramientas de página",
 	"timeless-userpagetools": "Herramientas de usuario",
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nombres",
-	"timeless-pagetools": "Acciones de página"
+	"timeless-pagetools": "Acciones de página",
+	"timeless-languages": "Lenguajes"
 }

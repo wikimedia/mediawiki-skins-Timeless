@@ -6,13 +6,16 @@
 	},
 	"timeless-loggedin": "Учётная запись",
 	"timeless-anonymous": "Аноним",
+	"timeless-notloggedin": "Вы не представились системе",
 	"timeless-userpage": "Участник",
 	"timeless-talkpage": "Обсуждение участника",
 	"timeless-pagelog": "Журналы страницы",
+	"timeless-more": "Ещё",
 	"timeless-sitetools": "Вики-инструменты",
 	"timeless-pageactions": "Инструменты для страниц",
 	"timeless-userpagetools": "Инструменты участника",
 	"timeless-pagemisc": "Ещё",
 	"timeless-namespaces": "Пространства имён",
-	"timeless-pagetools": "Действия на странице"
+	"timeless-pagetools": "Действия на странице",
+	"timeless-languages": "Языки"
 }

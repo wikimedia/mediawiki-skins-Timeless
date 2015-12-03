@@ -1,22 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gorizon"
+			"Gorizon",
+			"Mirzali"
 		]
 	},
 	"timeless-loggedin": "Hesabê şıma",
 	"timeless-anonymous": "Anonim",
-	"timeless-loggedinas": "Zey $1 kewt cı.",
-	"timeless-notloggedin": "Şıma cıkewtış nêvıraşto",
+	"timeless-loggedinas": "Be nameyê $1 ra kewt cı",
+	"timeless-notloggedin": "Şıma nêkewti cı",
 	"timeless-userpage": "Pela karberi",
-	"timeless-talkpage": "Karber vatış",
-	"timeless-pagelog": "Qeydê pela",
-	"timeless-more": "dehana vêşi",
-	"timeless-sitetools": "Wiki haleti",
-	"timeless-pageactions": "Haleta pela",
-	"timeless-userpagetools": "Haletê karberi",
-	"timeless-pagemisc": "Dehana vêşi",
-	"timeless-namespaces": "Heruna naman",
-	"timeless-pagetools": "Hereketê pela",
+	"timeless-talkpage": "Werênayışê karberi",
+	"timeless-pagelog": "Qeydê pele",
+	"timeless-more": "Zêde",
+	"timeless-sitetools": "Hacetê Wikiyi",
+	"timeless-pageactions": "Hacetê pele",
+	"timeless-userpagetools": "Hacetê karberi",
+	"timeless-pagemisc": "Zêde",
+	"timeless-namespaces": "Heruna nameyan",
+	"timeless-pagetools": "Hereketê pele",
 	"timeless-languages": "Zıwani"
 }
