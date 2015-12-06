@@ -5,10 +5,12 @@
 			"SinNovedades"
 		]
 	},
-	"timeless-desc": "Una apariencia atemporal, diseñada por Brandon Harris en base al prototipo Winter.",
+	"timeless-desc": "Una apariencia atemporal, diseñada por Brandon Harris en base al prototipo Winter y a varios estilos de la WMF.",
 	"timeless-search-placeholder": "Buscar aproximadamente {{NUMBEROFPAGES}} páginas",
 	"timeless-loggedin": "Tu cuenta",
 	"timeless-anonymous": "Anónimo",
+	"timeless-loggedinas": "Sesión iniciada como $1",
+	"timeless-notloggedin": "No has iniciado sesión",
 	"timeless-userpage": "Página de usuario",
 	"timeless-talkpage": "Discusión de usuario",
 	"timeless-pagelog": "Registros de página",
@@ -19,5 +21,5 @@
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nombres",
 	"timeless-pagetools": "Acciones de página",
-	"timeless-languages": "Lenguajes"
+	"timeless-languages": "Idiomas"
 }
