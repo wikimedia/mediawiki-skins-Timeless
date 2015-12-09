@@ -4,17 +4,21 @@
 			"Xuacu"
 		]
 	},
-	"timeless-desc": "Un aspeutu intemporal diseñáu dende'l prototipu Winter de Brandon Harris.",
+	"timeless-desc": "Un aspeutu intemporal diseñáu dende'l prototipu Winter de Brandon Harris y dellos estilos tipu WMF.",
 	"timeless-search-placeholder": "Buscar aproximadamente {{NUMBEROFPAGES}} páxines",
 	"timeless-loggedin": "La to cuenta",
 	"timeless-anonymous": "Anónimu",
+	"timeless-loggedinas": "Aniciasti sesión como $1.",
+	"timeless-notloggedin": "Nun aniciasti sesión",
 	"timeless-userpage": "Páxina d'usuariu",
 	"timeless-talkpage": "Alderique d'usuariu",
 	"timeless-pagelog": "Rexistros de páxina",
+	"timeless-more": "Más",
 	"timeless-sitetools": "Ferramientes wiki",
 	"timeless-pageactions": "Ferramientes de páxina",
 	"timeless-userpagetools": "Ferramientes d'usuariu",
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nomes",
-	"timeless-pagetools": "Aiciones de páxina"
+	"timeless-pagetools": "Aiciones de páxina",
+	"timeless-languages": "Llingües"
 }

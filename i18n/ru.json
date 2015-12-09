@@ -6,6 +6,7 @@
 	},
 	"timeless-loggedin": "Учётная запись",
 	"timeless-anonymous": "Аноним",
+	"timeless-loggedinas": "Вошёл как $1",
 	"timeless-notloggedin": "Вы не представились системе",
 	"timeless-userpage": "Участник",
 	"timeless-talkpage": "Обсуждение участника",
