@@ -4,17 +4,21 @@
 			"C.R."
 		]
 	},
-	"timeless-desc": "Nu skin senza tiempo disegnata cu' bbase 'o prototipo Winter 'a Brandon Harris.",
+	"timeless-desc": "Nu skin senza tiempo disegnata cu' bbase 'o prototipo Winter 'a Brandon Harris, e divierze stile WMFy.",
 	"timeless-search-placeholder": "Ascìa ncopp'a nu {{NUMBEROFPAGES}} paggene circa",
 	"timeless-loggedin": "'O cunto vuosto",
-	"timeless-anonymous": "Utente anonimo",
+	"timeless-anonymous": "Anonimo",
+	"timeless-loggedinas": "Trasuto/a comm'a $1",
+	"timeless-notloggedin": "Acciesso nun affettuato",
 	"timeless-userpage": "Paggena utente",
 	"timeless-talkpage": "Chiàcchiera 'utente",
 	"timeless-pagelog": "Riggistre 'e paggena",
+	"timeless-more": "Cchiù",
 	"timeless-sitetools": "Strumiente 'e wiki",
 	"timeless-pageactions": "Strumiente 'e paggena",
 	"timeless-userpagetools": "Strumiente 'utente",
 	"timeless-pagemisc": "Cchiù",
 	"timeless-namespaces": "Namespace",
-	"timeless-pagetools": "Aziune 'e paggena"
+	"timeless-pagetools": "Aziune 'e paggena",
+	"timeless-languages": "Llengue"
 }
