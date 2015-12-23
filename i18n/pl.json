@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"The Polish"
 		]
 	},
+	"timeless-search-placeholder": "Szukaj pośród {{NUMBEROFPAGES}} artykułów",
 	"timeless-loggedin": "Twoje konto",
 	"timeless-anonymous": "Anonimowy",
 	"timeless-loggedinas": "Zalogowano jako $1",
