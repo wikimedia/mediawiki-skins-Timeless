@@ -6,17 +6,21 @@
 		]
 	},
 	"skinname-timeless": "Vượt thời gian",
-	"timeless-desc": "Giao diện vượt thời gian phỏng theo mẫu Mùa đông của Brandon Harris.",
+	"timeless-desc": "Giao diện vượt thời gian phỏng theo mẫu Mùa đông của Brandon Harris và nhiều giao diện kiểu WMF.",
 	"timeless-search-placeholder": "Tìm khoảng {{NUMBEROFPAGES}} trang",
 	"timeless-loggedin": "Tài khoản",
-	"timeless-anonymous": "Người dùng vô danh",
+	"timeless-anonymous": "Vô danh",
+	"timeless-loggedinas": "Đã đăng nhập là $1",
+	"timeless-notloggedin": "Chưa đăng nhập",
 	"timeless-userpage": "Trang cá nhân",
 	"timeless-talkpage": "Trang thảo luận thành viên",
 	"timeless-pagelog": "Nhật trình trang",
+	"timeless-more": "Thêm nữa",
 	"timeless-sitetools": "Công cụ cho wiki",
 	"timeless-pageactions": "Công cụ cho trang",
 	"timeless-userpagetools": "Công cụ cho người dùng",
 	"timeless-pagemisc": "Thêm nữa",
 	"timeless-namespaces": "Không gian tên",
-	"timeless-pagetools": "Tác vụ trang"
+	"timeless-pagetools": "Tác vụ trang",
+	"timeless-languages": "Ngôn ngữ"
 }
