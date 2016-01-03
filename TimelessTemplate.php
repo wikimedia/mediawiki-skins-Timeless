@@ -427,10 +427,10 @@ class TimelessTemplate extends BaseTemplate {
 			<?php
 				foreach ( $this->getPersonalTools() as $key => $item ) {
 					if ( $key == 'userpage' ) {
-						$item['links'][0]['text'] = wfMessage( 'timeless-userpage' )->text();
+						$item['links'][0]['text'] = wfMessage( 'timeless-userpage', $user->getName() )->text();
 					}
 					if ( $key == 'mytalk' ) {
-						$item['links'][0]['text'] = wfMessage( 'timeless-talkpage' )->text();
+						$item['links'][0]['text'] = wfMessage( 'timeless-talkpage', $user->getName() )->text();
 					}
 					echo $this->makeListItem( $key, $item );
 				}
