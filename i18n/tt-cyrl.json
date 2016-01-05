@@ -4,6 +4,19 @@
 			"Ильнар"
 		]
 	},
+	"timeless-loggedin": "Хисап язмасы",
+	"timeless-anonymous": "Аноним",
+	"timeless-loggedinas": "$1 булып кергән",
+	"timeless-notloggedin": "Сез хисап язмагызга кермәгәнсез",
+	"timeless-userpage": "Кулланучы",
+	"timeless-talkpage": "Кулланучы бәхәсе",
+	"timeless-pagelog": "Бит көндәлекләре",
 	"timeless-more": "Тагын",
+	"timeless-sitetools": "Вики-кораллар",
+	"timeless-pageactions": "Бит очен кораллар",
+	"timeless-userpagetools": "Кулланучы кораллары",
+	"timeless-pagemisc": "Тагын",
+	"timeless-namespaces": "Исемнәр мәйданы",
+	"timeless-pagetools": "Биттәге гамәлләр",
 	"timeless-languages": "Телләр"
 }
