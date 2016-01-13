@@ -4,8 +4,21 @@
 			"Sjoerddebruin"
 		]
 	},
+	"timeless-desc": "Een tijdloze vormgeving, ontworpen naar het Winter-prototype door Brandon Harris en andere WMF-stijlen.",
+	"timeless-search-placeholder": "Zoek naar ongeveer {{NUMBEROFPAGES}} pagina's",
+	"timeless-loggedin": "Uw account",
 	"timeless-anonymous": "Anonieme gebruiker",
+	"timeless-loggedinas": "Aangemeld als $1",
+	"timeless-notloggedin": "Niet aangemeld",
 	"timeless-userpage": "Gebruikerspagina",
+	"timeless-talkpage": "Overleg gebruiker",
+	"timeless-pagelog": "Paginalogboek",
 	"timeless-more": "Meer",
-	"timeless-pagemisc": "Meer"
+	"timeless-sitetools": "Wikihulpmiddelen",
+	"timeless-pageactions": "Paginahulpmiddelen",
+	"timeless-userpagetools": "Gebruikershulpmiddelen",
+	"timeless-pagemisc": "Meer",
+	"timeless-namespaces": "Naamruimten",
+	"timeless-pagetools": "Pagina-acties",
+	"timeless-languages": "Talen"
 }
