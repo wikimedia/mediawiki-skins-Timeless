@@ -2,19 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"The Polish"
+			"The Polish",
+			"Rzuwig"
 		]
 	},
-	"timeless-search-placeholder": "Szukaj pośród {{NUMBEROFPAGES}} artykułów",
+	"timeless-search-placeholder": "Szukaj tekstu spośród {{NUMBEROFPAGES}} artykułów",
 	"timeless-loggedin": "Twoje konto",
 	"timeless-anonymous": "Anonimowy",
 	"timeless-loggedinas": "Zalogowano jako $1",
 	"timeless-notloggedin": "Niezalogowany",
-	"timeless-userpage": "Strona użytkownika",
-	"timeless-talkpage": "Dyskusja użytkownika",
+	"timeless-userpage": "Strona {{GENDER:$1|użytkownika|użytkowniczki}}",
+	"timeless-talkpage": "Dyskusja {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"timeless-more": "Więcej",
 	"timeless-sitetools": "Narzędzia Wiki",
-	"timeless-userpagetools": "Narzędzia użytkownika",
+	"timeless-userpagetools": "Narzędzia strony użytkownika",
 	"timeless-pagemisc": "Więcej",
 	"timeless-namespaces": "Przestrzenie nazw",
 	"timeless-languages": "Języki"
