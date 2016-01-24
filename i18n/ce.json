@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"timeless-search-placeholder": "Йозанца лахар гергарчу хьесапехь {{NUMBEROFPAGES}} агӀонах",
+	"timeless-userpage": "{{GENDER:$1|Декъашхочун}} агӀо",
+	"timeless-talkpage": "{{GENDER:$1|Декъашхочун}} дийцаре",
+	"timeless-userpagetools": "Декъашхочун агӀона гӀирсаш"
+}
