@@ -5,15 +5,15 @@
 			"Aursani"
 		]
 	},
-	"timeless-search-placeholder": "اٽڪل {{NUMBEROFPAGES}} صفحن ۾ ڳوليو",
+	"timeless-search-placeholder": "متن اٽڪل {{NUMBEROFPAGES}} صفحن ۾ ڳوليو",
 	"timeless-loggedin": "توهان جو کاتو",
 	"timeless-anonymous": "گمنام",
-	"timeless-userpage": "يوزر جو صفحو",
-	"timeless-talkpage": "يوزر سان ڳالهہ",
+	"timeless-userpage": "{{GENDER:$1|يوزر}} صفحو",
+	"timeless-talkpage": "{{GENDER:$1|يوزر}} ڳالھہ",
 	"timeless-pagelog": "صفحاتي لاگس",
 	"timeless-sitetools": "وڪي اوزار",
 	"timeless-pageactions": "صفحاتِي اوزار",
-	"timeless-userpagetools": "يوزر جا اوزار",
+	"timeless-userpagetools": "يوزر  صفحي جا اوزار",
 	"timeless-pagemisc": "وڌيڪ",
 	"timeless-namespaces": "نانءُپولار",
 	"timeless-pagetools": "صفحاتِي عمل"
