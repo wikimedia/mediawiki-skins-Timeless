@@ -13,5 +13,6 @@
 	"timeless-notloggedin": "Не ўвайшлі ў сыстэму",
 	"timeless-userpage": "Старонка {{GENDER:$1|ўдзельніка|ўдзельніцы}}",
 	"timeless-talkpage": "Гутаркі {{GENDER:$1|ўдзельніка|ўдзельніцы}}",
+	"timeless-pagelog": "Журналы старонкі",
 	"timeless-userpagetools": "Прылады карыстальніка"
 }
