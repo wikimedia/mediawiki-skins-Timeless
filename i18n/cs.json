@@ -1,15 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"DaBler"
+			"DaBler",
+			"LTM3"
 		]
 	},
+	"timeless-search-placeholder": "Prohledat text přibližně {{NUMBEROFPAGES}} stránek",
 	"timeless-loggedin": "Váš účet",
-	"timeless-anonymous": "Anonymní uživatel",
-	"timeless-userpage": "Uživatelská stránka",
+	"timeless-anonymous": "Anonym",
+	"timeless-loggedinas": "Přihlášen jako $1",
+	"timeless-notloggedin": "Nepřihlášen(a)",
+	"timeless-userpage": "Stránka {{GENDER:$1|uživatele|uživatelky}}",
+	"timeless-talkpage": "{{GENDER:$1|Uživatele|Uživatelky}} diskuze",
+	"timeless-pagelog": "Logy stránek",
+	"timeless-more": "Více",
 	"timeless-sitetools": "Wiki nástroje",
 	"timeless-pageactions": "Nástroje ke stránkám",
 	"timeless-userpagetools": "Uživatelské nástroje",
 	"timeless-pagemisc": "Více",
-	"timeless-namespaces": "Jmenné prostory"
+	"timeless-namespaces": "Jmenné prostory",
+	"timeless-pagetools": "Možnosti stránky",
+	"timeless-languages": "Jazyky"
 }

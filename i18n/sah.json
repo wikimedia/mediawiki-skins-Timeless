@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ай-Куо"
+		]
+	},
+	"timeless-desc": " Timeless оҥоруу тиэмэтэ   Брэндон Харрис Winter-ын уонна  Викимедиа фондун араас истииллэрин прототипыттан оҥоһуллубут",
+	"timeless-loggedin": "бодо аат",
+	"timeless-anonymous": "аатын эппэтэх киһи",
+	"timeless-loggedinas": " $1 тэҥ",
+	"timeless-notloggedin": "киирбэт",
+	"timeless-userpage": " {{GENDER:$1| эр киһи| дьахтар}}сирэйэ",
+	"timeless-talkpage": " {{GENDER:$1| эр киһи| дьахтар}} дьүүллэһиилэрэ",
+	"timeless-pagelog": "сирэй сурунааллара",
+	"timeless-more": "эбии",
+	"timeless-sitetools": "Вики-үнүстүрүмүөннэр",
+	"timeless-pageactions": "сирэйдэр үнүстүрүмүөннэрэ",
+	"timeless-userpagetools": "кыттааччы сирэйин үнүстүрүмүөннэрэ",
+	"timeless-pagemisc": "эбии",
+	"timeless-namespaces": "аат дала",
+	"timeless-pagetools": "сирэй дьайыылара",
+	"timeless-languages": "тыллар"
+}

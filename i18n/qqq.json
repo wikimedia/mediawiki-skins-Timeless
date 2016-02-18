@@ -3,7 +3,8 @@
 		"authors": [
 			"Isarra",
 			"Liuxinyu970226",
-			"Robby"
+			"Robby",
+			"Amire80"
 		]
 	},
 	"skinname-timeless": "{{optional}}",
@@ -15,7 +16,7 @@
 	"timeless-notloggedin": "Note for personal menu for anonymous users clarifying that they are not logged in\n{{Identical|Not logged in}}",
 	"timeless-userpage": "User page/profile link label in the personal menu\n{{Identical|User page}}\nParameters:\n* $1 - username, used for GENDER",
 	"timeless-talkpage": "Talk page link label in the personal menu.\nParameters:\n* $1 - username, used for GENDER",
-	"timeless-pagelog": "Label for special:log link for the page",
+	"timeless-pagelog": "Label for Special:Log link for the page. The page is singular.",
 	"timeless-more": "Label for the more tools dropdown menu in the page actions toolbar\n{{Identical|More}}",
 	"timeless-sitetools": "Label for general site tools menu in sidebar",
 	"timeless-pageactions": "Label for some page actions",
