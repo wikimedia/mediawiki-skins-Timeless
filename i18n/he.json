@@ -1,15 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"MojoMann"
 		]
 	},
 	"timeless-desc": "עיצוב \"מחוץ לזמן\", מבוסס על אבטיפוס \"חורף\" מאת ברנדון האריס, ועיצובים שונים של קרן ויקימדיה.",
-	"timeless-search-placeholder": "חיפוש בטקסט של כ{{NUMBEROFPAGES}} דפים",
+	"timeless-search-placeholder": "חיפוש בטקסט של כ-{{NUMBEROFPAGES}} דפים",
 	"timeless-loggedin": "החשבון שלך",
 	"timeless-anonymous": "אלמוני",
 	"timeless-loggedinas": "נכנסת לחשבון $1",
-	"timeless-notloggedin": "לא נכנסת לחשבון",
+	"timeless-notloggedin": "לא מחובר לחשבון",
 	"timeless-userpage": "דף {{GENDER:$1|משתמש|משתמשת}}",
 	"timeless-talkpage": "דף שיחת {{GENDER:$1|משתמש|משתמשת}}",
 	"timeless-pagelog": "יומני הדף",
