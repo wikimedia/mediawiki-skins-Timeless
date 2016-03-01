@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Maroen1990"
+		]
+	},
+	"timeless-loggedin": "حساب المستخدم",
+	"timeless-anonymous": "مجهول",
+	"timeless-notloggedin": "غير مسجل الدخول",
+	"timeless-pagelog": "سجلات الصفحة",
+	"timeless-more": "المزيد",
+	"timeless-sitetools": "ادوات ويكي",
+	"timeless-pageactions": "أدوات الصفحات",
+	"timeless-userpagetools": "ادوات صفحة المستخدم",
+	"timeless-pagemisc": "المزيد",
+	"timeless-namespaces": "أسماء النطاقات",
+	"timeless-pagetools": "إجراءات الصفحة",
+	"timeless-languages": "اللغات"
+}
