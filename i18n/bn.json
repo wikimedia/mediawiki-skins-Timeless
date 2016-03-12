@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bodhisattwa"
+		]
+	},
+	"timeless-loggedin": "আপনার অ্যাকাউন্ট",
+	"timeless-loggedinas": "$1 হিসাবে প্রবেশ",
+	"timeless-notloggedin": "প্রবেশ করেন নি",
+	"timeless-userpage": "{{GENDER:$1|ব্যবহারকারী}} পাতা",
+	"timeless-talkpage": "{{GENDER:$1|ব্যবহারকারী}} আলাপ",
+	"timeless-more": "আরও",
+	"timeless-sitetools": "উইকি সরঞ্জামসমূহ",
+	"timeless-pageactions": "পাতা সংক্রান্ত সরঞ্জামসমূহ",
+	"timeless-userpagetools": "ব্যবহারকারীর পাতা সংক্রান্ত সরঞ্জামসমূহ",
+	"timeless-pagemisc": "আরও",
+	"timeless-namespaces": "নামস্থানসমূহ",
+	"timeless-languages": "ভাষাসমূহ"
+}
