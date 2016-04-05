@@ -1,9 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Máté"
+			"Máté",
+			"Wolf Rex"
 		]
 	},
+	"timeless-loggedin": "Fiókod",
+	"timeless-loggedinas": "Bejelentkezve $1 néven",
+	"timeless-notloggedin": "Nem vagy bejelentkezve",
+	"timeless-more": "Több",
+	"timeless-sitetools": "Wikieszközök",
+	"timeless-userpagetools": "Szerkesztőlapi eszközök",
+	"timeless-pagemisc": "Több",
 	"timeless-namespaces": "Névterek",
+	"timeless-pagetools": "Lapműveletek",
 	"timeless-languages": "Nyelvek"
 }
