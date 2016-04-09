@@ -107,7 +107,7 @@ class TimelessTemplate extends BaseTemplate {
 					<h1 class="firstHeading">
 						<?php $this->html( 'title' ) ?>
 					</h1>
-					<div id="page-header-links">
+					<div id="mw-page-header-links">
 					<?php
 						echo $this->assemblePortlet( array(
 							'id' => 'p-namespaces',

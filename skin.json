@@ -43,6 +43,9 @@
 				},
 				"resources/screen-mobile.less": {
 					"media": "screen and (max-width: 850px)"
+				},
+				"resources/print.css": {
+					"media": "print"
 				}
 			}
 		},
