@@ -13,10 +13,13 @@
 	"timeless-notloggedin": "Niezalogowany",
 	"timeless-userpage": "Strona {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"timeless-talkpage": "Dyskusja {{GENDER:$1|użytkownika|użytkowniczki}}",
+	"timeless-pagelog": "Dzienniki stron",
 	"timeless-more": "Więcej",
 	"timeless-sitetools": "Narzędzia Wiki",
+	"timeless-pageactions": "Narzędzia dla stron",
 	"timeless-userpagetools": "Narzędzia strony użytkownika",
 	"timeless-pagemisc": "Więcej",
 	"timeless-namespaces": "Przestrzenie nazw",
+	"timeless-pagetools": "Działania na stronie",
 	"timeless-languages": "Języki"
 }
