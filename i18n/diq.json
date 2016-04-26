@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Gorizon",
-			"Mirzali"
+			"Mirzali",
+			"Marmase"
 		]
 	},
 	"timeless-loggedin": "Hesabê şıma",
 	"timeless-anonymous": "Anonim",
 	"timeless-loggedinas": "Be nameyê $1 ra kewt cı",
-	"timeless-notloggedin": "Şıma nêkewti cı",
+	"timeless-notloggedin": "Şıma cıkewtış nêvıraşto",
 	"timeless-userpage": "Pela karberi",
 	"timeless-talkpage": "Werênayışê karberi",
 	"timeless-pagelog": "Qeydê pele",
