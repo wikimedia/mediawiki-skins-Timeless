@@ -3,7 +3,8 @@
 		"authors": [
 			"Hwangjy9",
 			"Revi",
-			"고솜"
+			"고솜",
+			"Ykhwong"
 		]
 	},
 	"timeless-desc": "Brandon Harris의 윈터 프로토타입 이후로 개발된 타임리스 스킨",
@@ -18,7 +19,7 @@
 	"timeless-more": "더 보기",
 	"timeless-sitetools": "위키 도구",
 	"timeless-pageactions": "문서 도구",
-	"timeless-userpagetools": "사용자 도구",
+	"timeless-userpagetools": "사용자 문서 도구",
 	"timeless-pagemisc": "더 보기",
 	"timeless-namespaces": "이름공간",
 	"timeless-pagetools": "문서 행위",
