@@ -4,6 +4,6 @@
 			"פוילישער"
 		]
 	},
-	"timeless-userpage": "באניצער־בלאט",
+	"timeless-userpage": "{{GENDER:$1|באניצער}}־בלאט",
 	"timeless-userpagetools": "באניצער־בלאט געצייג"
 }
