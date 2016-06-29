@@ -4,11 +4,12 @@
 			"Hwangjy9",
 			"Revi",
 			"고솜",
-			"Ykhwong"
+			"Ykhwong",
+			"아라"
 		]
 	},
-	"timeless-desc": "Brandon Harris의 윈터 프로토타입 이후로 개발된 타임리스 스킨",
-	"timeless-search-placeholder": "대략 {{NUMBEROFPAGES}} 문서 중에서 검색.",
+	"timeless-desc": "Brandon Harris의 윈터 프로토타입 이후로 개발되고 위키미디어 재단에 의해 수정이 가해진 스킨",
+	"timeless-search-placeholder": "대략 문서 {{NUMBEROFPAGES}}개의 내용 중에서 검색",
 	"timeless-loggedin": "사용자 계정",
 	"timeless-anonymous": "익명 사용자",
 	"timeless-loggedinas": "$1 사용자로 로그인됨",
