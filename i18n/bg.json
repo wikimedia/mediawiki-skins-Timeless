@@ -1,10 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"StanProg"
 		]
 	},
+	"timeless-loggedin": "Вашата потребителска сметка",
+	"timeless-anonymous": "Анонимен",
+	"timeless-pagelog": "Дневници на страницата",
 	"timeless-more": "Повече",
+	"timeless-sitetools": "Уики инструменти",
+	"timeless-pageactions": "Инструменти за страниците",
+	"timeless-userpagetools": "Инструменти за потребителска страница",
 	"timeless-pagemisc": "Повече",
 	"timeless-namespaces": "Именни пространства",
 	"timeless-languages": "Езици"
