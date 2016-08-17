@@ -4,6 +4,7 @@
 			"Robby"
 		]
 	},
+	"timeless-search-placeholder": "Am Text vun ongeféier {{NUMBEROFPAGES}} Säite sichen",
 	"timeless-loggedin": "Äre Benotzerkont",
 	"timeless-anonymous": "Anonym",
 	"timeless-loggedinas": "Als $1 ageloggt",
@@ -13,5 +14,6 @@
 	"timeless-more": "Méi",
 	"timeless-pagemisc": "Méi",
 	"timeless-namespaces": "Nummraim",
+	"timeless-pagetools": "Säitenaktiounen",
 	"timeless-languages": "Sproochen"
 }
