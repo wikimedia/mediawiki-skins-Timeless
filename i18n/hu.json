@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Máté",
-			"Wolf Rex"
+			"Wolf Rex",
+			"Dj"
 		]
 	},
 	"timeless-loggedin": "Fiókod",
+	"timeless-anonymous": "Névtelen",
 	"timeless-loggedinas": "Bejelentkezve $1 néven",
 	"timeless-notloggedin": "Nem vagy bejelentkezve",
 	"timeless-more": "Több",
