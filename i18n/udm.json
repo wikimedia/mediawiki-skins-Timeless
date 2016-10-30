@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kaganer"
+			"Kaganer",
+			"Irus"
 		]
 	},
+	"timeless-notloggedin": "Тон эн тусбуяськыны сӧзнэтэз",
 	"timeless-pagelog": "Бамлэн журналъёс",
 	"timeless-more": "Эшшо",
 	"timeless-pagemisc": "Эшшо",
