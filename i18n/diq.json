@@ -4,7 +4,8 @@
 			"Gorizon",
 			"Mirzali",
 			"Marmase",
-			"Kumkumuk"
+			"Kumkumuk",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"timeless-desc": "Tereftê Brandon Harris ra vıraziyayê ciltê Timeless prototipê zımıstani, u tayna ciltê Weqıfta Wikimedia.",
@@ -13,7 +14,7 @@
 	"timeless-anonymous": "Anonim",
 	"timeless-loggedinas": "Be nameyê $1 ra kewt cı",
 	"timeless-notloggedin": "Cıkewtış nêvıraziya",
-	"timeless-userpage": "Pela {{GENDER:$1|karberi}}",
+	"timeless-userpage": "Pella {{GENDER:$1|karberi}}",
 	"timeless-talkpage": "Vatena {{GENDER:$1|Karberi}}",
 	"timeless-pagelog": "Qeydê pele",
 	"timeless-more": "Zêde",
