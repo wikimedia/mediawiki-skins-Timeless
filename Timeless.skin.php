@@ -16,15 +16,15 @@ class SkinTimeless extends SkinTemplate {
 
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
 
-		$out->addModuleStyles( array(
+		$out->addModuleStyles( [
 			'mediawiki.skinning.content.externallinks',
 			'skins.timeless',
 			'skins.timeless.misc'
-		) );
-		$out->addModules( array(
+		] );
+		$out->addModules( [
 			'skins.timeless.js',
 			'skins.timeless.mobile'
-		) );
+		] );
 	}
 
 	/**
