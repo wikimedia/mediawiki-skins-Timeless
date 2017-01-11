@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"timeless-loggedin": "Sua conta",
+	"timeless-anonymous": "Anônimo",
+	"timeless-loggedinas": "Autenticado como $1",
+	"timeless-notloggedin": "Não está logado",
+	"timeless-pagelog": "Registos da página",
+	"timeless-more": "Mais",
+	"timeless-sitetools": "Ferramentas da wiki",
+	"timeless-pageactions": "Ferramentas de páginas",
+	"timeless-userpagetools": "Ferramentas da página do usuário",
+	"timeless-pagemisc": "Mais",
+	"timeless-namespaces": "Espaços nominais",
+	"timeless-pagetools": "Ações da página",
+	"timeless-languages": "Idioma"
+}
