@@ -105,6 +105,35 @@ body {
 	box-shadow: none;
 }
 
+.suggestions {
+	background: @background;
+	box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.05);
+
+	.suggestions-special {
+		background-color: @background;
+		border: 1px solid @grey;
+		border-bottom-width: @border;
+		padding: .75em 2em;
+	}
+	.suggestions-results {
+		background-color: @background;
+		border: 1px solid @grey;
+		border-bottom-width: @border;
+	}
+	.suggestions-result {
+		color: @text;
+		padding: .65em 2em .35em;
+	}
+	.suggestions-result-current {
+		background-color: @blue;
+		color: @background;
+	}
+}
+div.suggestions {
+	position: fixed;
+	top: 2.75em !important; // Override js-provided value to account for fixed header
+}
+
 /* Dropdown stuff */
 
 .pokey,
@@ -304,9 +333,21 @@ a.new,
 	}
 }
 
+hr {
+	border-width: 1px;
+	border-color: @grey;
+	border-style: solid none solid none;
+	margin: .5em 0;
+}
+
 pre {
 	overflow: auto;
 	white-space: pre-wrap;
+	font-family: @fonts-monospace;
+}
+
+p {
+	margin: .9em 0 .8em;
 }
 
 .center,
