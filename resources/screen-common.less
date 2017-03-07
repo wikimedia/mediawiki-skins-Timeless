@@ -146,11 +146,11 @@ div.suggestions {
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	content: "";
-	height: 0px;
+	height: 0;
 	position: absolute;
 	transform: rotate(360deg); // to force some smoothing in annoying browsers
-	width: 0px;
-	z-index: 2;
+	width: 0;
+	z-index: 4;
 }
 .pokey {
 	top: 1.85em;
@@ -475,6 +475,30 @@ table.wikitable > * > tr > th {
 	background: @blue-dark;
 	margin-left: @column-left-size + 1em;
 	margin-right: @column-right-size + 1em;
+}
+
+/* Extension specific junk */
+
+/* Echo */
+
+#p-personal h2,
+#p-personal-extra,
+#p-personal-extra ul,
+#p-personal-extra li {
+	display: inline-block;
+}
+#p-personal-extra {
+	// Position and keep it from randomly overflowing massively for no apparent reason
+	margin: .7em 0 -2em 0;
+
+	ul {
+		list-style: none;
+		margin: 0 -1em 0 0;
+		padding: 0;
+	}
+	li {
+		margin: 0 .75em 0 0;
+	}
 }
 
 /* Hidden stuff */
