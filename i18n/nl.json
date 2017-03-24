@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Zoek in de inhoud van ongeveer {{NUMBEROFPAGES}} pagina's",
 	"timeless-loggedin": "Uw account",
 	"timeless-anonymous": "Anonieme gebruiker",
-	"timeless-loggedinas": "Aangemeld als $1",
+	"timeless-loggedinas": "Aangemeld als '''$1'''",
 	"timeless-notloggedin": "Niet aangemeld",
 	"timeless-userpage": "{{GENDER:$1|Gebruiker}}spagina",
 	"timeless-talkpage": "Overleg {{GENDER:$1|gebruiker}}",

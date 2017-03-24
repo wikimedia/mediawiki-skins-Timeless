@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Bodhisattwa",
-			"আজিজ"
+			"আজিজ",
+			"Aftabuzzaman"
 		]
 	},
+	"timeless-search-placeholder": "প্রায় {{NUMBEROFPAGES}}টি পাতায় অনুসন্ধান করুন",
 	"timeless-loggedin": "আপনার অ্যাকাউন্ট",
 	"timeless-anonymous": "বেনামি",
-	"timeless-loggedinas": "$1 হিসাবে প্রবেশ",
+	"timeless-loggedinas": "'''$1''' হিসাবে প্রবেশ",
 	"timeless-notloggedin": "প্রবেশ করেন নি",
 	"timeless-userpage": "{{GENDER:$1|ব্যবহারকারী}} পাতা",
 	"timeless-talkpage": "{{GENDER:$1|ব্যবহারকারী}} আলাপ",

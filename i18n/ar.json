@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Maroen1990"
+			"Maroen1990",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"timeless-loggedin": "حساب المستخدم",
 	"timeless-anonymous": "مجهول",
+	"timeless-loggedinas": "الدخول مسجل باسم '''$1'''",
 	"timeless-notloggedin": "غير مسجل الدخول",
 	"timeless-pagelog": "سجلات الصفحة",
 	"timeless-more": "المزيد",

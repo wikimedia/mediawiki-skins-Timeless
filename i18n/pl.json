@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "Szukaj tekstu spośród {{NUMBEROFPAGES}} artykułów",
 	"timeless-loggedin": "Twoje konto",
 	"timeless-anonymous": "Anonimowy",
-	"timeless-loggedinas": "Zalogowano jako $1",
+	"timeless-loggedinas": "Zalogowano jako '''$1'''",
 	"timeless-notloggedin": "Niezalogowany",
 	"timeless-userpage": "Strona {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"timeless-talkpage": "Dyskusja {{GENDER:$1|użytkownika|użytkowniczki}}",

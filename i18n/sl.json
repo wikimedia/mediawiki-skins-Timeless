@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "Preiščite besedilo približno {{NUMBEROFPAGES}} strani",
 	"timeless-loggedin": "Vaš račun",
 	"timeless-anonymous": "Brezimen",
-	"timeless-loggedinas": "Prijavljeni ste kot $1",
+	"timeless-loggedinas": "Prijavljeni ste kot '''$1'''",
 	"timeless-notloggedin": "Niste prijavljeni",
 	"timeless-userpage": "{{GENDER:$1|Uporabniška}} stran",
 	"timeless-talkpage": "{{GENDER:$1|Uporabniški}} pogovor",

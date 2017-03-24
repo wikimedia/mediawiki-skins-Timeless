@@ -11,7 +11,7 @@
 	"timeless-search-placeholder": "Sök text från cirka {{NUMBEROFPAGES}} sidor",
 	"timeless-loggedin": "Ditt konto",
 	"timeless-anonymous": "Anonym",
-	"timeless-loggedinas": "Inloggad som $1",
+	"timeless-loggedinas": "Inloggad som '''$1'''",
 	"timeless-notloggedin": "Inte inloggad",
 	"timeless-userpage": "{{GENDER:$1|Användarsida}}",
 	"timeless-talkpage": "{{GENDER:$1|Användardiskussion}}",

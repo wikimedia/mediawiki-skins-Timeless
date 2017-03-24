@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "جستجوی حدودی متن {{NUMBEROFPAGES}} صفحه",
 	"timeless-loggedin": "حساب کاربری شما",
 	"timeless-anonymous": "ناشناس",
-	"timeless-loggedinas": "ورد به سامانه به عنوان $1",
+	"timeless-loggedinas": "ورد به سامانه به عنوان '''$1'''",
 	"timeless-notloggedin": "عدم ورود به سامانه",
 	"timeless-userpage": "صفحهٔ {{GENDER:$1|کاربر}}",
 	"timeless-talkpage": "بحث {{GENDER:$1|کاربر}}",

@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Текста яҡынса {{NUMBEROFPAGES}} бит эсендә эҙләү",
 	"timeless-loggedin": "Иҫәп яҙмаһы",
 	"timeless-anonymous": "Танытмаған",
-	"timeless-loggedinas": "$1 булып танылған",
+	"timeless-loggedinas": "'''$1''' булып танылған",
 	"timeless-notloggedin": "Танылмағанһығыҙ",
 	"timeless-userpage": "{{GENDER:$1|Ҡатнашыусы}} бите",
 	"timeless-talkpage": "{{GENDER:$1|Ҡатнашыусы}} менән фекер алышыу",

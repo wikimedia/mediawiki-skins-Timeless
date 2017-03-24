@@ -5,7 +5,7 @@
 		]
 	},
 	"timeless-loggedin": "Yer accoont",
-	"timeless-loggedinas": "Logged in as $1",
+	"timeless-loggedinas": "Logged in as '''$1'''",
 	"timeless-notloggedin": "Nae logged in",
 	"timeless-userpage": "{{GENDER:$1|Uiser}} page",
 	"timeless-talkpage": "{{GENDER:$1|Uiser}} tauk",

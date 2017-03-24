@@ -10,7 +10,7 @@
 	"timeless-search-placeholder": "Пошук тексту на {{NUMBEROFPAGES}} {{PLURAL:{{NUMBEROFPAGES}}|сторінці|сторінках}}",
 	"timeless-loggedin": "Ваш обліковий запис",
 	"timeless-anonymous": "Анонім",
-	"timeless-loggedinas": "Увійшли як $1",
+	"timeless-loggedinas": "Увійшли як '''$1'''",
 	"timeless-notloggedin": "Не увійшли до системи",
 	"timeless-userpage": "Сторінка {{GENDER:$1|користувача|користувачки}}",
 	"timeless-talkpage": "Обговорення {{GENDER:$1|користувача|користувачки}}",

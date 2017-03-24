@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Recercar dins lo tèxte d’environ {{NUMBEROFPAGES}} paginas",
 	"timeless-loggedin": "Vòstre compte",
 	"timeless-anonymous": "Anonim",
-	"timeless-loggedinas": "Connectat en tant que $1",
+	"timeless-loggedinas": "Connectat en tant que '''$1'''",
 	"timeless-notloggedin": "Pas connectat",
 	"timeless-userpage": "Pagina {{GENDER:$1|utilizaire}}",
 	"timeless-talkpage": "Discussion {{GENDER:$1|utilizaire}}",

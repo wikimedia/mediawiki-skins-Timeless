@@ -12,7 +12,7 @@
 	"timeless-search-placeholder": "Nezdi {{NUMBEROFPAGES}} peley ena metin de vineyay",
 	"timeless-loggedin": "Hesabê şıma",
 	"timeless-anonymous": "Anonim",
-	"timeless-loggedinas": "Be nameyê $1 ra kewt cı",
+	"timeless-loggedinas": "Be nameyê '''$1''' ra kewt cı",
 	"timeless-notloggedin": "Cıkewtış nêvıraziya",
 	"timeless-userpage": "Pella {{GENDER:$1|karberi}}",
 	"timeless-talkpage": "Vatena {{GENDER:$1|Karberi}}",

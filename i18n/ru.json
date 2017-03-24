@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras"
+			"Okras",
+			"Redredsonia"
 		]
 	},
 	"timeless-desc": "Тема оформления Timeless создана после прототипа Winter Брэндона Харриса и различных стилей Фонда Викимедиа.",
-	"timeless-search-placeholder": "Поиск по тексту примерно из {{NUMBEROFPAGES}} страниц",
+	"timeless-search-placeholder": "Поиск примерно из {{NUMBEROFPAGES}} страниц",
 	"timeless-loggedin": "Учётная запись",
 	"timeless-anonymous": "Аноним",
-	"timeless-loggedinas": "Вошёл как $1",
+	"timeless-loggedinas": "Вошёл как '''$1'''",
 	"timeless-notloggedin": "Вы не представились системе",
 	"timeless-userpage": "Страница {{GENDER:$1|участника|участницы}}",
 	"timeless-talkpage": "Обсуждение {{GENDER:$1|участника|участницы}}",

@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "Leita í texta á u.þ.b. {{NUMBEROFPAGES}} síðum",
 	"timeless-loggedin": "Aðgangur þinn",
 	"timeless-anonymous": "Nafnlaus",
-	"timeless-loggedinas": "Skráð/ur inn sem $1",
+	"timeless-loggedinas": "Skráð/ur inn sem '''$1'''",
 	"timeless-notloggedin": "Ekki innskráð/ur",
 	"timeless-userpage": "Síða {{GENDER:$1|notanda}}",
 	"timeless-talkpage": "Spjall {{GENDER:$1|notanda}}",

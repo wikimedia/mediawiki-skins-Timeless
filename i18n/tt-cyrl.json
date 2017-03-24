@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Текст буенча {{NUMBEROFPAGES}} бит аша эзләү",
 	"timeless-loggedin": "Хисап язмасы",
 	"timeless-anonymous": "Аноним",
-	"timeless-loggedinas": "$1 булып кергән",
+	"timeless-loggedinas": "'''$1''' булып кергән",
 	"timeless-notloggedin": "Сез хисап язмагызга кермәгәнсез",
 	"timeless-userpage": "{{GENDER:$1|Кулланучы}} бите",
 	"timeless-talkpage": "{{GENDER:$1|Кулланучы}} бәхәсе",

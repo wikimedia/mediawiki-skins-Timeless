@@ -6,10 +6,10 @@
 		]
 	},
 	"timeless-desc": "Вечная тэма афармленьня, створаная паводле прататыпу Winter аўтарства Брэндана Гарыса і розных стыляў фундацыі «Вікімэдыя».",
-	"timeless-search-placeholder": "Пошук сярод тэксту прыблізна {{NUMBEROFPAGES}} старонак",
+	"timeless-search-placeholder": "Пошук сярод прыблізна {{NUMBEROFPAGES}} старонак",
 	"timeless-loggedin": "Ваш рахунак",
 	"timeless-anonymous": "Ананім",
-	"timeless-loggedinas": "Увайшлі як $1",
+	"timeless-loggedinas": "Увайшлі як '''$1'''",
 	"timeless-notloggedin": "Не ўвайшлі ў сыстэму",
 	"timeless-userpage": "Старонка {{GENDER:$1|ўдзельніка|ўдзельніцы}}",
 	"timeless-talkpage": "Гутаркі {{GENDER:$1|ўдзельніка|ўдзельніцы}}",

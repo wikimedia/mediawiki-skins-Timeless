@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Etsi noin {{NUMBEROFPAGES}} sivun tekstiä",
 	"timeless-loggedin": "Käyttäjätunnuksesi",
 	"timeless-anonymous": "Anonyymi",
-	"timeless-loggedinas": "Kirjautunut käyttäjällä $1",
+	"timeless-loggedinas": "Kirjautunut käyttäjällä '''$1'''",
 	"timeless-notloggedin": "Et ole kirjautunut",
 	"timeless-userpage": "{{GENDER:$1|Käyttäjä}}sivu",
 	"timeless-talkpage": "Keskustelu {{GENDER:$1|käyttäjästä}}",

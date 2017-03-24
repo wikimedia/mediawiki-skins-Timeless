@@ -10,7 +10,7 @@
 	"timeless-search-placeholder": "Pesquisar o texto de aproximadamente {{NUMBEROFPAGES}} páginas",
 	"timeless-loggedin": "A sua conta",
 	"timeless-anonymous": "Anónimo",
-	"timeless-loggedinas": "Autenticado como $1",
+	"timeless-loggedinas": "Autenticado como '''$1'''",
 	"timeless-notloggedin": "Não autenticado",
 	"timeless-userpage": "Página de {{GENDER:$1|utilizador|utilizadora|utilizador(a)}}",
 	"timeless-talkpage": "{{GENDER:$1|Utilizador|Utilizadora|Utilizador(a)}} Discussão",

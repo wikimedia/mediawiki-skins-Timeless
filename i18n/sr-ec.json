@@ -4,7 +4,7 @@
 			"Milicevic01"
 		]
 	},
-	"timeless-loggedinas": "Пријављени сте као $1",
+	"timeless-loggedinas": "Пријављени сте као '''$1'''",
 	"timeless-notloggedin": "Нисте пријављени",
 	"timeless-more": "Више",
 	"timeless-languages": "Језици"

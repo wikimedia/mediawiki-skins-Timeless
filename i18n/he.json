@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "חיפוש בטקסט של כ-{{NUMBEROFPAGES}} דפים",
 	"timeless-loggedin": "החשבון שלך",
 	"timeless-anonymous": "אלמוני",
-	"timeless-loggedinas": "נכנסת לחשבון $1",
+	"timeless-loggedinas": "נכנסת לחשבון '''$1'''",
 	"timeless-notloggedin": "לא מחובר לחשבון",
 	"timeless-userpage": "דף {{GENDER:$1|משתמש|משתמשת}}",
 	"timeless-talkpage": "דף שיחת {{GENDER:$1|משתמש|משתמשת}}",

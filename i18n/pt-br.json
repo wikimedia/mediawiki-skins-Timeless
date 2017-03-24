@@ -6,7 +6,7 @@
 	},
 	"timeless-loggedin": "Sua conta",
 	"timeless-anonymous": "Anônimo",
-	"timeless-loggedinas": "Autenticado como $1",
+	"timeless-loggedinas": "Autenticado como '''$1'''",
 	"timeless-notloggedin": "Não está logado",
 	"timeless-pagelog": "Registos da página",
 	"timeless-more": "Mais",

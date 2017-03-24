@@ -5,10 +5,10 @@
 		]
 	},
 	"timeless-desc": "Eine zeitlose Benutzeroberfläche, entworfen nach dem Winter-Prototyp von Brandon Harris und verschiedenen Stilen der Wikimedia Foundation.",
-	"timeless-search-placeholder": "Den Text von ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen",
+	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen",
 	"timeless-loggedin": "Dein Benutzerkonto",
 	"timeless-anonymous": "Anonym",
-	"timeless-loggedinas": "Angemeldet als $1",
+	"timeless-loggedinas": "Angemeldet als '''$1'''",
 	"timeless-notloggedin": "Nicht angemeldet",
 	"timeless-userpage": "{{GENDER:$1|Benutzerseite}}",
 	"timeless-talkpage": "{{GENDER:$1|Benutzerdiskussion}}",

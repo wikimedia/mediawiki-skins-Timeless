@@ -10,7 +10,7 @@
 	"timeless-search-placeholder": "Tìm văn bản trong vào khoảng {{NUMBEROFPAGES}} trang",
 	"timeless-loggedin": "Tài khoản",
 	"timeless-anonymous": "Vô danh",
-	"timeless-loggedinas": "Đã đăng nhập là $1",
+	"timeless-loggedinas": "Đã đăng nhập là '''$1'''",
 	"timeless-notloggedin": "Chưa đăng nhập",
 	"timeless-userpage": "{{GENDER:$1}}Trang cá nhân",
 	"timeless-talkpage": "{{GENDER:$1}}Trang thảo luận thành viên",

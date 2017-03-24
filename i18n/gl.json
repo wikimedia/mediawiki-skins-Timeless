@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Buscar o texto de aproximadamente {{NUMBEROFPAGES}} páxinas",
 	"timeless-loggedin": "A súa conta",
 	"timeless-anonymous": "Anónimo",
-	"timeless-loggedinas": "Conectado como $1",
+	"timeless-loggedinas": "Conectado como '''$1'''",
 	"timeless-notloggedin": "Non conectado",
 	"timeless-userpage": "Páxina de {{GENDER:$1|usuario|usuaria}}",
 	"timeless-talkpage": "Conversa de {{GENDER:$1|usuario|usuaria}}",

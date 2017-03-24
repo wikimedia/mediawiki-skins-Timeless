@@ -8,7 +8,7 @@
 	"timeless-search-placeholder": "Søk i teksten på rundt {{NUMBEROFPAGES}} sider",
 	"timeless-loggedin": "Din konto",
 	"timeless-anonymous": "Anonym",
-	"timeless-loggedinas": "Logget inn som $1",
+	"timeless-loggedinas": "Logget inn som '''$1'''",
 	"timeless-notloggedin": "Ikke innlogget",
 	"timeless-userpage": "{{GENDER:$1|Brukerside}}",
 	"timeless-talkpage": "{{GENDER:$1|Brukerdiskusjon}}",

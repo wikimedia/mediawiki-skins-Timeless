@@ -10,7 +10,7 @@
 	"timeless-search-placeholder": "在近 {{NUMBEROFPAGES}} 個頁面中搜尋文字",
 	"timeless-loggedin": "您的帳號",
 	"timeless-anonymous": "匿名",
-	"timeless-loggedinas": "已登入為 $1",
+	"timeless-loggedinas": "已登入為 '''$1'''",
 	"timeless-notloggedin": "尚未登入",
 	"timeless-userpage": "{{GENDER:$1|使用者}}頁面",
 	"timeless-talkpage": "{{GENDER:$1|使用者}}對話",

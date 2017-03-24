@@ -12,7 +12,7 @@
 	"timeless-search-placeholder": "대략 문서 {{NUMBEROFPAGES}}개의 내용 중에서 검색",
 	"timeless-loggedin": "사용자 계정",
 	"timeless-anonymous": "익명 사용자",
-	"timeless-loggedinas": "$1님으로 로그인됨",
+	"timeless-loggedinas": "'''$1'''님으로 로그인됨",
 	"timeless-notloggedin": "로그인하지 않음",
 	"timeless-userpage": "{{GENDER:$1|사용자}} 문서",
 	"timeless-talkpage": "{{GENDER:$1|사용자}}토론",

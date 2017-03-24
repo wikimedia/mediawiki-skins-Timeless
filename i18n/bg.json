@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "Търсене на текст в около {{NUMBEROFPAGES}} страници",
 	"timeless-loggedin": "Вашата потребителска сметка",
 	"timeless-anonymous": "Анонимен",
-	"timeless-loggedinas": "Влезли сте като $1",
+	"timeless-loggedinas": "Влезли сте като '''$1'''",
 	"timeless-notloggedin": "Не сте влезли",
 	"timeless-userpage": "{{GENDER:$1|Потребителска}} страница",
 	"timeless-talkpage": "{{GENDER:$1|Потребителска}} беседа",
