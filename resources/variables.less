@@ -38,10 +38,10 @@
 
 // Fonts are chosen for consistent metrics, not necessarily overall prettiness.
 // This will NEED fixes for different languages.
-@fonts: 'Helvetica Neue', 'Nimbus Sans', 'Arial', sans-serif;
+@fonts: 'Helvetica Neue', 'Nimbus Sans', 'Helvetica', 'Arial', sans-serif;
 @fonts-secondary: 'Linux Libertine', 'Times New Roman', serif;
-// Based on information on https://wiki.archlinux.org/index.php/Metric-compatible_fonts; not tested
-@fonts-monospace: 'Courier', 'Nimbus Mono', 'Liberation Mono', 'Courier New', monospace, monospace;
+// Based on information on https://wiki.archlinux.org/index.php/Metric-compatible_fonts
+@fonts-monospace: 'Consolas', 'Courier', 'Nimbus Mono', 'Liberation Mono', 'Courier New', monospace;
 @border: .2em;
 @radius: .2em;
 
@@ -174,7 +174,7 @@
 	top: 2.95em;
 	@{direction}: -1em;
 	overflow: visible;
-	z-index: 1;
+	z-index: 3;
 }
 
 // Categories on bottom of page

@@ -11,8 +11,12 @@ body {
 	font-family: @fonts;
 	color: @text;
 	background: @background-dark;
-	line-height: 1.4;
 	font-size: @font-size;
+}
+body,
+p,
+div {
+	line-height: 1.4;
 }
 
 #mw-content {
@@ -50,7 +54,7 @@ body {
 	height: 11em;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	margin: auto;
+	margin: .75em auto 0;
 }
 #p-logo-text {
 	width: @column-left-size;
@@ -68,7 +72,7 @@ body {
 		/* 13+ character names */
 		&.long {
 			font-size: 1.45em;
-			padding: 0;
+			padding: 0 .75em 0 0;
 			line-height: .8;
 		}
 	}
@@ -202,10 +206,9 @@ div.suggestions {
 		display: inline-block;
 		margin: 0;
 		padding: 0;
-		line-height: 1.5;
 	}
 	li {
-		margin: .25em 0 1.5em;
+		margin: .25em 0 1em;
 		border-bottom: solid 3px @background;
 
 		&:hover {

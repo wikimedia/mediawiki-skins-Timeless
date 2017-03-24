@@ -4,10 +4,10 @@
 	},
 	"skinname-timeless": "Timeless",
 	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris, and various styles by the Wikimedia Foundation",
-	"timeless-search-placeholder": "Search the text of approximately {{NUMBEROFPAGES}} pages",
+	"timeless-search-placeholder": "Search approximately {{NUMBEROFPAGES}} pages",
 	"timeless-loggedin": "Your account",
 	"timeless-anonymous": "Anonymous",
-	"timeless-loggedinas": "Logged in as $1",
+	"timeless-loggedinas": "Logged in as '''$1'''",
 	"timeless-notloggedin": "Not logged in",
 	"timeless-userpage": "{{GENDER:$1|User}} page",
 	"timeless-talkpage": "{{GENDER:$1|User}} talk",
@@ -22,4 +22,3 @@
 	"timeless-languages": "Languages",
 	"timeless-sitetitle": "{{MediaWiki:Sitetitle}}"
 }
-

@@ -80,26 +80,26 @@
 	.pokey {
 		top: 2.125em;
 	}
-}
+	h2 {
+		margin: 0;
+		padding: .7em 0 0 25px;
+		font-family: @fonts-secondary;
+		font-weight: normal;
+		font-size: 1.1em;
+		.background-image-svg('images/user-grey.svg', 'images/user-grey.png');
+		background-position: 0 7px;
+		background-repeat: no-repeat;
 
-#p-personal h2 {
-	margin: 0;
-	padding: .7em 0 0 25px;
-	font-family: @fonts-secondary;
-	font-weight: normal;
-	font-size: 1.1em;
-	.background-image-svg('images/user-grey.svg', 'images/user-grey.png');
-	background-position: 0 7px;
-	background-repeat: no-repeat;
-
-	.dropdown-header();
-}
-#p-personal:hover {
-	.pokey,
-	.dropdown {
-		display: block !important;
+		.dropdown-header();
+	}
+	&:hover {
+		.pokey,
+		.dropdown {
+			display: block !important;
+		}
 	}
 }
+
 
 #mw-page-header-links #ca-more,
 #mw-page-header-links #ca-languages,
