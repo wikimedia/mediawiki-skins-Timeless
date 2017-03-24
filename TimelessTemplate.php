@@ -12,14 +12,13 @@ class TimelessTemplate extends BaseTemplate {
 		$pileOfTools = $this->getPageTools();
 
 		$this->html( 'headelement' );
+		$userLinks = $this->getUserLinks();
 		?>
-		<div id="mw-wrapper">
+		<div id="mw-wrapper" class="<?php echo $userLinks['class'] ?>">
 			<div id="mw-header-container" class="ts-container">
 			<div id="mw-header" class="ts-inner">
-				<div id="user-tools">
-					<?php $this->outputUserLinks(); ?>
-				</div>
 				<?php
+				echo $userLinks['html'];
 				$this->outputLogo( 'p-logo-text', 'text' );
 				$this->outputSearch();
 				?>
@@ -351,8 +350,8 @@ class TimelessTemplate extends BaseTemplate {
 	 * Outputs the search
 	 */
 	private function outputSearch() {
+		echo Html::openElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ] );
 		?>
-		<div class="mw-portlet" id="p-search">
 			<h3<?php $this->html( 'userlangattributes' ) ?>>
 				<label for="searchInput"><?php echo $this->getMsg( 'search' )->parse() ?></label>
 			</h3>
@@ -379,8 +378,8 @@ class TimelessTemplate extends BaseTemplate {
 				?>
 				</div>
 			</form>
-		</div>
 		<?php
+		echo Html::closeElement( 'div' );
 	}
 
 	/**
@@ -406,60 +405,96 @@ class TimelessTemplate extends BaseTemplate {
 
 	/**
 	 * Outputs user links portlet for header
+	 *
+	 * @return array [ html, extra class to apply to surrounding objects ] (for width adjustments)
 	 */
-	private function outputUserLinks() {
+	private function getUserLinks() {
 		$user = $this->getSkin()->getUser();
-		?>
-		<div id="p-personal">
-		<h2>
-			<span>
-			<?php
-			// Display status, and make a dropdown if logged in
+		$html = '';
+
+		$dropdownContent = '';
+		$extraTools = [];
+		foreach ( $this->getPersonalTools() as $key => $item ) {
+			// Skip echo icons and stick them elsewhere
+			if ( in_array( $key, [ 'notifications-alert', 'notifications-notice' ] ) ) {
+				$extraTools[$key] = $item;
+				continue;
+			}
+			if ( $key == 'userpage' ) {
+				$item['links'][0]['text'] = wfMessage( 'timeless-userpage', $user->getName() )->text();
+			}
+			if ( $key == 'mytalk' ) {
+				$item['links'][0]['text'] = wfMessage( 'timeless-talkpage', $user->getName() )->text();
+			}
+			$dropdownContent .= $this->makeListItem( $key, $item );
+		}
+		$class = empty( $extraTools ) ? '' : 'extension-icons';
+
+		// p-personal portlet
+		$html .= Html::openElement( 'div', [ 'id' => 'p-personal' ] );
+
+			// Header
 			if ( $user->isLoggedIn() ) {
 				$userName = $user->getName();
-				// Make sure it fit firsts
-				if ( mb_strlen( $userName ) < 12 ) {
-					echo htmlspecialchars( $userName, ENT_QUOTES );
+				// Make sure it fits first (numbers slightly made up, may need adjusting)
+				$fit = empty( $extraTools ) ? 13 : 9;
+				if ( mb_strlen( $userName ) < $fit ) {
+					$header = htmlspecialchars( $userName, ENT_QUOTES );
 				} else {
-					echo wfMessage( 'timeless-loggedin' )->escaped();
+					$header = wfMessage( 'timeless-loggedin' )->escaped();
 				}
 			} else {
-				echo wfMessage( 'timeless-anonymous' )->escaped();
+				$header = wfMessage( 'timeless-anonymous' )->escaped();
 			}
-			?>
-			</span>
-			<div class="pokey"></div>
-		</h2>
-		<div id="p-personal-inner" class="dropdown">
-		<div class="mw-portlet" role="navigation">
-			<h3>
-			<?php
-			if ( $user->isLoggedIn() ) {
-				echo wfMessage( 'timeless-loggedinas', $user->getName() )->parse();
-			} else {
-				echo wfMessage( 'timeless-notloggedin' )->parse();
-			}
-			?>
-			</h3>
-			<div class="p-body">
-			<ul<?php $this->html( 'userlangattributes' ) ?>>
-			<?php
-				foreach ( $this->getPersonalTools() as $key => $item ) {
-					if ( $key == 'userpage' ) {
-						$item['links'][0]['text'] = wfMessage( 'timeless-userpage', $user->getName() )->text();
-					}
-					if ( $key == 'mytalk' ) {
-						$item['links'][0]['text'] = wfMessage( 'timeless-talkpage', $user->getName() )->text();
-					}
-					echo $this->makeListItem( $key, $item );
+			$html .= Html::rawElement( 'h2', [], Html::rawElement(
+				'span',
+				[],
+				$header
+			) . Html::element( 'div', [ 'class' => 'pokey' ] ) );
+
+			// Dropdown
+			$html .= Html::openElement( 'div', [ 'id' => 'p-personal-inner', 'class' => 'dropdown' ] );
+			$html .= Html::openElement( 'div', [ 'class' => 'mw-portlet', 'role' => 'navigation' ] );
+
+				if ( $user->isLoggedIn() ) {
+					$header = wfMessage( 'timeless-loggedinas', $user->getName() )->parse();
+				} else {
+					$header = wfMessage( 'timeless-notloggedin' )->parse();
 				}
-			?>
-			</ul>
-			</div>
-		</div>
-		</div>
-		</div>
-		<?php
+				$html .= Html::rawElement( 'h3', [], $header );
+				$html .= Html::rawElement(
+					'div',
+					[ 'class' => 'p-body' ],
+					Html::rawElement( 'ul', [], $dropdownContent )
+				);
+
+			$html .= Html::closeElement( 'div' );
+			$html .= Html::closeElement( 'div' );
+
+		$html .= Html::closeElement( 'div' );
+
+		// Extra icon stuff (echo etc)
+		if ( !empty( $extraTools ) ) {
+			$iconList = '';
+			foreach ( $extraTools as $key => $item ) {
+				$iconList .= $this->makeListItem( $key, $item );
+			}
+
+			$html .= Html::rawElement(
+				'div',
+				[ 'id' => 'p-personal-extra', 'class' => 'p-body' ],
+				Html::rawElement( 'ul', [], $iconList )
+			);
+		}
+
+		return [
+			'html' => Html::rawElement(
+				'div',
+				[ 'id' => 'user-tools' ],
+				$html
+			),
+			'class' => $class
+		];
 	}
 
 	/*
