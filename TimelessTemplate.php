@@ -5,473 +5,447 @@
  * @ingroup Skins
  */
 class TimelessTemplate extends BaseTemplate {
+
+	/** @var array */
+	private $pileOfTools;
+
 	/**
 	 * Outputs the entire contents of the page
 	 */
 	public function execute() {
-		$pileOfTools = $this->getPageTools();
-
-		$this->html( 'headelement' );
+		$this->pileOfTools = $this->getPageTools();
 		$userLinks = $this->getUserLinks();
-		?>
-		<div id="mw-wrapper" class="<?php echo $userLinks['class'] ?>">
-			<div id="mw-header-container" class="ts-container">
-			<div id="mw-header" class="ts-inner">
-				<?php
-				echo $userLinks['html'];
-				$this->outputLogo( 'p-logo-text', 'text' );
-				$this->outputSearch();
-				?>
-			</div>
-			<div class="visual-clear"></div>
-			</div>
 
-			<div id="mw-header-hack" class="color-bar">
-				<div class="color-middle-container">
-					<div class="color-middle"></div>
-				</div>
-				<div class="color-left"></div>
-				<div class="color-right"></div>
-			</div>
-			<div id="mw-header-nav-hack">
-			<div class="color-bar">
-				<div class="color-middle-container">
-					<div class="color-middle"></div>
-				</div>
-				<div class="color-left"></div>
-				<div class="color-right"></div>
-			</div>
-			</div>
-			<div id="menus-cover"></div>
+		// Open html, body elements, etc
+		$html = $this->get( 'headelement' );
 
-			<div id="mw-content-container" class="ts-container">
-			<div id="mw-content-block" class="ts-inner">
-				<div id="mw-site-navigation">
-					<?php
-					$this->outputLogo( 'p-logo', 'image' );
-					$this->outputSiteNavigation();
+		$html .= Html::openElement( 'div', [ 'id' => 'mw-wrapper', 'class' => $userLinks['class'] ] );
 
-					$siteTools = $this->assemblePortlet( [
-						'id' => 'p-sitetools',
-						'headerMessage' => 'timeless-sitetools',
-						'content' => $pileOfTools['general']
-					] );
-					$this->outputSidebarChunk( 'site-tools', 'timeless-sitetools', $siteTools );
-					?>
-				</div>
-				<div id="mw-related-navigation">
-					<?php
-					$pageTools = '';
-					if ( count( $pileOfTools['page-secondary'] ) > 0 ) {
-						$pageTools .= $this->assemblePortlet( [
-							'id' => 'p-pageactions',
-							'headerMessage' => 'timeless-pageactions',
-							'content' => $pileOfTools['page-secondary'],
-						] );
-					}
-					if ( count( $pileOfTools['user'] ) > 0 ) {
-						$pageTools .= $this->assemblePortlet( [
-							'id' => 'p-userpagetools',
-							'headerMessage' => 'timeless-userpagetools',
-							'content' => $pileOfTools['user'],
-						] );
-					}
-					$pageTools .= $this->assemblePortlet( [
-						'id' => 'p-pagemisc',
-						'headerMessage' => 'timeless-pagemisc',
-						'content' => $pileOfTools['page-tertiary'],
-					] );
-					$this->outputSidebarChunk( 'page-tools', 'timeless-pageactions', $pageTools );
+		$html .= Html::rawElement( 'div', [ 'id' => 'mw-header-container', 'class' => 'ts-container' ],
+			Html::rawElement( 'div', [ 'id' => 'mw-header', 'class' => 'ts-inner' ],
+				$userLinks['html'] .
+				$this->getLogo( 'p-logo-text', 'text' ) .
+				$this->getSearch()
+			) .
+			$this->clear()
+		);
+		$html .= $this->getHeaderHack();
 
-					$this->outputInterlanguageLinks();
-					$this->outputCategories();
-					?>
-				</div>
-				<div id="mw-content">
-				<div class="mw-body" role="main">
-					<?php
-					if ( $this->data['sitenotice'] ) {
-						?>
-						<div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
-						<?php
-					}
-					if ( $this->data['newtalk'] ) {
-						?>
-						<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
-						<?php
-					}
-					echo $this->getIndicators();
-					?>
+		// For mobile
+		$html .= Html::element( 'div', [ 'id' => 'menus-cover' ] );
 
-					<h1 class="firstHeading">
-						<?php $this->html( 'title' ) ?>
-					</h1>
-					<div id="mw-page-header-links">
-					<?php
-						echo $this->assemblePortlet( [
-							'id' => 'p-namespaces',
-							'headerMessage' => 'timeless-namespaces',
-							'content' => $pileOfTools['namespaces'],
-						] );
-					?>
-					<?php
-						echo $this->assemblePortlet( [
-							'id' => 'p-pagetools',
-							'headerMessage' => 'timeless-pagetools',
-							'content' => $pileOfTools['page-primary'],
-						] );
-					?>
-					</div>
-					<div class="visual-clear"></div>
-					<div class="mw-body-content">
-						<div id="contentSub">
-							<?php
-							if ( $this->data['subtitle'] ) {
-								?>
-								<p><?php $this->html( 'subtitle' ) ?></p>
-								<?php
-							}
-							if ( $this->data['undelete'] ) {
-								?>
-								<p><?php $this->html( 'undelete' ) ?></p>
-								<?php
-							}
-							?>
-						</div>
+		$html .= Html::rawElement( 'div', [ 'id' => 'mw-content-container', 'class' => 'ts-container' ],
+			Html::rawElement( 'div', [ 'id' => 'mw-content-block', 'class' => 'ts-inner' ],
+				Html::rawElement( 'div', [ 'id' => 'mw-site-navigation' ],
+					$this->getLogo( 'p-logo', 'image' ) .
+					$this->getMainNavigation() .
+					$this->getSidebarChunk(
+						'site-tools',
+						'timeless-sitetools',
+						$this->getPortlet(
+							'tbx',
+							$this->pileOfTools['general'],
+							'timeless-sitetools'
+						)
+					)
+				) .
+				Html::rawElement( 'div', [ 'id' => 'mw-related-navigation' ],
+					$this->getPageToolSidebar() .
+					$this->getInterlanguageLinks() .
+					$this->getCategories()
+				) .
+				Html::rawElement( 'div', [ 'id' => 'mw-content' ],
+					Html::rawElement( 'div', [ 'id' => 'content', 'class' => 'mw-body',  'role' => 'main' ],
+						$this->getSiteNotices() .
+						$this->getIndicators() .
+						Html::rawElement(
+							'h1',
+							[
+								'id' => 'firstHeading',
+								'class' => 'firstHeading',
+								'lang' => $this->get( 'pageLanguage' )
+							],
+							$this->get( 'title' )
+						) .
+						Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
+							$this->getPortlet(
+								'namespaces',
+								$this->pileOfTools['namespaces'],
+								'timeless-namespaces'
+							) .
+							$this->getPortlet(
+								'pagetools',
+								$this->pileOfTools['page-primary'],
+								'timeless-pagetools'
+							)
+						) .
+						$this->clear() .
+						Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
+							$this->getContentSub() .
+							$this->get( 'bodytext' ) .
+							$this->clear()
+						)
+					)
+				) .
+				$this->getAfterContent() .
+				$this->clear()
+			)
+		);
 
-						<?php
-						$this->html( 'bodytext' );
-						?>
-						<div class="visual-clear"></div>
-					</div>
-				</div>
-				</div>
-			<?php
-				if ( $this->data['catlinks'] ) {
-					$this->html( 'catlinks' );
-				}
-				$this->html( 'dataAfterContent' );
-			?>
-			<div class="visual-clear"></div>
-			</div>
-			</div>
+		$html .= Html::rawElement( 'div', [ 'id' => 'mw-footer-container', 'class' => 'ts-container' ],
+			Html::rawElement( 'div', [ 'id' => 'mw-footer', 'class' => 'ts-inner' ],
+				$this->getFooter()
+			)
+		);
 
-			<div id="mw-footer-container" class="ts-container">
-			<div id="mw-footer" class="ts-inner">
-				<ul role="contentinfo" id="footer-icons">
-					<?php
-					foreach ( $this->getFooterIcons( 'icononly' ) as $blockName => $footerIcons ) {
-						?>
-						<li>
-							<?php
-							foreach ( $footerIcons as $icon ) {
-								echo $this->getSkin()->makeFooterIcon( $icon );
-							}
-							?>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-				<?php
-				foreach ( $this->getFooterLinks() as $category => $links ) {
-					?>
-					<ul role="contentinfo" id="footer-<?php echo Sanitizer::escapeId( $category ) ?>">
-						<?php
-						foreach ( $links as $key ) {
-							?>
-							<li><?php $this->html( $key ) ?></li>
-							<?php
-						}
-						?>
-					</ul>
-					<?php
-				}
-				?>
-			</div>
-			</div>
-		</div>
+		$html .= Html::closeElement( 'div' );
 
-		<?php $this->printTrail() ?>
-		</body></html>
+		// BaseTemplate::printTrail() stuff (has no get version)
+		// Required for RL to run
+		$html .= MWDebug::getDebugHTML( $this->getSkin()->getContext() );
+		$html .= $this->get( 'bottomscripts' );
+		$html .= $this->get( 'reporttime' );
 
-		<?php
+		$html .= Html::closeElement( 'body' );
+		$html .= Html::closeElement( 'html' );
+
+		// The unholy echo
+		echo $html;
 	}
 
 	/**
-	 * Returns a single sidebar portlet of any kind (monobook style)
+	 * A list of navigation links (portlet)
+	 *
+	 * @param string $name
+	 * @param array|string $content array of links or block of text
+	 *        Expected array format:
+		[
+			$name => [
+				'links' => [ '0' => [ 'href' => ..., 'single-id' => ..., 'text' => ... ] ],
+				'id' => ...,
+				'active' => ...
+			],
+			...
+		]
+	 * @param null|string|array|bool $msg
+	 *
+	 * @return $html
 	 */
-	private function assemblePortlet( $box ) {
-		if ( !$box['content'] ) {
-			return;
+	protected function getPortlet( $name, $content, $msg = null ) {
+		if ( $msg === null ) {
+			$msg = $name;
+		} elseif ( is_array( $msg ) ) {
+			$msgString = array_shift( $msg );
+			$msgParams = $msg;
+			$msg = $msgString;
 		}
-		if ( !isset( $box['class'] ) ) {
-			$box['class'] = 'mw-portlet';
-		} else {
-			$box['class'] .= ' mw-portlet';
-		}
-
-		$content = '<div role="navigation" class="' .
-			$box['class'] . '" id="' . Sanitizer::escapeId( $box['id'] ) . '"' .
-				Linker::tooltip( $box['id'] ) . '>';
-		$content .= '<h3>';
-			if ( isset( $box['headerMessage'] ) ) {
-				$content .= $this->getMsg( $box['headerMessage'] )->escaped();
+		$msgObj = wfMessage( $msg );
+		if ( $msgObj->exists() ) {
+			if ( isset( $msgParams ) && !empty( $msgParams ) ) {
+				$msgString = $this->getMsg( $msg, $msgParams )->parse();
 			} else {
-				$content .= htmlspecialchars( $box['header'] );
+				$msgString = $msgObj->parse();
 			}
-		$content .= '</h3>';
-		if ( is_array( $box['content'] ) ) {
-			$content .= '<ul>';
-			foreach ( $box['content'] as $key => $item ) {
-				$content .= $this->makeListItem( $key, $item );
-			}
-			$content .= '</ul>';
 		} else {
-			$content .= $box['content'];
+			$msgString = htmlspecialchars( $msg );
 		}
-		$content .= '</div>';
 
-		return $content;
-	}
+		$labelId = Sanitizer::escapeId( "p-$name-label" );
 
-	/**
-	 * Makes links for navigation lists.
-	 *
-	 * Modified to add a <span> around <a> content in navigation lists; everything else is
-	 * basically the same as in BaseTemplate, just with extra stuff removed.
-	 *
-	 * Can't just use the original's options['wrapper'] because it's a piece of crap and spews
-	 * infinite errors on the page.
-	 */
-	function makeLink( $key, $item, $options = [] ) {
-		if ( isset( $item['text'] ) ) {
-			$text = $item['text'];
+		if ( is_array( $content ) ) {
+			$contentText = Html::openElement( 'ul' );
+			foreach ( $content as $key => $item ) {
+				$contentText .= $this->makeListItem( $key, $item, [ 'text-wrapper' => [ 'tag' => 'span' ] ] );
+			}
+			$contentText .= Html::closeElement( 'ul' );
 		} else {
-			$text = $this->translator->translate( isset( $item['msg'] ) ? $item['msg'] : $key );
+			$contentText = $content;
 		}
 
-		$html = htmlspecialchars( $text );
-		$html = '<span>' . $html . '</span>';
-
-		if ( isset( $item['href'] ) ) {
-			$attrs = $item;
-			$array = [ 'single-id', 'text', 'msg', 'tooltiponly', 'context', 'primary', 'tooltip-params' ];
-			foreach ( $array as $k ) {
-				unset( $attrs[$k] );
-			}
-
-			if ( isset( $attrs['data'] ) ) {
-				foreach ( $attrs['data'] as $key => $value ) {
-					$attrs[ 'data-' . $key ] = $value;
-				}
-				unset( $attrs[ 'data' ] );
-			}
-
-			if ( isset( $item['id'] ) && !isset( $item['single-id'] ) ) {
-				$item['single-id'] = $item['id'];
-			}
-
-			$tooltipParams = [];
-			if ( isset( $item['tooltip-params'] ) ) {
-				$tooltipParams = $item['tooltip-params'];
-			}
-
-			if ( isset( $item['single-id'] ) ) {
-				if ( isset( $item['tooltiponly'] ) && $item['tooltiponly'] ) {
-					$title = Linker::titleAttrib( $item['single-id'], null, $tooltipParams );
-					if ( $title !== false ) {
-						$attrs['title'] = $title;
-					}
-				} else {
-					$tip = Linker::tooltipAndAccesskeyAttribs( $item['single-id'], $tooltipParams );
-					if ( isset( $tip['title'] ) && $tip['title'] !== false ) {
-						$attrs['title'] = $tip['title'];
-					}
-					if ( isset( $tip['accesskey'] ) && $tip['accesskey'] !== false ) {
-						$attrs['accesskey'] = $tip['accesskey'];
-					}
-				}
-			}
-			$html = Html::rawElement( 'a', $attrs, $html );
-		}
+		$html = Html::rawElement( 'div', [
+				'role' => 'navigation',
+				'class' => 'mw-portlet',
+				'id' => Sanitizer::escapeId( 'p-' . $name ),
+				'title' => Linker::titleAttrib( 'p-' . $name ),
+				'aria-labelledby' => $labelId
+			],
+			Html::rawElement( 'h3', [
+					'id' => $labelId,
+					'lang' => $this->get( 'userlang' ),
+					'dir' => $this->get( 'dir' )
+				],
+				$msgString
+			) .
+			Html::rawElement( 'div', [ 'class' => 'p-body' ],
+				$contentText .
+				$this->getAfterPortlet( $name )
+			)
+		);
 
 		return $html;
 	}
 
 	/**
-	 * Outputs a sidebar-chunk containing one or more portlets
+	 * Sidebar chunk containing one or more portlets
+	 *
+	 * @param string $id
+	 * @param string $headerMessage
+	 * @param string $content
+	 *
+	 * @return string html
 	 */
-	private function outputSidebarChunk( $id, $headerMessage, $content ) {
-		echo '<div id="' . $id . '" class="sidebar-chunk">';
-		echo '<h2><span>' .
-			$this->getMsg( $headerMessage )->escaped() .
-				'</span><div class="pokey"></div></h2>';
-		echo '<div class="sidebar-inner">' . $content . '</div></div>';
+	protected function getSidebarChunk( $id, $headerMessage, $content ) {
+		$html = '';
+
+		$html .= Html::rawElement(
+			'div',
+			[ 'id' => Sanitizer::escapeId( $id ), 'class' => 'sidebar-chunk' ],
+			Html::rawElement( 'h2', [],
+				Html::rawElement( 'span', [],
+					$this->getMsg( $headerMessage )->escaped()
+				) .
+				Html::element( 'div', [ 'class' => 'pokey' ] )
+			) .
+			Html::rawElement( 'div', [ 'class' => 'sidebar-inner' ], $content )
+		);
+
+		return $html;
 	}
 
 	/**
-	 * Outputs the logo and (optionally) site title
+	 * The logo and (optionally) site title
+	 *
+	 * @param string $id
+	 * @param string $part whether it's only image, only text, or both
+	 *
+	 * @return string html
 	 */
-	private function outputLogo( $id = 'p-logo', $part = 'both' ) {
-		?>
-		<div id="<?php echo $id ?>" class="mw-portlet" role="banner">
-			<?php
-			if ( $part !== 'text' ) {
-				?>
-				<a
-					class="mw-wiki-logo"
-					href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
-				?>" <?php
-				echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) )
-				?>></a>
-				<?php
+	protected function getLogo( $id = 'p-logo', $part = 'both' ) {
+		$html = '';
+
+		$html .= Html::openElement(
+			'div',
+			[
+				'id' => Sanitizer::escapeId( $id ),
+				'class' => 'mw-portlet',
+				'role' => 'banner'
+			]
+		);
+		if ( $part !== 'image' ) {
+			$titleClass = '';
+			$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+			// width is 11em; 13 characters will probably fit?
+			if ( mb_strlen( $siteTitle ) > 13 ) {
+				$titleClass = 'long';
 			}
-			if ( $part !== 'image' ) {
-				$titleClass = '';
-				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
-				// width is 11em; 13 characters will probably fit?
-				if ( mb_strlen( $siteTitle ) > 13 ) {
-					$titleClass = 'long';
-				}
-				?>
-				<a id="p-banner" class="mw-wiki-title <?php echo $titleClass ?>"
-					href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-					<?php echo $siteTitle ?>
-				</a>
-				<?php
-			}
-			?>
-		</div>
-		<?php
+			$html .= Html::element( 'a', [
+					'id' => 'p-banner',
+					'class' => [ 'mw-wiki-title', $titleClass ],
+					'href' => htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+				],
+				$siteTitle
+			);
+		}
+		if ( $part !== 'text' ) {
+			$html .= Html::element( 'a', array_merge(
+				[
+					'class' => 'mw-wiki-logo',
+					'href' => htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+				],
+				Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
+			) );
+		}
+		$html .= Html::closeElement( 'div' );
+
+		return $html;
 	}
 
 	/**
-	 * Outputs the search
+	 * The search box at the top
+	 *
+	 * @return string html
 	 */
-	private function outputSearch() {
-		echo Html::openElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ] );
-		?>
-			<h3<?php $this->html( 'userlangattributes' ) ?>>
-				<label for="searchInput"><?php echo $this->getMsg( 'search' )->parse() ?></label>
-			</h3>
-			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
-				<div id="simpleSearch">
-				<div id="searchInput-container">
-					<?php
-					echo $this->makeSearchInput( [
+	protected function getSearch() {
+		$html = '';
+
+		$html .= Html::openElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ] );
+
+		$html .= Html::rawElement(
+			'h3',
+			[ 'lang' => $this->get( 'userlang' ), 'dir' => $this->get( 'dir' ) ],
+			Html::rawElement( 'label', [ 'for' => 'searchInput' ], $this->getMsg( 'search' )->text() )
+		);
+
+		$html .= Html::rawElement( 'form', [ 'action' => $this->get( 'wgScript' ), 'id' => 'searchform' ],
+			Html::rawElement( 'div', [ 'id' => 'simpleSearch' ],
+				Html::rawElement( 'div', [ 'id' => 'searchInput-container' ],
+					$this->makeSearchInput( [
 						'id' => 'searchInput',
-						'placeholder' => $this->getMsg( 'timeless-search-placeholder' )->escaped(),
-					] );
-					?>
-				</div>
-				<?php
-				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
-				echo $this->makeSearchButton(
+						'placeholder' => $this->getMsg( 'timeless-search-placeholder' )->text(),
+					] )
+				) .
+				Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
+				$this->makeSearchButton(
 					'fulltext',
 					[ 'id' => 'mw-searchButton', 'class' => 'searchButton mw-fallbackSearchButton' ]
-				);
-				echo $this->makeSearchButton(
+				) .
+				$this->makeSearchButton(
 					'go',
 					[ 'id' => 'searchButton', 'class' => 'searchButton' ]
-				);
-				?>
-				</div>
-			</form>
-		<?php
-		echo Html::closeElement( 'div' );
+				)
+			)
+		);
+
+		$html .= Html::closeElement( 'div' );
+
+		return $html;
 	}
 
 	/**
-	 * Outputs the sidebar
+	 * Left sidebar navigation, usually
+	 *
+	 * @return string html
 	 */
-	private function outputSiteNavigation() {
+	protected function getMainNavigation() {
 		$sidebar = $this->getSidebar();
-		$content = '';
+		$html = '';
 
 		$sidebar['SEARCH'] = false; // Already hardcoded into header
 		$sidebar['TOOLBOX'] = false; // Parsed as part of pageTools
 		$sidebar['LANGUAGES'] = false; // Forcibly removed to separate chunk
 
-		foreach ( $sidebar as $boxName => $box ) {
-			if ( $boxName === false ) {
+		foreach ( $sidebar as $name => $content ) {
+			if ( $content === false ) {
 				continue;
 			}
-			$content .= $this->assemblePortlet( $box, true );
+			// Numeric strings gets an integer when set as key, cast back - T73639
+			$name = (string)$name;
+			$html .= $this->getPortlet( $name, $content['content'] );
 		}
 
-		$this->outputSidebarChunk( 'site-navigation', 'navigation', $content );
+		$html = $this->getSidebarChunk( 'site-navigation', 'navigation', $html );
+
+		return $html;
 	}
 
 	/**
-	 * Outputs user links portlet for header
+	 * The colour bars
+	 * Split this out so we don't have to look at it/can easily kill it later
 	 *
-	 * @return array [ html, extra class to apply to surrounding objects ] (for width adjustments)
+	 * @return string html
 	 */
-	private function getUserLinks() {
-		$user = $this->getSkin()->getUser();
+	protected function getHeaderHack() {
 		$html = '';
 
-		$dropdownContent = '';
+		// These are almost exactly the same and this is stupid.
+		$html .= Html::rawElement( 'div', [ 'id' => 'mw-header-hack', 'class' => 'color-bar' ],
+			Html::rawElement( 'div', [ 'class' => 'color-middle-container' ],
+				Html::element( 'div', [ 'class' => 'color-middle' ] )
+			) .
+			Html::element( 'div', [ 'class' => 'color-left' ] ) .
+			Html::element( 'div', [ 'class' => 'color-right' ] )
+		);
+		$html .= Html::rawElement( 'div', [ 'id' => 'mw-header-nav-hack' ],
+			Html::rawElement( 'div', [ 'class' => 'color-bar' ],
+				Html::rawElement( 'div', [ 'class' => 'color-middle-container' ],
+					Html::element( 'div', [ 'class' => 'color-middle' ] )
+				) .
+				Html::element( 'div', [ 'class' => 'color-left' ] ) .
+				Html::element( 'div', [ 'class' => 'color-right' ] )
+			)
+		);
+
+		return $html;
+	}
+
+	/**
+	 * Page tools in sidebar
+	 *
+	 * @return string html
+	 **/
+	protected function getPageToolSidebar() {
+		$pageTools = '';
+		if ( count( $this->pileOfTools['page-secondary'] ) > 0 ) {
+			$pageTools .= $this->getPortlet(
+				'pageactions',
+				$this->pileOfTools['page-secondary'],
+				'timeless-pageactions'
+			);
+		}
+		if ( count( $this->pileOfTools['user'] ) > 0 ) {
+			$pageTools .= $this->getPortlet(
+				'userpagetools',
+				$this->pileOfTools['user'],
+				'timeless-userpagetools'
+			);
+		}
+		$pageTools .= $this->getPortlet(
+			'pagemisc',
+			$this->pileOfTools['page-tertiary'],
+			'timeless-pagemisc'
+		);
+
+		return $this->getSidebarChunk( 'page-tools', 'timeless-pageactions', $pageTools );
+	}
+
+	/**
+	 * Personal/user links portlet for header
+	 *
+	 * @return array [ html, class], where class is an extra class to apply to surrounding objects
+	 * (for width adjustments)
+	 */
+	protected function getUserLinks() {
+		$user = $this->getSkin()->getUser();
+		$personalTools = $this->getPersonalTools();
+
+		$html = '';
 		$extraTools = [];
-		foreach ( $this->getPersonalTools() as $key => $item ) {
-			// Skip echo icons and stick them elsewhere
-			if ( in_array( $key, [ 'notifications-alert', 'notifications-notice' ] ) ) {
-				$extraTools[$key] = $item;
-				continue;
-			}
-			if ( $key == 'userpage' ) {
-				$item['links'][0]['text'] = wfMessage( 'timeless-userpage', $user->getName() )->text();
-			}
-			if ( $key == 'mytalk' ) {
-				$item['links'][0]['text'] = wfMessage( 'timeless-talkpage', $user->getName() )->text();
-			}
-			$dropdownContent .= $this->makeListItem( $key, $item );
+
+		// Remove Echo badges
+		if ( isset( $personalTools['notifications-alert'] ) ) {
+			$extraTools['notifications-alert'] = $personalTools['notifications-alert'];
+			unset( $personalTools['notifications-alert'] );
+		}
+		if ( isset( $personalTools['notifications-notice'] ) ) {
+			$extraTools['notifications-notice'] = $personalTools['notifications-notice'];
+			unset( $personalTools['notifications-notice'] );
 		}
 		$class = empty( $extraTools ) ? '' : 'extension-icons';
 
-		// p-personal portlet
-		$html .= Html::openElement( 'div', [ 'id' => 'p-personal' ] );
+		// Re-label some messages
+		if ( isset( $personalTools['userpage'] ) ) {
+			$personalTools['userpage']['links'][0]['text'] = $this->getMsg( 'timeless-userpage' )->text();
+		}
+		if ( isset( $personalTools['mytalk'] ) ) {
+			$personalTools['mytalk']['links'][0]['text'] = $this->getMsg( 'timeless-talkpage' )->text();
+		}
 
-			// Header
-			if ( $user->isLoggedIn() ) {
-				$userName = $user->getName();
-				// Make sure it fits first (numbers slightly made up, may need adjusting)
-				$fit = empty( $extraTools ) ? 13 : 9;
-				if ( mb_strlen( $userName ) < $fit ) {
-					$header = htmlspecialchars( $userName, ENT_QUOTES );
-				} else {
-					$header = wfMessage( 'timeless-loggedin' )->escaped();
-				}
+		// Labels
+		if ( $user->isLoggedIn() ) {
+			$userName = $user->getName();
+			// Make sure it fits first (numbers slightly made up, may need adjusting)
+			$fit = empty( $extraTools ) ? 13 : 9;
+			if ( mb_strlen( $userName ) < $fit ) {
+				$dropdownHeader = htmlspecialchars( $userName, ENT_QUOTES );
 			} else {
-				$header = wfMessage( 'timeless-anonymous' )->escaped();
+				$dropdownHeader = wfMessage( 'timeless-loggedin' )->escaped();
 			}
-			$html .= Html::rawElement( 'h2', [], Html::rawElement(
-				'span',
-				[],
-				$header
-			) . Html::element( 'div', [ 'class' => 'pokey' ] ) );
+			$headerMsg = [ 'timeless-loggedinas', $user->getName() ];
+		} else {
+			$dropdownHeader = wfMessage( 'timeless-anonymous' )->escaped();
+			$headerMsg = 'timeless-notloggedin';
+		}
+		$html .= Html::openElement( 'div', [ 'id' => 'user-tools' ] );
 
-			// Dropdown
-			$html .= Html::openElement( 'div', [ 'id' => 'p-personal-inner', 'class' => 'dropdown' ] );
-			$html .= Html::openElement( 'div', [ 'class' => 'mw-portlet', 'role' => 'navigation' ] );
-
-				if ( $user->isLoggedIn() ) {
-					$header = wfMessage( 'timeless-loggedinas', $user->getName() )->parse();
-				} else {
-					$header = wfMessage( 'timeless-notloggedin' )->parse();
-				}
-				$html .= Html::rawElement( 'h3', [], $header );
-				$html .= Html::rawElement(
-					'div',
-					[ 'class' => 'p-body' ],
-					Html::rawElement( 'ul', [], $dropdownContent )
-				);
-
-			$html .= Html::closeElement( 'div' );
-			$html .= Html::closeElement( 'div' );
-
-		$html .= Html::closeElement( 'div' );
+		$html .= Html::rawElement( 'div', [ 'id' => 'personal' ],
+			Html::rawElement( 'h2', [],
+				Html::rawElement( 'span', [], $dropdownHeader ) .
+				Html::element( 'div', [ 'class' => 'pokey' ] )
+			) .
+			Html::rawElement( 'div', [ 'id' => 'personal-inner', 'class' => 'dropdown' ],
+				$this->getPortlet( 'personal', $personalTools, $headerMsg )
+			)
+		);
 
 		// Extra icon stuff (echo etc)
 		if ( !empty( $extraTools ) ) {
@@ -482,27 +456,90 @@ class TimelessTemplate extends BaseTemplate {
 
 			$html .= Html::rawElement(
 				'div',
-				[ 'id' => 'p-personal-extra', 'class' => 'p-body' ],
+				[ 'id' => 'personal-extra', 'class' => 'p-body' ],
 				Html::rawElement( 'ul', [], $iconList )
 			);
 		}
 
+		$html .= Html::closeElement( 'div' );
+
 		return [
-			'html' => Html::rawElement(
-				'div',
-				[ 'id' => 'user-tools' ],
-				$html
-			),
+			'html' => $html,
 			'class' => $class
 		];
 	}
 
-	/*
-	 * Generates pile of all the tools
-	 * Returns array of arrays of each kind
-	 * (wouldn't it be nice if tools themselves just registered the type instead?)
+	/**
+	 * Notices that may appear above the firstHeading
+	 *
+	 * @return string html
 	 */
-	private function getPageTools() {
+	protected function getSiteNotices() {
+		$html = '';
+
+		if ( $this->data['sitenotice'] ) {
+			$html .= Html::rawElement( 'div', [ 'id' => 'siteNotice' ], $this->get( 'sitenotice' ) );
+		}
+		if ( $this->data['newtalk'] ) {
+			$html .= Html::rawElement( 'div', [ 'class' => 'usermessage' ], $this->get( 'newtalk' ) );
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Links and information that may appear below the firstHeading
+	 *
+	 * @return string html
+	 */
+	protected function getContentSub() {
+		$html = '';
+
+		$html .= Html::openElement( 'div', [ 'id' => 'contentSub' ] );
+		if ( $this->data['subtitle'] ) {
+			$html .= $this->get( 'subtitle' );
+		}
+		if ( $this->data['undelete'] ) {
+			$html .= $this->get( 'undelete' );
+		}
+		$html .= Html::closeElement( 'div' );
+
+		return $html;
+	}
+
+	/**
+	 * The data after content, catlinks, and potential other stuff that may appear within
+	 * the content block but after the main content
+	 *
+	 * @return string html
+	 */
+	protected function getAfterContent() {
+		$html = '';
+
+		if ( $this->data['catlinks'] || $this->data['dataAfterContent'] ) {
+			$html .= Html::openElement( 'div', [ 'id' => 'content-bottom-stuff' ] );
+			if ( $this->data['catlinks'] ) {
+				$html .= $this->get( 'catlinks' );
+			}
+			if ( $this->data['dataAfterContent'] ) {
+				$html .= $this->get( 'dataAfterContent' );
+			}
+			$html .= Html::closeElement( 'div' );
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Generate pile of all the tools
+	 *
+	 * We can make a few assumptions based on where a tool started out:
+	 *     If it's in the cactions region, it's a page tool, probably primary or secondary
+	 *     ...that's all I can think of
+	 *
+	 * @return array of array of tools information (portlet formatting)
+	 */
+	protected function getPageTools() {
 		$title = $this->getSkin()->getTitle();
 		$namespace = $title->getNamespace();
 
@@ -515,9 +552,10 @@ class TimelessTemplate extends BaseTemplate {
 			'general' => []
 		];
 
-		$pileOfTools = [];
+		// Tools specific to the page
+		$pileOfEditTools = [];
 		foreach ( $this->data['content_navigation'] as $navKey => $navBlock ) {
-			/* Just use namespaces items as they are */
+			// Just use namespaces items as they are
 			if ( $navKey == 'namespaces' ) {
 				if ( $namespace < 0 ) {
 					// Put special page ns_pages in the more pile so they're not so lonely
@@ -526,22 +564,26 @@ class TimelessTemplate extends BaseTemplate {
 					$sortedPileOfTools['namespaces'] = $navBlock;
 				}
 			} else {
-				$pileOfTools = array_merge( $pileOfTools, $navBlock );
+				$pileOfEditTools = array_merge( $pileOfEditTools, $navBlock );
 			}
 		}
-		$pileOfTools = array_merge( $pileOfTools, $this->getToolbox() );
+
+		// Tools that may be general or page-related (typically the toolbox)
+		$pileOfTools = $this->getToolbox();
 		if ( $namespace >= 0 ) {
 			$pileOfTools['pagelog'] = [
-				'text' => $this->getMsg( 'timeless-pagelog' )->escaped(),
+				'text' => $this->getMsg( 'timeless-pagelog' )->text(),
 				'href' => SpecialPage::getTitleFor( 'Log', $title->getPrefixedText() )->getLocalURL(),
 				'id' => 't-pagelog'
 			];
 		}
 		$pileOfTools['more'] = [
-			'text' => $this->getMsg( 'timeless-more' )->escaped(),
+			'text' => $this->getMsg( 'timeless-more' )->text(),
 			'id' => 'ca-more',
 			'class' => 'dropdown-toggle'
 		];
+
+		// Goes in the page-primary in mobile, doesn't appear otherwise
 		if ( $this->data['language_urls'] ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
@@ -550,20 +592,20 @@ class TimelessTemplate extends BaseTemplate {
 			];
 		}
 
-		/* This is really dumb, but there is no sane way to do this. */
-		foreach ( $pileOfTools as $navKey => $navBlock ) {
+		// This is really dumb, and you're an idiot for doing it this way
+		foreach ( $pileOfEditTools as $navKey => $navBlock ) {
 			$currentSet = null;
 
-			if ( in_array( $navKey, [ 'watch', 'unwatch' ] ) ) {
+			if ( in_array( $navKey, [
+				'watch',
+				'unwatch'
+			] ) ) {
 				$currentSet = 'namespaces';
 			} elseif ( in_array( $navKey, [
 				'edit',
 				'view',
 				'history',
-				'contributions',
-				'addsection',
-				'more',
-				'languages'
+				'addsection'
 			] ) ) {
 				$currentSet = 'page-primary';
 			} elseif ( in_array( $navKey, [
@@ -575,7 +617,25 @@ class TimelessTemplate extends BaseTemplate {
 				'move'
 			] ) ) {
 				$currentSet = 'page-secondary';
-			} elseif ( in_array( $navKey, [ 'blockip', 'userrights', 'log' ] ) ) {
+			} else {
+				$currentSet = 'page-primary'; // Catch random extension ones?
+			}
+			$sortedPileOfTools[$currentSet][$navKey] = $navBlock;
+		}
+		foreach ( $pileOfTools as $navKey => $navBlock ) {
+			$currentSet = null;
+
+			if ( in_array( $navKey, [
+				'contributions',
+				'more',
+				'languages'
+			] ) ) {
+				$currentSet = 'page-primary';
+			} elseif ( in_array( $navKey, [
+				'blockip',
+				'userrights',
+				'log'
+			] ) ) {
 				$currentSet = 'user';
 			} elseif ( in_array( $navKey, [
 				'whatlinkshere',
@@ -595,28 +655,34 @@ class TimelessTemplate extends BaseTemplate {
 		return $sortedPileOfTools;
 	}
 
-	/*
-	 * Assemble and output array of categories, regardless of view mode
-	 * Just using Skin or OutputPage functions doesn't respect view modes (preview, history, whatever)
+	/**
+	 * Categories for the sidebar
+	 *
+	 * Assemble an array of categories, regardless of view mode. Just using Skin or
+	 * OutputPage functions doesn't respect view modes (preview, history, whatever)
+	 * But why? I have no idea what the purpose of this is.
+	 *
+	 * @return string html
 	 */
-	private function outputCategories() {
+	protected function getCategories() {
 		global $wgContLang;
 
 		$skin =  $this->getSkin();
 		$title = $skin->getTitle();
 		$catList = false;
+		$html = '';
 
-		/* Get list from outputpage if in preview; otherwise get list from title */
+		// Get list from outputpage if in preview; otherwise get list from title
 		if ( in_array( $skin->getRequest()->getVal( 'action' ), [ 'submit', 'edit' ] ) ) {
 			$allCats = [];
-			/* Can't just use getCategoryLinks because there's no equivalent for Title */
+			// Can't just use getCategoryLinks because there's no equivalent for Title
 			$allCats2 = $skin->getOutput()->getCategories();
 			foreach ( $allCats2 as $displayName ) {
 				$catTitle = Title::makeTitleSafe( NS_CATEGORY, $displayName );
 				$allCats[] = $catTitle->getDBkey();
 			}
 		} else {
-			/* This is probably to trim out some excessive stuff. Unless I was just high on cough syrup. */
+			// This is probably to trim out some excessive stuff. Unless I was just high on cough syrup.
 			$allCats = array_keys( $title->getParentCategories() );
 
 			$len = strlen( $wgContLang->getNsText( NS_CATEGORY ) . ':' );
@@ -648,10 +714,8 @@ class TimelessTemplate extends BaseTemplate {
 			$hiddenCount = count( $hiddenCats );
 			$count = $normalCount;
 
-			/*
-			 * Mostly consistent with how Skin does it.
-			 * Doesn't have the classes. Either way can't be good for caching.
-			 */
+			// Mostly consistent with how Skin does it.
+			// Doesn't have the classes. Either way can't be good for caching.
 			if (
 				$skin->getUser()->getBoolOption( 'showhiddencats' ) ||
 				$title->getNamespace() == NS_CATEGORY
@@ -662,7 +726,7 @@ class TimelessTemplate extends BaseTemplate {
 				$hiddenCount = 0;
 			}
 
-			/* Assemble the html because why not... */
+			// Assemble the html...
 			if ( $count ) {
 				if ( $normalCount ) {
 					$catHeader = 'categories';
@@ -671,49 +735,159 @@ class TimelessTemplate extends BaseTemplate {
 				}
 				$catList = '';
 				if ( $normalCount ) {
-					$catList .= $this->assembleCatList( $normalCats, 'catlist-normal', 'categories' );
+					$catList .= $this->getCatList( $normalCats, 'catlist-normal', 'categories' );
 				}
 				if ( $hiddenCount ) {
-					$catList .= $this->assembleCatList( $hiddenCats, 'catlist-hidden', 'hidden-categories' );
+					$catList .= $this->getCatList( $hiddenCats, 'catlist-hidden', 'hidden-categories' );
 				}
 			}
 		}
 		if ( $catList ) {
-			$this->outputSidebarChunk( 'catlinks-sidebar', $catHeader, $catList );
+			$html = $this->getSidebarChunk( 'catlinks-sidebar', $catHeader, $catList );
 		}
+
+		return $html;
 	}
-	private function assembleCatList( $list, $id, $message ) {
-		$catList = '<div class="mw-portlet" id="' .
-			$id . '"><h3>' .
-				$this->getMsg( $message )->escaped() . '</h3>';
-		$catList .= '<ul>';
+
+	/**
+	 * List of categories
+	 *
+	 * @param array $list
+	 * @param string $id
+	 * @param string $message
+	 *
+	 * @return string html
+	 */
+	protected function getCatList( $list, $id, $message ) {
+		$html = '';
+
+		$categories = [];
+		// Generate portlet content
 		foreach ( $list as $category ) {
 			$title = Title::makeTitleSafe( NS_CATEGORY, $category );
 			if ( !$title ) {
 				continue;
 			}
-			$category = Linker::link( $title, $title->getText() );
-			$catList .=  '<li>' . $category . '</li>';
+			$categories[ htmlspecialchars( $category ) ] = [ 'links' => [ 0 => [
+				'href' => $title->getLinkURL(),
+				'text' => htmlspecialchars( $title->getText() )
+			] ] ];
 		}
-		$catList .= '</ul></div>';
 
-		return $catList;
+		$html .= $this->getPortlet( $id, $categories, $message );
+
+		return $html;
 	}
 
-	/*
-	 * Output interlanguage links block
+	/**
+	 * Interlanguage links block, also with variants
+	 *
+	 * @return string html
 	 */
-	private function outputInterlanguageLinks() {
-		if ( $this->data['language_urls'] ) {
-			$msgObj = $this->getMsg( 'otherlanguages' )->escaped();
-			$content = $this->assemblePortlet( [
-					'id' => 'p-lang',
-					'header' => $msgObj,
-					'generated' => false,
-					'content' => $this->data['language_urls']
-				] );
+	protected function getInterlanguageLinks() {
+		$html = '';
 
-			$this->outputSidebarChunk( 'other-languages', 'timeless-languages', $content );
+		if ( isset( $this->data['variant_urls'] ) && $this->data['variant_urls'] !== false ) {
+			$variants = $this->getPortlet( 'variants', $this->data['variant_urls'], true );
+		} else {
+			$variants = '';
 		}
+		if ( $this->data['language_urls'] ) {
+
+			$html .= $this->getSidebarChunk(
+				'other-languages',
+				'timeless-languages',
+				$variants .
+				$this->getPortlet(
+					'lang',
+					$this->data['language_urls'],
+					'otherlanguages'
+				)
+			);
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Page footer
+	 *
+	 * @return string html
+	 */
+	protected function getFooter( $iconStyle = 'icononly', $linkStyle = 'flat' ) {
+		$validFooterIcons = $this->getFooterIcons( $iconStyle );
+		$validFooterLinks = $this->getFooterLinks( $linkStyle );
+
+		$html = '';
+
+		if ( count( $validFooterIcons ) + count( $validFooterLinks ) > 0 ) {
+			$html .= Html::openElement( 'div', [
+				'id' => 'footer-bottom',
+				'role' => 'contentinfo',
+				'lang' => $this->get( 'userlang' ),
+				'dir' => $this->get( 'dir' )
+			] );
+			$footerEnd = Html::closeElement( 'div' );
+		} else {
+			$footerEnd = '';
+		}
+		foreach ( $validFooterIcons as $blockName => $footerIcons ) {
+			$html .= Html::openElement( 'div', [
+				'id' => 'f-' . Sanitizer::escapeId( $blockName ) . 'ico',
+				'class' => 'footer-icons'
+			] );
+			foreach ( $footerIcons as $icon ) {
+				$html .= $this->getSkin()->makeFooterIcon( $icon );
+			}
+			$html .= Html::closeElement( 'div' );
+		}
+		if ( count( $validFooterLinks ) > 0 ) {
+			$html .= Html::openElement( 'ul', [ 'id' => 'f-list', 'class' => 'footer-places' ] );
+			foreach ( $validFooterLinks as $aLink ) {
+				$html .= Html::rawElement(
+					'li',
+					[ 'id' => Sanitizer::escapeId( $aLink ) ],
+					$this->get( $aLink )
+				);
+			}
+			$html .= Html::closeElement( 'ul' );
+		}
+
+		$html .= $this->clear() . $footerEnd;
+
+		return $html;
+	}
+
+	/**
+	 * BaseTemplate::renderAfterPortlet, but sans immediate pooping
+	 * Allows extensions to hook into known portlets and add stuff to them,
+	 * probably causing hideous explosions in this.
+	 *
+	 * @param string $name
+	 *
+	 * @return string html
+	 */
+	protected function getAfterPortlet( $name ) {
+		$content = '';
+		Hooks::run( 'BaseTemplateAfterPortlet', [ $this, $name, &$content ] );
+
+		if ( $content !== '' ) {
+			return Html::rawElement(
+				'div',
+				[ 'class' => [ 'after-portlet', 'after-portlet-' . $name ] ],
+				$content
+			);
+		}
+
+		return $content;
+	}
+
+	/**
+	 * Core visualClear class
+	 *
+	 * @return string html
+	 */
+	protected function clear() {
+		return Html::element( 'div', [ 'class' => 'visualClear' ] );
 	}
 }
