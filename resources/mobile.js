@@ -6,7 +6,7 @@ $( function() {
 	// Open the various menus
 	$( '#user-tools h2' ).on( 'click', function( e ) {
 		if ( $( window ).width() < 851 ) {
-			$( '#p-personal-inner, #menus-cover' ).fadeToggle( toggleTime );
+			$( '#personal-inner, #menus-cover' ).fadeToggle( toggleTime );
 		}
 	} );
 	$( '#site-navigation h2' ).on( 'click', function( e ) {
@@ -35,7 +35,7 @@ $( function() {
 	// Close menus on click outside
 	$( document ).click( function( e ) {
 		if ( $( e.target ).closest( '#menus-cover' ).length > 0 ) {
-			$( '#p-personal-inner' ).fadeOut( toggleTime );
+			$( '#personal-inner' ).fadeOut( toggleTime );
 			$( '.sidebar-inner' ).fadeOut( toggleTime );
 			$( '#menus-cover' ).fadeOut( toggleTime );
 		}
@@ -44,10 +44,9 @@ $( function() {
 	// Include alternative closing method for ios
 	$( window ).on( 'swiperight', function( e ) {
 		if ( $( window ).width() < 851 ) {
-			$( '#p-personal-inner' ).fadeOut( toggleTime );
+			$( '#personal-inner' ).fadeOut( toggleTime );
 			$( '.sidebar-inner' ).fadeOut( toggleTime );
 			$( '#menus-cover' ).fadeOut( toggleTime );
 		}
 	} );
 } );
-

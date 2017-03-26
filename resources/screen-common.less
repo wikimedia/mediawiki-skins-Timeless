@@ -179,7 +179,7 @@ div.suggestions {
 		list-style: none;
 		padding: 0;
 	}
-	#footer-icons {
+	.footer-icons {
 		float: right;
 		margin: 0 0 0 1em;
 
@@ -187,10 +187,13 @@ div.suggestions {
 			margin: 0 0 1em 0;
 		}
 	}
-}
-#footer-places li {
-	display: inline;
-	padding-right: 1em;
+	.footer-places li {
+		display: inline;
+		padding-right: 1em;
+	}
+	#lastmod {
+		display: block;
+	}
 }
 
 /* Content */
@@ -481,13 +484,13 @@ table.wikitable > * > tr > th {
 
 /* Echo */
 
-#p-personal h2,
-#p-personal-extra,
-#p-personal-extra ul,
-#p-personal-extra li {
+#personal h2,
+#personal-extra,
+#personal-extra ul,
+#personal-extra li {
 	display: inline-block;
 }
-#p-personal-extra {
+#personal-extra {
 	// Position and keep it from randomly overflowing massively for no apparent reason
 	margin: .7em 0 -2em 0;
 
