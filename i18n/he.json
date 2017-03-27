@@ -6,7 +6,7 @@
 		]
 	},
 	"timeless-desc": "עיצוב \"מחוץ לזמן\", מבוסס על אבטיפוס \"חורף\" מאת ברנדון האריס, ועיצובים שונים של קרן ויקימדיה.",
-	"timeless-search-placeholder": "חיפוש בטקסט של כ-{{NUMBEROFPAGES}} דפים",
+	"timeless-search-placeholder": "חיפוש בכ־{{NUMBEROFPAGES}} דפים",
 	"timeless-loggedin": "החשבון שלך",
 	"timeless-anonymous": "אלמוני",
 	"timeless-loggedinas": "נכנסת לחשבון '''$1'''",
