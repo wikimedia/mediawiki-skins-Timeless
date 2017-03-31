@@ -7,7 +7,7 @@
 		]
 	},
 	"timeless-desc": "«Вічне» оформлення, створене за прототипом «Зима» Брендона Гарріса та різноманітними стилями Фонду Вікімедіа.",
-	"timeless-search-placeholder": "Пошук тексту на {{NUMBEROFPAGES}} {{PLURAL:{{NUMBEROFPAGES}}|сторінці|сторінках}}",
+	"timeless-search-placeholder": "Пошук на {{NUMBEROFPAGES}} {{PLURAL:{{NUMBEROFPAGES}}|сторінці|сторінках}}",
 	"timeless-loggedin": "Ваш обліковий запис",
 	"timeless-anonymous": "Анонім",
 	"timeless-loggedinas": "Увійшли як '''$1'''",
