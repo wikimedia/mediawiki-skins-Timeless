@@ -3,9 +3,11 @@
 		"authors": [
 			"Máté",
 			"Wolf Rex",
-			"Dj"
+			"Dj",
+			"Tacsipacsi"
 		]
 	},
+	"timeless-search-placeholder": "Mintegy {{NUMBEROFPAGES}} lap keresése",
 	"timeless-loggedin": "Fiókod",
 	"timeless-anonymous": "Névtelen",
 	"timeless-loggedinas": "Bejelentkezve '''$1''' néven",

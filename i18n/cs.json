@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"DaBler",
-			"LTM3"
+			"LTM3",
+			"Dvorapa"
 		]
 	},
-	"timeless-search-placeholder": "Prohledat text přibližně {{NUMBEROFPAGES}} stránek",
+	"timeless-search-placeholder": "Prohledat přibližně {{NUMBEROFPAGES}} stránek",
 	"timeless-loggedin": "Váš účet",
 	"timeless-anonymous": "Anonym",
 	"timeless-loggedinas": "Přihlášen jako '''$1'''",
