@@ -7,7 +7,7 @@
 class TimelessTemplate extends BaseTemplate {
 
 	/** @var array */
-	private $pileOfTools;
+	protected $pileOfTools;
 
 	/**
 	 * Outputs the entire contents of the page
@@ -27,7 +27,7 @@ class TimelessTemplate extends BaseTemplate {
 				$this->getLogo( 'p-logo-text', 'text' ) .
 				$this->getSearch()
 			) .
-			$this->clear()
+			$this->getClear()
 		);
 		$html .= $this->getHeaderHack();
 
@@ -43,7 +43,7 @@ class TimelessTemplate extends BaseTemplate {
 						'site-tools',
 						'timeless-sitetools',
 						$this->getPortlet(
-							'tbx',
+							'tb',
 							$this->pileOfTools['general'],
 							'timeless-sitetools'
 						)
@@ -79,16 +79,16 @@ class TimelessTemplate extends BaseTemplate {
 								'timeless-pagetools'
 							)
 						) .
-						$this->clear() .
+						$this->getClear() .
 						Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
 							$this->getContentSub() .
 							$this->get( 'bodytext' ) .
-							$this->clear()
+							$this->getClear()
 						)
 					)
 				) .
 				$this->getAfterContent() .
-				$this->clear()
+				$this->getClear()
 			)
 		);
 
@@ -114,22 +114,26 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * A list of navigation links (portlet)
+	 * Generates a block of navigation links with a header
 	 *
 	 * @param string $name
-	 * @param array|string $content array of links or block of text
+	 * @param array|string $content array of links for use with makeListItem, or a block of text
 	 *        Expected array format:
-		[
-			$name => [
-				'links' => [ '0' => [ 'href' => ..., 'single-id' => ..., 'text' => ... ] ],
-				'id' => ...,
-				'active' => ...
-			],
-			...
-		]
+	 *	[
+	 *		$name => [
+	 *			'links' => [ '0' =>
+	 *				[ 'href' => ..., 'single-id' => ..., 'text' => ... ]
+	 *			],
+	 *			'id' => ...,
+	 *			'active' => ...
+	 *		],
+	 *		...
+	 *	]
 	 * @param null|string|array|bool $msg
+	 * @param string $class cssclass for the portal
 	 *
-	 * @return $html
+	 * @return string html
+	 * @since 1.29
 	 */
 	protected function getPortlet( $name, $content, $msg = null ) {
 		if ( $msg === null ) {
@@ -150,13 +154,38 @@ class TimelessTemplate extends BaseTemplate {
 			$msgString = htmlspecialchars( $msg );
 		}
 
+		// HACK: Compatibility with extensions still using SkinTemplateToolboxEnd
+		$hookContents = '';
+		if ( $name == 'tb' ) {
+			if ( isset( $boxes['TOOLBOX'] ) ) {
+				ob_start();
+				// We pass an extra 'true' at the end so extensions using BaseTemplateToolbox
+				// can abort and avoid outputting double toolbox links
+				// Avoid PHP 7.1 warning from passing $this by reference
+				$template = $this;
+				Hooks::run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
+				$hookContents = ob_get_contents();
+				ob_end_clean();
+				if ( !trim( $hookContents ) ) {
+					$hookContents = '';
+				}
+			}
+		}
+		// END hack
+
 		$labelId = Sanitizer::escapeId( "p-$name-label" );
 
 		if ( is_array( $content ) ) {
 			$contentText = Html::openElement( 'ul' );
 			foreach ( $content as $key => $item ) {
-				$contentText .= $this->makeListItem( $key, $item, [ 'text-wrapper' => [ 'tag' => 'span' ] ] );
+				$contentText .= $this->makeListItem(
+					$key,
+					$item,
+					[ 'text-wrapper' => [ 'tag' => 'span' ] ]
+				);
 			}
+			// Add in SkinTemplateToolboxEnd, if any
+			$contentText .= $hookContents;
 			$contentText .= Html::closeElement( 'ul' );
 		} else {
 			$contentText = $content;
@@ -176,9 +205,9 @@ class TimelessTemplate extends BaseTemplate {
 				],
 				$msgString
 			) .
-			Html::rawElement( 'div', [ 'class' => 'p-body' ],
+			Html::rawElement( 'div', [ 'class' => 'mw-portlet-body' ],
 				$contentText .
-				$this->getAfterPortlet( $name )
+				$this->renderAfterPortlet( $name )
 			)
 		);
 
@@ -391,7 +420,7 @@ class TimelessTemplate extends BaseTemplate {
 	/**
 	 * Personal/user links portlet for header
 	 *
-	 * @return array [ html, class], where class is an extra class to apply to surrounding objects
+	 * @return array [ html, class ], where class is an extra class to apply to surrounding objects
 	 * (for width adjustments)
 	 */
 	protected function getUserLinks() {
@@ -592,7 +621,8 @@ class TimelessTemplate extends BaseTemplate {
 			];
 		}
 
-		// This is really dumb, and you're an idiot for doing it this way
+		// This is really dumb, and you're an idiot for doing it this way.
+		// Obviously if you're not the idiot who did this, I don't mean you.
 		foreach ( $pileOfEditTools as $navKey => $navBlock ) {
 			$currentSet = null;
 
@@ -807,87 +837,5 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		return $html;
-	}
-
-	/**
-	 * Page footer
-	 *
-	 * @return string html
-	 */
-	protected function getFooter( $iconStyle = 'icononly', $linkStyle = 'flat' ) {
-		$validFooterIcons = $this->getFooterIcons( $iconStyle );
-		$validFooterLinks = $this->getFooterLinks( $linkStyle );
-
-		$html = '';
-
-		if ( count( $validFooterIcons ) + count( $validFooterLinks ) > 0 ) {
-			$html .= Html::openElement( 'div', [
-				'id' => 'footer-bottom',
-				'role' => 'contentinfo',
-				'lang' => $this->get( 'userlang' ),
-				'dir' => $this->get( 'dir' )
-			] );
-			$footerEnd = Html::closeElement( 'div' );
-		} else {
-			$footerEnd = '';
-		}
-		foreach ( $validFooterIcons as $blockName => $footerIcons ) {
-			$html .= Html::openElement( 'div', [
-				'id' => 'f-' . Sanitizer::escapeId( $blockName ) . 'ico',
-				'class' => 'footer-icons'
-			] );
-			foreach ( $footerIcons as $icon ) {
-				$html .= $this->getSkin()->makeFooterIcon( $icon );
-			}
-			$html .= Html::closeElement( 'div' );
-		}
-		if ( count( $validFooterLinks ) > 0 ) {
-			$html .= Html::openElement( 'ul', [ 'id' => 'f-list', 'class' => 'footer-places' ] );
-			foreach ( $validFooterLinks as $aLink ) {
-				$html .= Html::rawElement(
-					'li',
-					[ 'id' => Sanitizer::escapeId( $aLink ) ],
-					$this->get( $aLink )
-				);
-			}
-			$html .= Html::closeElement( 'ul' );
-		}
-
-		$html .= $this->clear() . $footerEnd;
-
-		return $html;
-	}
-
-	/**
-	 * BaseTemplate::renderAfterPortlet, but sans immediate pooping
-	 * Allows extensions to hook into known portlets and add stuff to them,
-	 * probably causing hideous explosions in this.
-	 *
-	 * @param string $name
-	 *
-	 * @return string html
-	 */
-	protected function getAfterPortlet( $name ) {
-		$content = '';
-		Hooks::run( 'BaseTemplateAfterPortlet', [ $this, $name, &$content ] );
-
-		if ( $content !== '' ) {
-			return Html::rawElement(
-				'div',
-				[ 'class' => [ 'after-portlet', 'after-portlet-' . $name ] ],
-				$content
-			);
-		}
-
-		return $content;
-	}
-
-	/**
-	 * Core visualClear class
-	 *
-	 * @return string html
-	 */
-	protected function clear() {
-		return Html::element( 'div', [ 'class' => 'visualClear' ] );
 	}
 }
