@@ -1,6 +1,6 @@
 {
 	"name": "Timeless",
-	"version": "0.6",
+	"version": "0.8.1",
 	"author": "Isarra Yos",
 	"url": "https://www.mediawiki.org/wiki/Skin:Timeless",
 	"descriptionmsg": "timeless-desc",
@@ -47,7 +47,8 @@
 				"resources/print.css": {
 					"media": "print"
 				}
-			}
+			},
+			"@NOTE": "Remember to also update variables.less if you change the width cutoffs here. screen-misc.less and mobile.js may also need updating."
 		},
 		"skins.timeless.misc": {
 			"position": "top",

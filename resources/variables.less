@@ -42,6 +42,7 @@
 @fonts-secondary: 'Linux Libertine', 'Times New Roman', serif;
 // Based on information on https://wiki.archlinux.org/index.php/Metric-compatible_fonts
 @fonts-monospace: 'Consolas', 'Courier', 'Nimbus Mono', 'Liberation Mono', 'Courier New', monospace;
+
 @border: .2em;
 @radius: .2em;
 
@@ -49,11 +50,19 @@
 
 // Widths
 
+// Remember to also update skin.json (and possibly mobile.js) if you change these
+// These are all max widths; get the min by subtrcting 1px from the previous thing.
+@mobile-width: 850px;
+@desktop-small-width: 1099px;
+@desktop-mid-width: 1339px;
+
+// The max-width for the content
+@content-width: 100em;
+
+@content-padding: 2em;
+
 @column-left-size: 14em;
 @column-right-size: 16em;
-
-@content-width: 100em;
-@content-padding: 2em;
 
 @fixed-header-height: 3.125em;
 
