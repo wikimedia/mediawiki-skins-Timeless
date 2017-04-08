@@ -130,7 +130,6 @@ class TimelessTemplate extends BaseTemplate {
 	 *		...
 	 *	]
 	 * @param null|string|array|bool $msg
-	 * @param string $class cssclass for the portal
 	 *
 	 * @return string html
 	 * @since 1.29
@@ -800,7 +799,7 @@ class TimelessTemplate extends BaseTemplate {
 			}
 			$categories[ htmlspecialchars( $category ) ] = [ 'links' => [ 0 => [
 				'href' => $title->getLinkURL(),
-				'text' => htmlspecialchars( $title->getText() )
+				'text' => $title->getText()
 			] ] ];
 		}
 
