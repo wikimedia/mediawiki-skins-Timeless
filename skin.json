@@ -74,6 +74,12 @@
 		"localBasePath": "",
 		"remoteSkinPath": "Timeless"
 	},
+	"ResourceModuleSkinStyles": {
+		"timeless": {
+			"+ext.visualEditor.core": "resources/extensions/VisualEditor.core.less",
+			"+ext.visualEditor.desktopArticleTarget.noscript": "resources/extensions/VisualEditor.article.less"
+		}
+	},
 	"AutoloadClasses": {
 		"SkinTimeless": "Timeless.skin.php",
 		"TimelessTemplate": "TimelessTemplate.php"
