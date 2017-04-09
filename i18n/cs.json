@@ -9,7 +9,7 @@
 	"timeless-search-placeholder": "Prohledat přibližně {{NUMBEROFPAGES}} stránek",
 	"timeless-loggedin": "Váš účet",
 	"timeless-anonymous": "Anonym",
-	"timeless-loggedinas": "Přihlášen jako '''$1'''",
+	"timeless-loggedinas": "{{GENDER:$1|Přihlášen|Přihlášena}} jako '''$1'''",
 	"timeless-notloggedin": "Nepřihlášen(a)",
 	"timeless-userpage": "Stránka {{GENDER:$1|uživatele|uživatelky}}",
 	"timeless-talkpage": "Diskuze {{GENDER:$1|uživatele|uživatelky}}",
