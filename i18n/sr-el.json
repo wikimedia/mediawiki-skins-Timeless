@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
+	"timeless-search-placeholder": "Pretraži otprilike {{NUMBEROFPAGES}} {{PLURAL:{{NUMBEROFPAGES}}|stranicu|stranice|stranica}}",
 	"timeless-loggedinas": "Prijavljeni ste kao '''$1'''",
 	"timeless-notloggedin": "Niste prijavljeni",
 	"timeless-more": "Više",
