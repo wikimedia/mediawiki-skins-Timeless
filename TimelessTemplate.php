@@ -206,7 +206,7 @@ class TimelessTemplate extends BaseTemplate {
 			) .
 			Html::rawElement( 'div', [ 'class' => 'mw-portlet-body' ],
 				$contentText .
-				$this->renderAfterPortlet( $name )
+				$this->getAfterPortlet( $name )
 			)
 		);
 
