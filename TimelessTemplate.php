@@ -612,7 +612,7 @@ class TimelessTemplate extends BaseTemplate {
 		];
 
 		// Goes in the page-primary in mobile, doesn't appear otherwise
-		if ( $this->data['language_urls'] ) {
+		if ( $this->data['language_urls'] !== false ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
 				'id' => 'ca-languages',
@@ -821,7 +821,7 @@ class TimelessTemplate extends BaseTemplate {
 		} else {
 			$variants = '';
 		}
-		if ( $this->data['language_urls'] ) {
+		if ( $this->data['language_urls'] !== false ) {
 
 			$html .= $this->getSidebarChunk(
 				'other-languages',
@@ -829,7 +829,7 @@ class TimelessTemplate extends BaseTemplate {
 				$variants .
 				$this->getPortlet(
 					'lang',
-					$this->data['language_urls'],
+					$this->data['language_urls'] ?: [],
 					'otherlanguages'
 				)
 			);
