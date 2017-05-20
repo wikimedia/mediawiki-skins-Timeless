@@ -2,13 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Maroen1990",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Mido"
 		]
 	},
+	"timeless-search-placeholder": "ابحث في حوالي {{NUMBEROFPAGES}} صفحة",
 	"timeless-loggedin": "حساب المستخدم",
 	"timeless-anonymous": "مجهول",
 	"timeless-loggedinas": "الدخول مسجل باسم '''$1'''",
 	"timeless-notloggedin": "غير مسجل الدخول",
+	"timeless-userpage": "صفحة {{GENDER:$1|المستخدم|المستخدمة}}",
+	"timeless-talkpage": "نقاش {{GENDER:$1|المستخدم|المستخدمة}}",
 	"timeless-pagelog": "سجلات الصفحة",
 	"timeless-more": "المزيد",
 	"timeless-sitetools": "ادوات ويكي",
