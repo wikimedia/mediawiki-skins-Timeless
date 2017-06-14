@@ -1,8 +1,8 @@
-@import "../variables.less";
+@import '../variables.less';
 
 @media screen {
 	.ve-ui-toolbar {
-		margin: -.8em -2em 0;
+		margin: -0.8em -2em 0;
 	}
 
 	// Still need a way to make it show up right away (instead of initially disappearin under the page header)
@@ -21,12 +21,13 @@
 		padding-right: @content-padding;
 	}
 
-	@media (min-width: @desktop-small-floor) and (max-width: @desktop-small-width) {
+	@media ( min-width: @desktop-small-floor ) and ( max-width: @desktop-small-width ) {
 		.ve-ui-toolbar {
-			margin-top: -.5em;
+			margin-top: -0.5em;
 		}
 	}
-	@media (max-width: @mobile-width) {
+
+	@media ( max-width: @mobile-width ) {
 		.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
 			top: 0;
 		}

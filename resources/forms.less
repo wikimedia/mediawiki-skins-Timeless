@@ -1,4 +1,4 @@
-@import "variables.less";
+@import 'variables.less';
 
 /*
  * PREFERENCES AND FIELDSET STUFF
@@ -25,7 +25,7 @@
 	min-height: 400px;
 
 	.prefsection {
-		border: none;
+		border: 0;
 		padding: 0;
 		margin: 0;
 		box-shadow: none;
@@ -40,10 +40,10 @@
 	.mw-email-not-authenticated .mw-input,
 	.mw-email-none .mw-input {
 		display: block;
-		padding: .25em .5em;
+		padding: 0.25em 0.5em;
 	}
-	input[type="checkbox"],
-	input[type="radio"] {
+	input[type='checkbox'],
+	input[type='radio'] {
 		margin-left: 0;
 	}
 }
@@ -63,21 +63,21 @@ fieldset {
 	background: @background;
 
 	legend {
-		padding: .5em 1.25em;
+		padding: 0.5em 1.25em;
 		background: @background;
 		font-weight: bold;
 		color: @blue-dark;
 	}
 }
 label {
-	padding-left: .5em;
+	padding-left: 0.5em;
 }
 .mw-input label {
 	padding: 0;
 	margin-right: 1em;
 }
 .mw-label {
-	padding-right: .5em;
+	padding-right: 0.5em;
 }
 .mw-submit {
 	padding-top: 2em;
@@ -97,13 +97,13 @@ label {
 
 /* pile of bad hacks to try to catch all the different ones */
 #searchInput,
-input[name="target"],
-input[name="user"],
-input[name="mime"],
-input[size$="0"],
-input[type="text"],
-input[type="checkbox"],
-input[type="radio"],
+input[name='target'],
+input[name='user'],
+input[name='mime'],
+input[size$='0'],
+input[type='text'],
+input[type='checkbox'],
+input[type='radio'],
 input#wpTemplateSandboxPage,
 input.mw-summary,
 input.mw-input,
@@ -112,36 +112,36 @@ textarea,
 .mw-ui-input-inline,
 .mw-ui-input {
 	box-sizing: border-box;
-	padding: .25em .35em;
+	padding: 0.25em 0.35em;
 	border: solid 1px @grey;
-	margin: .5em 0;
-	box-shadow: inset 0 1px 1px 1px rgba(0, 0, 0, 0.05);
+	margin: 0.5em 0;
+	box-shadow: inset 0 1px 1px 1px rgba( 0, 0, 0, 0.05 );
 	font-size: 1em;
 	min-height: 30px;
 	font-family: @fonts;
 }
 select {
-	padding: .25em;
-	margin: .5em 0;
+	padding: 0.25em;
+	margin: 0.5em 0;
 }
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
 	margin-left: 1em;
 	min-height: 0;
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
 	border-radius: 2px;
 }
-input[type="radio"] {
+input[type='radio'] {
 	border-radius: 8px;
 }
 .mw-ui-button.mw-ui-progressive,
 .mw-ui-button.mw-ui-progressive:active,
 .mw-ui-button.mw-ui-progressive.mw-ui-checked,
-input[type="submit"],
-input[type="button"],
+input[type='submit'],
+input[type='button'],
 button {
-	padding: .25em 1em .1em 1em;
+	padding: 0.25em 1em 0.1em 1em;
 	border: solid 1px @grey;
 	border-bottom-width: @border;
 	text-shadow: 0 -1px 0 @grey;
@@ -150,7 +150,7 @@ button {
 	background: @background;
 	color: @text;
 	min-height: 30px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.05 );
 
 	&:active {
 		background: @grey-bright;
@@ -191,20 +191,19 @@ div.editOptions {
 	fieldset,
 	legend {
 		background: inherit;
-		border: none;
+		border: 0;
 		box-shadow: none;
 		padding: 0;
 		margin-top: 2em;
 	}
 }
 
-
 /* Extension:TemplateSandbox stuff */
 .mw-templatesandbox-page label {
 	padding: 0;
 }
 #wpTemplateSandboxPreview {
-	margin-left: .5em;
+	margin-left: 0.5em;
 }
 
 /* Recent changes and watchlist options */
@@ -222,7 +221,7 @@ div.editOptions {
 	label {
 		padding: 0 1em 0 0;
 	}
-	input[type="submit"] {
+	input[type='submit'] {
 		margin: 0 0 0 4em;
 	}
 }
@@ -230,15 +229,15 @@ div.editOptions {
 /* Related changes hacks */
 .mw-special-Recentchangeslinked {
 	.rcoptions {
-		input[type="submit"] {
+		input[type='submit'] {
 			float: right;
 			margin: 0 0 0 4em;
 		}
 		td.mw-label.mw-target-label {
 			vertical-align: top;
-			padding-top: .75em;
+			padding-top: 0.75em;
 		}
-		input[name="target"] {
+		input[name='target'] {
 			float: left;
 		}
 	}
@@ -246,8 +245,8 @@ div.editOptions {
 		clear: left;
 		float: left;
 	}
-	label[for="showlinkedto"] {
-		padding: .4em;
+	label[for='showlinkedto'] {
+		padding: 0.4em;
 		float: left;
 	}
 }

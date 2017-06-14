@@ -1,4 +1,4 @@
-@import "../variables.less";
+@import '../variables.less';
 
 /* Handle and position Echo icons */
 
@@ -12,7 +12,7 @@
 	}
 	#personal-extra {
 		// Position and keep it from randomly overflowing massively for no apparent reason
-		margin: .7em 0 -2em 0;
+		margin: 0.7em 0 -2em 0;
 
 		ul {
 			list-style: none;
@@ -20,10 +20,11 @@
 			padding: 0;
 		}
 		li {
-			margin: 0 .75em 0 0;
+			margin: 0 0.75em 0 0;
 		}
 	}
-	@media (min-width: @desktop-small-floor) {
+
+	@media ( min-width: @desktop-small-floor ) {
 		#personal-extra {
 			float: left;
 			margin-left: -4.5em;
@@ -41,7 +42,7 @@
 		}
 	}
 
-	@media (min-width: @desktop-small-floor) and (max-width: @desktop-small-width) {
+	@media ( min-width: @desktop-small-floor ) and ( max-width: @desktop-small-width ) {
 		.extension-icons #p-search {
 			margin-right: 11em;
 		}
@@ -50,7 +51,7 @@
 		}
 	}
 
-	@media (min-width: @desktop-mid-floor) and (max-width: @desktop-mid-width) {
+	@media ( min-width: @desktop-mid-floor ) and ( max-width: @desktop-mid-width ) {
 		.extension-icons {
 			#user-tools {
 				width: auto;
@@ -61,13 +62,13 @@
 		}
 	}
 
-	@media(max-width: @mobile-width) {
+	@media ( max-width: @mobile-width ) {
 		.mw-echo-ui-notificationBadgeButtonPopupWidget {
 			z-index: 2;
 		}
 		#personal-extra {
 			position: absolute;
-			top: .9em;
+			top: 0.9em;
 			right: 11.75em;
 
 			li {

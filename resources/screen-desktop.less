@@ -1,4 +1,4 @@
-@import "variables.less";
+@import 'variables.less';
 
 // Override menu display from mobile
 // This also requires !importants where they hover and stuff
@@ -13,7 +13,7 @@
 	margin: auto;
 }
 #mw-content-container {
-	.background-image-svg('images/cat-grey.svg', 'images/cat-grey.png');
+	.background-image-svg( 'images/cat-grey.svg', 'images/cat-grey.png' );
 	background-repeat: no-repeat;
 	background-position: center 15em;
 }
@@ -48,7 +48,7 @@
 	position: fixed;
 	z-index: 97;
 	top: @fixed-header-height;
-	box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 3px 3px 2px rgba( 0, 0, 0, 0.075 ), 0 0 2px rgba( 0, 0, 0, 0.2 );
 }
 #mw-header-nav-hack {
 	display: none;
@@ -56,7 +56,7 @@
 
 /* Add offset to make anchor links work with the fixed header */
 :target:before {
-	content: "";
+	content: '';
 	display: block;
 	height: @fixed-header-height;
 	margin: -@fixed-header-height 0 0;
@@ -82,11 +82,11 @@
 	}
 	h2 {
 		margin: 0;
-		padding: .7em 0 0 25px;
+		padding: 0.7em 0 0 25px;
 		font-family: @fonts-secondary;
 		font-weight: normal;
 		font-size: 1.1em;
-		.background-image-svg('images/user-grey.svg', 'images/user-grey.png');
+		.background-image-svg( 'images/user-grey.svg', 'images/user-grey.png' );
 		background-position: 0 7px;
 		background-repeat: no-repeat;
 

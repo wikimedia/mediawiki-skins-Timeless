@@ -1,4 +1,4 @@
-@import "variables.less";
+@import 'variables.less';
 
 /* Page layout */
 
@@ -32,7 +32,7 @@ div {
 }
 #mw-footer-container {
 	border-top: solid 1px @background-dark2;
-	box-shadow: inset 0 7px 2px -4px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 7px 2px -4px rgba( 0, 0, 0, 0.1 );
 	color: @text-inverse;
 
 	a {
@@ -54,7 +54,7 @@ div {
 	height: 11em;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	margin: .75em auto 0;
+	margin: 0.75em auto 0;
 }
 #p-logo-text {
 	width: @column-left-size;
@@ -62,7 +62,7 @@ div {
 	line-height: 1;
 
 	a {
-		padding: .2em 1em;
+		padding: 0.2em 1em;
 		color: @text;
 		font-family: @fonts-secondary;
 		font-variant: small-caps;
@@ -72,8 +72,8 @@ div {
 		/* 13+ character names */
 		&.long {
 			font-size: 1.45em;
-			padding: 0 .75em 0 0;
-			line-height: .8;
+			padding: 0 0.75em 0 0;
+			line-height: 0.8;
 		}
 	}
 }
@@ -81,16 +81,16 @@ div {
 /* Search */
 
 #simpleSearch {
-	box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 4px 0 rgba( 0, 0, 0, 0.05 );
 	background: @background;
 	position: relative;
 	border: solid 1px @grey;
 }
 #searchInput {
-	border: none;
+	border: 0;
 	margin: 0;
 	height: 2.1em;
-	padding: .4em 4.5em .2em 2em;
+	padding: 0.4em 4.5em 0.2em 2em;
 	box-shadow: none;
 	background: transparent;
 	width: 100%;
@@ -104,20 +104,20 @@ div {
 	width: 2.5em;
 	height: 2.5em;
 	.icon;
-	.background-image-svg('images/search-ltr.svg', 'images/search-ltr.png');
+	.background-image-svg( 'images/search-ltr.svg', 'images/search-ltr.png' );
 	background-position: 50% 40%;
 	box-shadow: none;
 }
 
 .suggestions {
 	background: @background;
-	box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 2px 2px 1px rgba( 0, 0, 0, 0.05 );
 
 	.suggestions-special {
 		background-color: @background;
 		border: 1px solid @grey;
 		border-bottom-width: @border;
-		padding: .75em 2em;
+		padding: 0.75em 2em;
 	}
 	.suggestions-results {
 		background-color: @background;
@@ -126,7 +126,7 @@ div {
 	}
 	.suggestions-result {
 		color: @text;
-		padding: .65em 2em .35em;
+		padding: 0.65em 2em 0.35em;
 	}
 	.suggestions-result-current {
 		background-color: @blue;
@@ -141,14 +141,14 @@ div.suggestions {
 /* Dropdown stuff */
 
 .pokey,
-.pokey::after {
+.pokey:after {
 	border-bottom: 10px solid @grey-bright;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	content: "";
+	content: '';
 	height: 0;
 	position: absolute;
-	transform: rotate(360deg); // to force some smoothing in annoying browsers
+	transform: rotate( 360deg ); // to force some smoothing in annoying browsers
 	width: 0;
 	z-index: 4;
 }
@@ -157,8 +157,8 @@ div.suggestions {
 	right: 1px;
 	display: none;
 }
-.pokey::after {
-	border-bottom-color: #FFFFFF;
+.pokey:after {
+	border-bottom-color: #fff;
 	right: -10px;
 	top: 2px;
 }
@@ -170,7 +170,7 @@ div.suggestions {
 /* Footer */
 
 #mw-footer {
-	padding-top: .5em;
+	padding-top: 0.5em;
 	padding-bottom: 1em;
 
 	ul,
@@ -211,7 +211,7 @@ div.suggestions {
 		padding: 0;
 	}
 	li {
-		margin: .25em 0 1em;
+		margin: 0.25em 0 1em;
 		border-bottom: solid 3px @background;
 
 		&:hover {
@@ -243,11 +243,11 @@ div.suggestions {
 
 #ca-watch a {
 	.ca-icon();
-	.background-image-svg('images/star.svg', 'images/star.png');
+	.background-image-svg( 'images/star.svg', 'images/star.png' );
 }
 #ca-unwatch a {
 	.ca-icon();
-	.background-image-svg('images/star-filled.svg', 'images/star-filled.png');
+	.background-image-svg( 'images/star-filled.svg', 'images/star-filled.png' );
 }
 
 /* Misc */
@@ -275,11 +275,11 @@ a.new,
 	font-family: @fonts;
 
 	a {
-		.background-image-svg('images/pencil-grey.svg', 'images/pencil-grey.png');
+		.background-image-svg( 'images/pencil-grey.svg', 'images/pencil-grey.png' );
 		background-repeat: no-repeat;
 		background-position: 0 0;
 		display: inline-block;
-		padding: .5em 0 .25em 1.75em;
+		padding: 0.5em 0 0.25em 1.75em;
 	}
 }
 .mw-editsection-bracket {
@@ -290,23 +290,30 @@ a.new,
 }
 .mw-indicators {
 	float: right;
-	margin: .75em 0 0 1em;
+	margin: 0.75em 0 0 1em;
 }
 #mw-content {
-	h1, h2, h3, h4, h5, h6, dt {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	dt {
 		font-weight: normal;
 		font-family: @fonts-secondary;
 		line-height: 1.25;
-		margin: 1.5em 0 .5em;
+		margin: 1.5em 0 0.5em;
 	}
 
-	h1, h2 {
+	h1,
+	h2 {
 		border-bottom: solid 2px @blue;
 
 	}
 
 	h1.firstHeading {
-		margin: .25em 0 .5em;
+		margin: 0.25em 0 0.5em;
 		border-bottom: solid 4px @red;
 	}
 
@@ -343,7 +350,7 @@ hr {
 	border-width: 1px;
 	border-color: @grey;
 	border-style: solid none solid none;
-	margin: .5em 0;
+	margin: 0.5em 0;
 }
 
 pre {
@@ -353,7 +360,7 @@ pre {
 }
 
 p {
-	margin: .9em 0 .8em;
+	margin: 0.9em 0 0.8em;
 }
 
 .center,
@@ -364,23 +371,23 @@ p {
 
 /* Thumbnails */
 .tright {
-	margin: 0 0 .5em .5em;
+	margin: 0 0 0.5em 0.5em;
 	padding: 0 0 1em 1.5em;
 	background: #fff;
 }
 .tleft {
-	margin: 0 .5em .5em 0;
+	margin: 0 0.5em 0.5em 0;
 	padding: 0 1.5em 1em 0;
 	background: #fff;
 
 }
 .thumbinner {
 	.box;
-	padding: .75em;
+	padding: 0.75em;
 }
 .thumbcaption {
 	font-size: 95%;
-	padding: .5em 1em;
+	padding: 0.5em 1em;
 }
 .thumbinner img{
 	border: solid 1px @grey-bright;
@@ -392,16 +399,18 @@ p {
 
 /* Tables of contents */
 ul#filetoc,
-#toc, .toc, .mw-warning {
+#toc,
+.toc,
+.mw-warning {
 	display: inline-block;
 	.box;
 	padding: 1.25em 1.75em;
-	margin: 1em 0 ;
+	margin: 1em 0;
 	min-width: 15em;
 }
 ul#filetoc {
 	display: block;
-	border: none;
+	border: 0;
 }
 #toc ul,
 .toc ul {
@@ -419,21 +428,21 @@ ul#filetoc {
 	color: @background3;
 }
 #toc li:last-child {
-	margin-bottom: .5em;
+	margin-bottom: 0.5em;
 }
 .toclevel-1 {
-	margin-bottom: .25em;
+	margin-bottom: 0.25em;
 }
 .mw-changeslist-legend,
 #mw-content .mw-search-profile-tabs,
 #mw-content fieldset#mw-searchoptions,
 table.wikitable {
-	border: none;
+	border: 0;
 	color: @text;
 	.box;
 }
 #mw-content .mw-search-profile-tabs {
-	padding: .5em;
+	padding: 0.5em;
 }
 
 table.wikitable > tr > th,
@@ -446,7 +455,7 @@ table.wikitable > * > tr > td {
 
 table.wikitable > tr > th,
 table.wikitable > * > tr > th {
-	border: none;
+	border: 0;
 }
 
 /* Color bars */

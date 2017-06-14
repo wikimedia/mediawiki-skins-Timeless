@@ -1,4 +1,4 @@
-@import "mediawiki.mixins";
+@import 'mediawiki.mixins';
 
 // Colours
 
@@ -33,7 +33,6 @@
 @link: @blue;
 @link-red: @red;
 
-
 // Flair
 
 // Fonts are chosen for consistent metrics, not necessarily overall prettiness.
@@ -43,10 +42,10 @@
 // Based on information on https://wiki.archlinux.org/index.php/Metric-compatible_fonts
 @fonts-monospace: 'Consolas', 'Courier', 'Nimbus Mono', 'Liberation Mono', 'Courier New', monospace;
 
-@border: .2em;
-@radius: .2em;
+@border: 0.2em;
+@radius: 0.2em;
 
-@font-size: .95em;
+@font-size: 0.95em;
 
 // Widths
 
@@ -69,8 +68,7 @@
 @column-right-size: 16em;
 
 @fixed-header-height: 3.125em;
-@color-height: .35em;
-
+@color-height: 0.35em;
 
 // Miscellaneous functions
 
@@ -78,13 +76,13 @@
 .hidden() {
 	position: absolute;
 	top: -9999px;
-	left: 0px;
+	left: 0;
 }
 
 // Icons - hides labels, but keep them accessible for screen-readers
 .icon() {
 	text-indent: -99999px;
-	border: none;
+	border: 0;
 	background-color: transparent;
 	background-repeat: no-repeat;
 }
@@ -94,7 +92,7 @@
 	border: solid @grey-bright;
 	border-width: 1px 1px @border;
 	padding: 1.25em 1.75em;
-	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.02);
+	box-shadow: 0 1px 2px 1px rgba( 0, 0, 0, 0.02 );
 	overflow: auto;
 }
 
@@ -105,7 +103,7 @@
 	width: 20px;
 	height: 20px;
 	box-sizing: border-box;
-	margin-bottom: -.5em;
+	margin-bottom: -0.5em;
 }
 
 // Navigation column blocks
@@ -125,15 +123,15 @@
 	h3 {
 		font-weight: normal;
 		font-size: 1em;
-		margin: .25em 0 .75em 0;
-		padding-bottom: .15em;
+		margin: 0.25em 0 0.75em 0;
+		padding-bottom: 0.15em;
 		border-bottom: solid 2px @grey;
 	}
 	ul {
 		margin-bottom: 2em;
 	}
 	li {
-		margin: 0 0 .35em;
+		margin: 0 0 0.35em;
 	}
 }
 
@@ -171,7 +169,7 @@
 		content: '';
 		width: 22px;
 		height: 12px;
-		.background-image-svg('images/arrow-down-grey.svg', 'images/arrow-down-grey.png');
+		.background-image-svg( 'images/arrow-down-grey.svg', 'images/arrow-down-grey.png' );
 		background-position: center center;
 		background-repeat: no-repeat;
 	}
@@ -179,7 +177,7 @@
 .dropdown-menu( @direction: right ) {
 	.nav-block();
 	background: @background;
-	box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 2px 3px 1px rgba( 0, 0, 0, 0.05 );
 	position: absolute;
 	padding: 20px 2em 0;
 	margin: 0;
@@ -199,13 +197,13 @@
 
 	#catlinks {
 		margin: 0 @content-padding;
-		padding: 1.5em 0 .5em;
+		padding: 1.5em 0 0.5em;
 
 		li {
-			border-left: none;
+			border-left: 0;
 		}
 		div {
-			margin: 0 0 .35em;
+			margin: 0 0 0.35em;
 		}
 	}
 }
