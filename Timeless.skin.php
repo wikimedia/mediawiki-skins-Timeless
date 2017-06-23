@@ -9,7 +9,7 @@ class SkinTimeless extends SkinTemplate {
 		$template = 'TimelessTemplate', $useHeadElement = true;
 
 	/**
-	 * @param $out OutputPage
+	 * @param OutputPage $out
 	 */
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
@@ -33,7 +33,7 @@ class SkinTimeless extends SkinTemplate {
 	/**
 	 * Add CSS via ResourceLoader
 	 *
-	 * @param $out OutputPage
+	 * @param OutputPage $out
 	 */
 	function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );

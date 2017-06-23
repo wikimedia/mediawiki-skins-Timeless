@@ -338,9 +338,12 @@ class TimelessTemplate extends BaseTemplate {
 		$sidebar = $this->getSidebar();
 		$html = '';
 
-		$sidebar['SEARCH'] = false; // Already hardcoded into header
-		$sidebar['TOOLBOX'] = false; // Parsed as part of pageTools
-		$sidebar['LANGUAGES'] = false; // Forcibly removed to separate chunk
+		// Already hardcoded into header
+		$sidebar['SEARCH'] = false;
+		// Parsed as part of pageTools
+		$sidebar['TOOLBOX'] = false;
+		// Forcibly removed to separate chunk
+		$sidebar['LANGUAGES'] = false;
 
 		foreach ( $sidebar as $name => $content ) {
 			if ( $content === false ) {
@@ -647,7 +650,8 @@ class TimelessTemplate extends BaseTemplate {
 			] ) ) {
 				$currentSet = 'page-secondary';
 			} else {
-				$currentSet = 'page-primary'; // Catch random extension ones?
+				// Catch random extension ones?
+				$currentSet = 'page-primary';
 			}
 			$sortedPileOfTools[$currentSet][$navKey] = $navBlock;
 		}
@@ -822,7 +826,6 @@ class TimelessTemplate extends BaseTemplate {
 			$variants = '';
 		}
 		if ( $this->data['language_urls'] !== false ) {
-
 			$html .= $this->getSidebarChunk(
 				'other-languages',
 				'timeless-languages',
