@@ -1,0 +1,12 @@
+{
+	"extends": "wikimedia",
+	"env": {
+		"browser": true,
+		"jquery": true
+	},
+	"rules": {
+		"no-unused-vars": 0,
+		"quotes": 0,
+		"space-before-function-paren": 0
+	}
+}
