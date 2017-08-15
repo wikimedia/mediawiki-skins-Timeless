@@ -700,7 +700,7 @@ class TimelessTemplate extends BaseTemplate {
 	protected function getCategories() {
 		global $wgContLang;
 
-		$skin =  $this->getSkin();
+		$skin = $this->getSkin();
 		$title = $skin->getTitle();
 		$catList = false;
 		$html = '';
