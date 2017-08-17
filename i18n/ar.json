@@ -3,9 +3,11 @@
 		"authors": [
 			"Maroen1990",
 			"محمد أحمد عبد الفتاح",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
+	"timeless-desc": "برنامج مساعد خالد صُمِّم بعد النموذج المبدئي الشتوي الذي صممه براندون هاريس، وأساليب متنوعة من قبل مؤسسة ويكيميديا",
 	"timeless-search-placeholder": "ابحث في حوالي {{NUMBEROFPAGES}} صفحة",
 	"timeless-loggedin": "حساب المستخدم",
 	"timeless-anonymous": "مجهول",
