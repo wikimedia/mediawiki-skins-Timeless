@@ -3,9 +3,11 @@
 		"authors": [
 			"DaBler",
 			"LTM3",
-			"Dvorapa"
+			"Dvorapa",
+			"Mormegil"
 		]
 	},
+	"timeless-desc": "Nadčasový vzhled navržený podle prototypu Winter, vytvořeného Brandonem Harrisem, a dalších vzhledů vytvořených nadací Wikimedia",
 	"timeless-search-placeholder": "Prohledat přibližně {{NUMBEROFPAGES}} stránek",
 	"timeless-loggedin": "Váš účet",
 	"timeless-anonymous": "Anonym",
