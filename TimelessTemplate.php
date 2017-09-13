@@ -637,7 +637,8 @@ class TimelessTemplate extends BaseTemplate {
 				'edit',
 				'view',
 				'history',
-				'addsection'
+				'addsection',
+				'viewsource'
 			] ) ) {
 				$currentSet = 'page-primary';
 			} elseif ( in_array( $navKey, [
@@ -645,7 +646,6 @@ class TimelessTemplate extends BaseTemplate {
 				'rename',
 				'protect',
 				'unprotect',
-				'viewsource',
 				'move'
 			] ) ) {
 				$currentSet = 'page-secondary';
