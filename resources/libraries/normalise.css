@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.mwfork.2 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.mwfork.3 | MIT License | git.io/normalize */
 
 /**
  * Prevent iOS text size adjust after orientation change, without disabling
@@ -207,9 +207,11 @@ hr {
 
 /**
  * Address odd 'em'-unit font size rendering in all browsers.
+ * Added tt per https://phabricator.wikimedia.org/T175709
  */
 
 code,
+tt,
 kbd,
 pre,
 samp {
