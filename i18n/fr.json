@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Framawiki"
 		]
 	},
 	"timeless-desc": "Un habillage intemporel conçu d’après le prototype Winter par Brandon Harris, et divers styles de la Fondation Wikimédia.",
@@ -14,7 +15,7 @@
 	"timeless-notloggedin": "Non connecté",
 	"timeless-userpage": "Page {{GENDER:$1|utilisateur}}",
 	"timeless-talkpage": "Discussion {{GENDER:$1|utilisateur}}",
-	"timeless-pagelog": "Registres de page",
+	"timeless-pagelog": "Journaux de page",
 	"timeless-more": "Plus",
 	"timeless-sitetools": "Outils wiki",
 	"timeless-pageactions": "Outils de page",
