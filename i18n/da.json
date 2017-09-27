@@ -1,8 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarrus"
+			"Sarrus",
+			"Joedalton"
 		]
 	},
+	"timeless-loggedin": "Din konto",
+	"timeless-anonymous": "Anonym",
+	"timeless-loggedinas": "Logget på »$1«",
+	"timeless-notloggedin": "Ikke logget på",
+	"timeless-userpage": "{{GENDER:$1|Brugerside}}",
+	"timeless-talkpage": "{{GENDER:$1|Brugerdiskussion}}",
+	"timeless-pagelog": "Sidelogge",
+	"timeless-more": "Mere",
+	"timeless-sitetools": "Wikiværktøjer",
+	"timeless-pageactions": "Sideværktøjer",
+	"timeless-userpagetools": "Brugersideværktøjer",
+	"timeless-pagemisc": "Mere",
+	"timeless-namespaces": "Navnerum",
+	"timeless-pagetools": "Sidehandlinger",
 	"timeless-languages": "Sprog"
 }
