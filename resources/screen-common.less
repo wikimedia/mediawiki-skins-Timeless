@@ -288,6 +288,18 @@ a.new,
 	float: right;
 	margin: 0.75em 0 0 1em;
 }
+/* Subtitle area
+ * @see https://phabricator.wikimedia.org/T173951
+ */
+#contentSub {
+	font-size: 84%;
+	color: @grey-dark;
+
+	/* This forces "redirect page" (on a redirect page) etc. on a new line */
+	.subpages {
+		display: block;
+	}
+}
 #mw-content {
 	h1,
 	h2,
@@ -388,7 +400,7 @@ p {
 	font-size: 95%;
 	padding: 0.5em 1em;
 }
-.thumbinner img{
+.thumbinner img {
 	border: solid 1px @grey-bright;
 }
 #mw-content li.gallerybox div.thumb {
