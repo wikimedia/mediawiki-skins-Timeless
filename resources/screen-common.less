@@ -300,6 +300,29 @@ a.new,
 		display: block;
 	}
 }
+
+/* pre and code styles copypasted from core
+ * /resources/src/mediawiki.skinning/elements.css and modified a bit
+ * @see https://phabricator.wikimedia.org/T177142
+ */
+code {
+	color: #000;
+	background-color: @grey-bright;
+	border: 1px solid @grey-dark;
+	border-radius: 2px;
+	padding: 1px 4px;
+}
+
+pre,
+.mw-code {
+	color: #000;
+	background-color: @grey-bright;
+	border: 1px solid @grey-dark;
+	padding: 1em;
+	/* Wrap lines in overflow. T2260, T103780 */
+	white-space: pre-wrap;
+}
+
 #mw-content {
 	h1,
 	h2,
