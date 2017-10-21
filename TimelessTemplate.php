@@ -119,16 +119,16 @@ class TimelessTemplate extends BaseTemplate {
 	 * @param string $name
 	 * @param array|string $content array of links for use with makeListItem, or a block of text
 	 *        Expected array format:
-	 *	[
-	 *		$name => [
-	 *			'links' => [ '0' =>
-	 *				[ 'href' => ..., 'single-id' => ..., 'text' => ... ]
-	 *			],
-	 *			'id' => ...,
-	 *			'active' => ...
-	 *		],
-	 *		...
-	 *	]
+	 * 	[
+	 * 		$name => [
+	 * 			'links' => [ '0' =>
+	 * 				[ 'href' => ..., 'single-id' => ..., 'text' => ... ]
+	 * 			],
+	 * 			'id' => ...,
+	 * 			'active' => ...
+	 * 		],
+	 * 		...
+	 * 	]
 	 * @param null|string|array|bool $msg
 	 *
 	 * @return string html
@@ -393,7 +393,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * Page tools in sidebar
 	 *
 	 * @return string html
-	 **/
+	 */
 	protected function getPageToolSidebar() {
 		$pageTools = '';
 		if ( count( $this->pileOfTools['page-secondary'] ) > 0 ) {
