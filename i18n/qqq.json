@@ -4,10 +4,11 @@
 			"Isarra",
 			"Liuxinyu970226",
 			"Robby",
-			"Amire80"
+			"Amire80",
+			"Umherirrender"
 		]
 	},
-	"skinname-timeless": "{{optional}}",
+	"skinname-timeless": "{{name}}",
 	"timeless-desc": "{{desc|what=skin|name=Timeless|url=https://www.mediawiki.org/wiki/Skin:Timeless}}",
 	"timeless-search-placeholder": "Main search input placeholder text",
 	"timeless-loggedin": "Label for logged in users' user menu (if their username is too long to fit)",
