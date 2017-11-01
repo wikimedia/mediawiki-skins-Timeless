@@ -5,9 +5,19 @@
 		]
 	},
 	"timeless-search-placeholder": "Йозанца лахар гергарчу хьесапехь {{NUMBEROFPAGES}} агӀонах",
+	"timeless-loggedin": "Декъашхочун дӀаяздар",
+	"timeless-anonymous": "Аноним",
+	"timeless-loggedinas": "Чуваьлла '''$1''' санна",
+	"timeless-notloggedin": "ХӀинца а ахьа системин чохь болх беш бац",
 	"timeless-userpage": "{{GENDER:$1|Декъашхочун}} агӀо",
 	"timeless-talkpage": "{{GENDER:$1|Декъашхочун}} дийцаре",
+	"timeless-pagelog": "АгӀонан тептар",
 	"timeless-more": "Кхин",
+	"timeless-sitetools": "Вики-гӀирсаш",
+	"timeless-pageactions": "ГӀирсаш агӀонашна",
 	"timeless-userpagetools": "Декъашхочун агӀона гӀирсаш",
-	"timeless-pagemisc": "Кхин"
+	"timeless-pagemisc": "Кхин",
+	"timeless-namespaces": "ЦӀерийн меттигаш",
+	"timeless-pagetools": "АгӀонгахь дийриш",
+	"timeless-languages": "Меттанаш"
 }
