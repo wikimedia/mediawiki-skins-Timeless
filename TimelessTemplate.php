@@ -250,6 +250,7 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getLogo( $id = 'p-logo', $part = 'both' ) {
 		$html = '';
+		$language = $this->getSkin()->getLanguage();
 
 		$html .= Html::openElement(
 			'div',
@@ -261,7 +262,11 @@ class TimelessTemplate extends BaseTemplate {
 		);
 		if ( $part !== 'image' ) {
 			$titleClass = '';
-			$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+			if ( $language->hasVariants() ) {
+				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
+			} else {
+				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+			}
 			// width is 11em; 13 characters will probably fit?
 			if ( mb_strlen( $siteTitle ) > 13 ) {
 				$titleClass = 'long';
