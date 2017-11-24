@@ -771,7 +771,11 @@ class TimelessTemplate extends BaseTemplate {
 					$catList .= $this->getCatList( $normalCats, 'catlist-normal', 'categories' );
 				}
 				if ( $hiddenCount ) {
-					$catList .= $this->getCatList( $hiddenCats, 'catlist-hidden', 'hidden-categories' );
+					$catList .= $this->getCatList(
+						$hiddenCats,
+						'catlist-hidden',
+						[ 'hidden-categories', $hiddenCount ]
+					);
 				}
 			}
 		}
@@ -787,7 +791,7 @@ class TimelessTemplate extends BaseTemplate {
 	 *
 	 * @param array $list
 	 * @param string $id
-	 * @param string $message
+	 * @param string|array $message i18n message name or an array of [ message name, params ]
 	 *
 	 * @return string html
 	 */
