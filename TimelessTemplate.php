@@ -263,9 +263,9 @@ class TimelessTemplate extends BaseTemplate {
 		if ( $part !== 'image' ) {
 			$titleClass = '';
 			if ( $language->hasVariants() ) {
-				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
+				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->text() );
 			} else {
-				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->text();
 			}
 			// width is 11em; 13 characters will probably fit?
 			if ( mb_strlen( $siteTitle ) > 13 ) {
@@ -274,7 +274,7 @@ class TimelessTemplate extends BaseTemplate {
 			$html .= Html::element( 'a', [
 					'id' => 'p-banner',
 					'class' => [ 'mw-wiki-title', $titleClass ],
-					'href' => htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+					'href' => $this->data['nav_urls']['mainpage']['href']
 				],
 				$siteTitle
 			);
@@ -283,7 +283,7 @@ class TimelessTemplate extends BaseTemplate {
 			$html .= Html::element( 'a', array_merge(
 				[
 					'class' => 'mw-wiki-logo',
-					'href' => htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+					'href' => $this->data['nav_urls']['mainpage']['href']
 				],
 				Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
 			) );
