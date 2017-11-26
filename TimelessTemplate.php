@@ -229,8 +229,8 @@ class TimelessTemplate extends BaseTemplate {
 			'div',
 			[ 'id' => Sanitizer::escapeId( $id ), 'class' => 'sidebar-chunk' ],
 			Html::rawElement( 'h2', [],
-				Html::rawElement( 'span', [],
-					$this->getMsg( $headerMessage )->escaped()
+				Html::element( 'span', [],
+					$this->getMsg( $headerMessage )->text()
 				) .
 				Html::element( 'div', [ 'class' => 'pokey' ] )
 			) .
@@ -462,20 +462,20 @@ class TimelessTemplate extends BaseTemplate {
 			// Make sure it fits first (numbers slightly made up, may need adjusting)
 			$fit = empty( $extraTools ) ? 13 : 9;
 			if ( mb_strlen( $userName ) < $fit ) {
-				$dropdownHeader = htmlspecialchars( $userName, ENT_QUOTES );
+				$dropdownHeader = $userName;
 			} else {
-				$dropdownHeader = wfMessage( 'timeless-loggedin' )->escaped();
+				$dropdownHeader = wfMessage( 'timeless-loggedin' )->text();
 			}
 			$headerMsg = [ 'timeless-loggedinas', $user->getName() ];
 		} else {
-			$dropdownHeader = wfMessage( 'timeless-anonymous' )->escaped();
+			$dropdownHeader = wfMessage( 'timeless-anonymous' )->text();
 			$headerMsg = 'timeless-notloggedin';
 		}
 		$html .= Html::openElement( 'div', [ 'id' => 'user-tools' ] );
 
 		$html .= Html::rawElement( 'div', [ 'id' => 'personal' ],
 			Html::rawElement( 'h2', [],
-				Html::rawElement( 'span', [], $dropdownHeader ) .
+				Html::element( 'span', [], $dropdownHeader ) .
 				Html::element( 'div', [ 'class' => 'pokey' ] )
 			) .
 			Html::rawElement( 'div', [ 'id' => 'personal-inner', 'class' => 'dropdown' ],
