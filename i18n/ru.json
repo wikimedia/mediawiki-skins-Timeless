@@ -6,7 +6,7 @@
 		]
 	},
 	"timeless-desc": "Тема оформления Timeless создана после прототипа Winter Брэндона Харриса и различных стилей Фонда Викимедиа.",
-	"timeless-search-placeholder": "Поиск примерно из {{NUMBEROFPAGES}} страниц",
+	"timeless-search-placeholder": "Поиск примерно из {{NUMBEROFARTICLES}} страниц",
 	"timeless-loggedin": "Учётная запись",
 	"timeless-anonymous": "Аноним",
 	"timeless-loggedinas": "Вошёл как '''$1'''",

@@ -5,7 +5,7 @@
 			"Eitvys200"
 		]
 	},
-	"timeless-search-placeholder": "Ieškoti tarp apytiksliai {{NUMBEROFPAGES}} puslapių",
+	"timeless-search-placeholder": "Ieškoti tarp apytiksliai {{NUMBEROFARTICLES}} puslapių",
 	"timeless-loggedin": "Jūsų paskyra",
 	"timeless-anonymous": "Anonimas",
 	"timeless-loggedinas": "Prisijungęs kaip '''$1'''",

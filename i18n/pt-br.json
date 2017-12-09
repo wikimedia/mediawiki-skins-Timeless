@@ -7,7 +7,7 @@
 	},
 	"skinname-timeless": "Timeless",
 	"timeless-desc": "Um tema timeless projetado após o protótipo Winter por Brandon Harris e vários estilos pela Fundação Wikimedia",
-	"timeless-search-placeholder": "Pesquisar aproximadamente {{NUMBEROFPAGES}} páginas",
+	"timeless-search-placeholder": "Pesquisar aproximadamente {{NUMBEROFARTICLES}} páginas",
 	"timeless-loggedin": "Sua conta",
 	"timeless-anonymous": "Anônimo",
 	"timeless-loggedinas": "Autenticado como '''$1'''",

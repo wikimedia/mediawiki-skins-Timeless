@@ -9,7 +9,7 @@
 		]
 	},
 	"timeless-desc": "Timeless 是 Brandon Harris 繼 Winter prototype 之後所設計的，其中的各種樣式來自維基媒體基金會。",
-	"timeless-search-placeholder": "搜尋約 {{NUMBEROFARTICLES}} 篇文章",
+	"timeless-search-placeholder": "搜尋 {{NUMBEROFARTICLES}} 個頁面",
 	"timeless-loggedin": "您的帳號",
 	"timeless-anonymous": "匿名",
 	"timeless-loggedinas": "已登入為 '''$1'''",

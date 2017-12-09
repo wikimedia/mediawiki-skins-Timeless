@@ -5,7 +5,7 @@
 		]
 	},
 	"timeless-desc": "Ajaton ulkoasu, joka on suunniteltu Brandon Harrisin Winter-prototyypin sekä useiden Wikimedia Foundationin tyylien mukaisesti.",
-	"timeless-search-placeholder": "Etsi noin {{NUMBEROFPAGES}} sivua",
+	"timeless-search-placeholder": "Etsi noin {{NUMBEROFARTICLES}} sivua",
 	"timeless-loggedin": "Käyttäjätunnuksesi",
 	"timeless-anonymous": "Anonyymi",
 	"timeless-loggedinas": "Kirjautunut käyttäjällä '''$1'''",

@@ -6,7 +6,7 @@
 		]
 	},
 	"timeless-desc": "Stellt eine zeitlose und an Wikimedia erinnernde Benutzeroberfläche bereit",
-	"timeless-search-placeholder": "Ungefähr {{NUMBEROFPAGES}} Seiten durchsuchen",
+	"timeless-search-placeholder": "{{NUMBEROFARTICLES}} Seiten durchsuchen",
 	"timeless-loggedin": "Dein Benutzerkonto",
 	"timeless-anonymous": "Anonym",
 	"timeless-loggedinas": "Angemeldet als '''$1'''",

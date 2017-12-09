@@ -7,7 +7,7 @@
 			"Tacsipacsi"
 		]
 	},
-	"timeless-search-placeholder": "Mintegy {{NUMBEROFPAGES}} lap keresése",
+	"timeless-search-placeholder": "Mintegy {{NUMBEROFARTICLES}} lap keresése",
 	"timeless-loggedin": "Fiókod",
 	"timeless-anonymous": "Névtelen",
 	"timeless-loggedinas": "Bejelentkezve '''$1''' néven",

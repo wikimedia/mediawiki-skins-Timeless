@@ -6,7 +6,7 @@
 			"Aftabuzzaman"
 		]
 	},
-	"timeless-search-placeholder": "প্রায় {{NUMBEROFPAGES}}টি পাতায় অনুসন্ধান করুন",
+	"timeless-search-placeholder": "{{NUMBEROFARTICLES}}টি পাতায় অনুসন্ধান করুন",
 	"timeless-loggedin": "আপনার অ্যাকাউন্ট",
 	"timeless-anonymous": "নামহীন",
 	"timeless-loggedinas": "'''$1''' হিসাবে প্রবেশ",

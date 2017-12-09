@@ -5,7 +5,7 @@
 			"Sayginer"
 		]
 	},
-	"timeless-search-placeholder": "Yaklaşık {{NUMBEROFPAGES}} sayfayı ara",
+	"timeless-search-placeholder": "Yaklaşık {{NUMBEROFARTICLES}} sayfayı ara",
 	"timeless-loggedin": "Hesabınız",
 	"timeless-anonymous": "Anonim",
 	"timeless-notloggedin": "Oturum açık değil",

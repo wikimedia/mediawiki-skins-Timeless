@@ -6,7 +6,7 @@
 			"Rzuwig"
 		]
 	},
-	"timeless-search-placeholder": "Szukaj w {{NUMBEROFPAGES}} artykułach",
+	"timeless-search-placeholder": "Szukaj w {{NUMBEROFARTICLES}} artykułach",
 	"timeless-loggedin": "Twoje konto",
 	"timeless-anonymous": "Anonimowy",
 	"timeless-loggedinas": "Zalogowano jako '''$1'''",

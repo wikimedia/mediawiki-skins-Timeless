@@ -6,7 +6,7 @@
 		]
 	},
 	"timeless-desc": "Безвременски скин дизајниран по прототипу Winter који је направио Брендон Харис, те другим стиловима Задужбине Викимедија",
-	"timeless-search-placeholder": "Претражи отприлике {{NUMBEROFPAGES}} {{PLURAL:{{NUMBEROFPAGES}}|страницу|странице|страница}}",
+	"timeless-search-placeholder": "Претражи отприлике {{NUMBEROFARTICLES}} {{PLURAL:{{NUMBEROFARTICLES}}|страницу|странице|страница}}",
 	"timeless-loggedin": "Ваш налог",
 	"timeless-anonymous": "Анонимно",
 	"timeless-loggedinas": "Пријављени сте као '''$1'''",
