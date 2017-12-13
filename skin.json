@@ -86,7 +86,7 @@
 		}
 	},
 	"AutoloadClasses": {
-		"SkinTimeless": "Timeless.skin.php",
+		"SkinTimeless": "SkinTimeless.php",
 		"TimelessTemplate": "TimelessTemplate.php"
 	},
 	"manifest_version": 1
