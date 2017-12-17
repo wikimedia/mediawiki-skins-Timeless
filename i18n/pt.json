@@ -3,11 +3,12 @@
 		"authors": [
 			"Macofe",
 			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"MokaAkashiyaPT"
 		]
 	},
 	"timeless-desc": "Um tema intemporal, desenhado com base no protótipo Winter de Brandon Harris e em vários estilos da Wikimedia Foundation",
-	"timeless-search-placeholder": "Pesquisar o texto de aproximadamente {{NUMBEROFARTICLES}} páginas",
+	"timeless-search-placeholder": "Pesquisar em {{NUMBEROFARTICLES}} páginas",
 	"timeless-loggedin": "A sua conta",
 	"timeless-anonymous": "Anónimo",
 	"timeless-loggedinas": "Autenticado como '''$1'''",

@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Njardarlogar"
 		]
 	},
 	"timeless-desc": "Ei tidlaus drakt designa etter Winter-prototypen av Brandon Harris, og diverse andre stilar av Wikimedia Foundation",
-	"timeless-search-placeholder": "Søk i rundt {{NUMBEROFARTICLES}} sider",
+	"timeless-search-placeholder": "Søk i {{NUMBEROFARTICLES}} sider",
 	"timeless-loggedin": "Kontoen din",
 	"timeless-anonymous": "Anonym",
 	"timeless-loggedinas": "Innlogga som '''$1'''",
