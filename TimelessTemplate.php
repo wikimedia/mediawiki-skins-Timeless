@@ -416,7 +416,7 @@ class TimelessTemplate extends BaseTemplate {
 			);
 		}
 		$pageTools .= $this->getPortlet(
-			'pagemisc',
+			'cactions',
 			$this->pileOfTools['page-tertiary'],
 			'timeless-pagemisc'
 		);
