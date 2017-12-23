@@ -74,7 +74,7 @@ class TimelessTemplate extends BaseTemplate {
 								'timeless-namespaces'
 							) .
 							$this->getPortlet(
-								'pagetools',
+								'views',
 								$this->pileOfTools['page-primary'],
 								'timeless-pagetools'
 							)
@@ -176,12 +176,14 @@ class TimelessTemplate extends BaseTemplate {
 
 		if ( is_array( $content ) ) {
 			$contentText = Html::openElement( 'ul' );
-			foreach ( $content as $key => $item ) {
-				$contentText .= $this->makeListItem(
-					$key,
-					$item,
-					[ 'text-wrapper' => [ 'tag' => 'span' ] ]
-				);
+			if ( count( $content ) > 0 ) {
+				foreach ( $content as $key => $item ) {
+					$contentText .= $this->makeListItem(
+						$key,
+						$item,
+						[ 'text-wrapper' => [ 'tag' => 'span' ] ]
+					);
+				}
 			}
 			// Add in SkinTemplateToolboxEnd, if any
 			$contentText .= $hookContents;
@@ -192,7 +194,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html = Html::rawElement( 'div', [
 				'role' => 'navigation',
-				'class' => 'mw-portlet',
+				'class' => [ 'mw-portlet', 'emptyPortlet' => count( $content ) === 0 ],
 				'id' => Sanitizer::escapeId( 'p-' . $name ),
 				'title' => Linker::titleAttrib( 'p-' . $name ),
 				'aria-labelledby' => $labelId
@@ -401,22 +403,18 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getPageToolSidebar() {
 		$pageTools = '';
-		if ( count( $this->pileOfTools['page-secondary'] ) > 0 ) {
-			$pageTools .= $this->getPortlet(
-				'pageactions',
-				$this->pileOfTools['page-secondary'],
-				'timeless-pageactions'
-			);
-		}
-		if ( count( $this->pileOfTools['user'] ) > 0 ) {
-			$pageTools .= $this->getPortlet(
-				'userpagetools',
-				$this->pileOfTools['user'],
-				'timeless-userpagetools'
-			);
-		}
 		$pageTools .= $this->getPortlet(
 			'cactions',
+			$this->pileOfTools['page-secondary'],
+			'timeless-pageactions'
+		);
+		$pageTools .= $this->getPortlet(
+			'userpagetools',
+			$this->pileOfTools['user'],
+			'timeless-userpagetools'
+		);
+		$pageTools .= $this->getPortlet(
+			'pagemisc',
 			$this->pileOfTools['page-tertiary'],
 			'timeless-pagemisc'
 		);
