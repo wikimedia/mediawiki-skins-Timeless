@@ -12,7 +12,7 @@
 	"timeless-loggedin": "Tu cuenta",
 	"timeless-anonymous": "Anónimo",
 	"timeless-loggedinas": "Sesión iniciada como '''$1'''",
-	"timeless-notloggedin": "No has iniciado sesión",
+	"timeless-notloggedin": "No has accedido",
 	"timeless-userpage": "Página de {{GENDER:$1|usuario|usuaria}}",
 	"timeless-talkpage": "Discusión de {{GENDER:$1|usuario|usuaria}}",
 	"timeless-pagelog": "Registros de página",
