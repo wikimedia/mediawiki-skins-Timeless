@@ -22,5 +22,6 @@
 	"timeless-pagemisc": "আরও",
 	"timeless-namespaces": "নামস্থানসমূহ",
 	"timeless-pagetools": "পৃষ্ঠার ক্রিয়া",
-	"timeless-languages": "ভাষাসমূহ"
+	"timeless-languages": "ভাষাসমূহ",
+	"timeless.js": "/* এখানের যে কোন জাভাস্ক্রিপ্ট টাইমলেস আবরণ ব্যবহারকারীদের জন্য লোড হবে */"
 }

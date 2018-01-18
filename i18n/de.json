@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "Mehr",
 	"timeless-namespaces": "Namensräume",
 	"timeless-pagetools": "Seitenaktionen",
-	"timeless-languages": "Sprachen"
+	"timeless-languages": "Sprachen",
+	"timeless.js": "/* JavaScript an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */"
 }

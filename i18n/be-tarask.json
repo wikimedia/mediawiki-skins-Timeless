@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "Болей",
 	"timeless-namespaces": "Прасторы назваў",
 	"timeless-pagetools": "Дзеяньні на старонцы",
-	"timeless-languages": "Мовы"
+	"timeless-languages": "Мовы",
+	"timeless.js": "/* Кожны JavaScript, зьмешчаны тут, будзе загружаны для ўсіх удзельнікаў, якія выкарыстоўваюць тэму афармленьня Timeless */"
 }

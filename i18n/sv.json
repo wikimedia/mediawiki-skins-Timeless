@@ -7,6 +7,7 @@
 			"Jopparn"
 		]
 	},
+	"skinname-timeless": "Timeless",
 	"timeless-desc": "Ett tidlöst utseende designat efter prototypen Winter av Brandon Harris och diverse stilar av Wikimedia Foundation.",
 	"timeless-search-placeholder": "Sök på {{NUMBEROFARTICLES}} sidor",
 	"timeless-loggedin": "Ditt konto",
@@ -23,5 +24,7 @@
 	"timeless-pagemisc": "Mer",
 	"timeless-namespaces": "Namnrymder",
 	"timeless-pagetools": "Sidåtgärder",
-	"timeless-languages": "Språk"
+	"timeless-languages": "Språk",
+	"timeless.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Timeless */",
+	"timeless.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Timeless */"
 }

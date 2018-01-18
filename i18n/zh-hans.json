@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "更多",
 	"timeless-namespaces": "名字空间",
 	"timeless-pagetools": "页面选项",
-	"timeless-languages": "语言"
+	"timeless-languages": "语言",
+	"timeless.js": "/* 这里的任何JavaScript将为使用Timeless皮肤的用户加载 */"
 }
