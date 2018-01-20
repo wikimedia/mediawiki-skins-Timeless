@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "Ещё",
 	"timeless-namespaces": "Пространства имён",
 	"timeless-pagetools": "Действия на странице",
-	"timeless-languages": "Языки"
+	"timeless-languages": "Языки",
+	"timeless.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления Timeless */"
 }

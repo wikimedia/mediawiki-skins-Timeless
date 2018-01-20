@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "Повеќе",
 	"timeless-namespaces": "Именски простори",
 	"timeless-pagetools": "Дејства врз страници",
-	"timeless-languages": "Јазици"
+	"timeless-languages": "Јазици",
+	"timeless.js": "/* Тука поставениот JavaScript ќе им се вчитува на корисниците што го користат рувото „Безвременско“ */"
 }

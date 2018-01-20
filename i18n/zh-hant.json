@@ -5,10 +5,11 @@
 			"LNDDYL",
 			"Cwlin0416",
 			"Wehwei",
-			"Eflyjason"
+			"Eflyjason",
+			"Kly"
 		]
 	},
-	"timeless-desc": "Timeless 是 Brandon Harris 繼 Winter prototype 之後所設計的，其中的各種樣式來自維基媒體基金會。",
+	"timeless-desc": "Timeless 是 Brandon Harris 繼 Winter prototype 之後所設計的，其中的各種樣式來自維基媒體基金會",
 	"timeless-search-placeholder": "搜尋 {{NUMBEROFARTICLES}} 個頁面",
 	"timeless-loggedin": "您的帳號",
 	"timeless-anonymous": "匿名",
@@ -24,5 +25,6 @@
 	"timeless-pagemisc": "更多",
 	"timeless-namespaces": "命名空間",
 	"timeless-pagetools": "頁面動作",
-	"timeless-languages": "語言"
+	"timeless-languages": "語言",
+	"timeless.js": "/* 在使用者使用 Timeless 外觀時，任何在此的 JavaScript 都會被載入 */"
 }
