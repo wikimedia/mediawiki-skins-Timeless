@@ -6,7 +6,7 @@
 			"Whym"
 		]
 	},
-	"timeless-search-placeholder": "約{{NUMBEROFARTICLES}}件のページから検索",
+	"timeless-search-placeholder": "{{NUMBEROFARTICLES}}件のページから検索",
 	"timeless-loggedin": "あなたのアカウント",
 	"timeless-anonymous": "匿名",
 	"timeless-loggedinas": "'''$1''' としてログインしています",
