@@ -80,6 +80,7 @@
 	},
 	"ResourceModuleSkinStyles": {
 		"timeless": {
+			"+oojs-ui-core.styles": "resources/ooui.less",
 			"+ext.echo.styles.badge": "resources/extensions/Echo.less",
 			"+ext.visualEditor.core": "resources/extensions/VisualEditor.core.less",
 			"+ext.visualEditor.desktopArticleTarget.noscript": "resources/extensions/VisualEditor.article.less"
