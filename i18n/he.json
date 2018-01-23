@@ -22,5 +22,6 @@
 	"timeless-pagemisc": "עוד",
 	"timeless-namespaces": "מרחבי שם",
 	"timeless-pagetools": "פעולות דף",
-	"timeless-languages": "שפות"
+	"timeless-languages": "שפות",
+	"timeless.js": "/* כל הסקריפטים הנכתבים כאן ייטענו עבור מי שמשתמש בעיצוב \"מחוץ לזמן\" בלבד */"
 }
