@@ -22,5 +22,6 @@
 	"timeless-pagemisc": "Mais",
 	"timeless-namespaces": "Espaços nominais",
 	"timeless-pagetools": "Ações da página",
-	"timeless-languages": "Idiomas"
+	"timeless-languages": "Idiomas",
+	"timeless.js": "/* Qualquer código JavaScript colocado aqui será carregado para os usuários do tema Timeless */"
 }

@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "Meer",
 	"timeless-namespaces": "Naamruimten",
 	"timeless-pagetools": "Pagina-acties",
-	"timeless-languages": "Talen"
+	"timeless-languages": "Talen",
+	"timeless.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die het uiterlijk Timeless gebruiken */"
 }
