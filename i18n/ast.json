@@ -5,7 +5,7 @@
 		]
 	},
 	"timeless-desc": "Un aspeutu intemporal diseñáu dende'l prototipu Winter de Brandon Harris y dellos estilos de la Fundación Wikimedia.",
-	"timeless-search-placeholder": "Buscar aproximadamente {{NUMBEROFARTICLES}} páxines",
+	"timeless-search-placeholder": "Buscar {{NUMBEROFARTICLES}} {{PLURAL:{{NUMBEROFARTICLES}}|páxina|páxines}}",
 	"timeless-loggedin": "La to cuenta",
 	"timeless-anonymous": "Anónimu",
 	"timeless-loggedinas": "Aniciasti sesión como '''$1'''.",
@@ -20,5 +20,6 @@
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nomes",
 	"timeless-pagetools": "Aiciones de páxina",
-	"timeless-languages": "Llingües"
+	"timeless-languages": "Llingües",
+	"timeless.js": "/* Cualquier JavaScript que tea equí se cargará pa los usuarios del aspeutu Timeless */"
 }

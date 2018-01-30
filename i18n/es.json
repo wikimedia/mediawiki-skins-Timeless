@@ -4,7 +4,8 @@
 			"Macofe",
 			"SinNovedades",
 			"Julián L",
-			"Fitoschido"
+			"Fitoschido",
+			"MarcoAurelio"
 		]
 	},
 	"timeless-desc": "Una apariencia atemporal, diseñada por Brandon Harris en base al prototipo Winter y a varios estilos de la Fundación Wikimedia.",
@@ -23,5 +24,6 @@
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nombres",
 	"timeless-pagetools": "Acciones de página",
-	"timeless-languages": "Idiomas"
+	"timeless-languages": "Idiomas",
+	"timeless.js": "/* Cualquier código JavaScript escrito aquí se cargará para todos los usuarios que usen la apariencia Timeless */"
 }
