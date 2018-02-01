@@ -3,10 +3,11 @@
 		"authors": [
 			"Ата",
 			"Andriykopanytsia",
-			"Piramidion"
+			"Piramidion",
+			"Movses"
 		]
 	},
-	"timeless-desc": "«Вічне» оформлення, створене за прототипом «Зима» Брендона Гарріса та різноманітними стилями Фонду Вікімедіа.",
+	"timeless-desc": "Оформлення «Вічне», створене за прототипом «Зима» Брендона Гарріса та різноманітними стилями Фонду Вікімедіа",
 	"timeless-search-placeholder": "Пошук на {{NUMBEROFARTICLES}} {{PLURAL:{{NUMBEROFARTICLES}}|сторінці|сторінках}}",
 	"timeless-loggedin": "Ваш обліковий запис",
 	"timeless-anonymous": "Анонім",
@@ -22,5 +23,6 @@
 	"timeless-pagemisc": "Ще",
 	"timeless-namespaces": "Простори назв",
 	"timeless-pagetools": "Дії над сторінкою",
-	"timeless-languages": "Мови"
+	"timeless-languages": "Мови",
+	"timeless.js": "/* Розміщений тут код JavaScript буде завантажений для всіх користувачів, що використовують тему оформлення «Вічне» */"
 }
