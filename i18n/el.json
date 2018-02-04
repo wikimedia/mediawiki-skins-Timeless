@@ -1,8 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xaris333"
+			"Xaris333",
+			"Nikosgranturismogt"
 		]
 	},
+	"timeless-loggedin": "Ο λογαριασμός σας",
+	"timeless-anonymous": "Ανώνυμος",
+	"timeless-pagelog": "Μητρώα σελίδας",
+	"timeless-more": "Περισσότερα",
+	"timeless-sitetools": "Εργαλεία του βίκι",
+	"timeless-pageactions": "Εργαλεία σελίδων",
+	"timeless-userpagetools": "Εργαλεία σελίδας χρήστη",
+	"timeless-pagemisc": "Περισσότερα",
+	"timeless-namespaces": "Ονοματοχώροι",
 	"timeless-languages": "Γλώσσες"
 }
