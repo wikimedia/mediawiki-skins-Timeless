@@ -20,5 +20,6 @@
 	"timeless-pagemisc": "Viac",
 	"timeless-namespaces": "Menné priestory",
 	"timeless-pagetools": "Možnosti stránky",
-	"timeless-languages": "Jazyky"
+	"timeless-languages": "Jazyky",
+	"timeless.js": "/* Tu sa nachádzajúci JavaScript sa načíta používateľom vzhľadu Timeless */"
 }
