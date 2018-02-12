@@ -18,7 +18,6 @@
 	"ResourceModules": {
 		"skins.timeless": {
 			"targets": [ "desktop", "mobile" ],
-			"position": "top",
 			"class": "ResourceLoaderSkinModule",
 			"styles": {
 				"resources/libraries/normalise.css": {
@@ -53,21 +52,18 @@
 		},
 		"skins.timeless.misc": {
 			"targets": [ "desktop", "mobile" ],
-			"position": "top",
 			"styles": [
 				"resources/screen-misc.less"
 			]
 		},
 		"skins.timeless.js": {
 			"targets": [ "desktop", "mobile" ],
-			"position": "bottom",
 			"scripts": [
 				"resources/main.js"
 			]
 		},
 		"skins.timeless.mobile": {
 			"targets": [ "desktop", "mobile" ],
-			"position": "bottom",
 			"scripts": [
 				"resources/libraries/jquery.mobile.custom.js",
 				"resources/mobile.js"
