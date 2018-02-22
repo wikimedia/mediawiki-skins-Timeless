@@ -3,9 +3,11 @@
 		"authors": [
 			"Sujiniku",
 			"Otokoume",
-			"Whym"
+			"Whym",
+			"Yusuke1109"
 		]
 	},
+	"timeless-desc": "Brandon HarrisによるWinterプロトタイプの後にデザインされたTimelessテーマ。ウィキメディア財団のさまざまなスタイル。",
 	"timeless-search-placeholder": "{{NUMBEROFARTICLES}}件のページから検索",
 	"timeless-loggedin": "あなたのアカウント",
 	"timeless-anonymous": "匿名",
@@ -21,5 +23,6 @@
 	"timeless-pagemisc": "その他",
 	"timeless-namespaces": "名前空間",
 	"timeless-pagetools": "ページアクション",
-	"timeless-languages": "言語"
+	"timeless-languages": "言語",
+	"timeless.js": "/* ここにあるすべてのJavaScriptは、Timeless外装を使用している利用者に対して読み込まれます */"
 }
