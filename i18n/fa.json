@@ -6,7 +6,7 @@
 		]
 	},
 	"timeless-desc": "پوسته بدون زمان طراحی شده بعد از پروتوتایپ زمستان توسط براندون هریس و بسیاری از مدل‌های بنیاد ویکی‌مدیا",
-	"timeless-search-placeholder": "جستجوی حدودی {{NUMBEROFARTICLES}} صفحه",
+	"timeless-search-placeholder": "جستجوی {{NUMBEROFARTICLES}} صفحه",
 	"timeless-loggedin": "حساب کاربری شما",
 	"timeless-anonymous": "ناشناس",
 	"timeless-loggedinas": "ورد به سامانه به عنوان '''$1'''",
@@ -21,5 +21,6 @@
 	"timeless-pagemisc": "بیشتر",
 	"timeless-namespaces": "فضاهای نام",
 	"timeless-pagetools": "عملکردهای صفحه",
-	"timeless-languages": "زبان‌ها"
+	"timeless-languages": "زبان‌ها",
+	"timeless.js": "/ * کدهای جاوااسکریپتی که در اینجا قرار می‌گیرند برای کاربران پوستهٔ تایم‌لاین بارگیری می‌شود * /"
 }
