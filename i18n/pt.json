@@ -14,7 +14,7 @@
 	"timeless-anonymous": "Anónimo",
 	"timeless-loggedinas": "Autenticado como '''$1'''",
 	"timeless-notloggedin": "Não autenticado",
-	"timeless-userpage": "Página de {{GENDER:$1|utilizador|utilizadora|utilizador(a)}}",
+	"timeless-userpage": "Página {{GENDER:$1|do utilizador|da utilizadora|de utilizador}}",
 	"timeless-talkpage": "{{GENDER:$1|Utilizador|Utilizadora|Utilizador(a)}} Discussão",
 	"timeless-pagelog": "Registos da página",
 	"timeless-more": "Mais",
