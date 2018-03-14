@@ -42,8 +42,8 @@
 		display: block;
 		padding: 0.25em 0.5em;
 	}
-	input[type='checkbox'],
-	input[type='radio'] {
+	input[ type='checkbox' ],
+	input[ type='radio' ] {
 		margin-left: 0;
 	}
 }
@@ -96,21 +96,21 @@ label {
  */
 
 /* pile of bad hacks to try to catch all the different ones */
-#searchInput,
-input[name='target'],
-input[name='user'],
-input[name='mime'],
-input[size$='0'],
-input[type='text'],
-input[type='checkbox'],
-input[type='radio'],
+input[ name='target' ],
+input[ name='user' ],
+input[ name='mime' ],
+input[ size$='0' ],
+input[ type='text' ],
+input[ type='checkbox' ],
+input[ type='radio' ],
 input#wpTemplateSandboxPage,
 input.mw-summary,
 input.mw-input,
 .mw-input input,
 textarea,
 .mw-ui-input-inline,
-.mw-ui-input {
+.mw-ui-input,
+#searchInput {
 	box-sizing: border-box;
 	padding: 0.25em 0.35em;
 	border: solid 1px @grey;
@@ -124,22 +124,22 @@ select {
 	padding: 0.25em;
 	margin: 0.5em 0;
 }
-input[type='checkbox'],
-input[type='radio'] {
+input[ type='checkbox' ],
+input[ type='radio' ] {
 	margin-left: 1em;
 	min-height: 0;
 }
-input[type='checkbox'] {
+input[ type='checkbox' ] {
 	border-radius: 2px;
 }
-input[type='radio'] {
+input[ type='radio' ] {
 	border-radius: 8px;
 }
 .mw-ui-button.mw-ui-progressive,
 .mw-ui-button.mw-ui-progressive:active,
 .mw-ui-button.mw-ui-progressive.mw-ui-checked,
-input[type='submit'],
-input[type='button'],
+input[ type='submit' ],
+input[ type='button' ],
 button {
 	padding: 0.25em 1em 0.1em 1em;
 	border: solid 1px @grey;
@@ -221,7 +221,7 @@ div.editOptions {
 	label {
 		padding: 0 1em 0 0;
 	}
-	input[type='submit'] {
+	input[ type='submit' ] {
 		margin: 0 0 0 4em;
 	}
 }
@@ -229,7 +229,7 @@ div.editOptions {
 /* Related changes hacks */
 .mw-special-Recentchangeslinked {
 	.rcoptions {
-		input[type='submit'] {
+		input[ type='submit' ] {
 			float: right;
 			margin: 0 0 0 4em;
 		}
@@ -237,7 +237,7 @@ div.editOptions {
 			vertical-align: top;
 			padding-top: 0.75em;
 		}
-		input[name='target'] {
+		input[ name='target' ] {
 			float: left;
 		}
 	}
@@ -245,7 +245,7 @@ div.editOptions {
 		clear: left;
 		float: left;
 	}
-	label[for='showlinkedto'] {
+	label[ for='showlinkedto' ] {
 		padding: 0.4em;
 		float: left;
 	}
