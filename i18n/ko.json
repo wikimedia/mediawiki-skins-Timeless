@@ -5,9 +5,11 @@
 			"Revi",
 			"고솜",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Garam"
 		]
 	},
+	"skinname-timeless": "타임레스",
 	"timeless-desc": "브랜든 해리스의 윈터 프로토타입 이후 개발된 타임리스 스킨 및 위키미디어 재단의 다양한 스타일.",
 	"timeless-search-placeholder": "문서 {{NUMBEROFARTICLES}}개 검색",
 	"timeless-loggedin": "사용자 계정",
