@@ -3,7 +3,8 @@
 		"authors": [
 			"Milicevic01",
 			"Obsuser",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"BadDog"
 		]
 	},
 	"timeless-desc": "Безвременски скин дизајниран по прототипу Winter који је направио Брендон Харис, те другим стиловима Задужбине Викимедија",
@@ -22,5 +23,6 @@
 	"timeless-pagemisc": "Више",
 	"timeless-namespaces": "Именски простори",
 	"timeless-pagetools": "Радње за страницу",
-	"timeless-languages": "Језици"
+	"timeless-languages": "Језици",
+	"timeless.js": "/* Јаваскрипт постављен овде ће се учитати за све оне који користе безвременску тему */"
 }
