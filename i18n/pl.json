@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"The Polish",
-			"Rzuwig"
+			"Rzuwig",
+			"Railfail536"
 		]
 	},
 	"timeless-search-placeholder": "Szukaj w {{NUMBEROFARTICLES}} stronach",
@@ -21,5 +22,6 @@
 	"timeless-pagemisc": "Więcej",
 	"timeless-namespaces": "Przestrzenie nazw",
 	"timeless-pagetools": "Działania na stronie",
-	"timeless-languages": "Języki"
+	"timeless-languages": "Języki",
+	"timeless.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Timeless */"
 }
