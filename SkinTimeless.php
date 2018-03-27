@@ -6,7 +6,7 @@
  */
 class SkinTimeless extends SkinTemplate {
 	public $skinname = 'timeless', $stylename = 'Timeless',
-		$template = 'TimelessTemplate', $useHeadElement = true;
+		$template = 'TimelessTemplate';
 
 	/**
 	 * @param OutputPage $out
