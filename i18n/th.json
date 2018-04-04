@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ans"
+			"Ans",
+			"Horus"
 		]
 	},
-	"timeless-notloggedin": "ไม่ได้ลงชื่อเข้าระบบ"
+	"timeless-notloggedin": "ยังไม่ลงชื่อเข้า"
 }
