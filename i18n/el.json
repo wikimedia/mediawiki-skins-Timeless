@@ -7,6 +7,10 @@
 	},
 	"timeless-loggedin": "Ο λογαριασμός σας",
 	"timeless-anonymous": "Ανώνυμος",
+	"timeless-loggedinas": "Συνδεδεμένος ως \"$1\"",
+	"timeless-notloggedin": "Δεν έχετε συνδεθεί",
+	"timeless-userpage": "{{GENDER:$1|Χρήστης}} σελίδα",
+	"timeless-talkpage": "{{GENDER:$1|Χρήστης}} συζήτηση",
 	"timeless-pagelog": "Μητρώα σελίδας",
 	"timeless-more": "Περισσότερα",
 	"timeless-sitetools": "Εργαλεία του βίκι",
@@ -14,5 +18,6 @@
 	"timeless-userpagetools": "Εργαλεία σελίδας χρήστη",
 	"timeless-pagemisc": "Περισσότερα",
 	"timeless-namespaces": "Ονοματοχώροι",
+	"timeless-pagetools": "Ενέργειες σελίδας",
 	"timeless-languages": "Γλώσσες"
 }
