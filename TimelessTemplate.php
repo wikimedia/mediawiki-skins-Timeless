@@ -74,6 +74,11 @@ class TimelessTemplate extends BaseTemplate {
 								'timeless-namespaces'
 							) .
 							$this->getPortlet(
+								'more',
+								$this->pileOfTools['more'],
+								'timeless-more'
+							) .
+							$this->getPortlet(
 								'views',
 								$this->pileOfTools['page-primary'],
 								'timeless-pagetools'
@@ -583,6 +588,7 @@ class TimelessTemplate extends BaseTemplate {
 			'page-secondary' => [],
 			'user' => [],
 			'page-tertiary' => [],
+			'more' => [],
 			'general' => []
 		];
 
@@ -617,7 +623,7 @@ class TimelessTemplate extends BaseTemplate {
 			'class' => 'dropdown-toggle'
 		];
 
-		// Goes in the page-primary in mobile, doesn't appear otherwise
+		// Only appears in mobile
 		if ( $this->data['language_urls'] !== false ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
@@ -661,11 +667,7 @@ class TimelessTemplate extends BaseTemplate {
 		foreach ( $pileOfTools as $navKey => $navBlock ) {
 			$currentSet = null;
 
-			if ( in_array( $navKey, [
-				'contributions',
-				'more',
-				'languages'
-			] ) ) {
+			if ( $navKey === 'contributions' ) {
 				$currentSet = 'page-primary';
 			} elseif ( in_array( $navKey, [
 				'blockip',
@@ -682,6 +684,11 @@ class TimelessTemplate extends BaseTemplate {
 				'permalink'
 			] ) ) {
 				$currentSet = 'page-tertiary';
+			} elseif ( in_array( $navKey, [
+				'more',
+				'languages'
+			] ) ) {
+				$currentSet = 'more';
 			} else {
 				$currentSet = 'general';
 			}
