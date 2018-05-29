@@ -181,7 +181,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		if ( is_array( $content ) ) {
 			$contentText = Html::openElement( 'ul' );
-			if ( count( $content ) > 0 ) {
+			if ( $content !== [] ) {
 				foreach ( $content as $key => $item ) {
 					$contentText .= $this->makeListItem(
 						$key,
@@ -199,7 +199,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html = Html::rawElement( 'div', [
 				'role' => 'navigation',
-				'class' => [ 'mw-portlet', 'emptyPortlet' => count( $content ) === 0 ],
+				'class' => [ 'mw-portlet', 'emptyPortlet' => (bool)$content ],
 				'id' => Sanitizer::escapeId( 'p-' . $name ),
 				'title' => Linker::titleAttrib( 'p-' . $name ),
 				'aria-labelledby' => $labelId
@@ -733,7 +733,7 @@ class TimelessTemplate extends BaseTemplate {
 				$allCats[$i] = substr( $catName, $len );
 			}
 		}
-		if ( count( $allCats ) > 0 ) {
+		if ( $allCats !== [] ) {
 			$dbr = wfGetDB( DB_REPLICA );
 			$res = $dbr->select(
 				[ 'page', 'page_props' ],
