@@ -199,7 +199,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html = Html::rawElement( 'div', [
 				'role' => 'navigation',
-				'class' => [ 'mw-portlet', 'emptyPortlet' => (bool)$content ],
+				'class' => [ 'mw-portlet', 'emptyPortlet' => !$content ],
 				'id' => Sanitizer::escapeId( 'p-' . $name ),
 				'title' => Linker::titleAttrib( 'p-' . $name ),
 				'aria-labelledby' => $labelId
