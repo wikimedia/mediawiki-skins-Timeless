@@ -147,7 +147,7 @@ class TimelessTemplate extends BaseTemplate {
 			$msgParams = $msg;
 			$msg = $msgString;
 		}
-		$msgObj = wfMessage( $msg );
+		$msgObj = $this->getMsg( $msg );
 		if ( $msgObj->exists() ) {
 			if ( isset( $msgParams ) && !empty( $msgParams ) ) {
 				$msgString = $this->getMsg( $msg, $msgParams )->parse();
@@ -467,11 +467,11 @@ class TimelessTemplate extends BaseTemplate {
 			if ( mb_strlen( $userName ) < $fit ) {
 				$dropdownHeader = $userName;
 			} else {
-				$dropdownHeader = wfMessage( 'timeless-loggedin' )->text();
+				$dropdownHeader = $this->getMsg( 'timeless-loggedin' )->text();
 			}
 			$headerMsg = [ 'timeless-loggedinas', $user->getName() ];
 		} else {
-			$dropdownHeader = wfMessage( 'timeless-anonymous' )->text();
+			$dropdownHeader = $this->getMsg( 'timeless-anonymous' )->text();
 			$headerMsg = 'timeless-notloggedin';
 		}
 		$html .= Html::openElement( 'div', [ 'id' => 'user-tools' ] );
