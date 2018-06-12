@@ -150,10 +150,9 @@ class TimelessTemplate extends BaseTemplate {
 		$msgObj = $this->getMsg( $msg );
 		if ( $msgObj->exists() ) {
 			if ( isset( $msgParams ) && !empty( $msgParams ) ) {
-				$msgString = $this->getMsg( $msg, $msgParams )->parse();
-			} else {
-				$msgString = $msgObj->parse();
+				$msgObj->params( $msgParams );
 			}
+			$msgString = $msgObj->parse();
 		} else {
 			$msgString = htmlspecialchars( $msg );
 		}
