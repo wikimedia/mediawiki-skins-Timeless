@@ -40,13 +40,4 @@ $( function () {
 			$( '#menus-cover' ).fadeOut( toggleTime );
 		}
 	} );
-
-	// Include alternative closing method for ios
-	$( window ).on( 'swiperight', function () {
-		if ( $( window ).width() < 851 ) {
-			$( '#personal-inner' ).fadeOut( toggleTime );
-			$( '.sidebar-inner' ).fadeOut( toggleTime );
-			$( '#menus-cover' ).fadeOut( toggleTime );
-		}
-	} );
 } );
