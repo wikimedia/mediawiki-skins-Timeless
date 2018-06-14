@@ -30,19 +30,19 @@
 					"media": "screen"
 				},
 				"resources/screen-desktop.less": {
-					"media": "screen and (min-width: 720px)"
+					"media": "screen and (min-width: 851px)"
 				},
 				"resources/screen-desktop-full.less": {
-					"media": "screen and (min-width: 1451px)"
+					"media": "screen and (min-width: 1340px)"
 				},
 				"resources/screen-desktop-mid.less": {
-					"media": "screen and (min-width: 1201px) and (max-width: 1450px)"
+					"media": "screen and (min-width: 1100px) and (max-width: 1339px)"
 				},
 				"resources/screen-desktop-small.less": {
-					"media": "screen and (min-width: 720px) and (max-width: 1200px)"
+					"media": "screen and (min-width: 851px) and (max-width: 1099px)"
 				},
 				"resources/screen-mobile.less": {
-					"media": "screen and (max-width: 719px)"
+					"media": "screen and (max-width: 850px)"
 				},
 				"resources/print.css": {
 					"media": "print"
