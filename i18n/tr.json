@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"HakanIST",
-			"Sayginer"
+			"Sayginer",
+			"Rapsar"
 		]
 	},
 	"timeless-search-placeholder": "Yaklaşık {{NUMBEROFARTICLES}} sayfayı ara",
@@ -15,6 +16,7 @@
 	"timeless-sitetools": "Viki araçları",
 	"timeless-pageactions": "Sayfa araçları",
 	"timeless-userpagetools": "Kullanıcı araçları",
+	"timeless-pagemisc": "Daha fazla",
 	"timeless-namespaces": "İsim alanları",
 	"timeless-pagetools": "Sayfa işlemleri",
 	"timeless-languages": "Diller"
