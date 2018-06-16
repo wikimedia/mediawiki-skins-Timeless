@@ -33,7 +33,7 @@ $( function () {
 	} );
 
 	// Close menus on click outside
-	$( document ).click( function ( e ) {
+	$( document ).on( 'click touchstart', function ( e ) {
 		if ( $( e.target ).closest( '#menus-cover' ).length > 0 ) {
 			$( '#personal-inner' ).fadeOut( toggleTime );
 			$( '.sidebar-inner' ).fadeOut( toggleTime );
