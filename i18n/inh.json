@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Adam-Yourist"
+			"Adam-Yourist",
+			"Kaganer"
 		]
 	},
 	"timeless-userpage": "{{GENDER:$1|Доакъашхочун}} оагӀув",
-	"timeless-talkpage": "{{GENDER:$1|Доакъашхочун}} дувца оттадар"
+	"timeless-talkpage": "{{GENDER:$1|Доакъашхочун}} дувца оттадар",
+	"timeless-namespaces": "ЦӀерий моттигаш"
 }
