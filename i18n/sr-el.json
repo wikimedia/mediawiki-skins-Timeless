@@ -6,6 +6,7 @@
 			"Zoranzoki21"
 		]
 	},
+	"skinname-timeless": "Bezvremenska",
 	"timeless-desc": "Bezvremenski skin dizajniran po prototipu Winter koji je napravio Brendon Haris, te drugim stilovima Zadužbine Vikimedija",
 	"timeless-search-placeholder": "Pretraži {{NUMBEROFARTICLES}} {{PLURAL:{{NUMBEROFARTICLES}}|stranicu|stranice|stranica}}",
 	"timeless-loggedin": "Vaš nalog",
@@ -22,5 +23,6 @@
 	"timeless-pagemisc": "Više",
 	"timeless-namespaces": "Imenski prostori",
 	"timeless-pagetools": "Radnje za stranicu",
-	"timeless-languages": "Jezici"
+	"timeless-languages": "Jezici",
+	"timeless.js": "/* Javaskript postavljen ovde će se učitati za sve one koji koriste bezvremensku temu */"
 }
