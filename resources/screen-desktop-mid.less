@@ -1,17 +1,28 @@
 @import 'variables.less';
 
+#mw-content-block {
+	clear: both;
+}
+
 #mw-site-navigation,
 #mw-related-navigation {
 	.column-left();
+	display: block;
+	width: @column-left-size;
+	position: relative;
 }
 
 #mw-related-navigation > div.sidebar-chunk:first-child {
 	margin-top: 0;
 }
 
+#mw-content-wrapper {
+	float: right;
+	margin-left: -@column-left-size;
+	width: 100%;
+}
 #mw-content {
 	margin-left: @column-left-size;
-	overflow: auto;
 }
 
 // Redundant content category list

@@ -36,6 +36,47 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html .= Html::rawElement( 'div', [ 'id' => 'mw-content-container', 'class' => 'ts-container' ],
 			Html::rawElement( 'div', [ 'id' => 'mw-content-block', 'class' => 'ts-inner' ],
+				Html::rawElement( 'div', [ 'id' => 'mw-content-wrapper' ],
+					Html::rawElement( 'div', [ 'id' => 'mw-content' ],
+						Html::rawElement( 'div', [ 'id' => 'content', 'class' => 'mw-body',  'role' => 'main' ],
+							$this->getSiteNotices() .
+							$this->getIndicators() .
+							Html::rawElement(
+								'h1',
+								[
+									'id' => 'firstHeading',
+									'class' => 'firstHeading',
+									'lang' => $this->get( 'pageLanguage' )
+								],
+								$this->get( 'title' )
+							) .
+							Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
+								$this->getPortlet(
+									'namespaces',
+									$this->pileOfTools['namespaces'],
+									'timeless-namespaces'
+								) .
+								$this->getPortlet(
+									'more',
+									$this->pileOfTools['more'],
+									'timeless-more'
+								) .
+								$this->getPortlet(
+									'views',
+									$this->pileOfTools['page-primary'],
+									'timeless-pagetools'
+								)
+							) .
+							$this->getClear() .
+							Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
+								$this->getContentSub() .
+								$this->get( 'bodytext' ) .
+								$this->getClear()
+							)
+						)
+					)
+				) .
+				$this->getAfterContent() .
 				Html::rawElement( 'div', [ 'id' => 'mw-site-navigation' ],
 					$this->getLogo( 'p-logo', 'image' ) .
 					$this->getMainNavigation() .
@@ -54,45 +95,6 @@ class TimelessTemplate extends BaseTemplate {
 					$this->getInterlanguageLinks() .
 					$this->getCategories()
 				) .
-				Html::rawElement( 'div', [ 'id' => 'mw-content' ],
-					Html::rawElement( 'div', [ 'id' => 'content', 'class' => 'mw-body',  'role' => 'main' ],
-						$this->getSiteNotices() .
-						$this->getIndicators() .
-						Html::rawElement(
-							'h1',
-							[
-								'id' => 'firstHeading',
-								'class' => 'firstHeading',
-								'lang' => $this->get( 'pageLanguage' )
-							],
-							$this->get( 'title' )
-						) .
-						Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
-							$this->getPortlet(
-								'namespaces',
-								$this->pileOfTools['namespaces'],
-								'timeless-namespaces'
-							) .
-							$this->getPortlet(
-								'more',
-								$this->pileOfTools['more'],
-								'timeless-more'
-							) .
-							$this->getPortlet(
-								'views',
-								$this->pileOfTools['page-primary'],
-								'timeless-pagetools'
-							)
-						) .
-						$this->getClear() .
-						Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
-							$this->getContentSub() .
-							$this->get( 'bodytext' ) .
-							$this->getClear()
-						)
-					)
-				) .
-				$this->getAfterContent() .
 				$this->getClear()
 			)
 		);
