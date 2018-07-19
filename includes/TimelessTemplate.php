@@ -702,95 +702,49 @@ class TimelessTemplate extends BaseTemplate {
 	/**
 	 * Categories for the sidebar
 	 *
-	 * Assemble an array of categories, regardless of view mode. Just using Skin or
-	 * OutputPage functions doesn't respect view modes (preview, history, whatever)
-	 * But why? I have no idea what the purpose of this is.
+	 * Assemble an array of categories. This doesn't show any categories for the
+	 * action=history view, but that behaviour is consistent with other skins.
 	 *
 	 * @return string html
 	 */
 	protected function getCategories() {
-		global $wgContLang;
-
 		$skin = $this->getSkin();
-		$title = $skin->getTitle();
-		$catList = false;
+		$catList = '';
 		$html = '';
 
-		// Get list from outputpage if in preview; otherwise get list from title
-		if ( in_array( $skin->getRequest()->getVal( 'action' ), [ 'submit', 'edit' ] ) ) {
-			$allCats = [];
-			// Can't just use getCategoryLinks because there's no equivalent for Title
-			$allCats2 = $skin->getOutput()->getCategories();
-			foreach ( $allCats2 as $displayName ) {
-				$catTitle = Title::makeTitleSafe( NS_CATEGORY, $displayName );
-				$allCats[] = $catTitle->getDBkey();
-			}
-		} else {
-			// This is probably to trim out some excessive stuff. Unless I was just high on cough syrup.
-			$allCats = array_keys( $title->getParentCategories() );
-
-			$len = strlen( $wgContLang->getNsText( NS_CATEGORY ) . ':' );
-			foreach ( $allCats as $i => $catName ) {
-				$allCats[$i] = substr( $catName, $len );
-			}
-		}
-		if ( $allCats !== [] ) {
-			$dbr = wfGetDB( DB_REPLICA );
-			$res = $dbr->select(
-				[ 'page', 'page_props' ],
-				[ 'page_id', 'page_title' ],
-				[
-					'page_title' => $allCats,
-					'page_namespace' => NS_CATEGORY,
-					'pp_propname' => 'hiddencat'
-				],
-				__METHOD__,
-				[],
-				[ 'page_props' => [ 'JOIN', 'pp_page = page_id' ] ]
-			);
-			$hiddenCats = [];
-			foreach ( $res as $row ) {
-				$hiddenCats[] = $row->page_title;
-			}
-			$normalCats = array_diff( $allCats, $hiddenCats );
-
-			$normalCount = count( $normalCats );
-			$hiddenCount = count( $hiddenCats );
-			$count = $normalCount;
-
-			// Mostly consistent with how Skin does it.
-			// Doesn't have the classes. Either way can't be good for caching.
-			if (
-				$skin->getUser()->getBoolOption( 'showhiddencats' ) ||
-				$title->getNamespace() == NS_CATEGORY
-			) {
-				$count += $hiddenCount;
+		$allCats = $skin->getOutput()->getCategoryLinks();
+		if ( !empty( $allCats ) ) {
+			if ( !empty( $allCats['normal'] ) ) {
+				$catHeader = 'categories';
+				$catList .= $this->getCatList(
+					$allCats['normal'],
+					'normal-catlinks',
+					'mw-normal-catlinks',
+					'categories'
+				);
 			} else {
-				/* We don't care if there are hidden ones. */
-				$hiddenCount = 0;
+				$catHeader = 'hidden-categories';
 			}
 
-			// Assemble the html...
-			if ( $count ) {
-				if ( $normalCount ) {
-					$catHeader = 'categories';
+			if ( isset( $allCats['hidden'] ) ) {
+				$hiddenCatClass = [ 'mw-hidden-catlinks' ];
+				if ( $skin->getUser()->getBoolOption( 'showhiddencats' ) ) {
+					$hiddenCatClass[] = 'mw-hidden-cats-user-shown';
+				} elseif ( $skin->getTitle()->getNamespace() == NS_CATEGORY ) {
+					$hiddenCatClass[] = 'mw-hidden-cats-ns-shown';
 				} else {
-					$catHeader = 'hidden-categories';
+					$hiddenCatClass[] = 'mw-hidden-cats-hidden';
 				}
-				$catList = '';
-				if ( $normalCount ) {
-					$catList .= $this->getCatList( $normalCats, 'catlist-normal', 'categories' );
-				}
-				if ( $hiddenCount ) {
-					$catList .= $this->getCatList(
-						$hiddenCats,
-						'catlist-hidden',
-						[ 'hidden-categories', $hiddenCount ]
-					);
-				}
+				$catList .= $this->getCatList(
+					$allCats['hidden'],
+					'hidden-catlinks',
+					$hiddenCatClass,
+					[ 'hidden-categories', count( $allCats['hidden'] ) ]
+				);
 			}
 		}
-		if ( $catList ) {
+
+		if ( $catList !== '' ) {
 			$html = $this->getSidebarChunk( 'catlinks-sidebar', $catHeader, $catList );
 		}
 
@@ -802,27 +756,28 @@ class TimelessTemplate extends BaseTemplate {
 	 *
 	 * @param array $list
 	 * @param string $id
+	 * @param string|array $class
 	 * @param string|array $message i18n message name or an array of [ message name, params ]
 	 *
 	 * @return string html
 	 */
-	protected function getCatList( $list, $id, $message ) {
-		$html = '';
+	protected function getCatList( $list, $id, $class, $message ) {
+		$html = Html::openElement( 'div', [ 'id' => "sidebar-{$id}", 'class' => $class ] );
 
-		$categories = [];
-		// Generate portlet content
-		foreach ( $list as $category ) {
-			$title = Title::makeTitleSafe( NS_CATEGORY, $category );
-			if ( !$title ) {
-				continue;
-			}
-			$categories[ htmlspecialchars( $category ) ] = [ 'links' => [ 0 => [
-				'href' => $title->getLinkURL(),
-				'text' => $title->getText()
-			] ] ];
-		}
+		$makeLinkItem = function ( $linkHtml ) {
+			return Html::rawElement( 'li', [], $linkHtml );
+		};
 
-		$html .= $this->getPortlet( $id, $categories, $message );
+		$categoryItems = array_map( $makeLinkItem, $list );
+
+		$categoriesHtml = Html::rawElement( 'ul',
+			[],
+			implode( '', $categoryItems )
+		);
+
+		$html .= $this->getPortlet( $id, $categoriesHtml, $message );
+
+		$html .= Html::closeElement( 'div' );
 
 		return $html;
 	}
