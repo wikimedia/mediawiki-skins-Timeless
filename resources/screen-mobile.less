@@ -221,24 +221,22 @@ div.thumb {
 	margin: 0 auto 0.5em;
 }
 
-#mw-content {
+.mw-body {
 	overflow: auto;
 	border: 0;
+
+	/* Keep images from overflowing */
+	a > img {
+		height: auto !important;
+		max-width: 100% !important;
+	}
 }
+
 #mw-content-block {
 	background: @background;
 }
 
-/* Keep images from overflowing */
-
-#mw-content a > img {
-	height: auto !important;
-	max-width: 100% !important;
-}
-
 /* Table of contents */
-
-#toc,
 .toc,
 .mw-warning {
 	width: 100%;
