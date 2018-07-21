@@ -50,6 +50,7 @@ class TimelessTemplate extends BaseTemplate {
 								],
 								$this->get( 'title' )
 							) .
+							Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
 							Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
 								$this->getPortlet(
 									'namespaces',
