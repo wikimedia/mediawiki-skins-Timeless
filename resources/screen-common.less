@@ -23,6 +23,8 @@ body {
 }
 #mw-content-container {
 	background: @background2;
+}
+.mw-body {
 	word-wrap: break-word;
 }
 #mw-footer-container {
@@ -450,7 +452,7 @@ ul {
 .thumbborder {
 	border: solid 1px @grey-bright;
 }
-#mw-content li.gallerybox div.thumb {
+.mw-body li.gallerybox div.thumb {
 	.box;
 	padding: 0;
 }
@@ -473,7 +475,7 @@ ul#filetoc {
 	margin: 1em 0 0;
 	list-style: none;
 }
-#mw-content .toc h2 {
+.mw-body .toc h2 {
 	font-size: 1em;
 	font-family: @fonts;
 	margin: 0;
@@ -483,7 +485,7 @@ ul#filetoc {
 .toctoggle {
 	color: @background3;
 }
-#toc li:last-child {
+.toc li:last-child {
 	margin-bottom: 0.5em;
 }
 .toclevel-1 {
@@ -493,14 +495,14 @@ ul#filetoc {
 	color: @grey-dark;
 }
 .mw-changeslist-legend,
-#mw-content .mw-search-profile-tabs,
-#mw-content fieldset#mw-searchoptions,
+.mw-body .mw-search-profile-tabs,
+.mw-body fieldset#mw-searchoptions,
 table.wikitable {
 	border: 0;
 	color: @text;
 	.box;
 }
-#mw-content .mw-search-profile-tabs {
+.mw-body .mw-search-profile-tabs {
 	padding: 0.5em;
 }
 
