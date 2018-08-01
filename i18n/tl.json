@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Leeheonjin",
-			"Sky Harbor"
+			"Sky Harbor",
+			"Jojit fb"
 		]
 	},
 	"timeless-desc": "Isang pabalat na magpakailanman na ibinatay sa disenyo ng prototipong Winter ni Brandon Harris, at ang mga sari-saring estilo ng Pundasyong Wikimedia",
 	"timeless-search-placeholder": "Maghanap sa {{NUMBEROFARTICLES}} pahina",
-	"timeless-loggedin": "Iyong kuwenta",
+	"timeless-loggedin": "Ang iyong account",
 	"timeless-anonymous": "Anonimo",
 	"timeless-loggedinas": "Nakalagda bilang si '''$1'''",
 	"timeless-notloggedin": "Hindi nakalagda",
