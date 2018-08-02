@@ -75,9 +75,9 @@ class TimelessTemplate extends BaseTemplate {
 								$this->getClear()
 							)
 						)
-					)
+					) .
+					$this->getAfterContent()
 				) .
-				$this->getAfterContent() .
 				Html::rawElement( 'div', [ 'id' => 'mw-site-navigation' ],
 					$this->getLogo( 'p-logo', 'image' ) .
 					$this->getMainNavigation() .
