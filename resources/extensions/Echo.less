@@ -34,6 +34,13 @@
 	}
 
 	@media ( min-width: @desktop-small-floor ) {
+		// Prevent echo badge labels from overflowing over this
+		// since they're just color:transparent and still right there
+		#personal {
+			position: relative;
+			z-index: 5;
+		}
+
 		#personal-extra {
 			float: left;
 			margin-left: -4.5em;
