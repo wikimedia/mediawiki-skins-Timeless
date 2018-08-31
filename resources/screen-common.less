@@ -571,6 +571,13 @@ table.wikitable > * > tr > th {
 	display: inherit;
 }
 
+/* Language links box should not have an unnecessary scrollbar
+ * @see https://phabricator.wikimedia.org/T181491
+ */
+#p-lang {
+	overflow: hidden;
+}
+
 /* Hidden stuff */
 
 #p-namespaces h3,
