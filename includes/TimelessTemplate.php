@@ -272,15 +272,15 @@ class TimelessTemplate extends BaseTemplate {
 		if ( $part !== 'image' ) {
 			$titleClass = '';
 			if ( $language->hasVariants() ) {
-				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->text() );
+				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
 			} else {
-				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->text();
+				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
 			}
 			// width is 11em; 13 characters will probably fit?
 			if ( mb_strlen( $siteTitle ) > 13 ) {
 				$titleClass = 'long';
 			}
-			$html .= Html::element( 'a', [
+			$html .= Html::rawElement( 'a', [
 					'id' => 'p-banner',
 					'class' => [ 'mw-wiki-title', $titleClass ],
 					'href' => $this->data['nav_urls']['mainpage']['href']
@@ -315,7 +315,7 @@ class TimelessTemplate extends BaseTemplate {
 		$html .= Html::rawElement(
 			'h3',
 			[ 'lang' => $this->get( 'userlang' ), 'dir' => $this->get( 'dir' ) ],
-			Html::rawElement( 'label', [ 'for' => 'searchInput' ], $this->getMsg( 'search' )->text() )
+			Html::rawElement( 'label', [ 'for' => 'searchInput' ], $this->getMsg( 'search' )->escaped() )
 		);
 
 		$html .= Html::rawElement( 'form', [ 'action' => $this->get( 'wgScript' ), 'id' => 'searchform' ],
