@@ -322,8 +322,7 @@ class TimelessTemplate extends BaseTemplate {
 			Html::rawElement( 'div', [ 'id' => 'simpleSearch' ],
 				Html::rawElement( 'div', [ 'id' => 'searchInput-container' ],
 					$this->makeSearchInput( [
-						'id' => 'searchInput',
-						'placeholder' => $this->getMsg( 'timeless-search-placeholder' )->text(),
+						'id' => 'searchInput'
 					] )
 				) .
 				Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
