@@ -38,7 +38,7 @@ class SkinTimeless extends SkinTemplate {
 	 *
 	 * @param OutputPage $out
 	 */
-	function setupSkinUserCss( OutputPage $out ) {
+	public function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
 	}
 }
