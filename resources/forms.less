@@ -3,49 +3,10 @@
 /*
  * PREFERENCES AND FIELDSET STUFF
  */
-#preftoc {
-	margin: 0 0 1em;
-	padding: 0;
-	list-style: none;
-	clear: both;
-
-	li {
-		display: inline;
-		margin-right: 1em;
-
-		&.selected a {
-			color: @text;
-			border-bottom: solid @border @blue;
-		}
-	}
-}
-
 #preferences {
 	margin: 0;
 	clear: both;
 	min-height: 400px;
-
-	.prefsection {
-		border: 0;
-		padding: 0;
-		margin: 0;
-		box-shadow: none;
-	}
-
-	.mainLegend {
-		display: none;
-	}
-
-	.preferences-login {
-		clear: both;
-		margin-bottom: 1.5em;
-	}
-
-	.mw-email-not-authenticated .mw-input,
-	.mw-email-none .mw-input {
-		display: block;
-		padding: 0.25em 0.5em;
-	}
 
 	input[ type='checkbox' ],
 	input[ type='radio' ] {
