@@ -1,7 +1,7 @@
 /**
  * Timeless-specific scripts
  */
-jQuery( function ( $ ) {
+$( function () {
 
 	/**
 	 * Focus on search box when 'Tab' key is pressed once
