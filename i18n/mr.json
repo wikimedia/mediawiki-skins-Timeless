@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar"
+			"V.narsikar",
+			"Sureshkhole"
 		]
 	},
 	"skinname-timeless": "टाईमलेस",
 	"timeless-loggedin": "आपले खाते",
 	"timeless-anonymous": "अनामिक",
 	"timeless-loggedinas": "'''$1''' म्हणून सनोंद प्रवेशित",
-	"timeless-notloggedin": "सनोंद-प्रवेशित नाही",
+	"timeless-notloggedin": "आल्याची नोंद केलेली नाही(लॉग इन केलेले नाही)",
 	"timeless-userpage": "{{GENDER:$1|सदस्य}} पान",
 	"timeless-talkpage": "{{GENDER:$1|सदस्य}} चर्चा",
 	"timeless-pagelog": "पानाच्या नोंदी",
