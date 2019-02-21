@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-	<g fill="#aaa" fill-opacity="1" fill-rule="evenodd" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" transform="translate(0 -1032.362)">
-		<path stroke="none" stroke-opacity="1" d="M12.314 1035.098l-8.9 8.9 4.95 4.95 8.9-8.9zm0 2.829l2.121 2.121-6.071 6.072-2.121-2.122z"/>
-		<path stroke="#000" stroke-opacity="0" d="M6.95 1050.362H2v-4.95z"/>
+	<g fill="#aaa" stroke="none">
+		<path d="M12.314 2.736l-8.9 8.9 4.95 4.95 8.9-8.9zm0 2.829l2.121 2.121-6.071 6.072-2.121-2.122z"/>
+		<path d="M6.95 18H2v-4.95z"/>
 	</g>
 </svg>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="26.667" height="26.667" viewBox="0 0 25.02 25.02">
-	<rect width="23.018" height="5.004" x="1.001" y="19.015" fill="#aaa" fill-opacity="1" fill-rule="evenodd" stroke="none" stroke-dasharray="none" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="1" stroke-width="65" opacity="1" ry="1.648"/>
-	<rect width="23.018" height="5.004" x="1.001" y="10.008" fill="#aaa" fill-opacity="1" fill-rule="evenodd" stroke="none" stroke-dasharray="none" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="1" stroke-width="65" opacity="1" ry="1.648"/>
-	<rect width="23.018" height="5.004" x="1.001" y="1.001" fill="#aaa" fill-opacity="1" fill-rule="evenodd" stroke="none" stroke-dasharray="none" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="1" stroke-width="65" opacity="1" ry="1.648"/>
+	<rect width="23.018" height="5.004" x="1.001" y="19.015" fill="#aaa" stroke="none" ry="1.648"/>
+	<rect width="23.018" height="5.004" x="1.001" y="10.008" fill="#aaa" stroke="none" ry="1.648"/>
+	<rect width="23.018" height="5.004" x="1.001" y="1.001" fill="#aaa" stroke="none" ry="1.648"/>
 </svg>

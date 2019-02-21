@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 5.292 5.292">
-	<g fill="#aaa" fill-opacity="1" fill-rule="evenodd" stroke="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width=".265" transform="translate(-108.668 -132.58)">
-		<path d="M109.197 133.374h.794v.265h-.265v3.175h.265v.264h-.794z"/>
-		<path d="M113.43 133.374v3.704h-.793v-.264h.264v-3.175h-.264v-.265z"/>
-		<path d="M110.256 133.374h.793v.265h-.264v3.175h.264v.264h-.793z"/>
-		<path d="M112.372 133.374v3.704h-.793v-.264h.264v-3.175h-.264v-.265z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+	<g fill="#aaa" stroke="none">
+		<path d="M2 3h3v1h-1v12h1v1h-3z"/>
+		<path d="M18 3v14h-3v-1h1v-12h-1v-1z"/>
+		<path d="M6 3h3v1h-1v12h1v1h-3z"/>
+		<path d="M14 3v14h-3v-1h1v-12h-1v-1z"/>
 	</g>
 </svg>
