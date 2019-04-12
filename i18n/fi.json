@@ -21,5 +21,6 @@
 	"timeless-namespaces": "Nimiavaruudet",
 	"timeless-pagetools": "Sivun toiminnot",
 	"timeless-languages": "Kielet",
+	"timeless.css": "/* Tämä sivu sisältää Timeless-ulkoasua muuttavia tyylejä. */",
 	"timeless.js": "/* Tämän sivun JavaScript-koodi liitetään Timeless-tyyliin */"
 }
