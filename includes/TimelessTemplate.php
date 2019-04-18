@@ -437,6 +437,8 @@ class TimelessTemplate extends BaseTemplate {
 	protected function getUserLinks() {
 		$user = $this->getSkin()->getUser();
 		$personalTools = $this->getPersonalTools();
+		// Preserve standard username label to allow customisation (T215822)
+		$userName = $personalTools['userpage']['links'][0]['text'] ?? $user->getName();
 
 		$html = '';
 		$extraTools = [];
@@ -462,7 +464,6 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Labels
 		if ( $user->isLoggedIn() ) {
-			$userName = $user->getName();
 			// Make sure it fits first (numbers slightly made up, may need adjusting)
 			$fit = empty( $extraTools ) ? 13 : 9;
 			if ( mb_strlen( $userName ) < $fit ) {
@@ -470,7 +471,7 @@ class TimelessTemplate extends BaseTemplate {
 			} else {
 				$dropdownHeader = $this->getMsg( 'timeless-loggedin' )->text();
 			}
-			$headerMsg = [ 'timeless-loggedinas', $user->getName() ];
+			$headerMsg = [ 'timeless-loggedinas', $userName ];
 		} else {
 			$dropdownHeader = $this->getMsg( 'timeless-anonymous' )->text();
 			$headerMsg = 'timeless-notloggedin';
