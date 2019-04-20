@@ -160,25 +160,6 @@ class TimelessTemplate extends BaseTemplate {
 			$msgString = htmlspecialchars( $msg );
 		}
 
-		// HACK: Compatibility with extensions still using SkinTemplateToolboxEnd
-		$hookContents = '';
-		if ( $name == 'tb' ) {
-			if ( isset( $boxes['TOOLBOX'] ) ) {
-				ob_start();
-				// We pass an extra 'true' at the end so extensions using BaseTemplateToolbox
-				// can abort and avoid outputting double toolbox links
-				// Avoid PHP 7.1 warning from passing $this by reference
-				$template = $this;
-				Hooks::run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
-				$hookContents = ob_get_contents();
-				ob_end_clean();
-				if ( !trim( $hookContents ) ) {
-					$hookContents = '';
-				}
-			}
-		}
-		// END hack
-
 		$labelId = Sanitizer::escapeId( "p-$name-label" );
 
 		if ( is_array( $content ) ) {
@@ -192,8 +173,6 @@ class TimelessTemplate extends BaseTemplate {
 					);
 				}
 			}
-			// Add in SkinTemplateToolboxEnd, if any
-			$contentText .= $hookContents;
 			$contentText .= Html::closeElement( 'ul' );
 		} else {
 			$contentText = $content;
