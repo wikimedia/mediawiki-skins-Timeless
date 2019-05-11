@@ -18,10 +18,13 @@
 			"i18n"
 		]
 	},
+	"config": {
+		"TimelessBackdropImage": "cat.svg"
+	},
 	"ResourceModules": {
 		"skins.timeless": {
 			"targets": [ "desktop", "mobile" ],
-			"class": "ResourceLoaderSkinModule",
+			"class": "TimelessFileModule",
 			"styles": {
 				"resources/libraries/normalise.css": {
 					"media": "screen"
@@ -55,6 +58,7 @@
 		},
 		"skins.timeless.misc": {
 			"targets": [ "desktop", "mobile" ],
+			"class": "ResourceLoaderSkinModule",
 			"styles": [
 				"resources/screen-misc.less"
 			]
@@ -90,7 +94,8 @@
 	},
 	"AutoloadClasses": {
 		"SkinTimeless": "includes/SkinTimeless.php",
-		"TimelessTemplate": "includes/TimelessTemplate.php"
+		"TimelessTemplate": "includes/TimelessTemplate.php",
+		"TimelessFileModule": "includes/TimelessFileModule.php"
 	},
 	"manifest_version": 1
 }
