@@ -562,15 +562,27 @@ ul#filetoc,
 	min-width: 15em;
 }
 
+.toc {
+	line-height: 1.2;
+
+	ul {
+		margin: 1em 0 0;
+		list-style: none;
+		text-align: left;
+	}
+
+	li {
+		margin: 0.3em 0;
+
+		&:last-child {
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
 ul#filetoc {
 	display: block;
 	border: 0;
-}
-
-.toc ul {
-	margin: 1em 0 0;
-	list-style: none;
-	text-align: left;
 }
 
 .mw-body .toc h2 {
@@ -583,10 +595,6 @@ ul#filetoc {
 
 .toctogglespan {
 	float: right;
-}
-
-.toc li:last-child {
-	margin-bottom: 0.5em;
 }
 
 .toclevel-1 {
