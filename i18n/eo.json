@@ -1,9 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			1490493253
+			1490493253,
+			"Mirin"
 		]
 	},
+	"timeless-loggedin": "Via konto",
+	"timeless-anonymous": "Anonima",
+	"timeless-loggedinas": "Ensalutinta kiel '''$1'''",
+	"timeless-notloggedin": "Ne ensalutinta",
+	"timeless-userpage": "{{GENDER:$1|Uzantopaĝo}}",
+	"timeless-talkpage": "{{GENDER:$1|Diskutpaĝo de uzanto}}",
+	"timeless-pagelog": "Protokoloj pri paĝo",
 	"timeless-more": "Pli",
-	"timeless-languages": "Lingvoj"
+	"timeless-sitetools": "Vikiaj iloj",
+	"timeless-pageactions": "Paĝaj iloj",
+	"timeless-userpagetools": "Iloj pri uzantopaĝo",
+	"timeless-pagemisc": "Pli",
+	"timeless-namespaces": "Nomspacoj",
+	"timeless-pagetools": "Agoj pri paĝo",
+	"timeless-languages": "Lingvoj",
+	"timeless.js": "/* Ajna JavaScript ĉi tie ŝargiĝos por tiuj kiuj uzas la etoson Timeless */"
 }
