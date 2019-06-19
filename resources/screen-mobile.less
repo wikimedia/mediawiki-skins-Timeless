@@ -1,5 +1,8 @@
 @import 'variables.less';
 
+// Override default here because mobile narrow
+@content-padding: 0.45em;
+
 /* Layout */
 
 #mw-footer {
@@ -118,7 +121,7 @@
 }
 
 #user-tools h2 {
-	right: @content-padding + 0.5em;
+	right: @content-padding + 0.75em;
 	.background-image-svg( 'images/user-large-grey.svg', 'images/user-large-grey.png' );
 }
 
@@ -135,7 +138,7 @@
 }
 
 #site-tools h2 {
-	right: 7em;
+	right: @content-padding + 4.5em;
 	.background-image-svg( 'images/gear-large-grey.svg', 'images/gear-large-grey.png' );
 }
 
@@ -144,7 +147,7 @@
 #p-logo-text {
 	position: absolute;
 	top: 0.75em;
-	left: 6em;
+	left: @content-padding + 4em;
 	text-align: left;
 
 	a {
@@ -262,6 +265,10 @@ div.thumb {
 		height: auto !important;
 		max-width: 100% !important;
 	}
+}
+
+#mw-content {
+	padding: @content-padding;
 }
 
 #mw-content-block {
