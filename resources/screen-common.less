@@ -597,6 +597,18 @@ ul#filetoc {
 	float: right;
 }
 
+// Remove brackets around the show/hide button of the TOC
+// The selectors have a higher specifity than in core
+body :not( :checked ) > .toctogglespan:before,
+body :not( :checked ) > .toctogglespan:after {
+	content: '';
+}
+
+.toctogglelabel {
+	padding-left: 0; // Overwrite label { padding-left: 0.5em; } from forms.less
+	margin-left: 0.5em; // Create new distance to the TOC title without increasing the focus ring
+}
+
 .toclevel-1 {
 	margin-bottom: 0.25em;
 }
