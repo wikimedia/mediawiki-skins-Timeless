@@ -9,12 +9,25 @@ class TimelessTemplate extends BaseTemplate {
 	/** @var array */
 	protected $pileOfTools;
 
+	/** @var array */
+	protected $sidebar;
+
+	/** @var array|null */
+	protected $otherProjects;
+
 	/**
 	 * Outputs the entire contents of the page
 	 */
 	public function execute() {
+		$this->sidebar = $this->getSidebar();
 		$this->pileOfTools = $this->getPageTools();
 		$userLinks = $this->getUserLinks();
+
+		// WikiBase sidebar thing
+		if ( isset( $this->sidebar['wikibase-otherprojects'] ) ) {
+			$this->otherProjects = $this->sidebar['wikibase-otherprojects'];
+			unset( $this->sidebar['wikibase-otherprojects'] );
+		}
 
 		// Open html, body elements, etc
 		$html = $this->get( 'headelement' );
@@ -327,17 +340,16 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getMainNavigation() {
-		$sidebar = $this->getSidebar();
 		$html = '';
 
 		// Already hardcoded into header
-		$sidebar['SEARCH'] = false;
+		$this->sidebar['SEARCH'] = false;
 		// Parsed as part of pageTools
-		$sidebar['TOOLBOX'] = false;
+		$this->sidebar['TOOLBOX'] = false;
 		// Forcibly removed to separate chunk
-		$sidebar['LANGUAGES'] = false;
+		$this->sidebar['LANGUAGES'] = false;
 
-		foreach ( $sidebar as $name => $content ) {
+		foreach ( $this->sidebar as $name => $content ) {
 			if ( $content === false ) {
 				continue;
 			}
@@ -771,22 +783,35 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getInterlanguageLinks() {
 		$html = '';
+		$show = false;
+
+		$variants = '';
+		$projects = '';
+		$languages = '';
 
 		if ( isset( $this->data['variant_urls'] ) && $this->data['variant_urls'] !== false ) {
 			$variants = $this->getPortlet( 'variants', $this->data['variant_urls'], true );
-		} else {
-			$variants = '';
+			$show = true;
+		}
+		// Wikibase thing
+		if ( isset( $this->otherProjects ) ) {
+			$projects = $this->getPortlet( 'wikibase-otherprojects', $this->otherProjects['content'] );
+			$show = true;
 		}
 		if ( $this->data['language_urls'] !== false ) {
+			$languages = $this->getPortlet(
+				'lang',
+				$this->data['language_urls'] ?: [],
+				'otherlanguages'
+			);
+			$show = true;
+		}
+
+		if ( $show ) {
 			$html .= $this->getSidebarChunk(
 				'other-languages',
 				'timeless-languages',
-				$variants .
-				$this->getPortlet(
-					'lang',
-					$this->data['language_urls'] ?: [],
-					'otherlanguages'
-				)
+				$variants . $languages . $projects
 			);
 		}
 
