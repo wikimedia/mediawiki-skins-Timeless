@@ -137,6 +137,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * 		],
 	 * 		...
 	 * 	]
+	 * @param-taint $content escapes_htmlnoent
 	 * @param null|string|array|bool $msg
 	 *
 	 * @return string html
