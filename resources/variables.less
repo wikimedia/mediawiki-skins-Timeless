@@ -1,37 +1,35 @@
 @import 'mediawiki.mixins';
 
-// Colours
+// Colours; see https://design.wikimedia.org/style-guide/visual-style_colors.html
 
-@text: #013;
-@background: #fff;
-@background2: #f3f3f3;
-@background3: #fcfcfc;
+@base100: #fff;
+@base90: #f8f9fa;
+@base80: #eaecf0;
+@base70: #c8ccd1;
+@base30: #72777d;
+@base20: #54595d;
+@base0: #000;
 
-@background-dark: #777;
-@background-dark2: #555;
-@text-inverse: #fff;
+@red: #d33;
+@red-bright: #fee7e6;
+@red-dark: #b32424;
 
-@link: @blue;
-@link-red: @red;
+@green: #00af89;
+@green-bright: #d5fdf4;
+@green-dark: #14866d;
 
-@grey: #ccc;
-@grey-bright: #eee;
-@grey-dark: #666;
+@blue: #36c;
+@blue-bright: #eaf3ff;
+@blue-dark: #2a4b8d;
 
-@red: #d44;
-@red-bright: #f55;
-@red-dark: #900;
-
-@green: #3b7;
-@green-bright: #4c8;
-@green-dark: #396;
-
-@blue: #08d;
-@blue-bright: #2af;
-@blue-dark: #069;
+@background: @base100;
+@text: @base0;
 
 @link: @blue;
+@link-visited: @blue-dark;
+
 @link-red: @red;
+@link-red-visited: @red-dark;
 
 // Flair
 
@@ -85,8 +83,8 @@
 }
 
 .box() {
-	background: @background3;
-	border: solid @grey-bright;
+	background: @base90;
+	border: solid @base80;
 	border-width: 1px 1px @border;
 	padding: 1.25em 1.75em;
 	box-shadow: 0 1px 2px 1px rgba( 0, 0, 0, 0.02 );
@@ -131,7 +129,7 @@
 		font-size: 1em;
 		margin: 0.25em 0 0.75em 0;
 		padding-bottom: 0.15em;
-		border-bottom: solid 2px @grey;
+		border-bottom: solid 2px @base70;
 	}
 
 	ul {

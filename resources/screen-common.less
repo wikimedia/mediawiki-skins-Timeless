@@ -11,7 +11,7 @@ body {
 body {
 	font-family: @fonts;
 	color: @text;
-	background: @background-dark;
+	background: @base30;
 	font-size: @font-size;
 	line-height: 1.5;
 }
@@ -31,12 +31,17 @@ body {
 }
 
 #mw-footer-container {
-	border-top: solid 1px @background-dark2;
+	border-top: solid 1px @base20;
 	box-shadow: inset 0 7px 2px -4px rgba( 0, 0, 0, 0.1 );
-	color: @text-inverse;
+	color: @base100;
 
 	a {
-		color: @text-inverse;
+		color: @base100;
+
+		&:hover,
+		&:visited {
+			color: @base90;
+		}
 	}
 
 	ul {
@@ -87,7 +92,7 @@ body {
 	box-shadow: inset 0 2px 4px 0 rgba( 0, 0, 0, 0.05 );
 	background: @background;
 	position: relative;
-	border: solid 1px @grey;
+	border: solid 1px @base70;
 }
 
 #searchInput {
@@ -123,14 +128,14 @@ body {
 
 	.suggestions-special {
 		background-color: @background;
-		border: 1px solid @grey;
+		border: 1px solid @base70;
 		border-bottom-width: @border;
 		padding: 0.75em 2em;
 	}
 
 	.suggestions-results {
 		background-color: @background;
-		border: 1px solid @grey;
+		border: 1px solid @base70;
 		border-bottom-width: @border;
 	}
 
@@ -149,7 +154,7 @@ body {
 
 .pokey,
 .pokey:after {
-	border-bottom: 10px solid @grey-bright;
+	border-bottom: 10px solid @base80;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	content: '';
@@ -213,7 +218,7 @@ body {
 /* Content */
 
 #mw-content-container {
-	background: @background2;
+	background: @base80;
 	border-bottom: solid 4px @green;
 
 	// Background image (default cat) set via TimelessFileModule
@@ -236,7 +241,7 @@ body {
 		border-bottom: solid 3px transparent;
 
 		&:hover {
-			border-bottom-color: @grey;
+			border-bottom-color: @base70;
 		}
 
 		&.selected {
@@ -296,21 +301,21 @@ body {
 
 a {
 	text-decoration: none;
-	color: @blue;
+	color: @link;
 
 	&:hover,
 	&:visited {
-		color: @blue-dark;
+		color: @link-visited;
 	}
 }
 
 a.new,
 .new a {
-	color: @red;
+	color: @link-red;
 
 	&:hover,
 	&:visited {
-		color: @red-dark;
+		color: @link-red-visited;
 	}
 }
 
@@ -365,7 +370,7 @@ div.magnify a {
  */
 #contentSub {
 	font-size: 84%;
-	color: @grey-dark;
+	color: @base20;
 
 	/* This forces "redirect page" (on a redirect page) etc. on a new line */
 	.subpages {
@@ -379,8 +384,8 @@ div.magnify a {
  */
 code {
 	color: #000;
-	background-color: @grey-bright;
-	border: 1px solid @grey-dark;
+	background-color: @base80;
+	border: 1px solid @base30;
 	border-radius: 2px;
 	padding: 1px 4px;
 }
@@ -388,8 +393,8 @@ code {
 pre,
 .mw-code {
 	color: #000;
-	background-color: @grey-bright;
-	border: 1px solid @grey-dark;
+	background-color: @base80;
+	border: 1px solid @base30;
 	padding: 1em;
 	/* Wrap lines in overflow. T2260, T103780 */
 	white-space: pre-wrap;
@@ -434,13 +439,13 @@ pre,
 
 	h1 {
 		font-size: 2em;
-		border-bottom: solid 3px @grey;
+		border-bottom: solid 3px @base70;
 		overflow: hidden;
 	}
 
 	h2 {
 		font-size: 1.8em;
-		border-bottom: solid 2px @grey;
+		border-bottom: solid 2px @base70;
 		overflow: hidden;
 	}
 
@@ -486,7 +491,7 @@ pre,
 
 hr {
 	border-width: 1px;
-	border-color: @grey;
+	border-color: @base70;
 	border-style: solid none solid none;
 	margin: 0.5em 0;
 }
@@ -542,7 +547,7 @@ ul {
 
 .thumbinner .thumbimage,
 .thumbborder {
-	border: solid 1px @grey-bright;
+	border: solid 1px @base80;
 }
 
 .mw-body li.gallerybox div.thumb {
@@ -590,7 +595,7 @@ ul#filetoc {
 	font-family: @fonts;
 	margin: 0;
 	display: inline;
-	border-bottom-color: @grey;
+	border-bottom-color: @base70;
 }
 
 .toctogglespan {
@@ -614,7 +619,7 @@ body :not( :checked ) > .toctogglespan:after {
 }
 
 .tocnumber {
-	color: @grey-dark;
+	color: @base20;
 }
 
 .skin-timeless .mw-body .oo-ui-tagMultiselectWidget-handle,
@@ -639,7 +644,7 @@ body :not( :checked ) > .toctogglespan:after {
 .wikitable > tr > td,
 .wikitable > * > tr > th,
 .wikitable > * > tr > td {
-	border: 1px solid @grey-bright;
+	border: 1px solid @base80;
 	padding: 0.5em;
 }
 
