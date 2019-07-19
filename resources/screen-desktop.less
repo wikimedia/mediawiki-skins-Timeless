@@ -61,10 +61,6 @@
 	display: none;
 }
 
-.dropdown {
-	display: none !important;
-}
-
 #personal {
 	display: inline-block;
 	position: relative;
@@ -72,8 +68,9 @@
 	line-height: 1;
 
 	.dropdown {
-		.dropdown-menu();
 		top: 3.15em;
+		display: none !important;
+		.dropdown-menu();
 	}
 
 	.pokey {
@@ -105,6 +102,29 @@
 		.dropdown {
 			display: block !important;
 		}
+	}
+}
+
+#ca-languages {
+	position: relative;
+
+	h2 {
+		margin: 0 0 -1em;
+		line-height: 1.5;
+		padding-bottom: 1em;
+		border-bottom: transparent;
+	}
+
+	.dropdown {
+		display: none !important;
+		.dropdown-menu();
+		right: 0;
+		// Override the mobile thing
+		top: 2.25em !important;
+	}
+
+	&:hover .dropdown {
+		display: block !important;
 	}
 }
 

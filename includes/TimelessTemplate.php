@@ -68,7 +68,7 @@ class TimelessTemplate extends BaseTemplate {
 				) .
 				Html::rawElement( 'div', [ 'id' => 'mw-related-navigation' ],
 					$this->getPageToolSidebar() .
-					$this->getInterlanguageLinks() .
+					$this->getInterwikiLinks() .
 					$this->getCategories()
 				) .
 				$this->getClear()
@@ -122,17 +122,21 @@ class TimelessTemplate extends BaseTemplate {
 				$this->getPortlet(
 					'namespaces',
 					$this->pileOfTools['namespaces'],
-					'timeless-namespaces'
+					'timeless-namespaces',
+					[ 'extra-classes' => 'tools-inline' ]
 				) .
 				$this->getPortlet(
 					'more',
 					$this->pileOfTools['more'],
-					'timeless-more'
+					'timeless-more',
+					[ 'extra-classes' => 'tools-inline' ]
 				) .
+				$this->getLanguageLinks() .
 				$this->getPortlet(
 					'views',
 					$this->pileOfTools['page-primary'],
-					'timeless-pagetools'
+					'timeless-pagetools',
+					[ 'extra-classes' => 'tools-inline' ]
 				)
 			) .
 			$this->getClear() .
@@ -669,6 +673,9 @@ class TimelessTemplate extends BaseTemplate {
 				} else {
 					$sortedPileOfTools['namespaces'] = $navBlock;
 				}
+			} elseif ( $navKey == 'variants' ) {
+				// wat
+				$sortedPileOfTools['variants'] = $navBlock;
 			} else {
 				$pileOfEditTools = array_merge( $pileOfEditTools, $navBlock );
 			}
@@ -690,15 +697,6 @@ class TimelessTemplate extends BaseTemplate {
 			'id' => 'ca-more',
 			'class' => 'dropdown-toggle'
 		];
-
-		// Only appears in mobile
-		if ( $this->data['language_urls'] !== false ) {
-			$pileOfTools['languages'] = [
-				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
-				'id' => 'ca-languages',
-				'class' => 'dropdown-toggle'
-			];
-		}
 
 		// This is really dumb, and you're an idiot for doing it this way.
 		// Obviously if you're not the idiot who did this, I don't mean you.
@@ -850,41 +848,54 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Interlanguage links block, also with variants
+	 * Interlanguage links block, with variants if applicable
+	 * Layout sort of assumes we're using ULS compact language handling
+	 * if there's a lot of languages.
 	 *
 	 * @return string html
 	 */
-	protected function getInterlanguageLinks() {
+	protected function getLanguageLinks() {
 		$html = '';
-		$show = false;
 
-		$variants = '';
-		$projects = '';
-		$languages = '';
+		$variants = $this->getPortlet(
+			'variants',
+			$this->pileOfTools['variants']
+		);
+		$languages = $this->getPortlet(
+			'lang',
+			$this->data['language_urls'],
+			'otherlanguages'
+		);
 
-		if ( isset( $this->data['variant_urls'] ) && $this->data['variant_urls'] !== false ) {
-			$variants = $this->getPortlet( 'variants', $this->data['variant_urls'], true );
-			$show = true;
-		}
-		// Wikibase thing
-		if ( isset( $this->otherProjects ) ) {
-			$projects = $this->getPortlet( 'wikibase-otherprojects', $this->otherProjects['content'] );
-			$show = true;
-		}
-		if ( $this->data['language_urls'] !== false ) {
-			$languages = $this->getPortlet(
-				'lang',
-				$this->data['language_urls'] ?: [],
-				'otherlanguages'
+		if ( $this->data['language_urls'] || $this->pileOfTools['variants'] ) {
+			$html .= Html::rawElement( 'div', [ 'id' => 'ca-languages' ],
+				Html::rawElement( 'h2', [],
+					Html::element( 'span', [], $this->getMsg( 'timeless-languages' )->text() ) .
+					Html::element( 'div', [ 'class' => 'pokey' ] )
+				) .
+				Html::rawElement( 'div', [ 'id' => 'languages-inner', 'class' => 'dropdown' ],
+					$variants .
+					$languages
+				)
 			);
-			$show = true;
 		}
 
-		if ( $show ) {
+		return $html;
+	}
+
+	/**
+	 * Interwiki links block if using wikibase for 'in other projects'
+	 *
+	 * @return string html
+	 */
+	protected function getInterwikiLinks() {
+		$html = '';
+
+		if ( isset( $this->otherProjects ) ) {
 			$html .= $this->getSidebarChunk(
-				'other-languages',
-				'timeless-languages',
-				$variants . $languages . $projects
+				'other-projects',
+				'timeless-projects',
+				$this->getPortlet( 'wikibase-otherprojects', $this->otherProjects['content'] )
 			);
 		}
 
