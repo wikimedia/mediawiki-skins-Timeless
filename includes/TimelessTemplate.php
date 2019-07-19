@@ -135,6 +135,8 @@ class TimelessTemplate extends BaseTemplate {
 
 	/**
 	 * Generates a block of navigation links with a header
+	 * This is some random fork of some random fork of what was supposed to be in core. Latest
+	 * version copied out of MonoBook, probably. (20190719)
 	 *
 	 * @param string $name
 	 * @param array|string $content array of links for use with makeListItem, or a block of text
@@ -142,47 +144,75 @@ class TimelessTemplate extends BaseTemplate {
 	 * 	[
 	 * 		$name => [
 	 * 			'links' => [ '0' =>
-	 * 				[ 'href' => ..., 'single-id' => ..., 'text' => ... ]
+	 * 				[
+	 * 					'href' => ...,
+	 * 					'single-id' => ...,
+	 * 					'text' => ...
+	 * 				]
 	 * 			],
 	 * 			'id' => ...,
 	 * 			'active' => ...
 	 * 		],
 	 * 		...
 	 * 	]
-	 * @param-taint $content escapes_htmlnoent
 	 * @param null|string|array|bool $msg
+	 * @param array $setOptions miscellaneous overrides, see below
 	 *
 	 * @return string html
-	 * @since 1.29
 	 */
-	protected function getPortlet( $name, $content, $msg = null ) {
+	protected function getPortlet( $name, $content, $msg = null, $setOptions = [] ) {
+		// random stuff to override with any provided options
+		$options = array_merge( [
+			'role' => 'navigation',
+			// extra classes/ids
+			'id' => 'p-' . $name,
+			'class' => [ 'mw-portlet', 'emptyPortlet' => !$content ],
+			'extra-classes' => '',
+			'body-id' => null,
+			'body-class' => 'mw-portlet-body',
+			'body-extra-classes' => '',
+			// wrapper for individual list items
+			'text-wrapper' => [ 'tag' => 'span' ],
+			// option to stick arbitrary stuff at the beginning of the ul
+			'list-prepend' => ''
+		], $setOptions );
+
+		// Handle the different $msg possibilities
 		if ( $msg === null ) {
 			$msg = $name;
+			$msgParams = [];
 		} elseif ( is_array( $msg ) ) {
 			$msgString = array_shift( $msg );
 			$msgParams = $msg;
 			$msg = $msgString;
+		} else {
+			$msgParams = [];
 		}
-		$msgObj = $this->getMsg( $msg );
+		$msgObj = $this->getMsg( $msg, $msgParams );
 		if ( $msgObj->exists() ) {
-			if ( isset( $msgParams ) && !empty( $msgParams ) ) {
-				$msgObj->params( $msgParams );
-			}
 			$msgString = $msgObj->parse();
 		} else {
 			$msgString = htmlspecialchars( $msg );
 		}
 
-		$labelId = Sanitizer::escapeId( "p-$name-label" );
+		$labelId = Sanitizer::escapeIdForAttribute( "p-$name-label" );
 
 		if ( is_array( $content ) ) {
-			$contentText = Html::openElement( 'ul' );
-			if ( $content !== [] ) {
-				foreach ( $content as $key => $item ) {
+			$contentText = Html::openElement( 'ul',
+				[ 'lang' => $this->get( 'userlang' ), 'dir' => $this->get( 'dir' ) ]
+			);
+			$contentText .= $options['list-prepend'];
+			foreach ( $content as $key => $item ) {
+				if ( is_array( $options['text-wrapper'] ) ) {
 					$contentText .= $this->makeListItem(
 						$key,
 						$item,
-						[ 'text-wrapper' => [ 'tag' => 'span' ] ]
+						[ 'text-wrapper' => $options['text-wrapper'] ]
+					);
+				} else {
+					$contentText .= $this->makeListItem(
+						$key,
+						$item
 					);
 				}
 			}
@@ -191,27 +221,57 @@ class TimelessTemplate extends BaseTemplate {
 			$contentText = $content;
 		}
 
-		$html = Html::rawElement( 'div', [
-				'role' => 'navigation',
-				'class' => [ 'mw-portlet', 'emptyPortlet' => !$content ],
-				'id' => Sanitizer::escapeId( 'p-' . $name ),
-				'title' => Linker::titleAttrib( 'p-' . $name ),
-				'aria-labelledby' => $labelId
-			],
-			Html::rawElement( 'h3', [
-					'id' => $labelId,
-					'lang' => $this->get( 'userlang' ),
-					'dir' => $this->get( 'dir' )
-				],
-				$msgString
-			) .
-			Html::rawElement( 'div', [ 'class' => 'mw-portlet-body' ],
+		$divOptions = [
+			'role' => $options['role'],
+			'class' => $this->mergeClasses( $options['class'], $options['extra-classes'] ),
+			'id' => Sanitizer::escapeIdForAttribute( $options['id'] ),
+			'title' => Linker::titleAttrib( $options['id'] ),
+			'aria-labelledby' => $labelId
+		];
+		$labelOptions = [
+			'id' => $labelId,
+			'lang' => $this->get( 'userlang' ),
+			'dir' => $this->get( 'dir' )
+		];
+
+		$bodyDivOptions = [
+			'class' => $this->mergeClasses( $options['body-class'], $options['body-extra-classes'] )
+		];
+		if ( is_string( $options['body-id'] ) ) {
+			$bodyDivOptions['id'] = $options['body-id'];
+		}
+
+		$html = Html::rawElement( 'div', $divOptions,
+			Html::rawElement( 'h3', $labelOptions, $msgString ) .
+			Html::rawElement( 'div', $bodyDivOptions,
 				$contentText .
 				$this->getAfterPortlet( $name )
 			)
 		);
 
 		return $html;
+	}
+
+	/**
+	 * Helper function for getPortlet
+	 *
+	 * Merge all provided css classes into a single array
+	 * Account for possible different input methods matching what Html::element stuff takes
+	 *
+	 * @param string|array $class base portlet/body class
+	 * @param string|array $extraClasses any extra classes to also include
+	 *
+	 * @return array all classes to apply
+	 */
+	protected function mergeClasses( $class, $extraClasses ) {
+		if ( !is_array( $class ) ) {
+			$class = [ $class ];
+		}
+		if ( !is_array( $extraClasses ) ) {
+			$extraClasses = [ $extraClasses ];
+		}
+
+		return array_merge( $class, $extraClasses );
 	}
 
 	/**
