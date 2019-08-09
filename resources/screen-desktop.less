@@ -1,5 +1,11 @@
 @import 'variables.less';
 
+// T181484 (firefox and chrome; doesn't fix anything else as yet)
+body,
+html {
+	scroll-padding-top: @fixed-header-height + 0.5em;
+}
+
 // Override menu display from mobile
 // This also requires !importants where they hover and stuff
 .dropdown,
