@@ -152,33 +152,6 @@ body {
 	}
 }
 
-/* Dropdown stuff */
-
-.pokey,
-.pokey:after {
-	border-bottom: 10px solid @base80;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	content: '';
-	height: 0;
-	position: absolute;
-	transform: rotate( 360deg ); // to force some smoothing in annoying browsers
-	width: 0;
-	z-index: 4;
-}
-
-.pokey {
-	top: 1.85em;
-	right: 1px;
-	display: none;
-}
-
-.pokey:after {
-	border-bottom-color: #fff;
-	right: -10px;
-	top: 2px;
-}
-
 .dropdown-toggle {
 	.dropdown-header();
 }

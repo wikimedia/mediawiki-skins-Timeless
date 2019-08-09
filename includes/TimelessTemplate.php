@@ -309,8 +309,7 @@ class TimelessTemplate extends BaseTemplate {
 			Html::rawElement( 'h2', [],
 				Html::element( 'span', [],
 					$this->getMsg( $headerMessage )->text()
-				) .
-				Html::element( 'div', [ 'class' => 'pokey' ] )
+				)
 			) .
 			Html::rawElement( 'div', [ 'class' => 'sidebar-inner' ], $content )
 		);
@@ -548,8 +547,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html .= Html::rawElement( 'div', [ 'id' => 'personal' ],
 			Html::rawElement( 'h2', [],
-				Html::element( 'span', [], $dropdownHeader ) .
-				Html::element( 'div', [ 'class' => 'pokey' ] )
+				Html::element( 'span', [], $dropdownHeader )
 			) .
 			Html::rawElement( 'div', [ 'id' => 'personal-inner', 'class' => 'dropdown' ],
 				$this->getPortlet( 'personal', $personalTools, $headerMsg )
@@ -870,8 +868,7 @@ class TimelessTemplate extends BaseTemplate {
 		if ( $this->data['language_urls'] || $this->pileOfTools['variants'] ) {
 			$html .= Html::rawElement( 'div', [ 'id' => 'ca-languages' ],
 				Html::rawElement( 'h2', [],
-					Html::element( 'span', [], $this->getMsg( 'timeless-languages' )->text() ) .
-					Html::element( 'div', [ 'class' => 'pokey' ] )
+					Html::element( 'span', [], $this->getMsg( 'timeless-languages' )->text() )
 				) .
 				Html::rawElement( 'div', [ 'id' => 'languages-inner', 'class' => 'dropdown' ],
 					$variants .

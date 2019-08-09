@@ -126,6 +126,59 @@
 	z-index: 3;
 }
 
+.dropdown-pokey() {
+	&:before,
+	&:after {
+		transform: rotate( 360deg ); // to force some smoothing in annoying browsers
+		border-bottom: 10px solid @base80;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		content: '';
+		height: 0;
+		width: 0;
+		position: absolute;
+		right: 1em;
+		z-index: 4;
+	}
+
+	&:before {
+		top: -10px;
+	}
+
+	&:after {
+		border-bottom-color: @base100;
+		top: -8px;
+	}
+}
+
+// stupid pokey alignment for menus on the left... (desktop-small dropdowns)
+.dropdown-pokey-left() {
+	&:hover h2 span {
+		&:before,
+		&:after {
+			display: block;
+		}
+	}
+
+	h2 span {
+		.dropdown-pokey();
+
+		&:before,
+		&:after {
+			right: 0;
+			display: none;
+		}
+
+		&:before {
+			top: 34px;
+		}
+
+		&:after {
+			top: 36px;
+		}
+	}
+}
+
 // Categories on bottom of page
 
 .categories-bottom() {
