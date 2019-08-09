@@ -211,18 +211,35 @@ h1.firstHeading {
 	&:after {
 		margin-left: -0.35em;
 	}
+}
 
-	span {
-		.ca-icon();
-	}
+#ca-more span,
+#ca-languages h2 span {
+	.ca-icon();
 }
 
 #ca-more span {
 	.background-image-svg( 'images/gear-grey.svg', 'images/gear-grey.png' );
 }
 
-#ca-languages span {
-	.background-image-svg( 'images/languages-grey.svg', 'images/languages-grey.png' );
+// TODO: consistentify dropdown header rendering and mobile toggle rendering
+#ca-languages h2 {
+	border-bottom: solid 3px transparent;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+
+	&:hover {
+		border-bottom-color: @base70;
+	}
+
+	span {
+		.background-image-svg( 'images/languages-grey.svg', 'images/languages-grey.png' );
+	}
+
+	&:after {
+		width: 16px;
+	}
 }
 
 /* Full-width thumbnails */

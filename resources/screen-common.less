@@ -20,7 +20,9 @@ body {
 	.box;
 	background: @background;
 	padding: 1em @content-padding 3em;
+}
 
+#mw-content-text {
 	/* Set a z-index for the content to group it away from any nav stuff (extensions) - T200148 */
 	position: relative;
 	z-index: 0;
@@ -226,7 +228,8 @@ body {
 	background-position: center 10em;
 }
 
-#mw-page-header-links {
+.tools-inline,
+.tools-inline & {
 	div,
 	ul,
 	li {
@@ -235,21 +238,21 @@ body {
 		margin: 0;
 		padding: 0;
 	}
+}
 
-	li {
-		margin: 0.25em 0 1em;
-		border-bottom: solid 3px transparent;
+.tools-inline li {
+	margin: 0.25em 0 1em;
+	border-bottom: solid 3px transparent;
 
-		&:hover {
-			border-bottom-color: @base70;
-		}
+	&:hover {
+		border-bottom-color: @base70;
+	}
 
-		&.selected {
-			border-bottom-color: @blue;
+	&.selected {
+		border-bottom-color: @blue;
 
-			a {
-				color: @text;
-			}
+		a {
+			color: @text;
 		}
 	}
 }
@@ -279,6 +282,30 @@ body {
 #ca-unwatch a {
 	.ca-icon();
 	.background-image-svg( 'images/star-filled.svg', 'images/star-filled.png' );
+}
+
+#ca-languages {
+	float: right;
+	margin: 0.25em 0 1em 1em;
+
+	h2 {
+		.dropdown-header();
+		font-size: 1em;
+		font-family: @fonts;
+		border-bottom: transparent;
+	}
+
+	.dropdown {
+		display: none;
+
+		h3 {
+			font-family: @fonts;
+		}
+
+		.selected a {
+			color: @text;
+		}
+	}
 }
 
 #siteNotice {
@@ -695,13 +722,6 @@ body :not( :checked ) > .toctogglespan:after {
 
 #p-lang.emptyPortlet {
 	display: inherit;
-}
-
-/* Language links box should not have an unnecessary scrollbar
- * @see https://phabricator.wikimedia.org/T181491
- */
-#p-lang {
-	overflow: hidden;
 }
 
 /* Hidden stuff */
