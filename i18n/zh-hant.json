@@ -26,5 +26,6 @@
 	"timeless-namespaces": "命名空間",
 	"timeless-pagetools": "頁面動作",
 	"timeless-languages": "語言",
+	"timeless-projects": "其它專案",
 	"timeless.js": "/* 任何在此的 JavaScript 都會在使用者使用 Timeless 佈景主題時被載入 */"
 }

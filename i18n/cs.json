@@ -26,6 +26,7 @@
 	"timeless-namespaces": "Jmenné prostory",
 	"timeless-pagetools": "Možnosti stránky",
 	"timeless-languages": "Jazyky",
+	"timeless-projects": "Na jiných projektech",
 	"timeless.css": "/* Zde uvedené CSS bude ovlivňovat pouze „Nadčasový“ vzhled */",
 	"timeless.js": "/* Zde uvedený JavaScript bude použit pouze pro uživatele „Nadčasového“ vzhledu */"
 }
