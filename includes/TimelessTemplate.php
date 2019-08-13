@@ -531,13 +531,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Labels
 		if ( $user->isLoggedIn() ) {
-			// Make sure it fits first (numbers slightly made up, may need adjusting)
-			$fit = empty( $extraTools ) ? 13 : 9;
-			if ( mb_strlen( $userName ) < $fit ) {
-				$dropdownHeader = $userName;
-			} else {
-				$dropdownHeader = $this->getMsg( 'timeless-loggedin' )->text();
-			}
+			$dropdownHeader = $userName;
 			$headerMsg = [ 'timeless-loggedinas', $userName ];
 		} else {
 			$dropdownHeader = $this->getMsg( 'timeless-anonymous' )->text();
