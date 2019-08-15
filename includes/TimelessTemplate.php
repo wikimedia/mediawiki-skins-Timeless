@@ -892,4 +892,16 @@ class TimelessTemplate extends BaseTemplate {
 
 		return $html;
 	}
+
+	/**
+	 * Extra cleanup: because we're not using SkinTemplate::buildContentActionUrls(),
+	 * some junk gets left in the tab list items unless we remove it ourselves.
+	 * (T214202)
+	 *
+	 * @inheritDoc
+	 */
+	public function makeListItem( $key, $item, $options = [] ) {
+		unset( $item['redundant'] );
+		return parent::makeListItem( $key, $item, $options );
+	}
 }
