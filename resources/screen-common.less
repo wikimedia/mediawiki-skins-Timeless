@@ -437,19 +437,16 @@ pre,
 	h1.firstHeading {
 		margin: 0.25em 0 0.5em;
 		border-bottom: solid 4px @blue;
-		overflow: visible;
 	}
 
 	h1 {
 		font-size: 2em;
 		border-bottom: solid 3px @base70;
-		overflow: hidden;
 	}
 
 	h2 {
 		font-size: 1.8em;
 		border-bottom: solid 2px @base70;
-		overflow: hidden;
 	}
 
 	h3 {
@@ -482,6 +479,27 @@ pre,
 
 	.mw-changeslist-legend dd {
 		margin-bottom: 0;
+	}
+
+	// overflow:hidden on the header itself breaks tall scripts, but we need to hide
+	// overflow on the border itself in output for proper thumb handling. Too weird to
+	// change this everywhere, so we'll just do it for parser output for now.
+	.mw-parser-output {
+		h1,
+		h2 {
+			border-bottom: 0;
+
+			&:after {
+				content: '';
+				display: block;
+				border-bottom: solid 2px @base70;
+				overflow: hidden;
+			}
+		}
+
+		h1:after {
+			border-bottom-width: 3px;
+		}
 	}
 }
 
@@ -595,12 +613,19 @@ ul#filetoc {
 	border: 0;
 }
 
-.mw-body .toc h2 {
-	font-size: 1em;
-	font-family: @fonts;
-	margin: 0;
-	display: inline;
-	border-bottom-color: @base70;
+.mw-body .toctitle {
+	border-bottom: solid 2px @base70;
+
+	h2 {
+		font-size: 1em;
+		font-family: @fonts;
+		margin: 0;
+		display: inline;
+
+		&:after {
+			display: none;
+		}
+	}
 }
 
 .toctogglespan {
