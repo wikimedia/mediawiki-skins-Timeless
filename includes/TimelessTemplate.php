@@ -15,6 +15,9 @@ class TimelessTemplate extends BaseTemplate {
 	/** @var array|null */
 	protected $otherProjects;
 
+	/** @var array|null */
+	protected $collectionPortlet;
+
 	/**
 	 * Outputs the entire contents of the page
 	 */
@@ -27,6 +30,11 @@ class TimelessTemplate extends BaseTemplate {
 		if ( isset( $this->sidebar['wikibase-otherprojects'] ) ) {
 			$this->otherProjects = $this->sidebar['wikibase-otherprojects'];
 			unset( $this->sidebar['wikibase-otherprojects'] );
+		}
+		// Collection sidebar thing
+		if ( isset( $this->sidebar['coll-print_export'] ) ) {
+			$this->collectionPortlet = $this->sidebar['coll-print_export'];
+			unset( $this->sidebar['coll-print_export'] );
 		}
 
 		// Open html, body elements, etc
@@ -481,6 +489,12 @@ class TimelessTemplate extends BaseTemplate {
 			$this->pileOfTools['page-secondary'],
 			'timeless-pageactions'
 		);
+		if ( isset( $this->collectionPortlet ) ) {
+			$pageTools .= $this->getPortlet(
+				'coll-print_export',
+				$this->collectionPortlet['content']
+			);
+		}
 		$pageTools .= $this->getPortlet(
 			'userpagetools',
 			$this->pileOfTools['user'],
@@ -739,7 +753,9 @@ class TimelessTemplate extends BaseTemplate {
 				'info',
 				'pagelog',
 				'recentchangeslinked',
-				'permalink'
+				'permalink',
+				'wikibase',
+				'cite'
 			] ) ) {
 				$currentSet = 'page-tertiary';
 			} elseif ( in_array( $navKey, [
