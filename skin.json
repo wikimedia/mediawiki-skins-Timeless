@@ -24,7 +24,7 @@
 	"ResourceModules": {
 		"skins.timeless": {
 			"targets": [ "desktop", "mobile" ],
-			"class": "TimelessFileModule",
+			"class": "TimelessVariablesModule",
 			"styles": {
 				"resources/libraries/normalise.css": {
 					"media": "screen"
@@ -95,7 +95,7 @@
 	"AutoloadClasses": {
 		"SkinTimeless": "includes/SkinTimeless.php",
 		"TimelessTemplate": "includes/TimelessTemplate.php",
-		"TimelessFileModule": "includes/TimelessFileModule.php"
+		"TimelessVariablesModule": "includes/TimelessVariablesModule.php"
 	},
 	"manifest_version": 1
 }
