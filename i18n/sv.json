@@ -23,6 +23,7 @@
 	"timeless-namespaces": "Namnrymder",
 	"timeless-pagetools": "Sidåtgärder",
 	"timeless-languages": "Språk",
+	"timeless-projects": "Andra projekt",
 	"timeless.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Timeless */",
 	"timeless.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Timeless */"
 }
