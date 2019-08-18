@@ -1,9 +1,13 @@
 @import 'variables.less';
 
 input {
+	font-family: @fonts;
+}
+
+// Because weird special cases that get broken by this usually aren't forms?
+form input {
 	margin: 0.5em 0;
 	padding: 0.34em;
-	font-family: @fonts;
 }
 
 .mw-input-with-label {
