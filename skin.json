@@ -89,7 +89,8 @@
 			"+ext.echo.styles.badge": "resources/extensions/Echo.less",
 			"+ext.visualEditor.core": "resources/extensions/VisualEditor.core.less",
 			"+ext.visualEditor.desktopArticleTarget.noscript": "resources/extensions/VisualEditor.article.less",
-			"+ext.dismissableSiteNotice.styles": "resources/extensions/DismissableSiteNotice.less"
+			"+ext.dismissableSiteNotice.styles": "resources/extensions/DismissableSiteNotice.less",
+			"+ext.MWOAuth.AuthorizeForm": "resources/extensions/MWOAuth.AuthorizeForm.less"
 		}
 	},
 	"AutoloadClasses": {
