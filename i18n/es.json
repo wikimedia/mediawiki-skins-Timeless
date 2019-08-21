@@ -6,7 +6,8 @@
 			"Julián L",
 			"Fitoschido",
 			"MarcoAurelio",
-			"Hasley"
+			"Hasley",
+			"Johny Weissmuller Jr"
 		]
 	},
 	"timeless-desc": "Una apariencia atemporal, diseñada por Brandon Harris en base al prototipo Winter y a varios estilos de la Fundación Wikimedia.",
@@ -20,6 +21,7 @@
 	"timeless-sitetools": "Herramientas wiki",
 	"timeless-pageactions": "Herramientas de página",
 	"timeless-userpagetools": "Herramientas de página de usuario",
+	"timeless-action-addsection": "Añadir tema",
 	"timeless-pagemisc": "Más",
 	"timeless-namespaces": "Espacios de nombres",
 	"timeless-pagetools": "Acciones de página",
