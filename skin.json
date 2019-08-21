@@ -91,7 +91,8 @@
 			"+ext.visualEditor.desktopArticleTarget.noscript": "resources/extensions/VisualEditor.article.less",
 			"+ext.CodeMirror.visualEditor.init": "resources/extensions/VisualEditor.CodeMirror.less",
 			"+ext.dismissableSiteNotice.styles": "resources/extensions/DismissableSiteNotice.less",
-			"+ext.MWOAuth.AuthorizeForm": "resources/extensions/MWOAuth.AuthorizeForm.less"
+			"+ext.MWOAuth.AuthorizeForm": "resources/extensions/MWOAuth.AuthorizeForm.less",
+			"+ext.wikiLove.icon": "resources/extensions/WikiLove.icon.less"
 		}
 	},
 	"AutoloadClasses": {

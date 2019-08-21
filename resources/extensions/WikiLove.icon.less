@@ -1,0 +1,18 @@
+@import '../variables.less';
+
+@media screen {
+	// Only apply icon if setting enabled
+	@media ( min-width: @desktop-small-floor ) {
+		#ca-wikilove.icon a {
+			.ca-icon();
+			.background-image-svg( '../images/heart-grey.svg', '../images/heart-grey.png' );
+		}
+	}
+
+	@media ( max-width: @mobile-width ) {
+		#ca-wikilove a {
+			.ca-icon();
+			.background-image-svg( '../images/heart-grey.svg', '../images/heart-grey.png' );
+		}
+	}
+}
