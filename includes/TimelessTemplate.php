@@ -489,12 +489,6 @@ class TimelessTemplate extends BaseTemplate {
 			$this->pileOfTools['page-secondary'],
 			'timeless-pageactions'
 		);
-		if ( isset( $this->collectionPortlet ) ) {
-			$pageTools .= $this->getPortlet(
-				'coll-print_export',
-				$this->collectionPortlet['content']
-			);
-		}
 		$pageTools .= $this->getPortlet(
 			'userpagetools',
 			$this->pileOfTools['user'],
@@ -505,6 +499,12 @@ class TimelessTemplate extends BaseTemplate {
 			$this->pileOfTools['page-tertiary'],
 			'timeless-pagemisc'
 		);
+		if ( isset( $this->collectionPortlet ) ) {
+			$pageTools .= $this->getPortlet(
+				'coll-print_export',
+				$this->collectionPortlet['content']
+			);
+		}
 
 		return $this->getSidebarChunk( 'page-tools', 'timeless-pageactions', $pageTools );
 	}
@@ -744,7 +744,9 @@ class TimelessTemplate extends BaseTemplate {
 			} elseif ( in_array( $navKey, [
 				'blockip',
 				'userrights',
-				'log'
+				'log',
+				'emailuser'
+
 			] ) ) {
 				$currentSet = 'user';
 			} elseif ( in_array( $navKey, [
