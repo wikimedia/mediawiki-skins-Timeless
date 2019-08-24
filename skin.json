@@ -19,7 +19,9 @@
 		]
 	},
 	"config": {
-		"TimelessBackdropImage": "cat.svg"
+		"TimelessBackdropImage": "cat.svg",
+		"TimelessLogo": null,
+		"TimelessWordmark": null
 	},
 	"ResourceModules": {
 		"skins.timeless": {

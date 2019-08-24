@@ -149,13 +149,26 @@ div.mw-notification-area {
 	}
 }
 
-#p-variants,
-#other-languages.variants-only,
-#mw-page-header-links #p-more {
-	display: none;
+.mw-wiki-logo {
+	display: block;
+	margin: 0.75em auto 0;
+
+	&.fallback {
+		content: '';
+		width: 11em;
+		height: 11em;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	&.timeless-logo {
+		background-image: none;
+	}
 }
 
-// TODO: use .hidden() for this instead (and unhide on desktop-small)
+#p-variants,
+#other-languages.variants-only,
+#mw-page-header-links #p-more,
 .sidebar-chunk h2 {
 	display: none;
 }

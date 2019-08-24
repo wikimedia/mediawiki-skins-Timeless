@@ -340,6 +340,7 @@ class TimelessTemplate extends BaseTemplate {
 	protected function getLogo( $id = 'p-logo', $part = 'both' ) {
 		$html = '';
 		$language = $this->getSkin()->getLanguage();
+		$config = $this->getSkin()->getContext()->getConfig();
 
 		$html .= Html::openElement(
 			'div',
@@ -350,32 +351,45 @@ class TimelessTemplate extends BaseTemplate {
 			]
 		);
 		if ( $part !== 'image' ) {
+			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ) );
+
 			$titleClass = '';
-			if ( $language->hasVariants() ) {
-				$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
+			if ( !$wordmarkImage ) {
+				if ( $language->hasVariants() ) {
+					$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
+				} else {
+					$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
+				}
+				// width is 11em; 13 characters will probably fit?
+				if ( mb_strlen( $siteTitle ) > 13 ) {
+					$titleClass = 'long';
+				}
 			} else {
-				$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
-			}
-			// width is 11em; 13 characters will probably fit?
-			if ( mb_strlen( $siteTitle ) > 13 ) {
-				$titleClass = 'long';
+				$titleClass = 'wordmark';
 			}
 			$html .= Html::rawElement( 'a', [
 					'id' => 'p-banner',
 					'class' => [ 'mw-wiki-title', $titleClass ],
 					'href' => $this->data['nav_urls']['mainpage']['href']
 				],
-				$siteTitle
+				$wordmarkImage ?: $siteTitle
 			);
+
 		}
 		if ( $part !== 'text' ) {
-			$html .= Html::element( 'a', array_merge(
-				[
-					'class' => 'mw-wiki-logo',
-					'href' => $this->data['nav_urls']['mainpage']['href']
-				],
-				Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
-			) );
+			$logoImage = $this->getLogoImage( $config->get( 'TimelessLogo' ) );
+
+			$html .= Html::rawElement(
+				'a',
+				array_merge(
+					[
+						'class' => [ 'mw-wiki-logo', !$logoImage ? 'fallback' : 'timeless-logo' ],
+						'href' => $this->data['nav_urls']['mainpage']['href']
+					],
+					Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
+				),
+				$logoImage ?: ''
+			);
 		}
 		$html .= Html::closeElement( 'div' );
 
@@ -943,5 +957,120 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		return $html;
+	}
+
+	/**
+	 * Generate img-based logos for proper HiDPI support
+	 *
+	 * @param string|array|null $logo
+	 *
+	 * @return string|false html|we're not doing this
+	 */
+	protected function getLogoImage( $logo ) {
+		if ( $logo === null ) {
+			// not set, fall back to generic methods
+			return false;
+		}
+
+		// Generate $logoData from a file upload
+		if ( is_string( $logo ) ) {
+			$file = wfFindFile( $logo );
+
+			if ( !$file || !$file->canRender() ) {
+				// eeeeeh bail, scary
+				return false;
+			}
+			$logoData = [];
+
+			// Calculate intended sizes
+			$width = $file->getWidth();
+			$height = $file->getHeight();
+			$bound = $width > $height ? $width : $height;
+			$svg = File::normalizeExtension( $file->getExtension() ) === 'svg';
+
+			if ( $bound <= 165 ) {
+				// It's a 1x image
+				$logoData['width'] = $width;
+				$logoData['height'] = $height;
+
+				if ( $svg ) {
+					$logoData['1x'] = $file->createThumb( $logoData['width'] );
+					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
+				} elseif ( $file->mustRender() ) {
+					$logoData['1x'] = $file->createThumb( $logoData['width'] );
+				} else {
+					$logoData['1x'] = $file->getUrl();
+				}
+
+			} elseif ( $bound >= 230 && $bound <= 330 ) {
+				// It's a 2x image
+				$logoData['width'] = $width / 2;
+				$logoData['height'] = $height / 2;
+
+				$logoData['1x'] = $file->createThumb( $logoData['width'] );
+				$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+
+				if ( $svg || $file->mustRender() ) {
+					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
+				} else {
+					$logoData['2x'] = $file->getUrl();
+				}
+			} else {
+				// Okay, whatever, we get to pick something random
+				// Yes I am aware this means they might have arbitrarily tall logos,
+				// and you know what, let 'em, I don't care
+				$logoData['width'] = 155;
+				$logoData['height'] = File::scaleHeight( $width, $height, $logoData['width'] );
+
+				$logoData['1x'] = $file->createThumb( $logoData['width'] );
+				if ( $svg || $logoData['width'] * 1.5 <= $width ) {
+					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+				}
+				if ( $svg || $logoData['width'] * 2 <= $width ) {
+					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
+				}
+			}
+		} elseif ( is_array( $logo ) ) {
+			// manually set logo data for non-file-uploads
+			$logoData = $logo;
+		} else {
+			// nope
+			return false;
+		}
+
+		// Render the html output!
+		$attribs = [
+			'alt' => $this->getMsg( 'sitetitle' )->text(),
+			// Should we care? It's just a logo...
+			'decoding' => 'auto',
+			'width' => $logoData['width'],
+			'height' => $logoData['height'],
+		];
+
+		if ( !isset( $logoData['1x'] ) && isset( $logoData['2x'] ) ) {
+			// We'll allow it...
+			$attribs['src'] = $logoData['2x'];
+		} else {
+			// Okay, we really do want a 1x otherwise. If this throws an error or
+			// something because there's nothing here, GOOD.
+			$attribs['src'] = $logoData['1x'];
+
+			// Throw the rest in a srcset
+			unset( $logoData['1x'], $logoData['width'], $logoData['height'] );
+			$srcset = '';
+			foreach ( $logoData as $res => $path ) {
+				if ( $srcset != '' ) {
+					$srcset .= ', ';
+				}
+				$srcset .= $path . ' ' . $res;
+			}
+
+			if ( $srcset !== '' ) {
+				$attribs['srcset'] = $srcset;
+			}
+		}
+
+		return Html::element( 'img', $attribs );
 	}
 }
