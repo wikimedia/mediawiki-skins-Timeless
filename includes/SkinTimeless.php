@@ -28,10 +28,6 @@ class SkinTimeless extends SkinTemplate {
 		$out->addModuleStyles( [
 			'mediawiki.skinning.content.externallinks',
 			'skins.timeless',
-			// This is a separate module from skins.timeless because it has its own
-			// @media declarations in its less, and apparently modules cannot be defined
-			// with both. That is the only reason.
-			'skins.timeless.misc'
 		] );
 		$out->addModules( [
 			'skins.timeless.js',

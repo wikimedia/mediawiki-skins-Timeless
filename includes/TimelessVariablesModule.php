@@ -2,7 +2,7 @@
 /**
  * ResourceLoader module to set some LESS variables for the skin
  */
-class TimelessVariablesModule extends ResourceLoaderFileModule {
+class TimelessVariablesModule extends ResourceLoaderSkinModule {
 	/**
 	 * Add our LESS variables
 	 *
