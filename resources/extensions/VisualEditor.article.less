@@ -6,15 +6,17 @@
 			display: none;
 		}
 
+		#ca-edit a {
+			.ca-icon( '../images/pencil-source-grey' );
+		}
+
+		#ca-ve-edit a {
+			.ca-icon( '../images/pencil-grey' );
+		}
+
 		@media ( max-width: @mobile-width ) {
 			#ca-ve-edit a {
-				.ca-icon();
-				.background-image-svg( '../images/pencil-grey.svg', '../images/pencil-grey.png' );
-			}
-
-			#ca-edit a {
-				.ca-icon();
-				.background-image-svg( '../images/pencil-source-grey.svg', '../images/pencil-source-grey.png' );
+				.ca-icon-only();
 			}
 		}
 	}

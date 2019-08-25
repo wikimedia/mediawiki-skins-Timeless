@@ -18,6 +18,27 @@
 	background-repeat: no-repeat;
 }
 
+// Icons for the page actions menus
+.ca-icon( @icon: '' ) {
+	.background-image-svg( '@{icon}.svg', '@{icon}.png' );
+	border: 0;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left top;
+	display: inline-block;
+	margin-bottom: -0.35em;
+	padding: 0 2px 0 20px;
+}
+
+// For use after .ca-icon() ...
+.ca-icon-only() {
+	text-indent: -99999px;
+	width: 20px;
+	overflow: hidden; // T174314
+	box-sizing: border-box;
+	padding: 0;
+}
+
 .box() {
 	background: @base90;
 	border: solid @base80;
@@ -32,18 +53,6 @@
 	padding: 0;
 	box-shadow: none;
 }
-
-// Icons for the page actions menus
-.ca-icon() {
-	.icon;
-	display: inline-block;
-	width: 20px;
-	box-sizing: border-box;
-	margin-bottom: -0.5em;
-	overflow: hidden;
-}
-
-// Navigation column blocks
 
 .nav-block() {
 	.box();

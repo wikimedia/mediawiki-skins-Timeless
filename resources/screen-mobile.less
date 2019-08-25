@@ -175,39 +175,8 @@ h1.firstHeading {
 	}
 }
 
-#ca-edit a {
-	.ca-icon();
-	.background-image-svg( 'images/pencil-grey.svg', 'images/pencil-grey.png' );
-}
-
-#ca-history a {
-	.ca-icon();
-	.background-image-svg( 'images/clock-grey.svg', 'images/clock-grey.png' );
-}
-
-#ca-talk a {
-	.ca-icon();
-	.background-image-svg( 'images/talk-grey.svg', 'images/talk-grey.png' );
-}
-
-#t-contributions a {
-	.ca-icon();
-	.background-image-svg( 'images/puzzle-grey.svg', 'images/puzzle-grey.png' );
-}
-
-#ca-addsection a {
-	.ca-icon();
-	.background-image-svg( 'images/plus-grey.svg', 'images/plus-grey.png' );
-}
-
-#ca-viewsource a {
-	.ca-icon();
-	.background-image-svg( 'images/brackets-grey.svg', 'images/brackets-grey.png' );
-}
-
-*[ id^='ca-nstab-' ] a {
-	.ca-icon();
-	.background-image-svg( 'images/page-grey.svg', 'images/page-grey.png' );
+.tools-inline li a {
+	.ca-icon-only();
 }
 
 #ca-more,
@@ -219,7 +188,9 @@ h1.firstHeading {
 
 #ca-more span,
 #ca-languages h2 span {
-	.ca-icon();
+	.ca-icon-only();
+	display: inline-block;
+	overflow: visible;
 }
 
 #ca-more span {
@@ -235,10 +206,6 @@ h1.firstHeading {
 
 	&:hover {
 		border-bottom-color: @base70;
-	}
-
-	span {
-		.background-image-svg( 'images/languages-grey.svg', 'images/languages-grey.png' );
 	}
 
 	&:after {

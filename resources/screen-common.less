@@ -229,6 +229,10 @@ body {
 			color: @text;
 		}
 	}
+
+	a {
+		.ca-icon( 'images/page-misc-grey' );
+	}
 }
 
 #p-namespaces {
@@ -249,13 +253,50 @@ body {
 }
 
 #ca-watch a {
-	.ca-icon();
-	.background-image-svg( 'images/star.svg', 'images/star.png' );
+	.ca-icon( 'images/star' );
+	.ca-icon-only();
 }
 
 #ca-unwatch a {
-	.ca-icon();
-	.background-image-svg( 'images/star-filled.svg', 'images/star-filled.png' );
+	.ca-icon( 'images/star-filled' );
+	.ca-icon-only();
+}
+
+#ca-edit a {
+	.ca-icon( 'images/pencil-grey' );
+}
+
+#ca-history a {
+	.ca-icon( 'images/clock-grey' );
+}
+
+#ca-talk a {
+	.ca-icon( 'images/talk-grey' );
+}
+
+#t-contributions a {
+	.ca-icon( 'images/puzzle-grey' );
+}
+
+#ca-addsection a {
+	.ca-icon( 'images/plus-grey' );
+}
+
+#ca-viewsource a {
+	.ca-icon( 'images/brackets-grey' );
+}
+
+#ca-view {
+	.hidden();
+
+	// Let's give anyone who forcibly brings it back a creepy eyeball
+	a {
+		.ca-icon( 'images/eyeball-grey' );
+	}
+}
+
+.tools-inline li[ id^='ca-nstab-' ] a {
+	.ca-icon( 'images/page-grey' );
 }
 
 #ca-languages {
@@ -264,6 +305,7 @@ body {
 
 	h2 {
 		.dropdown-header();
+		.ca-icon( 'images/languages-grey' );
 		font-size: 1em;
 		font-family: @fonts;
 		border-bottom: transparent;
