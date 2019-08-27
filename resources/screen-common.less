@@ -379,6 +379,12 @@ a.mw-selflink {
 		display: inline-block;
 		padding: 0.5em 0 0.25em;
 		margin-right: 1em;
+
+		&:first-of-type {
+			// make the icon part of the first link
+			padding-left: 20px;
+			margin-left: -20px;
+		}
 	}
 }
 
