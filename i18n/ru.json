@@ -4,7 +4,8 @@
 			"Okras",
 			"Redredsonia",
 			"Edward Chernenko",
-			"Kareyac"
+			"Kareyac",
+			"Movses"
 		]
 	},
 	"timeless-desc": "Тема оформления Timeless создана на основе прототипа Winter, созданного Брэндоном Харрисом, и различных стилей Фонда Викимедиа.",
@@ -18,7 +19,7 @@
 	"timeless-sitetools": "Вики-инструменты",
 	"timeless-pageactions": "Инструменты для страниц",
 	"timeless-userpagetools": "Инструменты страницы участника",
-	"timeless-action-addsection": "Добавить тему",
+	"timeless-action-addsection": "Новая тема",
 	"timeless-pagemisc": "Ещё",
 	"timeless-namespaces": "Пространства имён",
 	"timeless-pagetools": "Действия на странице",
