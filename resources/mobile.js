@@ -26,9 +26,9 @@ $( function () {
 		}
 	} );
 	$( '#ca-languages' ).on( 'click', function () {
-		$( '#languages-inner' ).css( 'top', $( '#ca-languages' ).offset().top + 25 );
+		$( '#other-languages .sidebar-inner' ).css( 'top', $( '#ca-languages' ).offset().top + 25 );
 		if ( $( window ).width() < 851 ) {
-			$( '#languages-inner, #menus-cover' ).fadeToggle( toggleTime );
+			$( '#other-languages .sidebar-inner, #menus-cover' ).fadeToggle( toggleTime );
 		}
 	} );
 
@@ -36,7 +36,6 @@ $( function () {
 	$( document ).on( 'click touchstart', function ( e ) {
 		if ( $( e.target ).closest( '#menus-cover' ).length > 0 ) {
 			$( '#personal-inner' ).fadeOut( toggleTime );
-			$( '#languages-inner' ).fadeOut( toggleTime );
 			$( '.sidebar-inner' ).fadeOut( toggleTime );
 			$( '#menus-cover' ).fadeOut( toggleTime );
 		}

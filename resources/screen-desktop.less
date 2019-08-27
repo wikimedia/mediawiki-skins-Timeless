@@ -115,14 +115,20 @@ div.mw-notification-area {
 	}
 }
 
-#ca-languages {
+#p-variants-desktop {
+	float: right;
+	margin: 0.25em 0 1em 1em;
 	position: relative;
 
-	h2 {
+	h3 {
+		.dropdown-header();
+		.ca-icon( 'images/languages-grey' );
+		font-size: 1em;
+		font-family: @fonts;
+		border-bottom: transparent;
 		margin: 0 0 -1em;
 		line-height: 1.5;
 		padding-bottom: 1em;
-		border-bottom: transparent;
 	}
 
 	.dropdown {
@@ -131,6 +137,11 @@ div.mw-notification-area {
 		.dropdown-pokey();
 		// Override the mobile thing
 		top: 2.25em !important;
+		padding-bottom: 2em;
+
+		.selected a {
+			color: @text;
+		}
 	}
 
 	&:hover .dropdown {
@@ -138,7 +149,13 @@ div.mw-notification-area {
 	}
 }
 
-#mw-page-header-links #p-more,
+#p-variants,
+#other-languages.variants-only,
+#mw-page-header-links #p-more {
+	display: none;
+}
+
+// TODO: use .hidden() for this instead (and unhide on desktop-small)
 .sidebar-chunk h2 {
 	display: none;
 }

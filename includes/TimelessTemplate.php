@@ -139,7 +139,7 @@ class TimelessTemplate extends BaseTemplate {
 					'timeless-more',
 					[ 'extra-classes' => 'tools-inline' ]
 				) .
-				$this->getLanguageLinks() .
+				$this->getVariants() .
 				$this->getPortlet(
 					'views',
 					$this->pileOfTools['page-primary'],
@@ -305,15 +305,19 @@ class TimelessTemplate extends BaseTemplate {
 	 * @param string $id
 	 * @param string $headerMessage
 	 * @param string $content
+	 * @param array $classes
 	 *
 	 * @return string html
 	 */
-	protected function getSidebarChunk( $id, $headerMessage, $content ) {
+	protected function getSidebarChunk( $id, $headerMessage, $content, $classes = [] ) {
 		$html = '';
 
 		$html .= Html::rawElement(
 			'div',
-			[ 'id' => Sanitizer::escapeId( $id ), 'class' => 'sidebar-chunk' ],
+			[
+				'id' => Sanitizer::escapeId( $id ),
+				'class' => array_merge( [ 'sidebar-chunk' ], $classes )
+			],
 			Html::rawElement( 'h2', [],
 				Html::element( 'span', [],
 					$this->getMsg( $headerMessage )->text()
@@ -698,11 +702,21 @@ class TimelessTemplate extends BaseTemplate {
 				'id' => 't-pagelog'
 			];
 		}
+
+		// Mobile toggles
 		$pileOfTools['more'] = [
 			'text' => $this->getMsg( 'timeless-more' )->text(),
 			'id' => 'ca-more',
 			'class' => 'dropdown-toggle'
 		];
+		if ( $this->data['language_urls'] !== false || $this->pileOfTools['variants']
+			|| isset( $this->otherProjects ) ) {
+			$pileOfTools['languages'] = [
+				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
+				'id' => 'ca-languages',
+				'class' => 'dropdown-toggle'
+			];
+		}
 
 		// This is really dumb, and you're an idiot for doing it this way.
 		// Obviously if you're not the idiot who did this, I don't mean you.
@@ -864,28 +878,15 @@ class TimelessTemplate extends BaseTemplate {
 	 *
 	 * @return string html
 	 */
-	protected function getLanguageLinks() {
+	protected function getVariants() {
 		$html = '';
 
-		$variants = $this->getPortlet(
-			'variants',
-			$this->pileOfTools['variants']
-		);
-		$languages = $this->getPortlet(
-			'lang',
-			$this->data['language_urls'],
-			'otherlanguages'
-		);
-
-		if ( $this->data['language_urls'] || $this->pileOfTools['variants'] ) {
-			$html .= Html::rawElement( 'div', [ 'id' => 'ca-languages' ],
-				Html::rawElement( 'h2', [],
-					Html::element( 'span', [], $this->getMsg( 'timeless-languages' )->text() )
-				) .
-				Html::rawElement( 'div', [ 'id' => 'languages-inner', 'class' => 'dropdown' ],
-					$variants .
-					$languages
-				)
+		if ( $this->pileOfTools['variants'] ) {
+			$html .= $this->getPortlet(
+				'variants-desktop',
+				$this->pileOfTools['variants'],
+				'variants',
+				[ 'body-extra-classes' => 'dropdown' ]
 			);
 		}
 
@@ -893,18 +894,51 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Interwiki links block if using wikibase for 'in other projects'
+	 * Interwiki links block
 	 *
 	 * @return string html
 	 */
 	protected function getInterwikiLinks() {
 		$html = '';
+		$variants = '';
+		$otherprojects = '';
+		$languages = '';
+		$show = false;
+		$variantsOnly = false;
 
+		if ( $this->pileOfTools['variants'] ) {
+			$variants = $this->getPortlet(
+				'variants',
+				$this->pileOfTools['variants']
+			);
+			$show = true;
+			$variantsOnly = true;
+		}
+		if ( $this->data['language_urls'] !== false ) {
+			$languages = $this->getPortlet(
+				'lang',
+				$this->data['language_urls'] ?: [],
+				'otherlanguages'
+			);
+			$show = true;
+			$variantsOnly = false;
+		}
+		// if using wikibase for 'in other projects'
 		if ( isset( $this->otherProjects ) ) {
+			$otherprojects = $this->getPortlet(
+				'wikibase-otherprojects',
+				$this->otherProjects['content']
+			);
+			$show = true;
+			$variantsOnly = false;
+		}
+
+		if ( $show ) {
 			$html .= $this->getSidebarChunk(
-				'other-projects',
+				'other-languages',
 				'timeless-projects',
-				$this->getPortlet( 'wikibase-otherprojects', $this->otherProjects['content'] )
+				$variants . $languages . $otherprojects,
+				$variantsOnly ? [ 'variants-only' ] : []
 			);
 		}
 
