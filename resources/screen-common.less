@@ -709,30 +709,45 @@ body :not( :checked ) > .toctogglespan:after {
 .mw-changeslist-legend,
 .mw-body .mw-search-profile-tabs,
 .mw-body fieldset#mw-searchoptions,
-.wikitable {
+.wikitable,
+.mw-datatable {
 	color: @text;
 	.box;
-}
-
-.wikitable {
-	border-color: @base70;
 }
 
 .mw-body .mw-search-profile-tabs {
 	padding: 0.5em;
 }
 
-.wikitable > tr > th,
-.wikitable > tr > td,
-.wikitable > * > tr > th,
-.wikitable > * > tr > td {
-	border: 1px solid @base70;
-	padding: 0.5em;
+.mw-datatable,
+.wikitable {
+	border-color: @base70;
+
+	> tr > th,
+	> tr > td,
+	> * > tr > th,
+	> * > tr > td {
+		border: 1px solid @base70;
+		padding: 0.4em 0.5em;
+	}
+
+	> tr > th,
+	> * > tr > th {
+		border-bottom-width: 2px;
+	}
+
+	> tr > td,
+	> * > tr > td {
+		background: @base90;
+	}
 }
 
-.wikitable > tr > th,
-.wikitable > * > tr > th {
-	border-bottom-width: 2px;
+.mw-datatable th {
+	background: @blue-bright;
+}
+
+.wikitable th {
+	background: @base80;
 }
 
 /* Color bars */
