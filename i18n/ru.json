@@ -20,9 +20,11 @@
 	"timeless-pageactions": "Инструменты для страниц",
 	"timeless-userpagetools": "Инструменты страницы участника",
 	"timeless-action-addsection": "Новая тема",
+	"timeless-view-view": "Читать",
 	"timeless-pagemisc": "Ещё",
 	"timeless-namespaces": "Пространства имён",
 	"timeless-pagetools": "Действия на странице",
 	"timeless-languages": "Языки",
+	"timeless-projects": "Другие проекты",
 	"timeless.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления Timeless */"
 }
