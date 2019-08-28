@@ -56,3 +56,14 @@
 		min-width: @column-right-size;
 	}
 }
+
+// Internet Explorer 10-11
+/* stylelint-disable media-feature-parentheses-space-inside */
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* stylelint-enable media-feature-parentheses-space-inside */
+	// T190991
+	textarea,
+	#searchInput {
+		box-shadow: none;
+	}
+}
