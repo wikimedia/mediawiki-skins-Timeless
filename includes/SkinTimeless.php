@@ -33,6 +33,9 @@ class SkinTimeless extends SkinTemplate {
 			'skins.timeless.js',
 			'skins.timeless.mobile'
 		] );
+
+		// Basic IE support without flexbox
+		$out->addStyle( $this->stylename . '/resources/IE9fixes.css', 'screen', 'IE' );
 	}
 
 	/**

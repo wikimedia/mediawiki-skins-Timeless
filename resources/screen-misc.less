@@ -15,48 +15,6 @@
 	}
 }
 
-// uuuuugh wat I don't know what's going on, everything after this is possibly a horrible idea
-// trying to handle changeable-width username container, I guess?
-@media screen and ( min-width: @desktop-mid-floor ) {
-	#mw-header {
-		.flex-display;
-	}
-
-	#user-tools {
-		.flex(0, 1, auto, 3);
-		display: inline-block;
-
-		h2 span {
-			display: inline-block;
-			max-width: 300px;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-
-		// Because the overflow:hidden above messes up the alignment...
-		#personal h2:after {
-			height: 18px;
-		}
-	}
-
-	#p-logo-text {
-		.flex(0, 0, @column-left-size, 1);
-	}
-
-	#p-search {
-		.flex(1, 1, auto, 2);
-		// this line breaks IE for mid (two-column), too, but whatever
-		margin: 0;
-	}
-}
-
-@media screen and ( min-width: @desktop-large-floor ) {
-	#user-tools {
-		min-width: @column-right-size;
-	}
-}
-
 // Internet Explorer 10-11
 /* stylelint-disable media-feature-parentheses-space-inside */
 @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {

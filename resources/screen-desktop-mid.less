@@ -6,6 +6,10 @@
 	clear: both;
 }
 
+#p-logo-text {
+	min-width: @column-left-size;
+}
+
 #mw-site-navigation,
 #mw-related-navigation {
 	.column-left();
@@ -41,4 +45,9 @@
 
 .color-right {
 	background: @blue-dark;
+}
+
+.ts-inner,
+.color-middle-container {
+	max-width: @content-width - @column-right-size;
 }

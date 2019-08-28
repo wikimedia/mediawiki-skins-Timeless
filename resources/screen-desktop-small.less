@@ -4,6 +4,13 @@
 
 #mw-content-block {
 	padding: 0;
+	position: relative;
+	// In case of high resolution usage
+	max-width: @content-width - @column-left-size - @column-right-size;
+}
+
+.ts-inner {
+	max-width: @content-width - @column-left-size - @column-right-size;
 }
 
 #mw-content {
@@ -62,7 +69,6 @@
 }
 
 .sidebar-chunk:hover {
-	.pokey,
 	.sidebar-inner {
 		display: block !important;
 	}
@@ -83,7 +89,7 @@
 
 #mw-site-navigation {
 	position: absolute;
-	top: 3.1em;
+	top: -2.35em;
 	left: 2em;
 
 	.sidebar-chunk {
@@ -101,7 +107,7 @@
 
 #mw-related-navigation {
 	position: absolute;
-	top: 3.1em;
+	top: -2.35em;
 	right: 2em;
 
 	.sidebar-chunk {
@@ -123,6 +129,7 @@
 
 #p-logo-text a {
 	padding-left: 0;
+	padding-right: 0.5em;
 	text-align: left;
 }
 
@@ -136,22 +143,10 @@
 	float: right;
 
 	h2 span {
-		display: none;
-	}
-
-	h2:after {
-		margin-left: -0.65em;
+		max-width: 130px;
 	}
 
 	.dropdown {
 		right: -1em;
 	}
-}
-
-#user-tools {
-	width: 6em;
-}
-
-#p-search {
-	margin-right: 6em;
 }
