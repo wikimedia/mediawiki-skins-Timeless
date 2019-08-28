@@ -121,12 +121,20 @@ div.mw-notification-area {
 			word-wrap: break-word;
 		}
 	}
+}
 
-	&:hover {
-		.pokey,
-		.dropdown {
-			display: block !important;
-		}
+.client-nojs #personal:hover {
+	.pokey,
+	.dropdown {
+		display: block !important;
+	}
+}
+
+#mw-wrapper .dropdown-active {
+	.pokey,
+	.dropdown,
+	.sidebar-inner {
+		display: block !important;
 	}
 }
 
@@ -153,15 +161,16 @@ div.mw-notification-area {
 		// Override the mobile thing
 		top: 2.25em !important;
 		padding-bottom: 2em;
+		margin-right: 2px;
 
 		.selected a {
 			color: @text;
 		}
 	}
+}
 
-	&:hover .dropdown {
-		display: block !important;
-	}
+.client-nojs #ca-languages:hover .dropdown {
+	display: block !important;
 }
 
 .mw-wiki-logo {
