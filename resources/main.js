@@ -7,22 +7,20 @@ $( function () {
 
 /**
  * Desktop menu click-toggling
+ *
+ * We're not even checking if it's desktop because the classes in play have no effect
+ * on mobile regardless... this may break things at some point, though.
  */
 $( function () {
 	// sidebar-chunk only applies to desktop-small, but the toggles are hidden at
-	// other resolutions regardless and the css overrides any visible effects. So
-	// whatever.
+	// other resolutions regardless and the css overrides any visible effects.
 	var dropdowns = '#personal, #p-variants-desktop, .sidebar-chunk';
 
 	/**
 	 * Close all dropdowns
 	 */
 	function closeOpen() {
-		$( dropdowns ).each( function () {
-			if ( $( this ).hasClass( 'dropdown-active' ) ) {
-				$( this ).removeClass( 'dropdown-active' );
-			}
-		} );
+		$( dropdowns ).removeClass( 'dropdown-active' );
 	}
 
 	/**
@@ -40,7 +38,7 @@ $( function () {
 			$( this ).addClass( 'dropdown-active' );
 		}
 	} );
-	$( document ).click( function ( e ) {
+	$( document ).on( 'click', function ( e ) {
 		if ( $( e.target ).closest( dropdowns ).length > 0 ) {
 			// Clicked inside an open menu; don't close anything
 		} else {
