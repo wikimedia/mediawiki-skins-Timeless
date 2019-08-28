@@ -26,6 +26,10 @@ div.mw-notification-area {
 
 /* Header */
 
+#mw-header {
+	.flex-display;
+}
+
 #mw-header-container {
 	/* Stupid IE10+ bug requires defining the height property for this to work
 	 * the way it is intended; without doing that this'll break horribly under
@@ -45,18 +49,29 @@ div.mw-notification-area {
 }
 
 #p-logo-text {
-	width: @column-left-size;
-	float: left;
+	.flex(0, 0, auto, 1);
 }
 
 #p-search {
-	margin-left: @column-left-size;
-	margin-right: @column-right-size;
+	.flex(1, 1, auto, 2);
 }
 
 #user-tools {
-	width: @column-right-size;
-	float: right;
+	.flex(0, 1, auto, 3);
+	display: inline-block;
+
+	h2 span {
+		display: inline-block;
+		max-width: 300px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	// Because the overflow:hidden above messes up the alignment...
+	#personal h2:after {
+		height: 18px;
+	}
 }
 
 #mw-header-nav-hack,

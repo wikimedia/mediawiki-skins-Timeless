@@ -7,6 +7,10 @@
 	clear: both;
 }
 
+#p-logo-text {
+	min-width: @column-left-size;
+}
+
 #mw-site-navigation {
 	.column-left();
 	.flex(0, 0, @column-left-size, 1);
@@ -26,4 +30,9 @@
 // Redundant content category list
 #catlinks {
 	display: none;
+}
+
+// For the more responsive username support
+#user-tools {
+	min-width: @column-right-size;
 }
