@@ -802,7 +802,6 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Extra sorting for Extension:ProofreadPage namespace items
 		$tabs = [
-			'proofreadPagePrevLink',
 			// This is the order we want them in...
 			'proofreadPageScanLink',
 			'proofreadPageIndexLink',
@@ -813,19 +812,8 @@ class TimelessTemplate extends BaseTemplate {
 				$toMove = $sortedPileOfTools['namespaces'][$tab];
 				unset( $sortedPileOfTools['namespaces'][$tab] );
 
-				// add a hover tooltip, mostly for the icons
-				$toMove['title'] = $toMove['text'];
-
-				if ( $tab === 'proofreadPagePrevLink' ) {
-					// prev at start
-					$sortedPileOfTools['namespaces'] = array_merge(
-						[ $tab => $toMove ],
-						$sortedPileOfTools['namespaces']
-					);
-				} else {
-					// move others to end
-					$sortedPileOfTools['namespaces'][$tab] = $toMove;
-				}
+				// move to end!
+				$sortedPileOfTools['namespaces'][$tab] = $toMove;
 			}
 		}
 
