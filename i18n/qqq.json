@@ -30,5 +30,9 @@
 	"timeless-projects": "Label for the other projects dropdown",
 	"timeless-sitetitle": "{{ignore}}\nSite title for site banner",
 	"timeless.css": "{{optional}}\nCSS applied to users using Timeless skin.",
-	"timeless.js": "{{optional}}\nJS for users using Timeless skin."
+	"timeless.js": "{{optional}}\nJS for users using Timeless skin.",
+	"timeless-layout-preference": "Preferences label for full-width layout options",
+	"timeless-pref-one-column": "Label for single-column layout option",
+	"timeless-pref-two-column": "Label for two-column layout option",
+	"timeless-pref-three-column": "Label for three-column layout option"
 }
