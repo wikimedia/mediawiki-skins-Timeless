@@ -88,7 +88,8 @@
 			"+ext.CodeMirror.visualEditor.init": "resources/extensions/VisualEditor.CodeMirror.less",
 			"+ext.dismissableSiteNotice.styles": "resources/extensions/DismissableSiteNotice.less",
 			"+ext.MWOAuth.AuthorizeForm": "resources/extensions/MWOAuth.AuthorizeForm.less",
-			"+ext.wikiLove.icon": "resources/extensions/WikiLove.icon.less"
+			"+ext.wikiLove.icon": "resources/extensions/WikiLove.icon.less",
+			"+ext.proofreadpage.page.navigation": "resources/extensions/Proofreadpage.page.navigation.less"
 		}
 	},
 	"AutoloadClasses": {
