@@ -26,14 +26,16 @@ $( function () {
 	 * Click behaviour
 	 */
 	$dropdowns.on( 'click', function ( e ) {
-		var wasOpen = false;
 		// Check if it's already open so we don't open it again
 		if ( $( this ).hasClass( 'dropdown-active' ) ) {
-			wasOpen = true;
-		}
-		closeOpen();
-		e.stopPropagation(); // stop hiding it!
-		if ( !wasOpen ) {
+			if ( $( e.target ).closest( $( 'h2, #p-variants-desktop h3' ) ).length > 0 ) {
+				// treat reclick on the header as a toggle
+				closeOpen();
+			}
+			// Clicked inside an open menu; don't do anything
+		} else {
+			closeOpen();
+			e.stopPropagation(); // stop hiding it!
 			$( this ).addClass( 'dropdown-active' );
 		}
 	} );
