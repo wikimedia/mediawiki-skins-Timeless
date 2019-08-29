@@ -23,8 +23,6 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	public function execute() {
 		$this->sidebar = $this->getSidebar();
-		$this->pileOfTools = $this->getPageTools();
-		$userLinks = $this->getUserLinks();
 
 		// WikiBase sidebar thing
 		if ( isset( $this->sidebar['wikibase-otherprojects'] ) ) {
@@ -36,6 +34,9 @@ class TimelessTemplate extends BaseTemplate {
 			$this->collectionPortlet = $this->sidebar['coll-print_export'];
 			unset( $this->sidebar['coll-print_export'] );
 		}
+
+		$this->pileOfTools = $this->getPageTools();
+		$userLinks = $this->getUserLinks();
 
 		// Open html, body elements, etc
 		$html = $this->get( 'headelement' );
@@ -723,7 +724,7 @@ class TimelessTemplate extends BaseTemplate {
 			'id' => 'ca-more',
 			'class' => 'dropdown-toggle'
 		];
-		if ( $this->data['language_urls'] !== false || $this->pileOfTools['variants']
+		if ( $this->data['language_urls'] !== false || $sortedPileOfTools['variants']
 			|| isset( $this->otherProjects ) ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
