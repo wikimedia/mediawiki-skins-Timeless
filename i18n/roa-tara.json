@@ -22,5 +22,9 @@
 	"timeless-pagetools": "Aziune sus 'a pàgene",
 	"timeless-languages": "Lènghe",
 	"timeless-projects": "Otre pruggette",
-	"timeless.js": "/* Ogne JavaScript aqquà avène carecate pe le utinde ca ausane 'a masckere Timeless */"
+	"timeless.js": "/* Ogne JavaScript aqquà avène carecate pe le utinde ca ausane 'a masckere Timeless */",
+	"timeless-layout-preference": "Disposizione d'a scrivanie a dimenzione indere (skin Timeless):",
+	"timeless-pref-one-column": "Culonna singole: nisciuna barre laterale",
+	"timeless-pref-two-column": "Doje-Culonne: sulamende 'a barre laterale sinistre de navigazione",
+	"timeless-pref-three-column": "Ttre-Culonne: Navigazzione e struminde sus a le late destre e sinistre d'u condenute"
 }
