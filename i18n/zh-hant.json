@@ -29,5 +29,9 @@
 	"timeless-pagetools": "頁面動作",
 	"timeless-languages": "語言",
 	"timeless-projects": "其它專案",
-	"timeless.js": "/* 任何在此的 JavaScript 都會在使用者使用 Timeless 佈景主題時被載入 */"
+	"timeless.js": "/* 任何在此的 JavaScript 都會在使用者使用 Timeless 佈景主題時被載入 */",
+	"timeless-layout-preference": "全幅桌面佈局（Timeless 外觀）：",
+	"timeless-pref-one-column": "單欄：無側邊欄",
+	"timeless-pref-two-column": "雙欄：僅左側導航側邊欄",
+	"timeless-pref-three-column": "三欄：導航與工具在左側，內容在右側"
 }

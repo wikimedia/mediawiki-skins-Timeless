@@ -28,5 +28,6 @@
 	"timeless.js": "/* Qualquer código JavaScript colocado aqui será carregado para os usuários do tema Timeless */",
 	"timeless-layout-preference": "Layout de área de trabalho de largura total (capa atemporal):",
 	"timeless-pref-one-column": "Coluna única: sem barras laterais",
-	"timeless-pref-two-column": "Duas colunas: apenas navegação na barra lateral esquerda"
+	"timeless-pref-two-column": "Duas colunas: apenas navegação na barra lateral esquerda",
+	"timeless-pref-three-column": "Três colunas: navegação e ferramentas nos lados esquerdo e direito do conteúdo"
 }

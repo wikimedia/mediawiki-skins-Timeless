@@ -29,5 +29,9 @@
 	"timeless-pagetools": "Actions de page",
 	"timeless-languages": "Langues",
 	"timeless-projects": "Autres projets",
-	"timeless.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs de l’habillage Timeless */"
+	"timeless.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs de l’habillage Timeless */",
+	"timeless-layout-preference": "Affichage de bureau en plein écran (habillage Timeless) :",
+	"timeless-pref-one-column": "Colonne unique : pas de barres latérales",
+	"timeless-pref-two-column": "Deux colonnes : Barre de navigation gauche seulement",
+	"timeless-pref-three-column": "Trois colonnes : Navigation et outils à gauche et à droite du contenu"
 }

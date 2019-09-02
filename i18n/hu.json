@@ -7,6 +7,7 @@
 			"Tacsipacsi"
 		]
 	},
+	"timeless-desc": "Egy időtlen felület Brandon Harris Winter prototípusa és a Wikimédia Alapítvány számos stílusa alapján",
 	"timeless-anonymous": "Névtelen",
 	"timeless-loggedinas": "Bejelentkezve '''$1''' néven",
 	"timeless-notloggedin": "Nem vagy bejelentkezve",
@@ -17,9 +18,16 @@
 	"timeless-sitetools": "Wikieszközök",
 	"timeless-pageactions": "Eszközök",
 	"timeless-userpagetools": "Szerkesztőlapi eszközök",
+	"timeless-action-addsection": "Új téma",
+	"timeless-view-view": "Olvasás",
 	"timeless-pagemisc": "Több",
 	"timeless-namespaces": "Névterek",
 	"timeless-pagetools": "Lapműveletek",
 	"timeless-languages": "Nyelvek",
-	"timeless.js": "/* A Timeless felület használói számára betöltendő JavaScriptek */"
+	"timeless-projects": "További projektek",
+	"timeless.js": "/* A Timeless felület használói számára betöltendő JavaScriptek */",
+	"timeless-layout-preference": "Teljes szélességű asztali nézet (Timeless felület):",
+	"timeless-pref-one-column": "Egy oszlop: nincsenek oldalsávok",
+	"timeless-pref-two-column": "Két oszlop: csak bal oldali oldalsáv",
+	"timeless-pref-three-column": "Három oszlop: navigáció és eszközök a tartalom jobb és bal oldalán"
 }
