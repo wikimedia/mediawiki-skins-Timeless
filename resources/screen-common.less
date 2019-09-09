@@ -404,20 +404,32 @@ div.magnify a {
  * /resources/src/mediawiki.skinning/elements.css and modified a bit
  * @see https://phabricator.wikimedia.org/T177142
  */
-code {
+
+.screenplay,
+code,
+tt,
+kbd,
+pre,
+samp {
+	font-family: @fonts-mono;
+}
+
+code,
+pre,
+.mw-code {
 	color: #000;
-	background-color: @base80;
-	border: 1px solid @base30;
-	border-radius: 2px;
+	background-color: @base90;
+	border: 1px solid @base70;
+}
+
+code {
 	padding: 1px 4px;
 }
 
 pre,
 .mw-code {
-	color: #000;
-	background-color: @base80;
-	border: 1px solid @base30;
 	padding: 1em;
+	border-bottom-width: 0.2em;
 	/* Wrap lines in overflow. T2260, T103780 */
 	white-space: pre-wrap;
 }
