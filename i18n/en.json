@@ -23,9 +23,5 @@
 	"timeless-projects": "Other projects",
 	"timeless-sitetitle": "{{int:Sitetitle}}",
 	"timeless.css": "/* CSS placed here will affect users of the Timeless skin */",
-	"timeless.js": "/* Any JavaScript here will be loaded for users using the Timeless skin */",
-	"timeless-layout-preference": "Full-width desktop layout (Timeless skin):",
-	"timeless-pref-one-column": "Single column: no sidebars",
-	"timeless-pref-two-column": "Two-column: Left sidebar navigation only",
-	"timeless-pref-three-column": "Three-column: Navigation and tools on left and right sides of content"
+	"timeless.js": "/* Any JavaScript here will be loaded for users using the Timeless skin */"
 }
