@@ -354,7 +354,7 @@ class TimelessTemplate extends BaseTemplate {
 			]
 		);
 		if ( $part !== 'image' ) {
-			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ) );
+			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ), true );
 
 			$titleClass = '';
 			if ( !$wordmarkImage ) {
@@ -995,10 +995,11 @@ class TimelessTemplate extends BaseTemplate {
 	 * Generate img-based logos for proper HiDPI support
 	 *
 	 * @param string|array|null $logo
+	 * @param bool $doLarge Render extra-large HiDPI logos for mobile devices?
 	 *
 	 * @return string|false html|we're not doing this
 	 */
-	protected function getLogoImage( $logo ) {
+	protected function getLogoImage( $logo, $doLarge = false ) {
 		if ( $logo === null ) {
 			// not set, fall back to generic methods
 			return false;
@@ -1020,6 +1021,12 @@ class TimelessTemplate extends BaseTemplate {
 			$bound = $width > $height ? $width : $height;
 			$svg = File::normalizeExtension( $file->getExtension() ) === 'svg';
 
+			// Mobile stuff is generally a lot more than just 2ppp. Let's go with 4x?
+			// Currently we're just doing this for wordmarks, which shouldn't get that
+			// big in practice, so this is probably safe enough. And no need to use
+			// this for desktop logos, so fall back to 2x for 2x as default...
+			$large = $doLarge ? 4 : 2;
+
 			if ( $bound <= 165 ) {
 				// It's a 1x image
 				$logoData['width'] = $width;
@@ -1028,7 +1035,7 @@ class TimelessTemplate extends BaseTemplate {
 				if ( $svg ) {
 					$logoData['1x'] = $file->createThumb( $logoData['width'] );
 					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
-					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
+					$logoData['2x'] = $file->createThumb( $logoData['width'] * $large );
 				} elseif ( $file->mustRender() ) {
 					$logoData['1x'] = $file->createThumb( $logoData['width'] );
 				} else {
@@ -1060,7 +1067,7 @@ class TimelessTemplate extends BaseTemplate {
 					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
 				}
 				if ( $svg || $logoData['width'] * 2 <= $width ) {
-					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
+					$logoData['2x'] = $file->createThumb( $logoData['width'] * $large );
 				}
 			}
 		} elseif ( is_array( $logo ) ) {
