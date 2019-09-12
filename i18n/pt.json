@@ -26,9 +26,5 @@
 	"timeless-pagetools": "Ações de página",
 	"timeless-languages": "Línguas",
 	"timeless-projects": "Outros projetos",
-	"timeless.js": "/* Qualquer código JavaScript colocado aqui será carregado para os utilizadores do tema Timeless */",
-	"timeless-layout-preference": "Área de trabalho de largura total (tema Timeless):",
-	"timeless-pref-one-column": "Coluna única: sem barras laterais",
-	"timeless-pref-two-column": "Duas colunas: navegação só na barra lateral esquerda",
-	"timeless-pref-three-column": "Três colunas: navegação e ferramentas no lado esquerdo e direito do conteúdo"
+	"timeless.js": "/* Qualquer código JavaScript colocado aqui será carregado para os utilizadores do tema Timeless */"
 }

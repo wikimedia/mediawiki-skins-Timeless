@@ -27,9 +27,5 @@
 	"timeless-languages": "Språk",
 	"timeless-projects": "Andra projekt",
 	"timeless.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Timeless */",
-	"timeless.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Timeless */",
-	"timeless-layout-preference": "Datorutseende med full bredd (utseendet Timeless):",
-	"timeless-pref-one-column": "En kolumn: Inga sidofält",
-	"timeless-pref-two-column": "Två kolumner: Endast navigeringsfält åt vänster",
-	"timeless-pref-three-column": "Tre kolumner: Navigering och verktyg till vänster och höger om innehållet"
+	"timeless.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Timeless */"
 }

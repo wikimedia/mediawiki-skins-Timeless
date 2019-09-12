@@ -25,9 +25,5 @@
 	"timeless-pagetools": "Lapműveletek",
 	"timeless-languages": "Nyelvek",
 	"timeless-projects": "További projektek",
-	"timeless.js": "/* A Timeless felület használói számára betöltendő JavaScriptek */",
-	"timeless-layout-preference": "Teljes szélességű asztali nézet (Timeless felület):",
-	"timeless-pref-one-column": "Egy oszlop: nincsenek oldalsávok",
-	"timeless-pref-two-column": "Két oszlop: csak bal oldali oldalsáv",
-	"timeless-pref-three-column": "Három oszlop: navigáció és eszközök a tartalom jobb és bal oldalán"
+	"timeless.js": "/* A Timeless felület használói számára betöltendő JavaScriptek */"
 }

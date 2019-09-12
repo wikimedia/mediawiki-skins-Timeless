@@ -26,9 +26,5 @@
 	"timeless-pagetools": "Działania na stronie",
 	"timeless-languages": "Języki",
 	"timeless-projects": "Inne projekty",
-	"timeless.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Timeless */",
-	"timeless-layout-preference": "Tryb pełnej szerokości (skórka Timeless):",
-	"timeless-pref-one-column": "Pojedyncza kolumna: brak pasków bocznych",
-	"timeless-pref-two-column": "Dwie kolumny: Tylko lewy panel nawigacyjny",
-	"timeless-pref-three-column": "Trzy kolumny: Nawigacja po lewej i narzędzia po prawej stronie treści"
+	"timeless.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Timeless */"
 }
