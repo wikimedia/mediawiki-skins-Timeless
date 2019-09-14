@@ -126,33 +126,35 @@ class TimelessTemplate extends BaseTemplate {
 				],
 				$this->get( 'title' )
 			) .
-			Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
-			Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
-				$this->getPortlet(
-					'namespaces',
-					$this->pileOfTools['namespaces'],
-					'timeless-namespaces',
-					[ 'extra-classes' => 'tools-inline' ]
+			Html::rawElement( 'div', [ 'id' => 'bodyContentOuter' ],
+				Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
+				Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
+					$this->getPortlet(
+						'namespaces',
+						$this->pileOfTools['namespaces'],
+						'timeless-namespaces',
+						[ 'extra-classes' => 'tools-inline' ]
+					) .
+					$this->getPortlet(
+						'more',
+						$this->pileOfTools['more'],
+						'timeless-more',
+						[ 'extra-classes' => 'tools-inline' ]
+					) .
+					$this->getVariants() .
+					$this->getPortlet(
+						'views',
+						$this->pileOfTools['page-primary'],
+						'timeless-pagetools',
+						[ 'extra-classes' => 'tools-inline' ]
+					)
 				) .
-				$this->getPortlet(
-					'more',
-					$this->pileOfTools['more'],
-					'timeless-more',
-					[ 'extra-classes' => 'tools-inline' ]
-				) .
-				$this->getVariants() .
-				$this->getPortlet(
-					'views',
-					$this->pileOfTools['page-primary'],
-					'timeless-pagetools',
-					[ 'extra-classes' => 'tools-inline' ]
+				$this->getClear() .
+				Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
+					$this->getContentSub() .
+					$this->get( 'bodytext' ) .
+					$this->getClear()
 				)
-			) .
-			$this->getClear() .
-			Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
-				$this->getContentSub() .
-				$this->get( 'bodytext' ) .
-				$this->getClear()
 			)
 		);
 
