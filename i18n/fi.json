@@ -17,10 +17,13 @@
 	"timeless-sitetools": "Wiki-työkalut",
 	"timeless-pageactions": "Sivutyökalut",
 	"timeless-userpagetools": "Käyttäjäsivun työkalut",
+	"timeless-action-addsection": "Uusi aihe",
+	"timeless-view-view": "Lue",
 	"timeless-pagemisc": "Lisää",
 	"timeless-namespaces": "Nimiavaruudet",
 	"timeless-pagetools": "Sivun toiminnot",
 	"timeless-languages": "Kielet",
+	"timeless-projects": "Muut projektit",
 	"timeless.css": "/* Tämä sivu sisältää Ajaton-ulkoasua muuttavia tyylejä. */",
 	"timeless.js": "/* Tämän sivun JavaScript-koodi liitetään Ajaton-tyyliin */"
 }
