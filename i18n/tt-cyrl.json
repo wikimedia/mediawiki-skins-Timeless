@@ -5,7 +5,7 @@
 			"Ерней"
 		]
 	},
-	"timeless-desc": "Timeless бизәлеше Брэндон Харрисның Winter прототипыннан һәм Викимедия Фондының башка төр стильләреннән чыгып ясалган.",
+	"timeless-desc": "Timeless бизәлеше Брэндон Харрисның Winter прототибыннан һәм Викимедия Фондының башка төр стильләреннән чыгып ясалган",
 	"timeless-anonymous": "Аноним",
 	"timeless-loggedinas": "'''$1''' булып кергән",
 	"timeless-notloggedin": "Сез хисап язмагызга кермәгәнсез",
@@ -16,6 +16,7 @@
 	"timeless-sitetools": "Вики-кораллар",
 	"timeless-pageactions": "Бит очен кораллар",
 	"timeless-userpagetools": "Кулланучы бите кораллары",
+	"timeless-action-addsection": "Яңа тема",
 	"timeless-view-view": "Уку",
 	"timeless-pagemisc": "Тагын",
 	"timeless-namespaces": "Исемнәр киңлекләре",
