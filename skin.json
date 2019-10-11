@@ -63,9 +63,6 @@
 			"targets": [ "desktop" ],
 			"scripts": [
 				"resources/main.js"
-			],
-			"dependencies": [
-				"jquery.tabIndex"
 			]
 		},
 		"skins.timeless.mobile": {
