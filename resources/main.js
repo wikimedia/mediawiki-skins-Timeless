@@ -4,11 +4,6 @@ $( function () {
 	var $dropdowns = $( '#personal, #p-variants-desktop, .sidebar-chunk' );
 
 	/**
-	 * Focus on search box when 'Tab' key is pressed once
-	 */
-	$( '#searchInput' ).attr( 'tabindex', $( document ).lastTabIndex() + 1 );
-
-	/**
 	 * Desktop menu click-toggling
 	 *
 	 * We're not even checking if it's desktop because the classes in play have no effect
