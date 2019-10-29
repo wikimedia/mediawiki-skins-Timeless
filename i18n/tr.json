@@ -7,17 +7,23 @@
 			"BaRaN6161 TURK"
 		]
 	},
+	"timeless-desc": "Brandon Harris'in Kış prototipinden sonra tasarlanan zamansız bir görünüm ve Wikimedia Vakfı'nın çeşitli stilleri",
 	"timeless-anonymous": "Anonim",
+	"timeless-loggedinas": "'''$1''' olarak giriş yapıldı",
 	"timeless-notloggedin": "Oturum açık değil",
-	"timeless-userpage": "Kullanıcı sayfası",
+	"timeless-userpage": "{{GENDER:$1|Kullanıcı}} sayfası",
+	"timeless-talkpage": "{{GENDER:$1|Kullanıcı}} tartışması",
 	"timeless-pagelog": "Sayfa günlükleri",
 	"timeless-more": "Daha fazla",
 	"timeless-sitetools": "Viki araçları",
 	"timeless-pageactions": "Sayfa araçları",
-	"timeless-userpagetools": "Kullanıcı araçları",
-	"timeless-action-addsection": "Konu ekle",
+	"timeless-userpagetools": "Kullanıcı sayfası araçları",
+	"timeless-action-addsection": "Yeni konu",
+	"timeless-view-view": "Oku",
 	"timeless-pagemisc": "Daha fazla",
 	"timeless-namespaces": "İsim alanları",
 	"timeless-pagetools": "Sayfa işlemleri",
-	"timeless-languages": "Diller"
+	"timeless-languages": "Diller",
+	"timeless-projects": "Diğer projeler",
+	"timeless.js": "/* Buradaki herhangi bir JavaScript, Zamansız görünüm kullanan kullanıcılar içindir */"
 }
