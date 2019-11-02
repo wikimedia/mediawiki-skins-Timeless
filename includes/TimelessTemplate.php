@@ -9,7 +9,7 @@ class TimelessTemplate extends BaseTemplate {
 	/** @var array */
 	protected $pileOfTools;
 
-	/** @var array */
+	/** @var (array|false)[] */
 	protected $sidebar;
 
 	/** @var array|null */
@@ -460,6 +460,7 @@ class TimelessTemplate extends BaseTemplate {
 			}
 			// Numeric strings gets an integer when set as key, cast back - T73639
 			$name = (string)$name;
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$html .= $this->getPortlet( $name, $content['content'] );
 		}
 
@@ -1032,11 +1033,11 @@ class TimelessTemplate extends BaseTemplate {
 
 			} elseif ( $bound >= 230 && $bound <= 330 ) {
 				// It's a 2x image
-				$logoData['width'] = $width / 2;
-				$logoData['height'] = $height / 2;
+				$logoData['width'] = (int)( $width / 2 );
+				$logoData['height'] = (int)( $height / 2 );
 
 				$logoData['1x'] = $file->createThumb( $logoData['width'] );
-				$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+				$logoData['1.5x'] = $file->createThumb( (int)( $logoData['width'] * 1.5 ) );
 
 				if ( $svg || $file->mustRender() ) {
 					$logoData['2x'] = $file->createThumb( $logoData['width'] * 2 );
@@ -1052,7 +1053,7 @@ class TimelessTemplate extends BaseTemplate {
 
 				$logoData['1x'] = $file->createThumb( $logoData['width'] );
 				if ( $svg || $logoData['width'] * 1.5 <= $width ) {
-					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+					$logoData['1.5x'] = $file->createThumb( (int)( $logoData['width'] * 1.5 ) );
 				}
 				if ( $svg || $logoData['width'] * 2 <= $width ) {
 					$logoData['2x'] = $file->createThumb( $logoData['width'] * $large );
