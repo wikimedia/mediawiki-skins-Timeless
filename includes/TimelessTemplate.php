@@ -1023,7 +1023,7 @@ class TimelessTemplate extends BaseTemplate {
 
 				if ( $svg ) {
 					$logoData['1x'] = $file->createThumb( $logoData['width'] );
-					$logoData['1.5x'] = $file->createThumb( $logoData['width'] * 1.5 );
+					$logoData['1.5x'] = $file->createThumb( (int)( $logoData['width'] * 1.5 ) );
 					$logoData['2x'] = $file->createThumb( $logoData['width'] * $large );
 				} elseif ( $file->mustRender() ) {
 					$logoData['1x'] = $file->createThumb( $logoData['width'] );
