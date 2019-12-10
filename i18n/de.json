@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Kghbln"
+			"Kghbln",
+			"Tobi 406"
 		]
 	},
 	"timeless-desc": "Stellt eine zeitlose Benutzeroberfläche bereit",
@@ -16,9 +17,11 @@
 	"timeless-sitetools": "Wikiwerkzeuge",
 	"timeless-pageactions": "Seitenwerkzeuge",
 	"timeless-userpagetools": "Benutzerseitenwerkzeuge",
+	"timeless-view-view": "Lesen",
 	"timeless-pagemisc": "Mehr",
 	"timeless-namespaces": "Namensräume",
 	"timeless-pagetools": "Seitenaktionen",
 	"timeless-languages": "Sprachen",
+	"timeless-projects": "Weitere Projekte",
 	"timeless.js": "/* JavaScript an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */"
 }
