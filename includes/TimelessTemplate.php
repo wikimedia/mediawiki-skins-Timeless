@@ -460,7 +460,6 @@ class TimelessTemplate extends BaseTemplate {
 			}
 			// Numeric strings gets an integer when set as key, cast back - T73639
 			$name = (string)$name;
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$html .= $this->getPortlet( $name, $content['content'] );
 		}
 
@@ -727,6 +726,7 @@ class TimelessTemplate extends BaseTemplate {
 			'id' => 'ca-more',
 			'class' => 'dropdown-toggle'
 		];
+		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 		if ( $this->data['language_urls'] !== false || $sortedPileOfTools['variants']
 			|| isset( $this->otherProjects ) ) {
 			$pileOfTools['languages'] = [
@@ -1082,6 +1082,7 @@ class TimelessTemplate extends BaseTemplate {
 		} else {
 			// Okay, we really do want a 1x otherwise. If this throws an error or
 			// something because there's nothing here, GOOD.
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$attribs['src'] = $logoData['1x'];
 
 			// Throw the rest in a srcset
