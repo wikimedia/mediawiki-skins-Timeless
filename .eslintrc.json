@@ -6,5 +6,9 @@
 	],
 	"globals": {
 		"mw": false
+	},
+	"rules": {
+		"no-jquery/no-global-selector": 0,
+		"no-jquery/no-fade": 0
 	}
 }
