@@ -318,7 +318,7 @@ class TimelessTemplate extends BaseTemplate {
 		$html .= Html::rawElement(
 			'div',
 			[
-				'id' => Sanitizer::escapeId( $id ),
+				'id' => Sanitizer::escapeIdForAttribute( $id ),
 				'class' => array_merge( [ 'sidebar-chunk' ], $classes )
 			],
 			Html::rawElement( 'h2', [],
