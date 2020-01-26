@@ -348,7 +348,7 @@ class TimelessTemplate extends BaseTemplate {
 		$html .= Html::openElement(
 			'div',
 			[
-				'id' => Sanitizer::escapeId( $id ),
+				'id' => Sanitizer::escapeIdForAttribute( $id ),
 				'class' => 'mw-portlet',
 				'role' => 'banner'
 			]
