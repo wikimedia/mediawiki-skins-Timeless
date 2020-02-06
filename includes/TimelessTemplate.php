@@ -187,6 +187,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * @param array $setOptions miscellaneous overrides, see below
 	 *
 	 * @return string html
+	 * @suppress PhanTypeMismatchArgumentNullable
 	 */
 	protected function getPortlet( $name, $content, $msg = null, $setOptions = [] ) {
 		// random stuff to override with any provided options
@@ -357,6 +358,7 @@ class TimelessTemplate extends BaseTemplate {
 			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ), true );
 
 			$titleClass = '';
+			$siteTitle = '';
 			if ( !$wordmarkImage ) {
 				if ( $language->hasVariants() ) {
 					$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
@@ -833,13 +835,13 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getCategories() {
 		$skin = $this->getSkin();
+		$catHeader = 'categories';
 		$catList = '';
 		$html = '';
 
 		$allCats = $skin->getOutput()->getCategoryLinks();
 		if ( !empty( $allCats ) ) {
 			if ( !empty( $allCats['normal'] ) ) {
-				$catHeader = 'categories';
 				$catList .= $this->getCatList(
 					$allCats['normal'],
 					'normal-catlinks',
