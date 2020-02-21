@@ -29,5 +29,5 @@
 	"timeless-pagetools": "頁面動作",
 	"timeless-languages": "語言",
 	"timeless-projects": "其它專案",
-	"timeless.js": "/* 任何在此的 JavaScript 都會在使用者使用 Timeless 佈景主題時被載入 */"
+	"timeless.js": "/* 對於採用 Timeless 佈景主題的使用者，在此所有的 JavaScript 都會載入 */"
 }
