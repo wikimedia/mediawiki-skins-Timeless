@@ -9,7 +9,8 @@
 			"Verdy p",
 			"Automatik",
 			"Djiboun",
-			"Derugon"
+			"Derugon",
+			"Eneelk"
 		]
 	},
 	"timeless-desc": "Un habillage intemporel conçu d’après le prototype Winter par Brandon Harris et divers styles de la Fondation Wikimedia",
@@ -30,6 +31,6 @@
 	"timeless-pagetools": "Actions de page",
 	"timeless-languages": "Langues",
 	"timeless-projects": "Autres projets",
-	"timeless.css": "/* Le CSS placé ici affectera les utilisateurs de l’habillage Timeless */",
+	"timeless.css": "/* La totalité du CSS placé ici s’appliquera aux utilisateurs de l’habillage Timeless */",
 	"timeless.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs de l’habillage Timeless */"
 }

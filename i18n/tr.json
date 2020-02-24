@@ -25,5 +25,5 @@
 	"timeless-pagetools": "Sayfa işlemleri",
 	"timeless-languages": "Diller",
 	"timeless-projects": "Diğer projeler",
-	"timeless.js": "/* Buradaki herhangi bir JavaScript, Zamansız görünüm kullanan kullanıcılar içindir */"
+	"timeless.js": "/* Buradaki tüm JavaScript, Zamansız arayüz kullanıcıları için yüklenecek */"
 }
