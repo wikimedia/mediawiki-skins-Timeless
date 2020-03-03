@@ -4,7 +4,8 @@
 			"DCLXVI",
 			"StanProg",
 			"ShockD",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"timeless-desc": "Обликът Timeless е създаден на базата на прототипа Winter от Брандън Харис и няколко други стилове на Фондация Уикимедия.",
@@ -25,5 +26,5 @@
 	"timeless-pagetools": "Действия на страницата",
 	"timeless-languages": "Езици",
 	"timeless-projects": "Други проекти",
-	"timeless.js": "/* Поставеният тук JavaScript ще бъде зареден за потребители, използващи облика Timeless */"
+	"timeless.js": "/* Всичкият JavaScript тук ще бъде зареден за потребители, използващи облика Timeless */"
 }
