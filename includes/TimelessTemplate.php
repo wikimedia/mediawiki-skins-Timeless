@@ -4,6 +4,9 @@
  *
  * @ingroup Skins
  */
+
+use MediaWiki\MediaWikiServices;
+
 class TimelessTemplate extends BaseTemplate {
 
 	/** @var array */
@@ -998,7 +1001,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Generate $logoData from a file upload
 		if ( is_string( $logo ) ) {
-			$file = wfFindFile( $logo );
+			$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $logo );
 
 			if ( !$file || !$file->canRender() ) {
 				// eeeeeh bail, scary
