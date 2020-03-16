@@ -8,7 +8,7 @@
 			"Ochaochaocha3"
 		]
 	},
-	"timeless-desc": "Brandon Harris による Winter プロトタイプの後にデザインされた不朽の外装、およびウィキメディア財団によるさまざまなスタイル。",
+	"timeless-desc": "Brandon Harris による Winter というプロトタイプやウィキメディア財団によるさまざまなスタイルを基にしてデザインされた不朽 (timeless) の外装。",
 	"timeless-anonymous": "匿名",
 	"timeless-loggedinas": "'''$1''' としてログインしています",
 	"timeless-notloggedin": "ログインしていません",
@@ -23,5 +23,6 @@
 	"timeless-namespaces": "名前空間",
 	"timeless-pagetools": "ページアクション",
 	"timeless-languages": "言語",
+	"timeless-projects": "他プロジェクト",
 	"timeless.js": "/* ここにあるすべてのJavaScriptは、Timeless外装を使用している利用者に対して読み込まれます */"
 }
