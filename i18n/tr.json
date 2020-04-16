@@ -10,7 +10,7 @@
 	"timeless-desc": "Brandon Harris'in Kış prototipinden sonra tasarlanan zamansız bir görünüm ve Wikimedia Vakfı'nın çeşitli stilleri",
 	"timeless-anonymous": "Anonim",
 	"timeless-loggedinas": "'''$1''' olarak giriş yapıldı",
-	"timeless-notloggedin": "Giriş yapmadınız",
+	"timeless-notloggedin": "Oturum açık değil",
 	"timeless-userpage": "{{GENDER:$1|Kullanıcı}} sayfası",
 	"timeless-talkpage": "{{GENDER:$1|Kullanıcı}} tartışması",
 	"timeless-pagelog": "Sayfa günlükleri",
