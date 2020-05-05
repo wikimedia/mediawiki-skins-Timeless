@@ -4,12 +4,13 @@
 			"Alirezaaa",
 			"Ebraminio",
 			"FarsiNevis",
+			"Huji",
 			"Reza1615"
 		]
 	},
 	"skinname-timeless": "تایملس",
 	"timeless-desc": "پوسته بدون زمان طراحی شده بعد از پروتوتایپ زمستان توسط براندون هریس و بسیاری از مدل‌های بنیاد ویکی‌مدیا",
-	"timeless-anonymous": "ناشناس",
+	"timeless-anonymous": "گمنام",
 	"timeless-loggedinas": "ورود به سامانه به عنوان '''$1'''",
 	"timeless-notloggedin": "عدم ورود به سامانه",
 	"timeless-userpage": "صفحهٔ {{GENDER:$1|کاربر}}",
