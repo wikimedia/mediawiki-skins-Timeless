@@ -466,6 +466,7 @@ class TimelessTemplate extends BaseTemplate {
 			}
 			// Numeric strings gets an integer when set as key, cast back - T73639
 			$name = (string)$name;
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$html .= $this->getPortlet( $name, $content['content'] );
 		}
 
