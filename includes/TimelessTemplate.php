@@ -97,7 +97,7 @@ class TimelessTemplate extends BaseTemplate {
 		$html .= Html::rawElement( 'div',
 			[ 'id' => 'mw-footer-container', 'class' => 'mw-footer-container ts-container' ],
 			Html::rawElement( 'div', [ 'id' => 'mw-footer', 'class' => 'mw-footer ts-inner' ],
-				$this->getFooter()
+				$this->getFooterBlock()
 			)
 		);
 
@@ -317,6 +317,116 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		return array_merge( $class, $extraClasses );
+	}
+
+	/**
+	 * Better renderer for getFooterIcons and getFooterLinks, based on Vector's HTML output
+	 * (as of 2016)
+	 *
+	 * @param array $setOptions Miscellaneous other options
+	 * * 'id' for footer id
+	 * * 'class' for footer class
+	 * * 'order' to determine whether icons or links appear first: 'iconsfirst' or links, though in
+	 *   practice we currently only check if it is or isn't 'iconsfirst'
+	 * * 'link-prefix' to set the prefix for all link and block ids; most skins use 'f' or 'footer',
+	 *   as in id='f-whatever' vs id='footer-whatever'
+	 * * 'icon-style' to pass to getFooterIcons: "icononly", "nocopyright"
+	 * * 'link-style' to pass to getFooterLinks: "flat" to disable categorisation of links in a
+	 *   nested array
+	 *
+	 * @return string html
+	 */
+	protected function getFooterBlock( $setOptions = [] ) {
+		// Set options and fill in defaults
+		$options = $setOptions + [
+			'id' => 'footer',
+			'class' => 'mw-footer',
+			'order' => 'iconsfirst',
+			'link-prefix' => 'footer',
+			'icon-style' => 'icononly',
+			'link-style' => null
+		];
+
+		// phpcs:ignore Generic.Files.LineLength.TooLong
+		'@phan-var array{id:string,class:string,order:string,link-prefix:string,icon-style:string,link-style:?string} $options';
+		$validFooterIcons = $this->getFooterIcons( $options['icon-style'] );
+		$validFooterLinks = $this->getFooterLinks( $options['link-style'] );
+
+		$html = '';
+
+		$html .= Html::openElement( 'div', [
+			'id' => $options['id'],
+			'class' => $options['class'],
+			'role' => 'contentinfo',
+			'lang' => $this->get( 'userlang' ),
+			'dir' => $this->get( 'dir' )
+		] );
+
+		$iconsHTML = '';
+		if ( count( $validFooterIcons ) > 0 ) {
+			$iconsHTML .= Html::openElement( 'ul', [ 'id' => "{$options['link-prefix']}-icons" ] );
+			foreach ( $validFooterIcons as $blockName => $footerIcons ) {
+				$iconsHTML .= Html::openElement( 'li', [
+					'id' => Sanitizer::escapeIdForAttribute(
+						"{$options['link-prefix']}-{$blockName}ico"
+					),
+					'class' => 'footer-icons'
+				] );
+				foreach ( $footerIcons as $icon ) {
+					$iconsHTML .= $this->getSkin()->makeFooterIcon( $icon );
+				}
+				$iconsHTML .= Html::closeElement( 'li' );
+			}
+			$iconsHTML .= Html::closeElement( 'ul' );
+		}
+
+		$linksHTML = '';
+		if ( count( $validFooterLinks ) > 0 ) {
+			if ( $options['link-style'] === 'flat' ) {
+				$linksHTML .= Html::openElement( 'ul', [
+					'id' => "{$options['link-prefix']}-list",
+					'class' => 'footer-places'
+				] );
+				foreach ( $validFooterLinks as $link ) {
+					$linksHTML .= Html::rawElement(
+						'li',
+						[ 'id' => Sanitizer::escapeIdForAttribute( $link ) ],
+						$this->get( $link )
+					);
+				}
+				$linksHTML .= Html::closeElement( 'ul' );
+			} else {
+				$linksHTML .= Html::openElement( 'div', [ 'id' => "{$options['link-prefix']}-list" ] );
+				foreach ( $validFooterLinks as $category => $links ) {
+					$linksHTML .= Html::openElement( 'ul',
+						[ 'id' => Sanitizer::escapeIdForAttribute(
+							"{$options['link-prefix']}-{$category}"
+						) ]
+					);
+					foreach ( $links as $link ) {
+						$linksHTML .= Html::rawElement(
+							'li',
+							[ 'id' => Sanitizer::escapeIdForAttribute(
+								"{$options['link-prefix']}-{$category}-{$link}"
+							) ],
+							$this->get( $link )
+						);
+					}
+					$linksHTML .= Html::closeElement( 'ul' );
+				}
+				$linksHTML .= Html::closeElement( 'div' );
+			}
+		}
+
+		if ( $options['order'] === 'iconsfirst' ) {
+			$html .= $iconsHTML . $linksHTML;
+		} else {
+			$html .= $linksHTML . $iconsHTML;
+		}
+
+		$html .= $this->getClear() . Html::closeElement( 'div' );
+
+		return $html;
 	}
 
 	/**
