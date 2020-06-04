@@ -21,11 +21,18 @@ class TimelessTemplate extends BaseTemplate {
 	/** @var array|null */
 	protected $collectionPortlet;
 
+	/** @var array[] */
+	protected $languages;
+
+	/** @var string */
+	protected $afterLangPortlet;
+
 	/**
 	 * Outputs the entire contents of the page
 	 */
 	public function execute() {
-		$this->sidebar = $this->getSidebar();
+		$this->sidebar = $this->data['sidebar'];
+		$this->languages = $this->sidebar['LANGUAGES'];
 
 		// WikiBase sidebar thing
 		if ( isset( $this->sidebar['wikibase-otherprojects'] ) ) {
@@ -274,11 +281,16 @@ class TimelessTemplate extends BaseTemplate {
 			$bodyDivOptions['id'] = $options['body-id'];
 		}
 
+		$afterPortlet = $this->getAfterPortlet( $name );
+		if ( $name === 'lang' ) {
+			$this->afterLangPortlet = $afterPortlet;
+		}
+
 		$html = Html::rawElement( 'div', $divOptions,
 			Html::rawElement( 'h3', $labelOptions, $msgString ) .
 			Html::rawElement( 'div', $bodyDivOptions,
 				$contentText .
-				$this->getAfterPortlet( $name )
+				$afterPortlet
 			)
 		);
 
@@ -459,15 +471,13 @@ class TimelessTemplate extends BaseTemplate {
 		$this->sidebar['TOOLBOX'] = false;
 		// Forcibly removed to separate chunk
 		$this->sidebar['LANGUAGES'] = false;
-
 		foreach ( $this->sidebar as $name => $content ) {
 			if ( $content === false ) {
 				continue;
 			}
 			// Numeric strings gets an integer when set as key, cast back - T73639
 			$name = (string)$name;
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-			$html .= $this->getPortlet( $name, $content['content'] );
+			$html .= $this->getPortlet( $name, $content );
 		}
 
 		$html = $this->getSidebarChunk( 'site-navigation', 'navigation', $html );
@@ -530,7 +540,7 @@ class TimelessTemplate extends BaseTemplate {
 		if ( isset( $this->collectionPortlet ) ) {
 			$pageTools .= $this->getPortlet(
 				'coll-print_export',
-				$this->collectionPortlet['content']
+				$this->collectionPortlet
 			);
 		}
 
@@ -716,7 +726,7 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		// Tools that may be general or page-related (typically the toolbox)
-		$pileOfTools = $this->getToolbox();
+		$pileOfTools = $this->sidebar['TOOLBOX'];
 		if ( $namespace >= 0 ) {
 			$pileOfTools['pagelog'] = [
 				'text' => $this->getMsg( 'timeless-pagelog' )->text(),
@@ -734,7 +744,7 @@ class TimelessTemplate extends BaseTemplate {
 			'class' => 'dropdown-toggle'
 		];
 		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
-		if ( $this->data['language_urls'] !== false || $sortedPileOfTools['variants']
+		if ( $this->sidebar['LANGUAGES'] !== false || $sortedPileOfTools['variants']
 			|| isset( $this->otherProjects ) ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
@@ -956,10 +966,15 @@ class TimelessTemplate extends BaseTemplate {
 			$show = true;
 			$variantsOnly = true;
 		}
-		if ( $this->data['language_urls'] !== false ) {
+		if ( $this->sidebar['LANGUAGES'] !== false ||
+			// Force rendering of this section if the 'lang' portlet has
+			// been modified by hook even if there are no language items.
+			//$this->getAfterPortlet( 'lang' ) !== ''
+			$this->afterLangPortlet !== ''
+		) {
 			$languages = $this->getPortlet(
 				'lang',
-				$this->data['language_urls'] ?: [],
+				$this->languages ?: [],
 				'otherlanguages'
 			);
 			$show = true;
@@ -969,7 +984,7 @@ class TimelessTemplate extends BaseTemplate {
 		if ( isset( $this->otherProjects ) ) {
 			$otherprojects = $this->getPortlet(
 				'wikibase-otherprojects',
-				$this->otherProjects['content']
+				$this->otherProjects
 			);
 			$show = true;
 			$variantsOnly = false;
