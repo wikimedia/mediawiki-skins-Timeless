@@ -954,7 +954,6 @@ class TimelessTemplate extends BaseTemplate {
 		$html = '';
 		$variants = '';
 		$otherprojects = '';
-		$languages = '';
 		$show = false;
 		$variantsOnly = false;
 
@@ -966,20 +965,18 @@ class TimelessTemplate extends BaseTemplate {
 			$show = true;
 			$variantsOnly = true;
 		}
-		if ( $this->sidebar['LANGUAGES'] !== false ||
-			// Force rendering of this section if the 'lang' portlet has
-			// been modified by hook even if there are no language items.
-			//$this->getAfterPortlet( 'lang' ) !== ''
-			$this->afterLangPortlet !== ''
-		) {
-			$languages = $this->getPortlet(
-				'lang',
-				$this->languages ?: [],
-				'otherlanguages'
-			);
+
+		$languages = $this->getPortlet( 'lang', $this->languages, 'otherlanguages' );
+
+		// Force rendering of this section if there are languages or when the 'lang'
+		// portlet has been modified by hook even if there are no language items.
+		if ( count( $this->languages ) || $this->afterLangPortlet !== '' ) {
 			$show = true;
 			$variantsOnly = false;
+		} else {
+			$languages = '';
 		}
+
 		// if using wikibase for 'in other projects'
 		if ( isset( $this->otherProjects ) ) {
 			$otherprojects = $this->getPortlet(
