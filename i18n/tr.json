@@ -7,9 +7,9 @@
 			"Sayginer"
 		]
 	},
-	"timeless-desc": "Brandon Harris'in Kış prototipinden sonra tasarlanan zamansız bir görünüm ve Wikimedia Vakfı'nın çeşitli stilleri",
+	"timeless-desc": "Brandon Harris'in Winter prototipinden sonra tasarlanan zamansız bir görünüm ve Wikimedia Vakfı'nın çeşitli stilleri",
 	"timeless-anonymous": "Anonim",
-	"timeless-loggedinas": "'''$1''' olarak giriş yapıldı",
+	"timeless-loggedinas": "'''$1''' olarak oturum açıldı",
 	"timeless-notloggedin": "Oturum açık değil",
 	"timeless-userpage": "{{GENDER:$1|Kullanıcı}} sayfası",
 	"timeless-talkpage": "{{GENDER:$1|Kullanıcı}} tartışması",
@@ -25,5 +25,5 @@
 	"timeless-pagetools": "Sayfa eylemleri",
 	"timeless-languages": "Diller",
 	"timeless-projects": "Diğer projeler",
-	"timeless.js": "/* Buradaki tüm JavaScript, Zamansız arayüz kullanıcıları için yüklenecek */"
+	"timeless.js": "/* Buradaki tüm JavaScript, Timeless arayüz kullanıcıları için yüklenecek */"
 }
