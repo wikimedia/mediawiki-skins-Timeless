@@ -6,9 +6,6 @@
  */
 class SkinTimeless extends SkinTemplate {
 	/** @var string */
-	public $skinname = 'timeless';
-
-	/** @var string */
 	public $stylename = 'Timeless';
 
 	/** @var string */
@@ -19,11 +16,6 @@ class SkinTimeless extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
-
-		$out->addMeta( 'viewport',
-			'width=device-width, initial-scale=1.0, ' .
-			'user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0'
-		);
 
 		$out->addModuleStyles( [
 			'mediawiki.skinning.content.externallinks',
