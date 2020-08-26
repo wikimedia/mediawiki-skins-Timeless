@@ -1,6 +1,6 @@
 {
 	"name": "Timeless",
-	"version": "0.8.9",
+	"version": "0.9.0",
 	"author": "Isarra Yos",
 	"url": "https://www.mediawiki.org/wiki/Skin:Timeless",
 	"descriptionmsg": "timeless-desc",
@@ -8,7 +8,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.35"
 	},
 	"ValidSkinNames": {
 		"timeless": {
