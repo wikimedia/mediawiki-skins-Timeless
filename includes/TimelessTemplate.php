@@ -687,6 +687,11 @@ class TimelessTemplate extends BaseTemplate {
 		$html = '';
 		$extraTools = [];
 
+		// Remove anon placeholder
+		if ( isset( $personalTools['anonuserpage'] ) ) {
+			unset( $personalTools['anonuserpage'] );
+		}
+
 		// Remove Echo badges
 		if ( isset( $personalTools['notifications-alert'] ) ) {
 			$extraTools['notifications-alert'] = $personalTools['notifications-alert'];
