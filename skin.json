@@ -21,6 +21,9 @@
 					"styles": [
 						"mediawiki.skinning.content.externallinks",
 						"skins.timeless"
+					],
+					"scripts": [
+						"skins.timeless.js"
 					]
 				}
 			]

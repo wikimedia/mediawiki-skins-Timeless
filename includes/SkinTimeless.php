@@ -17,10 +17,6 @@ class SkinTimeless extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
 
-		$out->addModules( [
-			'skins.timeless.js'
-		] );
-
 		// Basic IE support without flexbox
 		$out->addStyle( $this->stylename . '/resources/IE9fixes.css', 'screen', 'IE' );
 	}
