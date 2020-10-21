@@ -26,5 +26,6 @@
 	"timeless-pagetools": "Działania na stronie",
 	"timeless-languages": "Języki",
 	"timeless-projects": "Inne projekty",
+	"timeless.css": "/* Umieszczony tutaj kod CSS zostanie załadowany przez użytkowników korzystających ze skórki Timeless */",
 	"timeless.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Timeless */"
 }
