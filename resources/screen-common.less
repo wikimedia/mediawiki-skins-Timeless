@@ -6,6 +6,8 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	/* Make firefox's stupid scrollbars actually match the content */
+	scrollbar-color: @base70 @base90;
 }
 
 body {
@@ -412,8 +414,17 @@ code,
 tt,
 kbd,
 pre,
-samp {
+samp,
+.skin-timeless .monospace {
 	font-family: @fonts-mono;
+}
+
+.skin-timeless .serif {
+	font-family: @fonts-serif;
+}
+
+.skin-timeless .sans-serif {
+	font-family: @fonts-sans;
 }
 
 code,
@@ -533,6 +544,13 @@ pre,
 		h1:after {
 			border-bottom-width: 3px;
 		}
+	}
+
+	// Keep images from overflowing
+	a > img,
+	.floatnone > img {
+		height: auto !important;
+		max-width: 100% !important;
 	}
 }
 

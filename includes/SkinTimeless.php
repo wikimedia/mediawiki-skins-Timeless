@@ -17,13 +17,8 @@ class SkinTimeless extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
 
-		$out->addModuleStyles( [
-			'mediawiki.skinning.content.externallinks',
-			'skins.timeless',
-		] );
 		$out->addModules( [
-			'skins.timeless.js',
-			'skins.timeless.mobile'
+			'skins.timeless.js'
 		] );
 
 		// Basic IE support without flexbox
