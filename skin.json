@@ -8,7 +8,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.35"
+		"MediaWiki": ">= 1.36"
 	},
 	"ValidSkinNames": {
 		"timeless": {
@@ -19,7 +19,6 @@
 					"name": "timeless",
 					"responsive": true,
 					"styles": [
-						"mediawiki.skinning.content.externallinks",
 						"skins.timeless"
 					],
 					"scripts": [
@@ -55,6 +54,11 @@
 				"mobile"
 			],
 			"class": "TimelessVariablesModule",
+			"features": {
+				"content-links": true,
+				"logo": true,
+				"legacy": true
+			},
 			"styles": {
 				"resources/libraries/normalise.css": {
 					"media": "screen"
