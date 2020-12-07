@@ -42,4 +42,33 @@ $( function () {
 			closeOpen();
 		}
 	} );
+
+	/**
+	 * Experimental overflowing table scrolling
+	 */
+
+	// Gotta wrap them for this to work; maybe later the parser etc will do this for us?!
+	$( 'div > table' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
+	$( '.content-table-wrapper' ).prepend( '<div class="content-table-toggle"></div>' );
+
+	function unOverflowTables() {
+		$( 'div > table' ).each( function () {
+			var $table = $( this ),
+				$wrapper = $table.parent().parent();
+			if ( $table.outerWidth() > $wrapper.outerWidth() ) {
+				$wrapper.addClass( 'overflowed' );
+
+				// Frame styled tables...
+				// eslint-disable-next-line no-jquery/no-class-state
+				if ( $table.hasClass( 'wikitable' ) || $table.hasClass( 'mw-datatable' ) ) {
+					$wrapper.addClass( 'framed' );
+				}
+			} else {
+				$wrapper.removeClass( [ 'overflowed', 'framed' ] );
+			}
+		} );
+	}
+
+	unOverflowTables();
+	$( window ).on( 'resize', unOverflowTables );
 } );

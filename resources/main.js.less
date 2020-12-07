@@ -1,0 +1,43 @@
+@import 'variables.less';
+
+// Experimental overflowing table scrolling
+.overflowed {
+	margin: 1em 0;
+	position: relative;
+	padding-right: 25px;
+
+	&.framed {
+		border: solid 1px @base70;
+
+		.content-table-toggle {
+			border-left: solid 1px @base70;
+		}
+
+		.content-table {
+			border-right: solid 1px @base70;
+			margin: -1px -2px 0 0;
+		}
+	}
+
+	.content-table-toggle {
+		width: 25px;
+		height: 100%;
+		background: @base80 url( images/arrow-ltr.svg ) no-repeat;
+		background-position: 100% 50%;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.content-table {
+		overflow: hidden;
+		overflow-x: scroll;
+
+		.mw_metadata,
+		.mw-datatable,
+		.wikitable {
+			margin: 0 -1px;
+			border-bottom-width: 0;
+		}
+	}
+}
