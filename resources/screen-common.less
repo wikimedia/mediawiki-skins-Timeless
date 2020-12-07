@@ -6,16 +6,19 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	/* Make firefox's stupid scrollbars actually match the content */
-	scrollbar-color: @base70 @base90;
 }
 
 body {
 	font-family: @fonts;
 	color: @text;
-	background: @base30;
+	/* Make firefox's 'smart' scrollbars actually match the content */
+	background: @base100;
 	font-size: @font-size;
 	line-height: 1.5;
+}
+
+#mw-wrapper {
+	background: @base30;
 }
 
 #mw-content {
@@ -587,7 +590,8 @@ ul {
 }
 
 .center {
-	margin: auto;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
 }
 
@@ -715,6 +719,7 @@ body :not( :checked ) > .toctogglespan:after {
 .mw-changeslist-legend,
 .mw-body .mw-search-profile-tabs,
 .mw-body fieldset#mw-searchoptions,
+.mw_metadata,
 .wikitable,
 .mw-datatable {
 	color: @text;
@@ -725,6 +730,7 @@ body :not( :checked ) > .toctogglespan:after {
 	padding: 0.5em;
 }
 
+.mw_metadata,
 .mw-datatable,
 .wikitable {
 	border-color: @base70;
@@ -747,8 +753,13 @@ body :not( :checked ) > .toctogglespan:after {
 	background: @blue-bright;
 }
 
+.mw_metadata th,
 .wikitable th {
 	background: @base80;
+}
+
+.mw_metadata {
+	border-bottom-width: 3px;
 }
 
 /* Color bars */
