@@ -78,6 +78,7 @@ class TimelessTemplate extends BaseTemplate {
 					$this->getSidebarChunk(
 						'site-tools',
 						'timeless-sitetools',
+						// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 						$this->getPortlet(
 							'tb',
 							$this->pileOfTools['general'],
@@ -140,12 +141,14 @@ class TimelessTemplate extends BaseTemplate {
 			Html::rawElement( 'div', [ 'id' => 'bodyContentOuter' ],
 				Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
 				Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 					$this->getPortlet(
 						'namespaces',
 						$this->pileOfTools['namespaces'],
 						'timeless-namespaces',
 						[ 'extra-classes' => 'tools-inline' ]
 					) .
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 					$this->getPortlet(
 						'more',
 						$this->pileOfTools['more'],
@@ -153,6 +156,7 @@ class TimelessTemplate extends BaseTemplate {
 						[ 'extra-classes' => 'tools-inline' ]
 					) .
 					$this->getVariants() .
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 					$this->getPortlet(
 						'views',
 						$this->pileOfTools['page-primary'],
@@ -647,16 +651,19 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getPageToolSidebar() {
 		$pageTools = '';
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		$pageTools .= $this->getPortlet(
 			'cactions',
 			$this->pileOfTools['page-secondary'],
 			'timeless-pageactions'
 		);
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		$pageTools .= $this->getPortlet(
 			'userpagetools',
 			$this->pileOfTools['user'],
 			'timeless-userpagetools'
 		);
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		$pageTools .= $this->getPortlet(
 			'pagemisc',
 			$this->pileOfTools['page-tertiary'],
@@ -1046,6 +1053,7 @@ class TimelessTemplate extends BaseTemplate {
 			implode( '', $categoryItems )
 		);
 
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		$html .= $this->getPortlet( $id, $categoriesHtml, $message );
 
 		$html .= Html::closeElement( 'div' );
@@ -1064,6 +1072,7 @@ class TimelessTemplate extends BaseTemplate {
 		$html = '';
 
 		if ( $this->pileOfTools['variants'] ) {
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$html .= $this->getPortlet(
 				'variants-desktop',
 				$this->pileOfTools['variants'],
@@ -1088,6 +1097,7 @@ class TimelessTemplate extends BaseTemplate {
 		$variantsOnly = false;
 
 		if ( $this->pileOfTools['variants'] ) {
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$variants = $this->getPortlet(
 				'variants',
 				$this->pileOfTools['variants']
