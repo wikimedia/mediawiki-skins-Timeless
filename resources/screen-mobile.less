@@ -233,6 +233,19 @@ div.thumb {
 #mw-content {
 	padding: @content-padding;
 	border-width: 0;
+
+	table {
+		width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+
+		table {
+			// HOLD ON WHAT ABORT ABORT
+			width: unset !important;
+			margin-left: unset;
+			margin-right: unset;
+		}
+	}
 }
 
 #mw-content-block {
