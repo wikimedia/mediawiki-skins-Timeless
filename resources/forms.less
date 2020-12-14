@@ -5,9 +5,21 @@ input {
 }
 
 // Because weird special cases that get broken by this usually aren't forms?
-form input {
+// And special case out the datetime widget...
+form input:not( .mw-widgets-datetime-dateTimeInputWidget-editField ) {
 	margin: 0.5em 0;
-	padding: 0.34em;
+	padding: 0.35em;
+}
+
+.oo-ui-buttonElement-framed.oo-ui-labelElement > .oo-ui-buttonElement-button,
+.oo-ui-textInputWidget .oo-ui-inputWidget-input,
+.oo-ui-dropdownWidget-handle,
+button,
+textarea,
+select {
+	padding: 0.35em 1em;
+	box-sizing: border-box;
+	height: unset;
 }
 
 .mw-input-with-label {
@@ -54,8 +66,34 @@ div.editOptions {
 	}
 }
 
+form:not( .oo-ui-layout ) {
+	button,
+	input[ type='submit' ] {
+		border-radius: 2px;
+		padding: 0.35em 1em;
+		background-color: #36c;
+		font-weight: bold;
+		color: #fff;
+		border: solid 1px #36c;
+
+		&:hover,
+		&:active {
+			background-color: #47f;
+		}
+	}
+
+	fieldset {
+		border: 0;
+		margin: 1.5em 0;
+
+		legend {
+			font-weight: bold;
+			font-size: 110%;
+		}
+	}
+}
+
 // Essentially revert T182320 (core change)
-// Custom font stacks below should fully address this issue regardless
 .mw-editfont-monospace,
 .mw-editfont-sans-serif,
 .mw-editfont-serif {
