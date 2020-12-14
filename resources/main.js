@@ -42,29 +42,56 @@ $( function () {
 			closeOpen();
 		}
 	} );
+} );
+
+mw.hook( 'wikipage.content' ).add( function ( $content ) {
+	// Gotta wrap them for this to work; maybe later the parser etc will do this for us?!
+	$content.find( 'div > table:not( table table )' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
+	$content.find( '.content-table-wrapper' ).prepend( '<div class="content-table-left"></div><div class="content-table-right"></div>' );
 
 	/**
-	 * Experimental overflowing table scrolling
+	 * Set up borders for experimental overflowing table scrolling
+	 *
+	 * I have no idea what I'm doing.
+	 *
+	 * @param {jQuery} $table
 	 */
+	function setScrollClass( $table ) {
+		var $tableWrapper = $table.parent(),
+			$wrapper = $tableWrapper.parent(),
+			// wtf browser rtl implementations
+			scroll = Math.abs( $tableWrapper.scrollLeft() );
 
-	// Gotta wrap them for this to work; maybe later the parser etc will do this for us?!
-	$( 'div > table' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
-	$( '.content-table-wrapper' ).prepend( '<div class="content-table-toggle"></div>' );
+		// 1 instead of 0 because of weird rtl rounding errors or something (?!)
+		if ( scroll > 1 ) {
+			$wrapper.addClass( 'scroll-left' );
+		} else {
+			$wrapper.removeClass( 'scroll-left' );
+		}
 
+		if ( $table.outerWidth() - $tableWrapper.innerWidth() - scroll > 1 ) {
+			$wrapper.addClass( 'scroll-right' );
+		} else {
+			$wrapper.removeClass( 'scroll-right' );
+		}
+	}
+
+	$content.find( '.content-table' ).on( 'scroll', function () {
+		setScrollClass( $( this ).children( 'table' ).first() );
+	} );
+
+	/**
+	 * Mark overflowed tables for scrolling
+	 */
 	function unOverflowTables() {
-		$( 'div > table' ).each( function () {
+		$content.find( '.content-table > table' ).each( function () {
 			var $table = $( this ),
 				$wrapper = $table.parent().parent();
 			if ( $table.outerWidth() > $wrapper.outerWidth() ) {
 				$wrapper.addClass( 'overflowed' );
-
-				// Frame styled tables...
-				// eslint-disable-next-line no-jquery/no-class-state
-				if ( $table.hasClass( 'wikitable' ) || $table.hasClass( 'mw-datatable' ) ) {
-					$wrapper.addClass( 'framed' );
-				}
+				setScrollClass( $table );
 			} else {
-				$wrapper.removeClass( [ 'overflowed', 'framed' ] );
+				$wrapper.removeClass( 'overflowed scroll-left scroll-right fixed-scrollbar-container' );
 			}
 		} );
 	}
