@@ -557,6 +557,16 @@ pre,
 	}
 }
 
+a > img,
+.floatnone > img {
+	// Hopefully these are only templates or something sane to begin with
+	// See: T269970
+	.mw-body .mw-parser-output table & {
+		height: unset !important;
+		max-width: unset !important;
+	}
+}
+
 #siteSub {
 	margin: -0.5em 0 0.5em 0;
 	font-style: italic;
