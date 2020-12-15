@@ -11,14 +11,11 @@ body {
 body {
 	font-family: @fonts;
 	color: @text;
-	/* Make firefox's 'smart' scrollbars actually match the content */
-	background: @base100;
+	// Footer colour; results in a weird distracting dark scrollbar in firefox, but fuck firefox
+	// Setting it here avoids a jump to white after the footer, which is even more distracting
+	background: @base30;
 	font-size: @font-size;
 	line-height: 1.5;
-}
-
-#mw-wrapper {
-	background: @base30;
 }
 
 #mw-content {
