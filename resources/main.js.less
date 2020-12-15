@@ -70,3 +70,22 @@
 		}
 	}
 }
+
+// Desktop sticky scrollbars
+.content-table-scrollbar.inactive {
+	position: absolute;
+	top: -99999px;
+	bottom: unset;
+	left: -99999px;
+}
+
+.content-table-scrollbar {
+	position: fixed;
+	bottom: 0;
+	overflow-x: scroll;
+	z-index: 1;
+}
+
+.content-table-spoof {
+	height: 1px;
+}

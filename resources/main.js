@@ -98,4 +98,72 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 
 	unOverflowTables();
 	$( window ).on( 'resize', unOverflowTables );
+
+	/**
+	 * Sticky scrollbars maybe?!
+	 */
+	$content.find( '.content-table' ).each( function () {
+		var $table, $tableWrapper, $spoof, $scrollbar;
+
+		$tableWrapper = $( this );
+		$table = $tableWrapper.children( 'table' ).first();
+
+		// Assemble our silly crap and add to page
+		$scrollbar = $( '<div>' ).addClass( 'content-table-scrollbar inactive' ).width( $content.width() );
+		$spoof = $( '<div>' ).addClass( 'content-table-spoof' ).width( $table.outerWidth() );
+		$tableWrapper.parent().prepend( $scrollbar.prepend( $spoof ) );
+	} );
+
+	/**
+	 * Scoll table when scrolling scrollbar and visa-versa lololol wut
+	 */
+	$content.find( '.content-table' ).on( 'scroll', function () {
+		// Only do this here if we're not already mirroring the spoof
+		var $mirror = $( this ).siblings( '.inactive' ).first();
+
+		$mirror.scrollLeft( $( this ).scrollLeft() );
+	} );
+	$content.find( '.content-table-scrollbar' ).on( 'scroll', function () {
+		var $mirror = $( this ).siblings( '.content-table' ).first();
+
+		// Only do this here if we're not already mirroring the table
+		// eslint-disable-next-line no-jquery/no-class-state
+		if ( !$( this ).hasClass( 'inactive' ) ) {
+			$mirror.scrollLeft( $( this ).scrollLeft() );
+		}
+	} );
+
+	/**
+	 * Set active when actually over the table it applies to...
+	 */
+	function determineActiveSpoofScrollbars() {
+		$content.find( '.overflowed .content-table' ).each( function () {
+			var $scrollbar = $( this ).siblings( '.content-table-scrollbar' ).first(),
+				tableTop, tableBottom, viewBottom;
+
+			tableTop = $( this ).offset().top;
+			tableBottom = tableTop + $( this ).outerHeight();
+			viewBottom = window.scrollY + document.documentElement.clientHeight;
+
+			if ( tableTop < viewBottom && tableBottom > viewBottom ) {
+				$scrollbar.removeClass( 'inactive' );
+			} else {
+				$scrollbar.addClass( 'inactive' );
+			}
+		} );
+	}
+
+	determineActiveSpoofScrollbars();
+	$( window ).on( 'scroll resize', determineActiveSpoofScrollbars );
+
+	/**
+	 * Make sure tablespoofs remain correctly-sized?
+	 */
+	$( window ).on( 'resize', function () {
+		$content.find( '.content-table-scrollbar' ).each( function () {
+			var width = $( this ).siblings().first().find( 'table' ).first().width();
+			$( this ).find( '.content-table-spoof' ).first().width( width );
+			$( this ).width( $content.width() );
+		} );
+	} );
 } );
