@@ -62,7 +62,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 			// wtf browser rtl implementations
 			scroll = Math.abs( $tableWrapper.scrollLeft() );
 
-		// 1 instead of 0 because of weird rtl rounding errors or something (?!)
+		// 1 instead of 0 because of weird rtl rounding errors or something
 		if ( scroll > 1 ) {
 			$wrapper.addClass( 'scroll-left' );
 		} else {
@@ -78,6 +78,12 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 
 	$content.find( '.content-table' ).on( 'scroll', function () {
 		setScrollClass( $( this ).children( 'table' ).first() );
+
+		if ( $content.attr( 'dir' ) === 'rtl' ) {
+			$( this ).find( 'caption' ).css( 'margin-right', Math.abs( $( this ).scrollLeft() ) + 'px' );
+		} else {
+			$( this ).find( 'caption' ).css( 'margin-left', $( this ).scrollLeft() + 'px' );
+		}
 	} );
 
 	/**
@@ -93,6 +99,19 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 			} else {
 				$wrapper.removeClass( 'overflowed scroll-left scroll-right fixed-scrollbar-container' );
 			}
+		} );
+
+		// Set up sticky captions
+		$content.find( '.content-table > table > caption' ).each( function () {
+			var $container, tableHeight;
+
+			$container = $( this ).parents( '.content-table-wrapper' );
+			$( this ).width( $content.width() );
+			tableHeight = $container.innerHeight() - $( this ).outerHeight();
+
+			$container.find( '.content-table-left' ).height( tableHeight );
+			$container.find( '.content-table-right' ).height( tableHeight );
+
 		} );
 	}
 
@@ -139,13 +158,23 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	function determineActiveSpoofScrollbars() {
 		$content.find( '.overflowed .content-table' ).each( function () {
 			var $scrollbar = $( this ).siblings( '.content-table-scrollbar' ).first(),
-				tableTop, tableBottom, viewBottom;
+				tableTop, tableBottom, viewBottom, captionHeight;
+
+			// Skip caption
+			captionHeight = $( this ).find( 'caption' ).outerHeight();
+
+			if ( !captionHeight ) {
+				captionHeight = 0;
+			} else {
+				// Pad slightly for reasons
+				captionHeight += 8;
+			}
 
 			tableTop = $( this ).offset().top;
 			tableBottom = tableTop + $( this ).outerHeight();
 			viewBottom = window.scrollY + document.documentElement.clientHeight;
 
-			if ( tableTop < viewBottom && tableBottom > viewBottom ) {
+			if ( tableTop + captionHeight < viewBottom && tableBottom > viewBottom ) {
 				$scrollbar.removeClass( 'inactive' );
 			} else {
 				$scrollbar.addClass( 'inactive' );
