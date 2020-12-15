@@ -203,3 +203,13 @@ div.mw-notification-area {
 	margin-top: @fixed-header-height + @color-height;
 	padding-bottom: 1em;
 }
+
+// Icon-only some hopefully obvious ones so things are more likely to fit
+// TODO: have icons actually reflect active/new/regular states so we can put talk/page here too?
+#ca-addsection,
+#ca-history {
+	a,
+	span {
+		.ca-icon-only();
+	}
+}
