@@ -40,11 +40,18 @@ body {
 	color: @base100;
 
 	a {
-		color: @blue-bright;
+		color: darken( @blue-bright, 3% );
 
-		&:hover,
+		&:hover {
+			color: darken( @blue-bright, 6% );
+		}
+
 		&:visited {
-			color: @base90;
+			color: darken( @blue-bright, 8% );
+
+			&:hover {
+				color: darken( @blue-bright, 12% );
+			}
 		}
 	}
 
@@ -226,6 +233,10 @@ body {
 
 	a {
 		.ca-icon( 'images/page-misc-grey' );
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -285,13 +296,13 @@ body {
 	.ca-icon( 'images/brackets-grey' );
 }
 
+#ca-view a,
+#ca-view-foreign a {
+	.ca-icon( 'images/eyeball-grey' );
+}
+
 #ca-view {
 	.hidden();
-
-	/* Let's give anyone who forcibly brings it back a creepy eyeball */
-	a {
-		.ca-icon( 'images/eyeball-grey' );
-	}
 }
 
 .tools-inline li[ id^='ca-nstab-' ] a {
@@ -320,9 +331,17 @@ a {
 	text-decoration: none;
 	color: @link;
 
-	&:hover,
+	&:hover {
+		color: darken( @link, 10% );
+		text-decoration: underline;
+	}
+
 	&:visited {
 		color: @link-visited;
+
+		&:hover {
+			color: darken( @link-visited, 10% );
+		}
 	}
 }
 
@@ -330,9 +349,34 @@ a.new,
 .new a {
 	color: @link-red;
 
-	&:hover,
+	&:hover {
+		color: darken( @link-red, 10% );
+	}
+
 	&:visited {
 		color: @link-red-visited;
+
+		&:hover {
+			color: darken( @link-red-visited, 10% );
+		}
+	}
+}
+
+.mw-parser-output a.extiw,
+.mw-parser-output a.extiw:active,
+.mw-parser-output a.external {
+	color: @link-ext;
+
+	&:hover {
+		color: darken( @link-ext, 10% );
+	}
+
+	&:visited {
+		color: @link-ext-visited;
+
+		&:hover {
+			color: darken( @link-ext-visited, 10% );
+		}
 	}
 }
 

@@ -881,7 +881,7 @@ class TimelessTemplate extends BaseTemplate {
 			'class' => 'dropdown-toggle'
 		];
 		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
-		if ( $this->sidebar['LANGUAGES'] !== false || $sortedPileOfTools['variants']
+		if ( !empty( $this->sidebar['LANGUAGES'] ) || $sortedPileOfTools['variants']
 			|| isset( $this->otherProjects ) ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
