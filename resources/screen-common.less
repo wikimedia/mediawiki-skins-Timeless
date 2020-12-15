@@ -373,11 +373,17 @@ a.mw-selflink {
 
 .mw-indicators {
 	float: right;
-	margin: 0.75em 0 0 1em;
+	margin-left: 1em;
+
+	img {
+		/* Line up to baseline; expected indicator icon size is 20px */
+		margin-top: -0.5em;
+	}
 }
 
 .mw-indicator {
 	display: inline-block;
+	margin: 0.65em 0 0 0.25em;
 }
 
 div.magnify a {
