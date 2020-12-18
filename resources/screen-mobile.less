@@ -221,24 +221,24 @@ div.thumb {
 
 .mw-body {
 	border: 0;
-}
-
-#mw-content {
-	padding: @content-padding;
-	border-width: 0;
 
 	table {
-		width: 100% !important;
+		width: 100%;
 		margin-left: 0;
 		margin-right: 0;
 
 		table {
 			// HOLD ON WHAT ABORT ABORT
-			width: unset !important;
+			width: unset;
 			margin-left: unset;
 			margin-right: unset;
 		}
 	}
+}
+
+#mw-content {
+	padding: @content-padding;
+	border-width: 0;
 }
 
 #mw-content-block {
