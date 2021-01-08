@@ -103,15 +103,18 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 
 		// Set up sticky captions
 		$content.find( '.content-table > table > caption' ).each( function () {
-			var $container, tableHeight;
+			var $container, tableHeight,
+				$table = $( this ).parent(),
+				$wrapper = $table.parent().parent();
 
-			$container = $( this ).parents( '.content-table-wrapper' );
-			$( this ).width( $content.width() );
-			tableHeight = $container.innerHeight() - $( this ).outerHeight();
+			if ( $table.outerWidth() > $wrapper.outerWidth() ) {
+				$container = $( this ).parents( '.content-table-wrapper' );
+				$( this ).width( $content.width() );
+				tableHeight = $container.innerHeight() - $( this ).outerHeight();
 
-			$container.find( '.content-table-left' ).height( tableHeight );
-			$container.find( '.content-table-right' ).height( tableHeight );
-
+				$container.find( '.content-table-left' ).height( tableHeight );
+				$container.find( '.content-table-right' ).height( tableHeight );
+			}
 		} );
 	}
 
