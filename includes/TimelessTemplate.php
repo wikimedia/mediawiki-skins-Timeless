@@ -473,7 +473,6 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getLogo( $id = 'p-logo', $part = 'both' ) {
 		$html = '';
-		$language = $this->getSkin()->getLanguage();
 		$config = $this->getSkin()->getContext()->getConfig();
 
 		$html .= Html::openElement(
@@ -499,8 +498,10 @@ class TimelessTemplate extends BaseTemplate {
 			$titleClass = '';
 			$siteTitle = '';
 			if ( !$wordmarkImage ) {
-				if ( $language->hasVariants() ) {
-					$siteTitle = $language->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
+				$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
+					->getLanguageConverter( $this->getSkin()->getLanguage() );
+				if ( $langConv->hasVariants() ) {
+					$siteTitle = $langConv->convert( $this->getMsg( 'timeless-sitetitle' )->escaped() );
 				} else {
 					$siteTitle = $this->getMsg( 'timeless-sitetitle' )->escaped();
 				}
