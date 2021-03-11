@@ -97,9 +97,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$html .= Html::rawElement( 'div',
 			[ 'id' => 'mw-footer-container', 'class' => 'mw-footer-container ts-container' ],
-			Html::rawElement( 'div', [ 'id' => 'mw-footer', 'class' => 'mw-footer ts-inner' ],
-				$this->getFooterBlock()
-			)
+			$this->getFooterBlock( [ 'class' => [ 'mw-footer', 'ts-inner' ], 'id' => 'mw-footer' ] )
 		);
 
 		$html .= Html::closeElement( 'div' );
