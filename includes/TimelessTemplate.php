@@ -334,7 +334,6 @@ class TimelessTemplate extends BaseTemplate {
 	 *   practice we currently only check if it is or isn't 'iconsfirst'
 	 * * 'link-prefix' to set the prefix for all link and block ids; most skins use 'f' or 'footer',
 	 *   as in id='f-whatever' vs id='footer-whatever'
-	 * * 'icon-style' to pass to getFooterIcons: "icononly", "nocopyright"
 	 * * 'link-style' to pass to getFooterLinks: "flat" to disable categorisation of links in a
 	 *   nested array
 	 *
@@ -347,13 +346,12 @@ class TimelessTemplate extends BaseTemplate {
 			'class' => 'mw-footer',
 			'order' => 'iconsfirst',
 			'link-prefix' => 'footer',
-			'icon-style' => 'icononly',
 			'link-style' => null
 		];
 
 		// phpcs:ignore Generic.Files.LineLength.TooLong
-		'@phan-var array{id:string,class:string,order:string,link-prefix:string,icon-style:string,link-style:?string} $options';
-		$validFooterIcons = $this->getFooterIcons( $options['icon-style'] );
+		'@phan-var array{id:string,class:string,order:string,link-prefix:string,link-style:?string} $options';
+		$validFooterIcons = $this->get( 'footericons' );
 		$validFooterLinks = $this->getFooterLinks( $options['link-style'] );
 
 		$html = '';
