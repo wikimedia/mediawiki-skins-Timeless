@@ -189,7 +189,9 @@ div.mw-notification-area {
 		background-image: none;
 
 		img {
-			max-width: 156px;
+			// Let's not assume our users are sizing these to anything in particular
+			// 135px because that keeps things semi-consistent with logo parts of oldstyle logos
+			width: 135px;
 			height: auto;
 			margin: 0.75em 0 0.5em;
 		}
