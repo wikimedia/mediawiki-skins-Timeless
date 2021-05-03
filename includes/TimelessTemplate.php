@@ -163,7 +163,7 @@ class TimelessTemplate extends BaseTemplate {
 					)
 				) .
 				$this->getClear() .
-				Html::rawElement( 'div', [ 'class' => 'mw-body-content', 'id' => 'bodyContent' ],
+				Html::rawElement( 'div', [ 'id' => 'bodyContent' ],
 					$this->getContentSub() .
 					$this->get( 'bodytext' ) .
 					$this->getClear()
