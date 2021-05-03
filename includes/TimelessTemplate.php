@@ -1039,7 +1039,7 @@ class TimelessTemplate extends BaseTemplate {
 	protected function getCatList( $list, $id, $class, $message ) {
 		$html = Html::openElement( 'div', [ 'id' => "sidebar-{$id}", 'class' => $class ] );
 
-		$makeLinkItem = function ( $linkHtml ) {
+		$makeLinkItem = static function ( $linkHtml ) {
 			return Html::rawElement( 'li', [], $linkHtml );
 		};
 
