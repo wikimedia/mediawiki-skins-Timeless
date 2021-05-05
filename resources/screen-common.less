@@ -411,10 +411,6 @@ a.mw-selflink {
 	display: none;
 }
 
-.visual-clear {
-	clear: both;
-}
-
 .mw-indicators {
 	float: right;
 	margin-left: 1em;
@@ -696,6 +692,7 @@ ul {
 /* Tables of contents */
 ul#filetoc,
 .toc,
+.toccolours,
 .mw-warning {
 	display: table;
 	.box;
@@ -703,6 +700,7 @@ ul#filetoc,
 	margin-top: 1em;
 	margin-bottom: 1em;
 	min-width: 15em;
+	font-size: 100%;
 }
 
 .toc {
@@ -730,6 +728,7 @@ ul#filetoc {
 
 .mw-body .toctitle {
 	border-bottom: solid 2px @base70;
+	text-align: unset;
 
 	h2 {
 		font-size: 1em;

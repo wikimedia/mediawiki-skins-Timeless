@@ -56,12 +56,29 @@
 			],
 			"class": "TimelessVariablesModule",
 			"features": {
-				"content-links": true,
+				"normalize": false,
 				"logo": true,
-				"legacy": true
+				"content-thumbnails": false,
+				"content-media": false,
+				"content-links": true,
+				"content-links-external": true,
+				"content-parser-output": false,
+				"content-tables": false,
+				"interface": false,
+				"interface-category": false,
+				"interface-message-box": false,
+				"elements": false,
+				"legacy": false,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"toc": true
 			},
 			"styles": {
 				"resources/libraries/normalise.css": {
+					"media": "screen"
+				},
+				"resources/libraries/shared.css": {
 					"media": "screen"
 				},
 				"resources/forms.less": {
@@ -86,6 +103,9 @@
 					"media": "screen and (max-width: 850px)"
 				},
 				"0": "resources/screen-misc.less",
+				"resources/libraries/common-print.less": {
+					"media": "print"
+				},
 				"resources/print.css": {
 					"media": "print"
 				}
