@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"Jmarchn",
 			"Macofe",
 			"Toniher",
 			"Vriullop"
@@ -24,5 +25,5 @@
 	"timeless-pagetools": "Accions de pàgina",
 	"timeless-languages": "Llengües",
 	"timeless-projects": "Altres projectes",
-	"timeless.js": "/* Qualsevol codi JavaScript afegit aquí es carregarà per als usuaris que utilitzin l'aprença Timeless */"
+	"timeless.js": "/* Qualsevol codi JavaScript afegit aquí es carregarà per als usuaris que utilitzin l'aparença Timeless */"
 }
