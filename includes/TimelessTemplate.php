@@ -283,7 +283,16 @@ class TimelessTemplate extends BaseTemplate {
 			$bodyDivOptions['id'] = $options['body-id'];
 		}
 
-		$afterPortlet = $this->getAfterPortlet( $name );
+		$afterPortlet = '';
+		$content = $this->getSkin()->getAfterPortlet( $name );
+		if ( $content !== '' ) {
+			$afterPortlet = Html::rawElement(
+				'div',
+				[ 'class' => [ 'after-portlet', 'after-portlet-' . $name ] ],
+				$content
+			);
+		}
+
 		if ( $name === 'lang' ) {
 			$this->afterLangPortlet = $afterPortlet;
 		}
