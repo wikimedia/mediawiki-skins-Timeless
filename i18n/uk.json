@@ -3,6 +3,7 @@
 		"authors": [
 			"Andriykopanytsia",
 			"Base",
+			"DDPAT",
 			"Movses",
 			"Piramidion",
 			"Ата"
@@ -25,6 +26,6 @@
 	"timeless-namespaces": "Простори назв",
 	"timeless-pagetools": "Дії над сторінкою",
 	"timeless-languages": "Мови",
-	"timeless-projects": "Інші проекти",
+	"timeless-projects": "Інші проєкти",
 	"timeless.js": "/* Увесь розміщений тут код JavaScript буде завантажений для всіх користувачів теми оформлення «Вічне» */"
 }
