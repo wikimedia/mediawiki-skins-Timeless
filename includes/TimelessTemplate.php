@@ -1012,7 +1012,10 @@ class TimelessTemplate extends BaseTemplate {
 
 			if ( isset( $allCats['hidden'] ) ) {
 				$hiddenCatClass = [ 'mw-hidden-catlinks' ];
-				if ( $skin->getUser()->getBoolOption( 'showhiddencats' ) ) {
+				if ( MediaWikiServices::getInstance()
+					->getUserOptionsLookup()
+					->getBoolOption( $skin->getUser(), 'showhiddencats' )
+				) {
 					$hiddenCatClass[] = 'mw-hidden-cats-user-shown';
 				} elseif ( $skin->getTitle()->getNamespace() == NS_CATEGORY ) {
 					$hiddenCatClass[] = 'mw-hidden-cats-ns-shown';
