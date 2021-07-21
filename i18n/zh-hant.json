@@ -30,6 +30,6 @@
 	"timeless-pagetools": "頁面操作",
 	"timeless-languages": "語言",
 	"timeless-projects": "其它專案",
-	"timeless.css": "/* 此處所有的CSS都會在使用者使用Timeless外觀時載入 */",
-	"timeless.js": "/* 此處所有的JavaScript都會在使用者使用Timeless外觀時載入 */"
+	"timeless.css": "/* 此處所有的 CSS 都會在使用者使用 Timeless 外觀時載入 */",
+	"timeless.js": "/* 此處所有的 JavaScript 都會在使用者使用 Timeless 外觀時載入 */"
 }
