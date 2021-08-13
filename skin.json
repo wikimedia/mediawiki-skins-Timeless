@@ -8,7 +8,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.36"
+		"MediaWiki": ">= 1.38"
 	},
 	"ValidSkinNames": {
 		"timeless": {
