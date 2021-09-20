@@ -8,7 +8,8 @@
 			"Lakejason0",
 			"Liuxinyu970226",
 			"Looong",
-			"Shizhao"
+			"Shizhao",
+			"Xzonn"
 		]
 	},
 	"timeless-desc": "基于Brandon Harris的Winter皮肤原型，和一些来自维基媒体基金会的风格设计的“永恒的”（Timeless）皮肤",
@@ -29,5 +30,6 @@
 	"timeless-pagetools": "页面操作",
 	"timeless-languages": "语言",
 	"timeless-projects": "其他项目",
+	"timeless.css": "/* 这里放置的CSS将应用于Timeless皮肤 */",
 	"timeless.js": "/* 将为Timeless皮肤的用户加载此处的所有JavaScript  */"
 }
