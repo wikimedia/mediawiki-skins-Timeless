@@ -8,15 +8,15 @@ class TimelessVariablesModule extends ResourceLoaderSkinModule {
 	 * @inheritDoc
 	 */
 	public function __construct(
-			array $options = [],
-			$localBasePath = null,
-			$remoteBasePath = null
+		array $options = [],
+		$localBasePath = null,
+		$remoteBasePath = null
 	) {
-			if ( version_compare( MW_VERSION, '1.36', '<' ) ) {
-				$options['features'] = [ "logo", "legacy" ];
-			}
+		if ( version_compare( MW_VERSION, '1.36', '<' ) ) {
+			$options['features'] = [ "logo", "legacy" ];
+		}
 
-			parent::__construct( $options, $localBasePath, $remoteBasePath );
+		parent::__construct( $options, $localBasePath, $remoteBasePath );
 	}
 
 	/**
