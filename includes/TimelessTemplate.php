@@ -122,20 +122,13 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getContentBlock() {
+		$templateData = $this->getSkin()->getTemplateData();
 		$html = Html::rawElement(
 			'div',
 			[ 'id' => 'content', 'class' => 'mw-body',  'role' => 'main' ],
 			$this->getSiteNotices() .
 			$this->getIndicators() .
-			Html::rawElement(
-				'h1',
-				[
-					'id' => 'firstHeading',
-					'class' => 'firstHeading',
-					'lang' => $this->get( 'pageLanguage' )
-				],
-				$this->get( 'title' )
-			) .
+			$templateData[ 'html-title-heading' ] .
 			Html::rawElement( 'div', [ 'id' => 'bodyContentOuter' ],
 				Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
 				Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
