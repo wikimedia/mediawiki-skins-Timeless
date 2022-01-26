@@ -844,7 +844,14 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Tools specific to the page
 		$pileOfEditTools = [];
-		foreach ( $this->data['content_navigation'] as $navKey => $navBlock ) {
+		$contentNavigation = $this->data['content_navigation'];
+		// T300100: Do not use categories here. Already added to sidebar
+		unset(
+			$contentNavigation['category-normal'],
+			$contentNavigation['category-hidden']
+		);
+
+		foreach ( $contentNavigation as $navKey => $navBlock ) {
 			// Just use namespaces items as they are
 			if ( $navKey == 'namespaces' ) {
 				if ( $namespace < 0 && count( $navBlock ) < 2 ) {
