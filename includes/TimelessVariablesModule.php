@@ -1,4 +1,10 @@
 <?php
+
+namespace MediaWiki\Skin\Timeless;
+
+use ResourceLoaderContext;
+use ResourceLoaderSkinModule;
+
 /**
  * ResourceLoader module to set some LESS variables for the skin
  */

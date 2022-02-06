@@ -1,4 +1,9 @@
 <?php
+
+namespace MediaWiki\Skin\Timeless;
+
+use SkinTemplate;
+
 /**
  * SkinTemplate class for the Timeless skin
  *
