@@ -15,5 +15,7 @@
 	"timeless-userpagetools": "واپرائيندڙ جي صفحي جا اوزار",
 	"timeless-pagemisc": "وڌيڪ",
 	"timeless-namespaces": "نانءُپولارَ",
-	"timeless-pagetools": "صفحاتِي عمل"
+	"timeless-pagetools": "صفحاتِي عمل",
+	"timeless-view-history": "سوانح",
+	"timeless-action-undelete": "{{PLURAL:$1|هڪ سنوار|$1 سنوارون}} اڻڊاھيو"
 }

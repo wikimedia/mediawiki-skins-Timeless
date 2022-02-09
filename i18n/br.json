@@ -8,5 +8,7 @@
 	"timeless-userpage": "Pajenn implijer",
 	"timeless-sitetools": "Ostilhoù wiki",
 	"timeless-pagemisc": "Muioc'h",
-	"timeless-namespaces": "Esaouennoù anv"
+	"timeless-namespaces": "Esaouennoù anv",
+	"timeless-view-history": "Istor",
+	"timeless-action-undelete": "Diziverkañ {{PLURAL:$1|ur c'hemm|$1 kemm}}"
 }

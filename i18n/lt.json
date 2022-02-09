@@ -16,5 +16,7 @@
 	"timeless-namespaces": "Vardų sritys",
 	"timeless-pagetools": "Puslapio veiksmai",
 	"timeless-languages": "Kalbos",
-	"timeless-projects": "Kiti projektai"
+	"timeless-projects": "Kiti projektai",
+	"timeless-view-history": "Istorija",
+	"timeless-action-undelete": "Atkurti $1 {{PLURAL:$1|redagavimą|redagavimus|redagavimų}}"
 }

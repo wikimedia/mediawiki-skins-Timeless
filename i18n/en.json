@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": [ "Isarra" ]
+		"authors": [
+			"Isarra"
+		]
 	},
 	"skinname-timeless": "Timeless",
 	"timeless-desc": "A timeless skin designed after the Winter prototype by Brandon Harris, and various styles by the Wikimedia Foundation",
@@ -23,5 +25,7 @@
 	"timeless-projects": "Other projects",
 	"timeless-sitetitle": "{{int:Sitetitle}}",
 	"timeless.css": "/* All CSS here will be loaded for users of the Timeless skin */",
-	"timeless.js": "/* All JavaScript here will be loaded for users of the Timeless skin */"
+	"timeless.js": "/* All JavaScript here will be loaded for users of the Timeless skin */",
+	"timeless-view-history": "History",
+	"timeless-action-undelete": "Undelete {{PLURAL:$1|one edit|$1 edits}}"
 }

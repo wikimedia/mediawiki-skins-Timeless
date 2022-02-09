@@ -6,5 +6,7 @@
 			"Horus"
 		]
 	},
-	"timeless-notloggedin": "ยังไม่ได้เข้าสู่ระบบ"
+	"timeless-notloggedin": "ยังไม่ได้เข้าสู่ระบบ",
+	"timeless-view-history": "ประวัติ",
+	"timeless-action-undelete": "กู้คืน $1 การแก้ไข"
 }
