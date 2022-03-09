@@ -5,6 +5,7 @@
 			"HakanIST",
 			"MuratTheTurkish",
 			"Rapsar",
+			"SaldırganSincap",
 			"Sayginer"
 		]
 	},
@@ -28,5 +29,5 @@
 	"timeless-projects": "Diğer projeler",
 	"timeless.js": "/* Buradaki tüm JavaScript, Timeless arayüz kullanıcıları için yüklenecek */",
 	"timeless-view-history": "Geçmiş",
-	"timeless-action-undelete": "$1 değişikliği geri getir"
+	"timeless-action-undelete": "{{PLURAL:$1|Bir düzenlemeyi|$1 düzenlemeyi}} geri getir"
 }
