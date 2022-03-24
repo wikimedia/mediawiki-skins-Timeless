@@ -531,11 +531,13 @@ class TimelessTemplate extends BaseTemplate {
 		}
 		if ( $part !== 'text' ) {
 			$logoImage = $this->getLogoImage( $config->get( 'TimelessLogo' ) );
-			if ( $logoImage === false && isset( $logos['icon'] ) ) {
-				$logoSrc = $logos['icon'];
-				$logoImage = Html::element( 'img', [
-					'src' => $logoSrc,
-				] );
+			if ( $logoImage === false ) {
+				$logoSrc = $logos['svg'] ?: $logos['icon'] ?: '';
+				if ( $logoSrc !== '' ) {
+					$logoImage = Html::element( 'img', [
+						'src' => $logoSrc,
+					] );
+				}
 			}
 
 			$html .= Html::rawElement(
