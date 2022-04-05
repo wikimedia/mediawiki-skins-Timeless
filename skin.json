@@ -66,7 +66,7 @@
 				"content-tables": false,
 				"interface": false,
 				"interface-category": false,
-				"interface-message-box": false,
+				"interface-message-box": true,
 				"elements": false,
 				"legacy": false,
 				"i18n-ordered-lists": true,
