@@ -58,7 +58,6 @@
 			"features": {
 				"normalize": false,
 				"logo": true,
-				"content-thumbnails": false,
 				"content-media": false,
 				"content-links": true,
 				"content-links-external": true,
