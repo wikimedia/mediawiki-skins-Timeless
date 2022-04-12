@@ -33,5 +33,5 @@
 	"timeless.css": "/* 此處所有的 CSS 都會在使用者使用 Timeless 外觀時載入 */",
 	"timeless.js": "/* 此處所有的 JavaScript 都會在使用者使用 Timeless 外觀時載入 */",
 	"timeless-view-history": "歷史",
-	"timeless-action-undelete": "取消刪除 $1 項修訂"
+	"timeless-action-undelete": "取消刪除 {{PLURAL:$1|1|$1}} 個編輯"
 }
