@@ -3,13 +3,15 @@
 		"authors": [
 			"Eitvys200",
 			"Tomasdd",
+			"Vogone",
 			"Zygimantus"
 		]
 	},
 	"timeless-anonymous": "Anonimas",
-	"timeless-loggedinas": "Prisijungęs kaip '''$1'''",
+	"timeless-loggedinas": "{{gender:$1|Prisijungęs|Prisijungusi}} kaip '''$1'''",
 	"timeless-notloggedin": "Neprisijungta",
 	"timeless-more": "Daugiau",
+	"timeless-sitetools": "Viki įrankiai",
 	"timeless-pageactions": "Puslapio įrankiai",
 	"timeless-userpagetools": "Naudotojo puslapio įrankiai",
 	"timeless-pagemisc": "Daugiau",
