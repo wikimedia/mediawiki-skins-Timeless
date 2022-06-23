@@ -17,6 +17,11 @@ form {
 		margin: unset;
 		padding: unset;
 	}
+
+	// Padding on checkboxes seems to cause misalignment with its text
+	.oo-ui-checkboxInputWidget input:not( .mw-widgets-datetime-dateTimeInputWidget-editField ):not( .mw-history-compareselectedversions-button ) {
+		margin: unset;
+	}
 }
 
 .oo-ui-buttonElement-framed.oo-ui-labelElement > .oo-ui-buttonElement-button,
