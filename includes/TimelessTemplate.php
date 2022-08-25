@@ -837,6 +837,8 @@ class TimelessTemplate extends BaseTemplate {
 			$contentNavigation['category-normal'],
 			$contentNavigation['category-hidden']
 		);
+		// T316196: 'associatedPages' duplicates 'namespaces'
+		unset( $contentNavigation['associatedPages'] );
 
 		foreach ( $contentNavigation as $navKey => $navBlock ) {
 			// Just use namespaces items as they are
