@@ -832,13 +832,6 @@ class TimelessTemplate extends BaseTemplate {
 		// Tools specific to the page
 		$pileOfEditTools = [];
 		$contentNavigation = $this->data['content_navigation'];
-		// T300100: Do not use categories here. Already added to sidebar
-		unset(
-			$contentNavigation['category-normal'],
-			$contentNavigation['category-hidden']
-		);
-		// T316196: 'associatedPages' duplicates 'namespaces'
-		unset( $contentNavigation['associatedPages'] );
 
 		foreach ( $contentNavigation as $navKey => $navBlock ) {
 			// Just use namespaces items as they are
