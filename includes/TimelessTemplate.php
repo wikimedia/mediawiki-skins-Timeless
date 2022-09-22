@@ -193,6 +193,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * @suppress PhanTypeMismatchArgumentNullable
 	 */
 	protected function getPortlet( $name, $content, $msg = null, $setOptions = [] ) {
+		$skin = $this->getSkin();
 		// random stuff to override with any provided options
 		$options = array_merge( [
 			'role' => 'navigation',
@@ -236,13 +237,13 @@ class TimelessTemplate extends BaseTemplate {
 			$contentText .= $options['list-prepend'];
 			foreach ( $content as $key => $item ) {
 				if ( is_array( $options['text-wrapper'] ) ) {
-					$contentText .= $this->makeListItem(
+					$contentText .= $skin->makeListItem(
 						$key,
 						$item,
 						[ 'text-wrapper' => $options['text-wrapper'] ]
 					);
 				} else {
-					$contentText .= $this->makeListItem(
+					$contentText .= $skin->makeListItem(
 						$key,
 						$item
 					);
@@ -550,6 +551,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getSearch() {
+		$skin = $this->getSkin();
 		$html = Html::openElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ] );
 
 		$html .= Html::rawElement(
@@ -561,16 +563,16 @@ class TimelessTemplate extends BaseTemplate {
 		$html .= Html::rawElement( 'form', [ 'action' => $this->get( 'wgScript' ), 'id' => 'searchform' ],
 			Html::rawElement( 'div', [ 'id' => 'simpleSearch' ],
 				Html::rawElement( 'div', [ 'id' => 'searchInput-container' ],
-					$this->makeSearchInput( [
+					$skin->makeSearchInput( [
 						'id' => 'searchInput'
 					] )
 				) .
 				Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
-				$this->makeSearchButton(
+				$skin->makeSearchButton(
 					'fulltext',
 					[ 'id' => 'mw-searchButton', 'class' => 'searchButton mw-fallbackSearchButton' ]
 				) .
-				$this->makeSearchButton(
+				$skin->makeSearchButton(
 					'go',
 					[ 'id' => 'searchButton', 'class' => 'searchButton' ]
 				)
@@ -677,8 +679,9 @@ class TimelessTemplate extends BaseTemplate {
 	 * (for width adjustments)
 	 */
 	protected function getUserLinks() {
-		$user = $this->getSkin()->getUser();
-		$personalTools = $this->getPersonalTools();
+		$skin = $this->getSkin();
+		$user = $skin->getUser();
+		$personalTools = $skin->getPersonalToolsForMakeListItem( $this->get( 'personal_urls' ) );
 		// Preserve standard username label to allow customisation (T215822)
 		$userName = $personalTools['userpage']['links'][0]['text'] ?? $user->getName();
 
@@ -731,7 +734,7 @@ class TimelessTemplate extends BaseTemplate {
 		if ( !empty( $extraTools ) ) {
 			$iconList = '';
 			foreach ( $extraTools as $key => $item ) {
-				$iconList .= $this->makeListItem( $key, $item );
+				$iconList .= $skin->makeListItem( $key, $item );
 			}
 
 			$html .= Html::rawElement(
