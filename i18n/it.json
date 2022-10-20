@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Macofe"
+			"Macofe",
+			"Pierpao"
 		]
 	},
 	"timeless-desc": "Un tema senza tempo disegnato dopo il prototipo Winter da Brandon Harris, e vari stili della Wikimedia Foundation",
@@ -16,7 +17,7 @@
 	"timeless-sitetools": "Strumenti wiki",
 	"timeless-pageactions": "Strumenti pagine",
 	"timeless-userpagetools": "Strumenti pagina utente",
-	"timeless-action-addsection": "Nuovo argomento",
+	"timeless-action-addsection": "Nuova discussione",
 	"timeless-view-view": "Leggi",
 	"timeless-pagemisc": "Altro",
 	"timeless-namespaces": "Namespace",
