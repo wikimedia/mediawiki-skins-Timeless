@@ -36,7 +36,7 @@ figure[ typeof~='mw:File/Frame' ] {
 
 /* Magnify clip, not present for broken media */
 figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
-	> figcaption:before {
+	> figcaption::before {
 		content: '';
 		width: 20px;
 		height: 20px;
@@ -61,7 +61,7 @@ figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
 		position: relative;
 	}
 
-	> a.mw-file-description:after {
+	> a.mw-file-description::after {
 		content: '';
 		width: 20px;
 		height: 20px;

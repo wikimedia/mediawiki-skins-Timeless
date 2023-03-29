@@ -104,17 +104,17 @@
 #mw-site-navigation .sidebar-chunk h2 span {
 	.dropdown-pokey();
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		right: 1px;
 		display: none;
 	}
 
-	&:before {
+	&::before {
 		top: 34px;
 	}
 
-	&:after {
+	&::after {
 		top: 36px;
 	}
 }
@@ -122,8 +122,8 @@
 #mw-site-navigation .dropdown-active,
 .client-nojs #mw-site-navigation .sidebar-chunk:hover {
 	h2 span {
-		&:before,
-		&:after {
+		&::before,
+		&::after {
 			display: block;
 		}
 	}

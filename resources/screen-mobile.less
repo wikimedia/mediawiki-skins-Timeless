@@ -111,7 +111,7 @@
 		.icon();
 	}
 
-	&:after {
+	&::after {
 		position: absolute;
 		top: 0.65em;
 		left: 23px;
@@ -165,7 +165,7 @@
 
 #ca-more,
 #ca-languages {
-	&:after {
+	&::after {
 		margin-left: -0.35em;
 	}
 
@@ -237,11 +237,11 @@ figure[ typeof~='mw:File/Frame' ] {
 
 // FIXME: Clear the magnify clip for now
 figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
-	> figcaption:before {
+	> figcaption::before {
 		content: none;
 	}
 
-	> a:after {
+	> a::after {
 		content: none;
 	}
 }
