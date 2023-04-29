@@ -684,6 +684,15 @@ class TimelessTemplate extends BaseTemplate {
 		if ( isset( $personalTools['anonuserpage'] ) ) {
 			unset( $personalTools['anonuserpage'] );
 		}
+		// Remove temp user placeholder, as we display the user name in the dropdown header instead.
+		// Removing the use of .mw-userpage-tmp class also prevents the anchored popup from appearing,
+		// which is good, because there's no reasonable place to put it.
+		if (
+			isset( $personalTools['userpage'] ) &&
+			in_array( 'mw-userpage-tmp', $personalTools['userpage']['links'][0]['class'] ?? [] )
+		) {
+			unset( $personalTools['userpage'] );
+		}
 
 		// Remove Echo badges
 		if ( isset( $personalTools['notifications-alert'] ) ) {
@@ -705,9 +714,12 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		// Labels
-		if ( $user->isRegistered() ) {
+		if ( $user->isNamed() ) {
 			$dropdownHeader = $userName;
 			$headerMsg = [ 'timeless-loggedinas', $userName ];
+		} elseif ( $user->isTemp() ) {
+			$dropdownHeader = $user->getName();
+			$headerMsg = 'timeless-notloggedin';
 		} else {
 			$dropdownHeader = $this->getMsg( 'timeless-anonymous' )->text();
 			$headerMsg = 'timeless-notloggedin';
