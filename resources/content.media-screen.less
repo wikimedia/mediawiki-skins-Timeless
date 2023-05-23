@@ -8,9 +8,8 @@ figure[ typeof~='mw:File/Frame' ] {
 	box-shadow: 0 1px 2px 1px rgba( 0, 0, 0, 0.02 );  // From .box
 	background-color: @background-color-thumbinner-screen;
 
-	> a:first-child,
-	> span:first-child {
-		> *:first-child:not( .mw-broken-media ) {
+	> :not( figcaption ) {
+		.mw-file-element:not( .mw-broken-media ) {
 			border: @border-thumbimage-screen;
 		}
 	}
@@ -25,12 +24,9 @@ figure[ typeof~='mw:File/Frame' ] {
 	}
 }
 
-.mw-image-border {
-	> a:first-child,
-	> span:first-child {
-		> *:first-child:not( .mw-broken-media ) {
-			border: @border-thumbborder-screen;
-		}
+.mw-image-border > :not( figcaption ) {
+	.mw-file-element:not( .mw-broken-media ) {
+		border: @border-thumbborder-screen;
 	}
 }
 
@@ -56,30 +52,30 @@ figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
 		}
 	}
 
-	> a {
+	> .mw-file-description {
 		display: block;
 		position: relative;
-	}
 
-	> a.mw-file-description::after {
-		content: '';
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		bottom: -20px;
+		&::after {
+			content: '';
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			bottom: -20px;
 
-		.mw-content-ltr & {
-			/* @noflip */
-			right: 0.75em;
-			/* @noflip */
-			background-image: @background-image-magnify-ltr;
-		}
+			.mw-content-ltr & {
+				/* @noflip */
+				right: 0.75em;
+				/* @noflip */
+				background-image: @background-image-magnify-ltr;
+			}
 
-		.mw-content-rtl & {
-			/* @noflip */
-			left: 0.75em;
-			/* @noflip */
-			background-image: @background-image-magnify-rtl;
+			.mw-content-rtl & {
+				/* @noflip */
+				left: 0.75em;
+				/* @noflip */
+				background-image: @background-image-magnify-rtl;
+			}
 		}
 	}
 }

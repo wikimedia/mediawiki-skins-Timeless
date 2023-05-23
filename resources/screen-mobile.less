@@ -223,9 +223,8 @@ figure[ typeof~='mw:File/Thumb' ],
 figure[ typeof~='mw:File/Frame' ] {
 	width: 100% !important;
 
-	> a:first-child,
-	> span:first-child {
-		> *:first-child {
+	> :not( figcaption ) {
+		.mw-file-element {
 			margin: 1em 1.5em;
 		}
 	}
@@ -241,7 +240,7 @@ figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
 		content: none;
 	}
 
-	> a::after {
+	> .mw-file-description::after {
 		content: none;
 	}
 }
