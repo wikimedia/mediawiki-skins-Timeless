@@ -8,10 +8,8 @@ figure[ typeof~='mw:File/Frame' ] {
 	box-shadow: 0 1px 2px 1px rgba( 0, 0, 0, 0.02 );  // From .box
 	background-color: @background-color-thumbinner-screen;
 
-	> :not( figcaption ) {
-		.mw-file-element:not( .mw-broken-media ) {
-			border: @border-thumbimage-screen;
-		}
+	> :not( figcaption ) .mw-file-element {
+		border: @border-thumbimage-screen;
 	}
 
 	> figcaption {
@@ -24,14 +22,11 @@ figure[ typeof~='mw:File/Frame' ] {
 	}
 }
 
-.mw-image-border > :not( figcaption ) {
-	.mw-file-element:not( .mw-broken-media ) {
-		border: @border-thumbborder-screen;
-	}
+.mw-image-border .mw-file-element {
+	border: @border-thumbborder-screen;
 }
 
-/* Magnify clip, not present for broken media */
-figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
+figure[ typeof~='mw:File/Thumb' ] {
 	> figcaption::before {
 		content: '';
 		width: 20px;

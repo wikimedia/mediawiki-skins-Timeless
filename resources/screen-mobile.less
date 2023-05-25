@@ -223,10 +223,8 @@ figure[ typeof~='mw:File/Thumb' ],
 figure[ typeof~='mw:File/Frame' ] {
 	width: 100% !important;
 
-	> :not( figcaption ) {
-		.mw-file-element {
-			margin: 1em 1.5em;
-		}
+	> :not( figcaption ) .mw-file-element {
+		margin: 1em 1.5em;
 	}
 
 	> figcaption {
@@ -235,7 +233,7 @@ figure[ typeof~='mw:File/Frame' ] {
 }
 
 // FIXME: Clear the magnify clip for now
-figure[ typeof~='mw:File/Thumb' ]:not( [ typeof~='mw:Error' ] ) {
+figure[ typeof~='mw:File/Thumb' ] {
 	> figcaption::before {
 		content: none;
 	}
