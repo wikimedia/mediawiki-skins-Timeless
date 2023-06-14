@@ -59,6 +59,7 @@ figure[ typeof~='mw:File/Frame' ] {
 	display: table;
 	text-align: center;
 	border-collapse: collapse;
+	line-height: 0;
 
 	> a {
 		// The addition of the class is needed for higher specificity
@@ -143,6 +144,7 @@ figure[ typeof~='mw:File/Frame' ] {
 		 */
 		.mw-broken-media {
 			display: inline-block;
+			line-height: 1.5;
 			/* This is hardcoded in Linker::makeThumbLink2 for broken media */
 			width: 180px;
 		}
