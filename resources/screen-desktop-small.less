@@ -55,7 +55,7 @@
 #mw-related-navigation {
 	display: inline-block;
 	position: relative;
-	z-index: 99;
+	z-index: ( @z-index-fixed + 2 );
 
 	h2 {
 		font-weight: normal;
@@ -78,7 +78,7 @@
 	border-top: solid 2px @base80;
 	display: block;
 	position: absolute;
-	z-index: 98;
+	z-index: ( @z-index-fixed + 1 );
 	background: @background;
 	width: 100%;
 }

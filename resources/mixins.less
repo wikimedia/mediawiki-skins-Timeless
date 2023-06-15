@@ -132,7 +132,7 @@
 	top: 2.95em;
 	@{direction}: -1em;
 	overflow: visible;
-	z-index: 3;
+	z-index: @z-index-dropdown;
 }
 
 .dropdown-pokey() {
@@ -147,7 +147,7 @@
 		width: 0;
 		position: absolute;
 		right: 1em;
-		z-index: 4;
+		z-index: ( @z-index-dropdown + 1 );
 	}
 
 	&::before {
