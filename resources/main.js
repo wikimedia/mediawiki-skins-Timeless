@@ -46,7 +46,7 @@ $( function () {
 
 mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	// Gotta wrap them for this to work; maybe later the parser etc will do this for us?!
-	$content.find( 'div > table:not( table table )' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
+	$content.find( '.mw-parser-output div > table:not( table table )' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
 	$content.find( '.content-table-wrapper' ).prepend( '<div class="content-table-left"></div><div class="content-table-right"></div>' );
 
 	/**
