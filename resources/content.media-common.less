@@ -6,7 +6,7 @@
 
 figure[ typeof~='mw:File' ],
 figure[ typeof~='mw:File/Frameless' ] {
-	margin: 0;  // Maybe belongs in element.css for figure
+	margin: 0; // Maybe belongs in element.css for figure
 
 	> a {
 		// The addition of the class is needed for higher specificity
@@ -145,7 +145,7 @@ figure[ typeof~='mw:File/Frame' ] {
 		.mw-broken-media {
 			display: inline-block;
 			line-height: 1.5;
-			word-break: break-word;  // Same as in the figcaption
+			word-break: break-word; // Same as in the figcaption
 			/* This is hardcoded in Linker::makeThumbLink2 for broken media */
 			width: 180px;
 		}
@@ -169,7 +169,7 @@ figure[ typeof~='mw:File/Frame' ] {
 		 *
 		 * https://drafts.csswg.org/css-text-3/#word-break-property
 		 *
-		 * So, we should use that.  However, support for "anywhere" is lagging
+		 * So, we should use that. However, support for "anywhere" is lagging
 		 * at just 72.39%, with Safari being a notable miss.
 		 * https://caniuse.com/mdn-css_properties_overflow-wrap_anywhere
 		 *
@@ -203,7 +203,7 @@ figure[ typeof~='mw:File/Frame' ] {
 // Remove bogus padding from framed images without captions
 // However, it's still necessary for thumbs because the magnifying icon is present
 figure[ typeof~='mw:File/Frame' ] > figcaption:empty {
-	padding-bottom: 0.25em;  // Accounts for the difference in margin-bottom above
+	padding-bottom: 0.25em; // Accounts for the difference in margin-bottom above
 	min-height: 0;
 }
 
