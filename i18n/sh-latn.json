@@ -1,14 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
+			"Vlad5250",
 			"Winston Sung"
 		]
 	},
-	"timeless-pagelog": "Evidencije stranice",
+	"timeless-anonymous": "Anoniman",
+	"timeless-loggedinas": "Prijavljeni ste kao '''$1'''",
+	"timeless-notloggedin": "Niste prijavljeni",
+	"timeless-userpage": "{{GENDER:$1|Korisnička}} stranica",
+	"timeless-talkpage": "Razgovor sa {{GENDER:$1|korisnikom|korisnicom}}",
+	"timeless-pagelog": "Dnevnici stranice",
 	"timeless-more": "Više",
 	"timeless-sitetools": "Vikialatke",
 	"timeless-pageactions": "Alati za stranice",
 	"timeless-userpagetools": "Alati korisničke stranice",
+	"timeless-action-addsection": "Nova tema",
 	"timeless-view-view": "Pročitaj",
 	"timeless-pagemisc": "Više",
 	"timeless-namespaces": "Imenski prostori",
