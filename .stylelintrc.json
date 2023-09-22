@@ -1,6 +1,10 @@
 {
-	"extends": "stylelint-config-wikimedia",
+	"extends": [
+		"stylelint-config-wikimedia/support-modern",
+		"stylelint-config-wikimedia/mediawiki"
+	],
 	"rules": {
+		"selector-class-pattern": null,
 		"no-duplicate-selectors": null,
 		"selector-max-id": null,
 		"declaration-no-important": null,
