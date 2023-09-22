@@ -1,5 +1,8 @@
-/* eslint-env node */
+'use strict';
+
 module.exports = function ( grunt ) {
+	const conf = grunt.file.readJSON( 'skin.json' );
+
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-eslint' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
@@ -10,16 +13,9 @@ module.exports = function ( grunt ) {
 				cache: true,
 				fix: grunt.option( 'fix' )
 			},
-			all: [
-				'**/*.js{,on}',
-				'!resources/libraries/**',
-				'!node_modules/**',
-				'!vendor/**'
-			]
+			all: [ '.' ]
 		},
-		banana: {
-			all: 'i18n/'
-		},
+		banana: conf.MessagesDirs,
 		stylelint: {
 			all: [
 				'**/*.css',
