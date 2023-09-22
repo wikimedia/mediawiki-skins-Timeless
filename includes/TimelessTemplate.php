@@ -1004,7 +1004,7 @@ class TimelessTemplate extends BaseTemplate {
 					->getBoolOption( $skin->getUser(), 'showhiddencats' )
 				) {
 					$hiddenCatClass[] = 'mw-hidden-cats-user-shown';
-				} elseif ( $skin->getTitle()->getNamespace() == NS_CATEGORY ) {
+				} elseif ( $skin->getTitle()->getNamespace() === NS_CATEGORY ) {
 					$hiddenCatClass[] = 'mw-hidden-cats-ns-shown';
 				} else {
 					$hiddenCatClass[] = 'mw-hidden-cats-hidden';
