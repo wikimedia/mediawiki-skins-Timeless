@@ -703,7 +703,7 @@ class TimelessTemplate extends BaseTemplate {
 			$extraTools['notifications-notice'] = $personalTools['notifications-notice'];
 			unset( $personalTools['notifications-notice'] );
 		}
-		$class = empty( $extraTools ) ? '' : 'extension-icons';
+		$class = $extraTools === [] ? '' : 'extension-icons';
 
 		// Re-label some messages
 		if ( isset( $personalTools['userpage'] ) ) {
@@ -736,7 +736,7 @@ class TimelessTemplate extends BaseTemplate {
 		);
 
 		// Extra icon stuff (echo etc)
-		if ( !empty( $extraTools ) ) {
+		if ( $extraTools !== [] ) {
 			$iconList = '';
 			foreach ( $extraTools as $key => $item ) {
 				$iconList .= $skin->makeListItem( $key, $item );
@@ -985,8 +985,8 @@ class TimelessTemplate extends BaseTemplate {
 		$catList = '';
 
 		$allCats = $skin->getOutput()->getCategoryLinks();
-		if ( !empty( $allCats ) ) {
-			if ( !empty( $allCats['normal'] ) ) {
+		if ( $allCats !== [] ) {
+			if ( $allCats['normal'] !== [] ) {
 				$catList .= $this->getCatList(
 					$allCats['normal'],
 					'normal-catlinks',
