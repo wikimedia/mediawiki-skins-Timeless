@@ -986,7 +986,7 @@ class TimelessTemplate extends BaseTemplate {
 
 		$allCats = $skin->getOutput()->getCategoryLinks();
 		if ( $allCats !== [] ) {
-			if ( $allCats['normal'] !== [] ) {
+			if ( isset( $allCats['normal'] ) && $allCats['normal'] !== [] ) {
 				$catList .= $this->getCatList(
 					$allCats['normal'],
 					'normal-catlinks',
