@@ -136,6 +136,7 @@
 	"ResourceModuleSkinStyles": {
 		"timeless": {
 			"+mediawiki.page.ready": "resources/teleportTarget.less",
+			"+oojs-ui-core.styles": "resources/ooui.less",
 			"+ext.echo.styles.badge": "resources/extensions/Echo.less",
 			"+ext.eventLogging.jsonSchema.styles": "resources/extensions/EventLogging.jsonSchema.less",
 			"+ext.visualEditor.core": "resources/extensions/VisualEditor.core.less",
