@@ -9,12 +9,12 @@ namespace MediaWiki\Skin\Timeless;
 
 use BaseTemplate;
 use File;
-use Html;
-use Linker;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
-use ResourceLoaderSkinModule;
-use Sanitizer;
-use SpecialPage;
+use MediaWiki\Parser\Sanitizer;
+use MediaWiki\ResourceLoader\SkinModule;
+use MediaWiki\SpecialPage\SpecialPage;
 
 class TimelessTemplate extends BaseTemplate {
 
@@ -475,7 +475,7 @@ class TimelessTemplate extends BaseTemplate {
 				'role' => 'banner'
 			]
 		);
-		$logos = ResourceLoaderSkinModule::getAvailableLogos( $config );
+		$logos = SkinModule::getAvailableLogos( $config );
 		if ( $part !== 'image' ) {
 			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ), true );
 			if ( !$wordmarkImage && isset( $logos['wordmark'] ) ) {
