@@ -19,6 +19,7 @@
 	"timeless-namespaces": "ЦӀерийн меттигаш",
 	"timeless-pagetools": "АгӀонгахь дийриш",
 	"timeless-languages": "Меттанаш",
+	"timeless.js": "/* Кху чуйиллина йолу JavaScript код чуйоккхура йу, Timeless кечйаран тема лелош йолучу декъашхошна*/",
 	"timeless-view-history": "Истори",
 	"timeless-action-undelete": "МеттахӀоттайé $1 {{PLURAL:$1|нисйинарг|нисйинарш}}"
 }
