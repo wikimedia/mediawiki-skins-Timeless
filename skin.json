@@ -17,6 +17,7 @@
 			"args": [
 				{
 					"name": "timeless",
+					"supportsMwHeading": true,
 					"bodyOnly": true,
 					"template": "MediaWiki\\Skin\\Timeless\\TimelessTemplate",
 					"responsive": true,
