@@ -55,7 +55,7 @@
 			"class": "MediaWiki\\Skin\\Timeless\\TimelessVariablesModule",
 			"features": {
 				"normalize": false,
-				"logo": true,
+				"logo": false,
 				"content-media": false,
 				"content-links": true,
 				"content-links-external": true,
