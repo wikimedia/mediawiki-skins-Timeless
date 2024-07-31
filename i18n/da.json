@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Joedalton",
 			"Saederup92",
 			"Sarrus"
@@ -18,6 +19,7 @@
 	"timeless-pageactions": "Sideværktøjer",
 	"timeless-userpagetools": "Brugersideværktøjer",
 	"timeless-action-addsection": "Nyt emne",
+	"timeless-view-view": "Læs",
 	"timeless-pagemisc": "Mere",
 	"timeless-namespaces": "Navnerum",
 	"timeless-pagetools": "Sidehandlinger",
