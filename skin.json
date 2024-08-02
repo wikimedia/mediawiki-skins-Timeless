@@ -67,7 +67,6 @@
 				"elements": false,
 				"legacy": false,
 				"i18n-ordered-lists": true,
-				"i18n-all-lists-margins": true,
 				"i18n-headings": true,
 				"toc": true
 			},
