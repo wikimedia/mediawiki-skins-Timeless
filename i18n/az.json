@@ -23,6 +23,8 @@
 	"timeless-pagetools": "Səhifə fəaliyyətləri",
 	"timeless-languages": "Dillər",
 	"timeless-projects": "Digər layihələr",
+	"timeless.css": "/* Buradakı CSS kodu Timeless istifadəçiləri üçün yüklənəcək */",
+	"timeless.js": "/* Buradakı JavaScript kodu Timeless istifadəçiləri üçün yüklənəcək */",
 	"timeless-view-history": "Tarixçə",
 	"timeless-action-undelete": "$1 {{PLURAL:$1|dəyişikliyi}} bərpa et"
 }
