@@ -65,7 +65,6 @@
 				"interface-category": false,
 				"interface-message-box": true,
 				"elements": false,
-				"legacy": false,
 				"i18n-ordered-lists": true,
 				"i18n-headings": true,
 				"toc": true
