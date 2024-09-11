@@ -59,7 +59,6 @@
 				"content-media": false,
 				"content-links": true,
 				"content-links-external": true,
-				"content-parser-output": false,
 				"content-tables": false,
 				"interface": false,
 				"interface-category": false,
