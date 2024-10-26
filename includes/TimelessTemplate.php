@@ -655,7 +655,7 @@ class TimelessTemplate extends BaseTemplate {
 			$this->pileOfTools['page-tertiary'],
 			'timeless-pagemisc'
 		);
-		if ( isset( $this->collectionPortlet ) ) {
+		if ( $this->collectionPortlet !== null ) {
 			$pageTools .= $this->getPortlet(
 				'coll-print_export',
 				$this->collectionPortlet
@@ -878,7 +878,7 @@ class TimelessTemplate extends BaseTemplate {
 		];
 		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 		if ( !empty( $this->sidebar['LANGUAGES'] ) || $sortedPileOfTools['variants']
-			|| isset( $this->otherProjects ) ) {
+			|| $this->otherProjects !== null ) {
 			$pileOfTools['languages'] = [
 				'text' => $this->getMsg( 'timeless-languages' )->escaped(),
 				'id' => 'ca-languages',
@@ -1109,7 +1109,7 @@ class TimelessTemplate extends BaseTemplate {
 		}
 
 		// if using wikibase for 'in other projects'
-		if ( isset( $this->otherProjects ) ) {
+		if ( $this->otherProjects !== null ) {
 			$otherprojects = $this->getPortlet(
 				'wikibase-otherprojects',
 				$this->otherProjects
