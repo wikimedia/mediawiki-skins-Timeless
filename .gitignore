@@ -3,3 +3,4 @@
 /composer.lock
 /.eslintcache
 .DS_Store
+/.stylelintcache
