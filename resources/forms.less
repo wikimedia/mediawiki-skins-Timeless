@@ -64,7 +64,8 @@ div.editOptions {
 	}
 }
 
-form:not( .oo-ui-layout ) {
+// Modify forms that are not either OOUI or Codex.
+form:not( .oo-ui-layout ):not( .mw-htmlform-codex ) {
 	textarea,
 	input {
 		border: solid 1px @base70;
