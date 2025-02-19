@@ -94,14 +94,13 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 
 		// Set up sticky captions
 		$content.find( '.content-table > table > caption' ).each( function () {
-			let $container, tableHeight,
-				$table = $( this ).parent(),
+			const $table = $( this ).parent(),
 				$wrapper = $table.parent().parent();
 
 			if ( $table.outerWidth() > $wrapper.outerWidth() ) {
-				$container = $( this ).parents( '.content-table-wrapper' );
+				const $container = $( this ).parents( '.content-table-wrapper' );
 				$( this ).width( $content.width() );
-				tableHeight = $container.innerHeight() - $( this ).outerHeight();
+				const tableHeight = $container.innerHeight() - $( this ).outerHeight();
 
 				$container.find( '.content-table-left' ).height( tableHeight );
 				$container.find( '.content-table-right' ).height( tableHeight );
@@ -116,14 +115,12 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 * Sticky scrollbars maybe?!
 	 */
 	$content.find( '.content-table' ).each( function () {
-		let $table, $tableWrapper, $spoof, $scrollbar;
-
-		$tableWrapper = $( this );
-		$table = $tableWrapper.children( 'table' ).first();
+		const $tableWrapper = $( this );
+		const $table = $tableWrapper.children( 'table' ).first();
 
 		// Assemble our silly crap and add to page
-		$scrollbar = $( '<div>' ).addClass( 'content-table-scrollbar inactive' ).width( $content.width() );
-		$spoof = $( '<div>' ).addClass( 'content-table-spoof' ).width( $table.outerWidth() );
+		const $scrollbar = $( '<div>' ).addClass( 'content-table-scrollbar inactive' ).width( $content.width() );
+		const $spoof = $( '<div>' ).addClass( 'content-table-spoof' ).width( $table.outerWidth() );
 		$tableWrapper.parent().prepend( $scrollbar.prepend( $spoof ) );
 	} );
 
