@@ -3,7 +3,7 @@
 /* eslint-disable no-jquery/no-fade */
 
 $( function () {
-	var toggleTime = 200;
+	const toggleTime = 200;
 
 	// Open the various menus
 	$( '#user-tools h2' ).on( 'click', function () {

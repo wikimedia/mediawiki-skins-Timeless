@@ -1,7 +1,7 @@
 $( function () {
 	// sidebar-chunk only applies to desktop-small, but the toggles are hidden at
 	// other resolutions regardless and the css overrides any visible effects.
-	var $dropdowns = $( '#personal, #p-variants-desktop, .sidebar-chunk' );
+	const $dropdowns = $( '#personal, #p-variants-desktop, .sidebar-chunk' );
 
 	/**
 	 * Desktop menu click-toggling
@@ -57,7 +57,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 * @param {jQuery} $table
 	 */
 	function setScrollClass( $table ) {
-		var $tableWrapper = $table.parent(),
+		const $tableWrapper = $table.parent(),
 			// wtf browser rtl implementations
 			scroll = Math.abs( $tableWrapper.scrollLeft() );
 
@@ -82,7 +82,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 */
 	function unOverflowTables() {
 		$content.find( '.content-table > table' ).each( function () {
-			var $table = $( this ),
+			const $table = $( this ),
 				$wrapper = $table.parent().parent();
 			if ( $table.outerWidth() > $wrapper.outerWidth() ) {
 				$wrapper.addClass( 'overflowed' );
@@ -94,7 +94,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 
 		// Set up sticky captions
 		$content.find( '.content-table > table > caption' ).each( function () {
-			var $container, tableHeight,
+			let $container, tableHeight,
 				$table = $( this ).parent(),
 				$wrapper = $table.parent().parent();
 
@@ -116,7 +116,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 * Sticky scrollbars maybe?!
 	 */
 	$content.find( '.content-table' ).each( function () {
-		var $table, $tableWrapper, $spoof, $scrollbar;
+		let $table, $tableWrapper, $spoof, $scrollbar;
 
 		$tableWrapper = $( this );
 		$table = $tableWrapper.children( 'table' ).first();
@@ -132,12 +132,12 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 */
 	$content.find( '.content-table' ).on( 'scroll', function () {
 		// Only do this here if we're not already mirroring the spoof
-		var $mirror = $( this ).siblings( '.inactive' ).first();
+		const $mirror = $( this ).siblings( '.inactive' ).first();
 
 		$mirror.scrollLeft( $( this ).scrollLeft() );
 	} );
 	$content.find( '.content-table-scrollbar' ).on( 'scroll', function () {
-		var $mirror = $( this ).siblings( '.content-table' ).first();
+		const $mirror = $( this ).siblings( '.content-table' ).first();
 
 		// Only do this here if we're not already mirroring the table
 		// eslint-disable-next-line no-jquery/no-class-state
@@ -151,16 +151,16 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 */
 	function determineActiveSpoofScrollbars() {
 		$content.find( '.overflowed .content-table' ).each( function () {
-			var $scrollbar = $( this ).siblings( '.content-table-scrollbar' ).first();
+			const $scrollbar = $( this ).siblings( '.content-table-scrollbar' ).first();
 
 			// Skip caption
-			var captionHeight = $( this ).find( 'caption' ).outerHeight() || 0;
+			let captionHeight = $( this ).find( 'caption' ).outerHeight() || 0;
 			if ( captionHeight ) {
 				// Pad slightly for reasons
 				captionHeight += 8;
 			}
 
-			var tableTop = $( this ).offset().top,
+			const tableTop = $( this ).offset().top,
 				tableBottom = tableTop + $( this ).outerHeight(),
 				viewBottom = window.scrollY + document.documentElement.clientHeight,
 				active = tableTop + captionHeight < viewBottom && tableBottom > viewBottom;
@@ -176,7 +176,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	 */
 	$( window ).on( 'resize', function () {
 		$content.find( '.content-table-scrollbar' ).each( function () {
-			var width = $( this ).siblings().first().find( 'table' ).first().width();
+			const width = $( this ).siblings().first().find( 'table' ).first().width();
 			$( this ).find( '.content-table-spoof' ).first().width( width );
 			$( this ).width( $content.width() );
 		} );
