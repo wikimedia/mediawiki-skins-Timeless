@@ -1,4 +1,4 @@
-$( function () {
+$( () => {
 	// sidebar-chunk only applies to desktop-small, but the toggles are hidden at
 	// other resolutions regardless and the css overrides any visible effects.
 	const $dropdowns = $( '#personal, #p-variants-desktop, .sidebar-chunk' );
@@ -35,7 +35,7 @@ $( function () {
 			$( this ).addClass( 'dropdown-active' );
 		}
 	} );
-	$( document ).on( 'click', function ( e ) {
+	$( document ).on( 'click', ( e ) => {
 		if ( $( e.target ).closest( $dropdowns ).length > 0 ) {
 			// Clicked inside an open menu; don't close anything
 		} else {
@@ -44,7 +44,7 @@ $( function () {
 	} );
 } );
 
-mw.hook( 'wikipage.content' ).add( function ( $content ) {
+mw.hook( 'wikipage.content' ).add( ( $content ) => {
 	// Gotta wrap them for this to work; maybe later the parser etc will do this for us?!
 	$content.find( 'div > table:not( table table )' ).wrap( '<div class="content-table-wrapper"><div class="content-table"></div></div>' );
 	$content.find( '.content-table-wrapper' ).prepend( '<div class="content-table-left"></div><div class="content-table-right"></div>' );
@@ -171,7 +171,7 @@ mw.hook( 'wikipage.content' ).add( function ( $content ) {
 	/**
 	 * Make sure tablespoofs remain correctly-sized?
 	 */
-	$( window ).on( 'resize', function () {
+	$( window ).on( 'resize', () => {
 		$content.find( '.content-table-scrollbar' ).each( function () {
 			const width = $( this ).siblings().first().find( 'table' ).first().width();
 			$( this ).find( '.content-table-spoof' ).first().width( width );
