@@ -13,7 +13,7 @@
 	"ValidSkinNames": {
 		"timeless": {
 			"displayname": "Timeless",
-			"class": "MediaWiki\\Skin\\Timeless\\SkinTimeless",
+			"class": "SkinTemplate",
 			"args": [
 				{
 					"name": "timeless",
