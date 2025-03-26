@@ -72,7 +72,8 @@ form:not( .oo-ui-layout ):not( .mw-htmlform-codex ) {
 		border-radius: 2px;
 	}
 
-	input:not( [ type='submit' ] ) {
+	// The latter selector is due to T389358
+	input:not( [ type='submit' ] ):not( [ name='search' ] ) {
 		margin: 0.5em 0;
 		padding: 0.35em;
 	}
