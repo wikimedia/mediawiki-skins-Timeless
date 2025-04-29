@@ -516,7 +516,7 @@ class TimelessTemplate extends BaseTemplate {
 		if ( $part !== 'text' ) {
 			$logoImage = $this->getLogoImage( $config->get( 'TimelessLogo' ) );
 			if ( $logoImage === false ) {
-				$logoSrc = $logos['svg'] ?? $logos['icon'] ?? '';
+				$logoSrc = $logos['svg'] ?? $logos['icon'] ?? $logos['1x'] ?? '';
 				if ( $logoSrc !== '' ) {
 					$logoImage = Html::element( 'img', [
 						'src' => $logoSrc,
