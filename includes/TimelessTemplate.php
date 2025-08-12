@@ -1232,7 +1232,6 @@ class TimelessTemplate extends BaseTemplate {
 		} else {
 			// Okay, we really do want a 1x otherwise. If this throws an error or
 			// something because there's nothing here, GOOD.
-			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$attribs['src'] = $logoData['1x'];
 
 			// Throw the rest in a srcset
