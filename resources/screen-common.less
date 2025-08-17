@@ -885,11 +885,30 @@ body :not( :checked ) > .toctogglespan::after {
 }
 
 /* Portlets */
-.emptyPortlet,
-#mw-page-header-links .emptyPortlet {
-	display: none;
+
+// We don't want to hide .sidebar-chunk by default if :has is not supported.
+// The default of just having a small gray rectangle for class C browsers is
+// fine.
+@supports selector( :has( .a > :not( .b ) )) {
+	.sidebar-chunk {
+		display: none;
+	}
+
+	// Now we show sidebar chunks that have a non-empty portlet
+	// no-unsupported-browser-features doesn't understand @support:
+	// stylelint-disable-next-line plugin/no-unsupported-browser-features
+	.sidebar-chunk:has( .sidebar-inner > :not( .emptyPortlet ) ) {
+		display: inherit;
+	}
+
+	// Make sure the outer container of #p-lang is visible for the below rule
+	// stylelint-disable-next-line plugin/no-unsupported-browser-features
+	#other-languages:has( #p-lang ) {
+		display: inherit;
+	}
 }
 
+// Always show the language portlet as it has an "Add links" link when empty.
 #p-lang.emptyPortlet {
 	display: inherit;
 }
