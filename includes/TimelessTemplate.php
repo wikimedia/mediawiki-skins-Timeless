@@ -44,7 +44,9 @@ class TimelessTemplate extends BaseTemplate {
 		$this->languages = $this->sidebar['LANGUAGES'];
 
 		// WikiBase sidebar thing
-		if ( isset( $this->sidebar['wikibase-otherprojects'] ) ) {
+		// The hook will set it even if it's empty, but we don't care about
+		// other projects if it's empty.
+		if ( !empty( $this->sidebar['wikibase-otherprojects'] ) ) {
 			$this->otherProjects = $this->sidebar['wikibase-otherprojects'];
 			unset( $this->sidebar['wikibase-otherprojects'] );
 		}
