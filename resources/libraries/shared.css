@@ -106,13 +106,11 @@ span.comment {
 }
 
 /**
- * rev_deleted stuff
+ * rev_deleted custom color
  */
 li span.deleted,
 span.history-deleted {
-	text-decoration: line-through;
 	color: #72777d;
-	font-style: italic;
 }
 
 /**
