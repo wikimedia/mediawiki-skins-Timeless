@@ -707,10 +707,12 @@ class TimelessTemplate extends BaseTemplate {
 
 		// Re-label some messages
 		if ( isset( $personalTools['userpage'] ) ) {
-			$personalTools['userpage']['links'][0]['text'] = $this->getMsg( 'timeless-userpage' )->text();
+			$personalTools['userpage']['links'][0]['text'] =
+				$this->getMsg( 'timeless-userpage', $userName )->text();
 		}
 		if ( isset( $personalTools['mytalk'] ) ) {
-			$personalTools['mytalk']['links'][0]['text'] = $this->getMsg( 'timeless-talkpage' )->text();
+			$personalTools['mytalk']['links'][0]['text'] =
+				$this->getMsg( 'timeless-talkpage', $userName )->text();
 		}
 
 		// Labels
