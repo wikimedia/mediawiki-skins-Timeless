@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ne"
+			"Ne",
+			"Juwan"
 		]
 	},
-	"timeless-userpage": "lipu jan",
-	"timeless-talkpage": "lipu toki jan",
+	"timeless-userpage": "lipu {{GENDER:$1|jan}}",
+	"timeless-talkpage": "lipu toki {{GENDER:$1|jan}}",
 	"timeless-more": "ante",
 	"timeless-sitetools": "ilo",
 	"timeless-pageactions": "ilo lipu",
