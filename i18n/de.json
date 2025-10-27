@@ -4,7 +4,9 @@
 			"Kghbln",
 			"Metalhead64",
 			"Tobi 406",
-			"WikiBayer"
+			"WikiBayer",
+			"Brettchenweber",
+			"Vanyar"
 		]
 	},
 	"timeless-desc": "Stellt eine zeitlose Benutzeroberfläche bereit",
@@ -25,6 +27,7 @@
 	"timeless-pagetools": "Seitenaktionen",
 	"timeless-languages": "Sprachen",
 	"timeless-projects": "Weitere Projekte",
+	"timeless.css": "/* CSS an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */",
 	"timeless.js": "/* JavaScript an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */",
 	"timeless-view-history": "Versionsgeschichte",
 	"timeless-action-undelete": "{{PLURAL:$1|1 Version|$1 Versionen}} wiederherstellen"
