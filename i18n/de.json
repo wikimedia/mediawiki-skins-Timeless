@@ -10,7 +10,7 @@
 		]
 	},
 	"timeless-prefs-talkpage": "[[mw:Skin talk:Timeless|{{int:talk}}]]",
-	"timeless-desc": "Stellt eine zeitlose Benutzeroberfläche bereit, die auf dem \"Winter\"-Prototyp von Brandon Harris und verschiedenen Stilen von Wikimedia Foundation basiert.",
+	"timeless-desc": "Stellt eine zeitlose Benutzeroberfläche bereit",
 	"timeless-anonymous": "Anonym",
 	"timeless-loggedinas": "Angemeldet als '''$1'''",
 	"timeless-notloggedin": "Nicht angemeldet",
@@ -28,8 +28,8 @@
 	"timeless-pagetools": "Seitenaktionen",
 	"timeless-languages": "Sprachen",
 	"timeless-projects": "Weitere Projekte",
-	"timeless.css": "/* Jedes CSS hier wird für alle Benutzer des Timeless-Skins geladen */",
-	"timeless.js": "/* Jedes JavaScript hier wird für alle Benutzer des Timeless-Skins geladen */",
+	"timeless.css": "/* CSS an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */",
+	"timeless.js": "/* JavaScript an dieser Stelle wird für Benutzer geladen, die die Benutzeroberfläche „Timeless“ verwenden */",
 	"timeless-view-history": "Versionsgeschichte",
 	"timeless-action-undelete": "{{PLURAL:$1|1 Version|$1 Versionen}} wiederherstellen"
 }
