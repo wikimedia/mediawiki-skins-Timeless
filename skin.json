@@ -18,6 +18,16 @@
 				{
 					"name": "timeless",
 					"bodyOnly": true,
+					"menus": [
+						"user-interface-preferences",
+						"user-page",
+						"user-menu",
+						"notifications",
+						"associated-pages",
+						"views",
+						"actions",
+						"variants"
+					],
 					"template": "MediaWiki\\Skin\\Timeless\\TimelessTemplate",
 					"responsive": true,
 					"styles": [

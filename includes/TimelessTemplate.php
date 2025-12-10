@@ -132,7 +132,7 @@ class TimelessTemplate extends BaseTemplate {
 				Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
 					$this->getPortlet(
 						'namespaces',
-						$this->pileOfTools['namespaces'],
+						$this->pileOfTools['associated-pages'],
 						'timeless-namespaces',
 						[ 'extra-classes' => 'tools-inline' ]
 					) .
@@ -676,7 +676,14 @@ class TimelessTemplate extends BaseTemplate {
 	protected function getUserLinks() {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
-		$personalTools = $skin->getPersonalToolsForMakeListItem( $this->get( 'personal_urls' ) );
+		$contentNavigation = $this->data['content_navigation'];
+		$personalUrls = array_merge(
+			$contentNavigation['user-interface-preferences'],
+			$contentNavigation['user-page'],
+			$contentNavigation['notifications'],
+			$contentNavigation['user-menu']
+		);
+		$personalTools = $skin->getPersonalToolsForMakeListItem( $personalUrls );
 		// Preserve standard username label to allow customisation (T215822)
 		$userName = $personalTools['userpage']['links'][0]['text'] ?? $user->getName();
 
@@ -832,7 +839,7 @@ class TimelessTemplate extends BaseTemplate {
 		$namespace = $title->getNamespace();
 
 		$sortedPileOfTools = [
-			'namespaces' => [],
+			'associated-pages' => [],
 			'page-primary' => [],
 			'page-secondary' => [],
 			'user' => [],
@@ -847,16 +854,18 @@ class TimelessTemplate extends BaseTemplate {
 
 		foreach ( $contentNavigation as $navKey => $navBlock ) {
 			// Just use namespaces items as they are
-			if ( $navKey == 'namespaces' ) {
+			if ( $navKey == 'associated-pages' ) {
 				if ( $namespace < 0 && count( $navBlock ) < 2 ) {
 					// Put special page ns_pages in the more pile so they're not so lonely
 					$sortedPileOfTools['page-tertiary'] = $navBlock;
 				} else {
-					$sortedPileOfTools['namespaces'] = $navBlock;
+					$sortedPileOfTools['associated-pages'] = $navBlock;
 				}
 			} elseif ( $navKey == 'variants' ) {
 				// wat
 				$sortedPileOfTools['variants'] = $navBlock;
+			} elseif ( in_array( $navKey, [ 'user-menu', 'notifications', 'user-page' ] ) ) {
+				// pass (handled later)
 			} else {
 				$pileOfEditTools = array_merge( $pileOfEditTools, $navBlock );
 			}
@@ -897,7 +906,7 @@ class TimelessTemplate extends BaseTemplate {
 				'watch',
 				'unwatch'
 			] ) ) {
-				$currentSet = 'namespaces';
+				$currentSet = 'associated-pages';
 			} elseif ( in_array( $navKey, [
 				'edit',
 				'view',
@@ -963,12 +972,12 @@ class TimelessTemplate extends BaseTemplate {
 			'proofreadPageNextLink',
 		];
 		foreach ( $tabs as $tab ) {
-			if ( isset( $sortedPileOfTools['namespaces'][$tab] ) ) {
-				$toMove = $sortedPileOfTools['namespaces'][$tab];
-				unset( $sortedPileOfTools['namespaces'][$tab] );
+			if ( isset( $sortedPileOfTools['associated-pages'][$tab] ) ) {
+				$toMove = $sortedPileOfTools['associated-pages'][$tab];
+				unset( $sortedPileOfTools['associated-pages'][$tab] );
 
 				// move to end!
-				$sortedPileOfTools['namespaces'][$tab] = $toMove;
+				$sortedPileOfTools['associated-pages'][$tab] = $toMove;
 			}
 		}
 
