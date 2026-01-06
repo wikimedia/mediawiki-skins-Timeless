@@ -286,15 +286,13 @@ class TimelessTemplate extends BaseTemplate {
 			$this->afterLangPortlet = $afterPortlet;
 		}
 
-		$html = Html::rawElement( 'div', $divOptions,
+		return Html::rawElement( 'div', $divOptions,
 			Html::rawElement( 'h3', $labelOptions, $msgString ) .
 			Html::rawElement( 'div', $bodyDivOptions,
 				$contentText .
 				$afterPortlet
 			)
 		);
-
-		return $html;
 	}
 
 	/**
@@ -438,9 +436,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getSidebarChunk( $id, $headerMessage, $content, $classes = [] ) {
-		$html = '';
-
-		$html .= Html::rawElement(
+		return Html::rawElement(
 			'div',
 			[
 				'id' => Sanitizer::escapeIdForAttribute( $id ),
@@ -453,8 +449,6 @@ class TimelessTemplate extends BaseTemplate {
 			) .
 			Html::rawElement( 'div', [ 'class' => 'sidebar-inner' ], $content )
 		);
-
-		return $html;
 	}
 
 	/**
@@ -550,34 +544,31 @@ class TimelessTemplate extends BaseTemplate {
 	 */
 	protected function getSearch() {
 		$skin = $this->getSkin();
-		$html = Html::openElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ] );
-
-		$html .= Html::rawElement(
-			'h3',
-			[ 'lang' => $this->get( 'userlang' ), 'dir' => $this->get( 'dir' ) ],
-			Html::rawElement( 'label', [ 'for' => 'searchInput' ], $this->getMsg( 'search' )->escaped() )
-		);
-
-		$html .= Html::rawElement( 'form', [ 'action' => $this->get( 'wgScript' ), 'id' => 'searchform' ],
-			Html::rawElement( 'div', [ 'id' => 'simpleSearch' ],
-				Html::rawElement( 'div', [ 'id' => 'searchInput-container' ],
-					$skin->makeSearchInput( [
-						'id' => 'searchInput'
-					] )
-				) .
-				Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
-				$skin->makeSearchButton(
-					'fulltext',
-					[ 'id' => 'mw-searchButton', 'class' => 'searchButton mw-fallbackSearchButton' ]
-				) .
-				$skin->makeSearchButton(
-					'go',
-					[ 'id' => 'searchButton', 'class' => 'searchButton' ]
+		return Html::rawElement( 'div', [ 'class' => 'mw-portlet', 'id' => 'p-search' ],
+			Html::rawElement(
+				'h3',
+				[ 'lang' => $this->get( 'userlang' ), 'dir' => $this->get( 'dir' ) ],
+				Html::rawElement( 'label', [ 'for' => 'searchInput' ], $this->getMsg( 'search' )->escaped() )
+			) .
+			Html::rawElement( 'form', [ 'action' => $this->get( 'wgScript' ), 'id' => 'searchform' ],
+				Html::rawElement( 'div', [ 'id' => 'simpleSearch' ],
+					Html::rawElement( 'div', [ 'id' => 'searchInput-container' ],
+						$skin->makeSearchInput( [
+							'id' => 'searchInput'
+						] )
+					) .
+					Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
+					$skin->makeSearchButton(
+						'fulltext',
+						[ 'id' => 'mw-searchButton', 'class' => 'searchButton mw-fallbackSearchButton' ]
+					) .
+					$skin->makeSearchButton(
+						'go',
+						[ 'id' => 'searchButton', 'class' => 'searchButton' ]
+					)
 				)
 			)
 		);
-
-		return $html . Html::closeElement( 'div' );
 	}
 
 	/**
@@ -613,17 +604,15 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getHeaderHack() {
-		$html = '';
-
 		// These are almost exactly the same and this is stupid.
-		$html .= Html::rawElement( 'div', [ 'id' => 'mw-header-hack', 'class' => 'color-bar' ],
+		return Html::rawElement( 'div', [ 'id' => 'mw-header-hack', 'class' => 'color-bar' ],
 			Html::rawElement( 'div', [ 'class' => 'color-middle-container' ],
 				Html::element( 'div', [ 'class' => 'color-middle' ] )
 			) .
 			Html::element( 'div', [ 'class' => 'color-left' ] ) .
 			Html::element( 'div', [ 'class' => 'color-right' ] )
-		);
-		$html .= Html::rawElement( 'div', [ 'id' => 'mw-header-nav-hack' ],
+		) .
+		Html::rawElement( 'div', [ 'id' => 'mw-header-nav-hack' ],
 			Html::rawElement( 'div', [ 'class' => 'color-bar' ],
 				Html::rawElement( 'div', [ 'class' => 'color-middle-container' ],
 					Html::element( 'div', [ 'class' => 'color-middle' ] )
@@ -632,8 +621,6 @@ class TimelessTemplate extends BaseTemplate {
 				Html::element( 'div', [ 'class' => 'color-right' ] )
 			)
 		);
-
-		return $html;
 	}
 
 	/**
