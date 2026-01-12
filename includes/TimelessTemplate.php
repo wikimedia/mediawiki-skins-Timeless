@@ -131,7 +131,7 @@ class TimelessTemplate extends BaseTemplate {
 				Html::rawElement( 'div', [ 'id' => 'siteSub' ], $this->getMsg( 'tagline' )->parse() ) .
 				Html::rawElement( 'div', [ 'id' => 'mw-page-header-links' ],
 					$this->getPortlet(
-						'namespaces',
+						'associated-pages',
 						$this->pileOfTools['associated-pages'],
 						'timeless-namespaces',
 						[ 'extra-classes' => 'tools-inline' ]
