@@ -188,7 +188,6 @@ class TimelessTemplate extends BaseTemplate {
 	 * @param array $setOptions miscellaneous overrides, see below
 	 *
 	 * @return string html
-	 * @suppress PhanTypeMismatchArgumentNullable
 	 */
 	protected function getPortlet( $name, $content, $msg = null, $setOptions = [] ) {
 		$skin = $this->getSkin();
