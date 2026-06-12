@@ -36,6 +36,20 @@ class TimelessTemplate extends BaseTemplate {
 	/** @var string */
 	protected $afterLangPortlet;
 
+	/** @var array|null */
+	private $templateData;
+
+	/**
+	 * Get template data, caching the result for reuse within a single page render.
+	 *
+	 * @return array
+	 * @return-taint none
+	 */
+	private function getTemplateDataCached(): array {
+		$this->templateData ??= $this->getSkin()->getTemplateData();
+		return $this->templateData;
+	}
+
 	/**
 	 * Outputs the entire contents of the page
 	 */
@@ -120,7 +134,7 @@ class TimelessTemplate extends BaseTemplate {
 	 * @return string html
 	 */
 	protected function getContentBlock() {
-		$templateData = $this->getSkin()->getTemplateData();
+		$templateData = $this->getTemplateDataCached();
 		$html = Html::rawElement(
 			'div',
 			[ 'id' => 'content', 'class' => 'mw-body', 'role' => 'main' ],
@@ -317,18 +331,15 @@ class TimelessTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Better renderer for getFooterIcons and getFooterLinks, based on Vector's HTML output
-	 * (as of 2016)
+	 * Render the footer block from portlet data.
+	 *
+	 * Uses data-portlets.data-footer-* instead of the legacy BaseTemplate
+	 * API ($this->get('footericons'), $this->getFooterLinks()).
 	 *
 	 * @param array $setOptions Miscellaneous other options
 	 * * 'id' for footer id
 	 * * 'class' for footer class
-	 * * 'order' to determine whether icons or links appear first: 'iconsfirst' or links, though in
-	 *   practice we currently only check if it is or isn't 'iconsfirst'
-	 * * 'link-prefix' to set the prefix for all link and block ids; most skins use 'f' or 'footer',
-	 *   as in id='f-whatever' vs id='footer-whatever'
-	 * * 'link-style' to pass to getFooterLinks: "flat" to disable categorisation of links in a
-	 *   nested array
+	 * * 'order' to determine whether icons or links appear first: 'iconsfirst' or links
 	 *
 	 * @return string html
 	 */
@@ -338,18 +349,15 @@ class TimelessTemplate extends BaseTemplate {
 			'id' => 'footer',
 			'class' => 'mw-footer',
 			'order' => 'iconsfirst',
-			'link-prefix' => 'footer',
-			'link-style' => null
 		];
 
 		// phpcs:ignore Generic.Files.LineLength.TooLong
-		'@phan-var array{id:string,class:string,order:string,link-prefix:string,link-style:?string} $options';
-		$validFooterIcons = $this->get( 'footericons' );
-		$validFooterLinks = $this->getFooterLinks( $options['link-style'] );
+		'@phan-var array{id:string,class:string|string[],order:string} $options';
 
-		$html = '';
+		$templateData = $this->getTemplateDataCached();
+		$portlets = $templateData['data-portlets'];
 
-		$html .= Html::openElement( 'div', [
+		$html = Html::openElement( 'div', [
 			'id' => $options['id'],
 			'class' => $options['class'],
 			'role' => 'contentinfo',
@@ -357,60 +365,51 @@ class TimelessTemplate extends BaseTemplate {
 			'dir' => $this->get( 'dir' )
 		] );
 
+		// Icons
+		$iconsData = $portlets['data-footer-icons'] ?? null;
 		$iconsHTML = '';
-		if ( count( $validFooterIcons ) > 0 ) {
-			$iconsHTML .= Html::openElement( 'ul', [ 'id' => "{$options['link-prefix']}-icons" ] );
-			foreach ( $validFooterIcons as $blockName => $footerIcons ) {
-				$iconsHTML .= Html::openElement( 'li', [
-					'id' => Sanitizer::escapeIdForAttribute(
-						"{$options['link-prefix']}-{$blockName}ico"
-					),
+		if ( $iconsData && !empty( $iconsData['array-items'] ) ) {
+			$iconsHTML .= Html::openElement( 'ul', [ 'id' => $iconsData['id'] ] );
+			foreach ( $iconsData['array-items'] as $item ) {
+				$iconsHTML .= Html::rawElement( 'li', [
+					'id' => $item['id'],
 					'class' => 'footer-icons'
-				] );
-				foreach ( $footerIcons as $icon ) {
-					$iconsHTML .= $this->getSkin()->makeFooterIcon( $icon );
-				}
-				$iconsHTML .= Html::closeElement( 'li' );
+				], $item['html'] );
 			}
 			$iconsHTML .= Html::closeElement( 'ul' );
 		}
 
+		// Links (info + places)
 		$linksHTML = '';
-		if ( count( $validFooterLinks ) > 0 ) {
-			if ( $options['link-style'] === 'flat' ) {
-				$linksHTML .= Html::openElement( 'ul', [
-					'id' => "{$options['link-prefix']}-list",
-					'class' => 'footer-places'
-				] );
-				foreach ( $validFooterLinks as $link ) {
-					$linksHTML .= Html::rawElement(
-						'li',
-						[ 'id' => Sanitizer::escapeIdForAttribute( $link ) ],
-						$this->get( $link )
-					);
-				}
-				$linksHTML .= Html::closeElement( 'ul' );
-			} else {
-				$linksHTML .= Html::openElement( 'div', [ 'id' => "{$options['link-prefix']}-list" ] );
-				foreach ( $validFooterLinks as $category => $links ) {
-					$linksHTML .= Html::openElement( 'ul',
-						[ 'id' => Sanitizer::escapeIdForAttribute(
-							"{$options['link-prefix']}-{$category}"
-						) ]
-					);
-					foreach ( $links as $link ) {
+		$linkSections = [
+			$portlets['data-footer-info'] ?? null,
+			$portlets['data-footer-places'] ?? null,
+		];
+		$hasLinks = false;
+		foreach ( $linkSections as $sectionData ) {
+			if ( $sectionData && !empty( $sectionData['array-items'] ) ) {
+				$hasLinks = true;
+				break;
+			}
+		}
+		if ( $hasLinks ) {
+			$linksHTML .= Html::openElement( 'div', [ 'id' => 'footer-list' ] );
+			foreach ( $linkSections as $sectionData ) {
+				if ( $sectionData && !empty( $sectionData['array-items'] ) ) {
+					$linksHTML .= Html::openElement( 'ul', [
+						'id' => $sectionData['id']
+					] );
+					foreach ( $sectionData['array-items'] as $item ) {
 						$linksHTML .= Html::rawElement(
 							'li',
-							[ 'id' => Sanitizer::escapeIdForAttribute(
-								"{$options['link-prefix']}-{$category}-{$link}"
-							) ],
-							$this->get( $link )
+							[ 'id' => $item['id'] ],
+							$item['html']
 						);
 					}
 					$linksHTML .= Html::closeElement( 'ul' );
 				}
-				$linksHTML .= Html::closeElement( 'div' );
 			}
+			$linksHTML .= Html::closeElement( 'div' );
 		}
 
 		if ( $options['order'] === 'iconsfirst' ) {
@@ -850,8 +849,11 @@ class TimelessTemplate extends BaseTemplate {
 			} elseif ( $navKey == 'variants' ) {
 				// wat
 				$sortedPileOfTools['variants'] = $navBlock;
-			} elseif ( in_array( $navKey, [ 'user-menu', 'notifications', 'user-page' ] ) ) {
-				// pass (handled later)
+			} elseif ( in_array( $navKey, [
+				'user-menu', 'notifications', 'user-page',
+				'footer-info', 'footer-places', 'footer-icons',
+			] ) ) {
+				// pass (handled elsewhere)
 			} else {
 				$pileOfEditTools = array_merge( $pileOfEditTools, $navBlock );
 			}
