@@ -8,6 +8,9 @@
 		"no-duplicate-selectors": null,
 		"selector-max-id": null,
 		"declaration-no-important": null,
-		"no-descending-specificity": null
+		"no-descending-specificity": null,
+		"@stylistic/indentation": null,
+		"declaration-property-value-keyword-no-deprecated": null,
+		"nesting-selector-no-missing-scoping-root": null
 	}
 }
