@@ -105,6 +105,12 @@ mw.hook( 'wikipage.content' ).add( ( $content ) => {
 
 				$container.find( '.content-table-left' ).height( tableHeight );
 				$container.find( '.content-table-right' ).height( tableHeight );
+			} else {
+				const $container = $( this ).parents( '.content-table-wrapper' );
+				if ( $container.length ) {
+					$container.find( '.content-table-left' ).height( 0 );
+					$container.find( '.content-table-right' ).height( 0 );
+				}
 			}
 		} );
 	}
