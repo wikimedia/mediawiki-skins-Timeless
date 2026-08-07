@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"timeless-anonymous": "مجهول",
+	"timeless-loggedinas": "سجّل دخولك ب سمّيت` '''$1'''",
+	"timeless-notloggedin": "ماشي مسجّل الدخول",
+	"timeless-userpage": "صفحة {{GENDER:$1|المستخدم|المستخدمة}}",
+	"timeless-talkpage": "صفحة {{GENDER:$1|المستخدم|المستخدمة}}",
+	"timeless-pagelog": "سجلات الصفحة",
+	"timeless-more": "زيادة",
+	"timeless-sitetools": "ادوات الويكي",
+	"timeless-pageactions": "أدوات الصفحه",
+	"timeless-userpagetools": "ادوات صفحة المستخدم",
+	"timeless-action-addsection": "موضوع جديد",
+	"timeless-view-view": "اقرى",
+	"timeless-pagemisc": "زيادة",
+	"timeless-namespaces": "نطاقات الأسماء",
+	"timeless-pagetools": "أكثر خيارات",
+	"timeless-languages": "لوغات",
+	"timeless-projects": "في مشاريع وحد اخرى",
+	"timeless-view-history": "تاريخ"
+}
