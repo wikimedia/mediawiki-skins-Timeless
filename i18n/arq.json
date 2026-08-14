@@ -4,6 +4,7 @@
 			"Bachounda"
 		]
 	},
+	"timeless-desc": "تصميم (سكين) خالد مصمم على غرار النموذج الأولي Winter من Brandon Harris، وأنماط مختلفة من مؤسسة ويكيميديا.",
 	"timeless-anonymous": "مجهول",
 	"timeless-loggedinas": "سجّل دخولك ب سمّيت` '''$1'''",
 	"timeless-notloggedin": "ماشي مسجّل الدخول",
@@ -21,5 +22,6 @@
 	"timeless-pagetools": "أكثر خيارات",
 	"timeless-languages": "لوغات",
 	"timeless-projects": "في مشاريع وحد اخرى",
-	"timeless-view-history": "تاريخ"
+	"timeless-view-history": "تاريخ",
+	"timeless-action-undelete": "رجّع {{PLURAL:$1||تعديل واحد|$1 تعديل}}"
 }
