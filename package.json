@@ -7,12 +7,12 @@
 		"test": "grunt test"
 	},
 	"devDependencies": {
-		"eslint-config-wikimedia": "0.31.0",
-		"grunt": "1.6.2",
+		"eslint-config-wikimedia": "0.32.4",
+		"grunt": "1.6.3",
 		"grunt-banana-checker": "0.13.0",
 		"grunt-eslint": "24.3.0",
 		"grunt-stylelint": "0.20.1",
 		"stylelint-config-wikimedia": "0.18.0",
-		"svgo": "3.3.3"
+		"svgo": "3.3.5"
 	}
 }
