@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"PanWor",
 			"Rail",
 			"Railfail536",
 			"Rzuwig",
@@ -19,7 +20,7 @@
 	"timeless-sitetools": "Narzędzia wiki",
 	"timeless-pageactions": "Narzędzia dla stron",
 	"timeless-userpagetools": "Narzędzia strony użytkownika",
-	"timeless-action-addsection": "Nowy temat",
+	"timeless-action-addsection": "Nowy wątek",
 	"timeless-view-view": "Podgląd",
 	"timeless-pagemisc": "Więcej",
 	"timeless-namespaces": "Przestrzenie nazw",
