@@ -77,8 +77,9 @@ form:not( .oo-ui-layout ):not( .mw-htmlform-codex ):not( :where( #search, #power
 		border-radius: 2px;
 	}
 
-	// The latter selector is due to T389358
-	input:not( [ type='submit' ] ):not( [ name='search' ] ) {
+	// Only apply margin and padding to text-like inputs (T437803).
+	// The latter selector is due to T389358.
+	input:is( :not( [ type ] ), [ type='text' ], [ type='search' ], [ type='password' ], [ type='email' ], [ type='url' ], [ type='number' ], [ type='tel' ] ):not( [ name='search' ] ) {
 		margin: 0.5em 0;
 		padding: 0.35em;
 	}
