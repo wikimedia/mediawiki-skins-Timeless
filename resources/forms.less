@@ -4,40 +4,6 @@ input {
 	font-family: @fonts;
 }
 
-.oo-ui-buttonElement-framed.oo-ui-labelElement > .oo-ui-buttonElement-button,
-.oo-ui-textInputWidget .oo-ui-inputWidget-input,
-.oo-ui-dropdownWidget-handle,
-button,
-textarea,
-select {
-	padding: 0.35em;
-	box-sizing: border-box;
-	height: unset;
-}
-
-.oo-ui-buttonElement-framed.oo-ui-labelElement > .oo-ui-buttonElement-button,
-button {
-	padding: 0.35em 1em;
-}
-
-.mw-input-with-label {
-	display: block; // wat (this is probably an awful idea but aaaaaah whatever)
-}
-
-// Fix for half-arsed date input conversion on special:contributions and anywhere else
-// that's not actually ooui: add just enough margin to keep multiple widgets from fondling
-// each other
-.mw-widget-dateInputWidget {
-	margin: 0 0 0.2em 0;
-}
-
-// More fondling, because we've removed the default margins in normalise
-input[ type='radio' ],
-input[ type='checkbox' ] {
-	margin: 0.35em 0.2em 0.25em 0.35em;
-	box-sizing: border-box;
-}
-
 textarea,
 #searchInput {
 	box-sizing: border-box;
@@ -52,6 +18,12 @@ textarea {
 	line-height: 1.3em;
 }
 
+// Copied from core's elements.less because Timeless does not use core's elements feature.
+// Otherwise Special:Upload's form will be too crammed
+fieldset {
+	margin: 1em 0;
+}
+
 div.editOptions {
 	padding: 1.25em 1.75em;
 	border: solid @base70;
@@ -61,57 +33,6 @@ div.editOptions {
 	// For Extension:TemplateSandbox and the like
 	fieldset {
 		margin-top: 1em;
-	}
-}
-
-// Modify forms that are not either OOUI or Codex.
-// We also exclude #search (from AdvancedSearch) and #powerSearch (default UI
-// when you click "Advanced") since their styling looks fine and this kinda
-// breaks it. Additionally, we use :where so we avoid giving this specificity
-// over #searchButton styling that happens later. (T403355)
-// (Also sorry I can't get this line to wrap without stylelint being upset.)
-form:not( .oo-ui-layout ):not( .mw-htmlform-codex ):not( :where( #search, #powersearch ) ) {
-	textarea,
-	input {
-		border: solid 1px @base70;
-		border-radius: 2px;
-	}
-
-	// The latter selector is due to T389358
-	input:not( [ type='submit' ] ):not( [ name='search' ] ) {
-		margin: 0.5em 0;
-		padding: 0.35em;
-	}
-
-	input[ type='file' ] {
-		border: unset;
-		border-radius: unset;
-	}
-
-	button[ type='submit' ],
-	input[ type='submit' ] {
-		border-radius: 2px;
-		padding: 0.35em 1em;
-		background-color: #36c;
-		font-weight: bold;
-		color: #fff;
-		border: solid 1px #36c;
-
-		&:not( :disabled ):hover,
-		&:not( :disabled ):active {
-			background-color: #47f;
-		}
-	}
-
-	fieldset {
-		border: 0;
-		margin: 1.5em 0 0;
-		padding: 0;
-
-		legend {
-			font-weight: bold;
-			font-size: 110%;
-		}
 	}
 }
 
