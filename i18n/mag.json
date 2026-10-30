@@ -4,6 +4,9 @@
 			"ऐक्टिवेटेड्"
 		]
 	},
+	"timeless-anonymous": "अनाम",
+	"timeless-loggedinas": "'''$1''' के रूपमे प्रवेश कैल",
+	"timeless-notloggedin": "सम्प्रवेशित नै",
 	"timeless-userpage": "{{GENDER:$1|प्रयोगकर्ता}} पन्ना",
 	"timeless-talkpage": "{{GENDER:$1|प्रयोगकर्ता}} वार्ता",
 	"timeless-pagelog": "पन्ना सूचिका",
