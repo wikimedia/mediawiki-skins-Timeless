@@ -71,7 +71,7 @@
 				"content-media": false,
 				"content-links": true,
 				"content-links-external": true,
-				"content-tables": false,
+				"content-tables": true,
 				"interface": false,
 				"interface-category": false,
 				"elements": false,
